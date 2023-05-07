@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu4h3tkshcl3a"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_3iqq6"]
+[ext_resource type="Script" path="res://scripts/player_camera.gd" id="2_tt006"]
+[ext_resource type="Script" path="res://scripts/InteractRay.gd" id="3_yo8p4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3wqfa"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fs65c"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_3iqq6")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3wqfa")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_fs65c")
+
+[node name="CamHolder" type="Node3D" parent="."]
+script = ExtResource("2_tt006")
+
+[node name="Cam" type="Camera3D" parent="CamHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.1)
+fov = 85.0
+
+[node name="InteractRay" type="RayCast3D" parent="CamHolder/Cam"]
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+script = ExtResource("3_yo8p4")

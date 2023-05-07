@@ -1,13 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://gnhc6t2ppppg"]
+[gd_scene load_steps=10 format=3 uid="uid://gnhc6t2ppppg"]
+
+[ext_resource type="PackedScene" uid="uid://bu4h3tkshcl3a" path="res://scenes/player.tscn" id="1_8ige2"]
+[ext_resource type="PackedScene" uid="uid://beov0ucl8pycl" path="res://scenes/ui/gui.tscn" id="2_kdw4b"]
+[ext_resource type="PackedScene" uid="uid://d3doo5trm8sgg" path="res://scenes/objects/cauldron.tscn" id="3_6vfr5"]
+[ext_resource type="PackedScene" uid="uid://c0l51nbst4h6y" path="res://scenes/objects/mandrake_root.tscn" id="4_pa1kg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouuoy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1131"]
 albedo_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ytuem"]
+
+[sub_resource type="Sky" id="Sky_08ayf"]
+sky_material = SubResource("ProceduralSkyMaterial_ytuem")
+
+[sub_resource type="Environment" id="Environment_huoxf"]
+background_mode = 2
+sky = SubResource("Sky_08ayf")
+
 [node name="world" type="Node3D"]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -46,8 +61,25 @@ material = SubResource("StandardMaterial3D_ouuoy")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 1.7)
-size = Vector3(6, 1, 1)
+size = Vector3(6, 1, 0.5)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, -4)
-size = Vector3(6, 0.8, 0.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -3.7)
+size = Vector3(8, 0.8, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_8ige2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 7)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_huoxf")
+
+[node name="GUI" parent="." instance=ExtResource("2_kdw4b")]
+
+[node name="Cauldron" parent="." instance=ExtResource("3_6vfr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -3.7)
+
+[node name="MandrakeRoot" parent="." instance=ExtResource("4_pa1kg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.2, -3.7)

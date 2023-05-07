@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3doo5trm8sgg"]
+
+[ext_resource type="Script" path="res://interactable/cauldron.gd" id="1_32e5k"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3whgj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eidaq"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xeyeb"]
+material = SubResource("StandardMaterial3D_eidaq")
+
+[node name="Cauldron" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_32e5k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_3whgj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_xeyeb")
+
+[node name="InteractTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="CookingTimer" type="Timer" parent="."]
+one_shot = true
