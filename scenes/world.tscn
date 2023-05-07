@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://gnhc6t2ppppg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouuoy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1131"]
+albedo_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+
+[node name="world" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+size = Vector3(10, 2, 10)
+material = SubResource("StandardMaterial3D_ouuoy")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 14)
+size = Vector3(4, 2, 10)
+material = SubResource("StandardMaterial3D_ouuoy")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+size = Vector3(10, 2, 10)
+material = SubResource("StandardMaterial3D_ouuoy")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 7)
+size = Vector3(22, 1, 4)
+material = SubResource("StandardMaterial3D_j1131")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2.5, 0)
+size = Vector3(1, 5, 10)
+material = SubResource("StandardMaterial3D_ouuoy")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2.5, 0)
+size = Vector3(1, 5, 10)
+material = SubResource("StandardMaterial3D_ouuoy")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4.6)
+size = Vector3(8, 5, 0.8)
+material = SubResource("StandardMaterial3D_ouuoy")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 1.7)
+size = Vector3(6, 1, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.4, -4)
+size = Vector3(6, 0.8, 0.4)
