@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://dq0cttsvnw3ye"]
+
+[ext_resource type="Script" path="res://scripts/customer.gd" id="1_fesl2"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="2_irgry"]
+[ext_resource type="Texture2D" uid="uid://uxlw2bk58rwn" path="res://assets/textures/speech.png" id="2_wxqgo"]
+[ext_resource type="Script" path="res://interactable/CustomerBody.gd" id="4_3ec62"]
+
+[sub_resource type="Resource" id="Resource_yywc3"]
+script = ExtResource("2_irgry")
+Name = "Charles"
+Dialog = "I have a date later and I'm nervous"
+Need = ["courage"]
+Bonus = [""]
+Reward = 10
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wi8kg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7drc"]
+transparency = 1
+albedo_texture = ExtResource("2_wxqgo")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_h4lt8"]
+material = SubResource("StandardMaterial3D_d7drc")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bo1v6"]
+
+[node name="Customer" type="PathFollow3D"]
+script = ExtResource("1_fesl2")
+Info = SubResource("Resource_yywc3")
+
+[node name="BodyMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_wi8kg")
+
+[node name="SpeechBubble" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("QuadMesh_h4lt8")
+
+[node name="Dialogue" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.595, 0)
+billboard = 2
+double_sided = false
+no_depth_test = true
+render_priority = 2
+text = "I have a date later and I'm scared, please help me"
+font_size = 12
+outline_size = 2
+autowrap_mode = 3
+width = 140.0
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("4_3ec62")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+shape = SubResource("CapsuleShape3D_bo1v6")

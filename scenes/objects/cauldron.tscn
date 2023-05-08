@@ -22,7 +22,6 @@ shape = SubResource("SphereShape3D_3whgj")
 mesh = SubResource("SphereMesh_xeyeb")
 
 [node name="InteractTimer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="CookingTimer" type="Timer" parent="."]

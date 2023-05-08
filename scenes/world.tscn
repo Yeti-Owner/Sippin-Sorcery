@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://gnhc6t2ppppg"]
+[gd_scene load_steps=13 format=3 uid="uid://gnhc6t2ppppg"]
 
 [ext_resource type="PackedScene" uid="uid://bu4h3tkshcl3a" path="res://scenes/player.tscn" id="1_8ige2"]
 [ext_resource type="PackedScene" uid="uid://beov0ucl8pycl" path="res://scenes/ui/gui.tscn" id="2_kdw4b"]
 [ext_resource type="PackedScene" uid="uid://d3doo5trm8sgg" path="res://scenes/objects/cauldron.tscn" id="3_6vfr5"]
 [ext_resource type="PackedScene" uid="uid://c0l51nbst4h6y" path="res://scenes/objects/mandrake_root.tscn" id="4_pa1kg"]
+[ext_resource type="PackedScene" uid="uid://cecebo067j78j" path="res://scenes/objects/fairy_wing.tscn" id="5_26yoj"]
+[ext_resource type="PackedScene" uid="uid://dq0cttsvnw3ye" path="res://scenes/customer.tscn" id="6_8kxlc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouuoy"]
 
@@ -18,6 +20,13 @@ sky_material = SubResource("ProceduralSkyMaterial_ytuem")
 [sub_resource type="Environment" id="Environment_huoxf"]
 background_mode = 2
 sky = SubResource("Sky_08ayf")
+
+[sub_resource type="Curve3D" id="Curve3D_a1qbb"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 1, 18, 0, 0, 0, 0, 0, 0, 0, 1, 3.5),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [node name="world" type="Node3D"]
 
@@ -68,7 +77,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -3.7)
 size = Vector3(8, 0.8, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_8ige2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.1, -0.5)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 7)
@@ -79,7 +89,16 @@ environment = SubResource("Environment_huoxf")
 [node name="GUI" parent="." instance=ExtResource("2_kdw4b")]
 
 [node name="Cauldron" parent="." instance=ExtResource("3_6vfr5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -3.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 1.7)
 
 [node name="MandrakeRoot" parent="." instance=ExtResource("4_pa1kg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1.2, -3.7)
+
+[node name="FairyWing" parent="." instance=ExtResource("5_26yoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.2, -3.7)
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_a1qbb")
+
+[node name="Customer" parent="Path3D" instance=ExtResource("6_8kxlc")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 18)
