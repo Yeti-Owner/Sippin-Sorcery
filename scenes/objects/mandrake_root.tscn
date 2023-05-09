@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://interactable/mandrake_root.gd" id="1_nr8fi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ulhn"]
-albedo_color = Color(0.203922, 0.470588, 0.215686, 1)
+albedo_color = Color(0.12549, 0.290196, 0.133333, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_78yjo"]
 material = SubResource("StandardMaterial3D_8ulhn")

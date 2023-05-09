@@ -12,7 +12,16 @@ var ingredientEffects = {
 	"SalamanderTail": ["coldRes", "fireRes", "lessPain"],
 	"MermaidScale": ["swimming", "underwaterBreathing", "fishTalk"],
 	"SpiderSilk": ["sticky", "nightVision", "invisibility"],
-	"DragonflyWing": ["lessWeight", "hearing", "hovering"]
+	"DragonflyWing": ["lessWeight", "hearing", "hovering"],
+	"PhoenixFeather": ["energy", "luck", "fireRes"],
+	"BasiliskFang": ["petrificationImmunity", "poison", "strength"],
+	"UnicornHorn": ["purity", "healing", "heightenedSenses"],
+	"CentaurHoof": ["speed", "stability", "jumping"],
+	"HippogriffTalon": ["precision", "lessPain", "dexterity"],
+	"GriffinFeather": ["alertness", "perception", "electricalRes"],
+	"ChimeraFlame": ["strength", "explosionRes", "smokeImmunity"],
+	"GorgonBlood": ["petrificationRes", "poison", "betterSmell"],
+	"DryadSap": ["charisma", "healing", "plantControl"]
 }
 
 

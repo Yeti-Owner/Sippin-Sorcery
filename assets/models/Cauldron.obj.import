@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://paeabkaehigl"
+path="res://.godot/imported/Cauldron.obj-1b95338945dafc268a7b4103501b53bb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cauldron.obj-1b95338945dafc268a7b4103501b53bb.mesh"]
+
+source_file="res://assets/models/Cauldron.obj"
+dest_files=["res://.godot/imported/Cauldron.obj-1b95338945dafc268a7b4103501b53bb.mesh", "res://.godot/imported/Cauldron.obj-1b95338945dafc268a7b4103501b53bb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
