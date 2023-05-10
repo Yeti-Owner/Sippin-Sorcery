@@ -1,17 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://gnhc6t2ppppg"]
+[gd_scene load_steps=13 format=3 uid="uid://gnhc6t2ppppg"]
 
 [ext_resource type="PackedScene" uid="uid://bu4h3tkshcl3a" path="res://scenes/player.tscn" id="1_8ige2"]
 [ext_resource type="PackedScene" uid="uid://beov0ucl8pycl" path="res://scenes/ui/gui.tscn" id="2_kdw4b"]
 [ext_resource type="PackedScene" uid="uid://d3doo5trm8sgg" path="res://scenes/objects/cauldron.tscn" id="3_6vfr5"]
-[ext_resource type="PackedScene" uid="uid://c0l51nbst4h6y" path="res://scenes/objects/mandrake_root.tscn" id="4_pa1kg"]
-[ext_resource type="PackedScene" uid="uid://cecebo067j78j" path="res://scenes/objects/fairy_wing.tscn" id="5_26yoj"]
+[ext_resource type="Resource" uid="uid://piluioy68tvp" path="res://resources/Charles.tres" id="4_mw46j"]
 [ext_resource type="PackedScene" uid="uid://dq0cttsvnw3ye" path="res://scenes/customer.tscn" id="6_8kxlc"]
-[ext_resource type="PackedScene" uid="uid://cbho1e42f5dgt" path="res://scenes/objects/troll_blood.tscn" id="7_l0sny"]
-[ext_resource type="PackedScene" uid="uid://dnwc0d01nabm5" path="res://scenes/objects/kraken_ink.tscn" id="8_loviy"]
-[ext_resource type="PackedScene" uid="uid://5xya2f4gatk2" path="res://scenes/objects/salamander_tail.tscn" id="9_c6pgv"]
-[ext_resource type="PackedScene" uid="uid://bfpctuqfg0mm5" path="res://scenes/objects/mermaid_scale.tscn" id="10_vqdp2"]
-[ext_resource type="PackedScene" uid="uid://chjcrtrd3xxx0" path="res://scenes/objects/spider_silk.tscn" id="11_mk1yn"]
-[ext_resource type="PackedScene" uid="uid://cxcrqbxds7iey" path="res://scenes/objects/dragonfly_wing.tscn" id="12_w25i7"]
+[ext_resource type="PackedScene" uid="uid://dxgyknx3ddhxy" path="res://scenes/objects/ingredient.tscn" id="13_nlje3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouuoy"]
 
@@ -99,32 +93,77 @@ curve = SubResource("Curve3D_a1qbb")
 
 [node name="Customer" parent="Path3D" instance=ExtResource("6_8kxlc")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 18)
+Info = ExtResource("4_mw46j")
 
 [node name="JuiceStuff" type="Node3D" parent="."]
 
 [node name="Cauldron" parent="JuiceStuff" instance=ExtResource("3_6vfr5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 1.7)
 
-[node name="MandrakeRoot" parent="JuiceStuff" instance=ExtResource("4_pa1kg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7, 1.2, -3.7)
+[node name="MandrakeRoot" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.500001, 1.1, -3.7)
+Ingredient = "MandrakeRoot"
 
-[node name="FairyWing" parent="JuiceStuff" instance=ExtResource("5_26yoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 1.2, -3.7)
+[node name="FairyWing" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999994, 1.1, -3.7)
+Ingredient = "FairyWing"
 
-[node name="TrollBlood" parent="JuiceStuff" instance=ExtResource("7_l0sny")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.2, -3.7)
+[node name="TrollBlood" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699999, 1.1, -3.7)
+Ingredient = "TrollBlood"
 
-[node name="KrakenInk" parent="JuiceStuff" instance=ExtResource("8_loviy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.3, -3.7)
+[node name="KrakenInk" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 1.1, -3.7)
+Ingredient = "KrakenInk"
 
-[node name="SalamanderTail" parent="JuiceStuff" instance=ExtResource("9_c6pgv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.2, -3.7)
+[node name="SalamanderTail" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, 1.1, -3.7)
+Ingredient = "SalamanderTail"
 
-[node name="MermaidScale" parent="JuiceStuff" instance=ExtResource("10_vqdp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 1.2, -3.8)
+[node name="MermaidScale" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.1, -3.7)
+Ingredient = "MermaidScale"
 
-[node name="SpiderSilk" parent="JuiceStuff" instance=ExtResource("11_mk1yn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 1.2, -3.9)
+[node name="SpiderSilk" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 1.1, -3.7)
+Ingredient = "SpiderSilk"
 
-[node name="DragonflyWing" parent="JuiceStuff" instance=ExtResource("12_w25i7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7, 1.3, -3.8)
+[node name="DragonflyWing" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7, 1.1, -3.7)
+Ingredient = "DragonflyWing"
+
+[node name="PhoenixFeather" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 1.1, -3.7)
+Ingredient = "PhoenixFeather"
+
+[node name="BasiliskFang" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 1.1, -3.7)
+Ingredient = "BasiliskFang"
+
+[node name="UnicornHorn" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 1.1, -3.7)
+Ingredient = "UnicornHorn"
+
+[node name="CentaurHoof" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 1.1, -3.7)
+Ingredient = "CentaurHoof"
+
+[node name="HippogriffTalon" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.1, -3.7)
+Ingredient = "HippogriffTalon"
+
+[node name="GriffinFeather" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.7, -3.7)
+Ingredient = "GriffinFeather"
+
+[node name="ChimeraFlame" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 1.7, -3.7)
+Ingredient = "ChimeraFlame"
+
+[node name="GorgonBlood" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 1.7, -3.7)
+Ingredient = "GorgonBlood"
+
+[node name="DryadSap" parent="JuiceStuff" instance=ExtResource("13_nlje3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 1.7, -3.7)
+Ingredient = "DryadSap"

@@ -15,13 +15,13 @@ var ingredientEffects = {
 	"DragonflyWing": ["lessWeight", "hearing", "hovering"],
 	"PhoenixFeather": ["energy", "luck", "fireRes"],
 	"BasiliskFang": ["petrificationImmunity", "poison", "strength"],
-	"UnicornHorn": ["purity", "healing", "heightenedSenses"],
+	"UnicornHorn": ["purity", "health", "heightenedSenses"],
 	"CentaurHoof": ["speed", "stability", "jumping"],
 	"HippogriffTalon": ["precision", "lessPain", "dexterity"],
 	"GriffinFeather": ["alertness", "perception", "electricalRes"],
 	"ChimeraFlame": ["strength", "explosionRes", "smokeImmunity"],
 	"GorgonBlood": ["petrificationRes", "poison", "betterSmell"],
-	"DryadSap": ["charisma", "healing", "plantControl"]
+	"DryadSap": ["charisma", "health", "plantControl"]
 }
 
 

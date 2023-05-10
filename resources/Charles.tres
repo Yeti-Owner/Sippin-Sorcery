@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://piluioy68tvp"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_qaoit"]
+
+[resource]
+script = ExtResource("1_qaoit")
+Name = "Charles"
+FavColor = Color(0.290196, 0, 0.792157, 1)
+Dialog = "I have a data later and I'm nervous!"
+Need = ["courage"]
+Bonus = ["stamina", "luck"]
+Budget = 10
+House = "Gryffindor"

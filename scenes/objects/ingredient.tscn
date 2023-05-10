@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxgyknx3ddhxy"]
+
+[ext_resource type="Script" path="res://interactable/ingredient.gd" id="1_uj3bo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nohle"]
+resource_local_to_scene = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_7oqi8"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_nohle")
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vwr22"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="Ingredient" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_uj3bo")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_7oqi8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_vwr22")

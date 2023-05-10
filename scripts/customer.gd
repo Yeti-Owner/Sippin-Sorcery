@@ -6,6 +6,7 @@ const speed := 0.2
 func _ready():
 	$Dialogue.text = Info.Dialog
 	$Body.CharName = Info.Name
+	$Body.color = Info.FavColor
 
 func _physics_process(delta):
 	if self.progress_ratio < 1:
