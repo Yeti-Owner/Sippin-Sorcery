@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0qfqvswm2bin"
+path="res://.godot/imported/BasiliskFang.obj-8201a40b79d331d2d8b4dac9267ee35e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BasiliskFang.obj-8201a40b79d331d2d8b4dac9267ee35e.mesh"]
+
+source_file="res://assets/models/ingredients/BasiliskFang.obj"
+dest_files=["res://.godot/imported/BasiliskFang.obj-8201a40b79d331d2d8b4dac9267ee35e.mesh", "res://.godot/imported/BasiliskFang.obj-8201a40b79d331d2d8b4dac9267ee35e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

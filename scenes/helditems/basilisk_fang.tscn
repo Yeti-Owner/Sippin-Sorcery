@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dle6pcw3k2xnc"]
+
+[ext_resource type="ArrayMesh" uid="uid://cw4o55hmhl61a" path="res://scenes/helditems/BasiliskFang.obj" id="1_d8p4y"]
+
+[node name="BasiliskFang" type="Node3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -2, 0.15)
+mesh = ExtResource("1_d8p4y")

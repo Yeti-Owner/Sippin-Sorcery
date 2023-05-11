@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbc5xtpk6upyq"
+path="res://.godot/imported/TrollBlood.obj-e027310c3e9562632c1122f7027f4736.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TrollBlood.obj-e027310c3e9562632c1122f7027f4736.mesh"]
+
+source_file="res://assets/models/ingredients/TrollBlood.obj"
+dest_files=["res://.godot/imported/TrollBlood.obj-e027310c3e9562632c1122f7027f4736.mesh", "res://.godot/imported/TrollBlood.obj-e027310c3e9562632c1122f7027f4736.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3doo5trm8sgg"]
+[gd_scene load_steps=6 format=3 uid="uid://d3doo5trm8sgg"]
 
 [ext_resource type="Script" path="res://interactable/cauldron.gd" id="1_32e5k"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_a2ww8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vobn0"]
 size = Vector3(0.8, 0.6, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrdog"]
+albedo_color = Color(0.239216, 0.670588, 0.105882, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3b3dc"]
+material = SubResource("StandardMaterial3D_yrdog")
+size = Vector2(0.6, 0.6)
 
 [node name="Cauldron" type="StaticBody3D"]
 collision_layer = 3
@@ -24,3 +31,8 @@ one_shot = true
 
 [node name="CookingTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Juice" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.208, 0)
+visible = false
+mesh = SubResource("QuadMesh_3b3dc")

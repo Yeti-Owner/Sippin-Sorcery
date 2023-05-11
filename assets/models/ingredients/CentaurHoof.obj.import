@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2ls8em7u1j58"
+path="res://.godot/imported/CentaurHoof.obj-632bf9dd5d9662a1f86fc679095aef81.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CentaurHoof.obj-632bf9dd5d9662a1f86fc679095aef81.mesh"]
+
+source_file="res://assets/models/ingredients/CentaurHoof.obj"
+dest_files=["res://.godot/imported/CentaurHoof.obj-632bf9dd5d9662a1f86fc679095aef81.mesh", "res://.godot/imported/CentaurHoof.obj-632bf9dd5d9662a1f86fc679095aef81.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

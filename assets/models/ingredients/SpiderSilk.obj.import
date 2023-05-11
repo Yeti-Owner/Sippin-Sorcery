@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6f2ahsa7rqmv"
+path="res://.godot/imported/SpiderSilk.obj-cba9161fd6cd619a5a9cb428e800a6af.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SpiderSilk.obj-cba9161fd6cd619a5a9cb428e800a6af.mesh"]
+
+source_file="res://assets/models/ingredients/SpiderSilk.obj"
+dest_files=["res://.godot/imported/SpiderSilk.obj-cba9161fd6cd619a5a9cb428e800a6af.mesh", "res://.godot/imported/SpiderSilk.obj-cba9161fd6cd619a5a9cb428e800a6af.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

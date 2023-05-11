@@ -24,6 +24,22 @@ var ingredientEffects = {
 	"DryadSap": ["charisma", "health", "plantControl"]
 }
 
+var stages:Dictionary = {
+	1: 0.208,
+	2: 0.243,
+	3: 0.278,
+	4: 0.313,
+	5: 0.348,
+	6: 0.383,
+	7: 0.418,
+	8: 0.453,
+	9: 0.488,
+	10: 0.523,
+	11: 0.558,
+	12: 0.572
+}
+
+var content
 
 func get_interaction_text():
 	if InteractTimer.is_stopped():
@@ -42,6 +58,7 @@ func interact():
 		if EventBus.HeldItem == null and ItemsAdded.size() >= 0:
 			_mix()
 		elif EventBus.HeldItem != null:
+			_juice()
 			ItemsAdded.append(EventBus.HeldItem)
 			EventBus.HeldItem = null
 		InteractTimer.start()
@@ -55,3 +72,11 @@ func _mix():
 		while ItemsAdded.has(tmp):
 			ItemsAdded.erase(tmp)
 	print(Effects)
+	_juice()
+
+func _juice():
+	if ItemsAdded.size() == 0:
+		$Juice.visible = false
+	else:
+		$Juice.visible = true
+		$Juice.position.y = stages[min(11, ItemsAdded.size())]

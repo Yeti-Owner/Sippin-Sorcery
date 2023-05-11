@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://50rlck61e2pv"
+path="res://.godot/imported/GriffinFeather.obj-da189056af8db6e79ba74cdc39ef9911.mesh"
+
+[deps]
+
+files=["res://.godot/imported/GriffinFeather.obj-da189056af8db6e79ba74cdc39ef9911.mesh"]
+
+source_file="res://assets/models/ingredients/GriffinFeather.obj"
+dest_files=["res://.godot/imported/GriffinFeather.obj-da189056af8db6e79ba74cdc39ef9911.mesh", "res://.godot/imported/GriffinFeather.obj-da189056af8db6e79ba74cdc39ef9911.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
