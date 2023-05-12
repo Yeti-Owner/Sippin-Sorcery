@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq0cttsvnw3ye"]
+[gd_scene load_steps=9 format=3 uid="uid://dq0cttsvnw3ye"]
 
 [ext_resource type="Script" path="res://scripts/customer.gd" id="1_fesl2"]
 [ext_resource type="Texture2D" uid="uid://uxlw2bk58rwn" path="res://assets/textures/speech.png" id="2_wxqgo"]
+[ext_resource type="Resource" uid="uid://piluioy68tvp" path="res://resources/Charles.tres" id="2_y761b"]
 [ext_resource type="Script" path="res://interactable/CustomerBody.gd" id="4_3ec62"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wi8kg"]
@@ -19,6 +20,7 @@ material = SubResource("StandardMaterial3D_d7drc")
 
 [node name="Customer" type="PathFollow3D"]
 script = ExtResource("1_fesl2")
+Info = ExtResource("2_y761b")
 
 [node name="BodyMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_wi8kg")

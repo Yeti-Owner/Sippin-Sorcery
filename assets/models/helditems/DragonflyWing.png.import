@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnwq5jem1b6xr"
-path="res://.godot/imported/BasiliskFang.png-606b4be7479f448bb8895355935cb3c2.ctex"
+uid="uid://bqq4yyrhwdxoo"
+path="res://.godot/imported/DragonflyWing.png-bde32768e9a1a6f945bf1b1f269bb486.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/helditems/BasiliskFang.png"
-dest_files=["res://.godot/imported/BasiliskFang.png-606b4be7479f448bb8895355935cb3c2.ctex"]
+source_file="res://assets/models/helditems/DragonflyWing.png"
+dest_files=["res://.godot/imported/DragonflyWing.png-bde32768e9a1a6f945bf1b1f269bb486.ctex"]
 
 [params]
 

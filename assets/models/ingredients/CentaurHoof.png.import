@@ -3,26 +3,25 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjq5iqufghko6"
-path.s3tc="res://.godot/imported/CentaurHoof.png-f5c1268910fa9665bec40d36c4b46114.s3tc.ctex"
+path="res://.godot/imported/CentaurHoof.png-f5c1268910fa9665bec40d36c4b46114.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/models/ingredients/CentaurHoof.png"
-dest_files=["res://.godot/imported/CentaurHoof.png-f5c1268910fa9665bec40d36c4b46114.s3tc.ctex"]
+dest_files=["res://.godot/imported/CentaurHoof.png-f5c1268910fa9665bec40d36c4b46114.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

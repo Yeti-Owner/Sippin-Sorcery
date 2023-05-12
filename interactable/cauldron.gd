@@ -55,12 +55,13 @@ func get_interaction_icon():
 
 func interact():
 	if InteractTimer.is_stopped():
-		if EventBus.HeldItem == null and ItemsAdded.size() >= 0:
+		if EventBus.HeldItem == null and ItemsAdded.size() > 0:
 			_mix()
 		elif EventBus.HeldItem != null:
 			_juice()
 			ItemsAdded.append(EventBus.HeldItem)
 			EventBus.HeldItem = null
+			EventBus.emit_signal("HeldItemChanged")
 		InteractTimer.start()
 
 func _mix():
@@ -71,7 +72,9 @@ func _mix():
 		var tmp = ItemsAdded[0]
 		while ItemsAdded.has(tmp):
 			ItemsAdded.erase(tmp)
-	print(Effects)
+	EventBus.HeldEffect = Effects
+	EventBus.HeldItem = "Juice"
+	EventBus.emit_signal("HeldItemChanged")
 	_juice()
 
 func _juice():

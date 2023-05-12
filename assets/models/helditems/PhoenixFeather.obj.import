@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bkyh3ylia8m8d"
+path="res://.godot/imported/PhoenixFeather.obj-8ee088226d20580178287bf35dfa52ab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PhoenixFeather.obj-8ee088226d20580178287bf35dfa52ab.mesh"]
+
+source_file="res://assets/models/helditems/PhoenixFeather.obj"
+dest_files=["res://.godot/imported/PhoenixFeather.obj-8ee088226d20580178287bf35dfa52ab.mesh", "res://.godot/imported/PhoenixFeather.obj-8ee088226d20580178287bf35dfa52ab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

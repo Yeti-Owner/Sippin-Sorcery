@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://duasslcpcs4r1"]
+
+[ext_resource type="ArrayMesh" uid="uid://epe0suockrsb" path="res://assets/models/helditems/KrakenInk.obj" id="1_a8a8y"]
+
+[node name="DryadSap" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -2.15, 0.15)
+layers = 2
+mesh = ExtResource("1_a8a8y")

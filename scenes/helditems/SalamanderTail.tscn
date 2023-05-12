@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy34mwesval4c"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1qjvrkowqvaj" path="res://assets/models/helditems/SalamanderTail.obj" id="1_huio4"]
+
+[node name="DryadSap" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -2.15, 0.05)
+layers = 2
+mesh = ExtResource("1_huio4")

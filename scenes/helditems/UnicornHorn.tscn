@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5kidllghgux1"]
+
+[ext_resource type="ArrayMesh" uid="uid://bra4q8so1smed" path="res://assets/models/helditems/UnicornHorn.obj" id="1_d5w42"]
+
+[node name="DryadSap" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -2.15, 0.05)
+layers = 2
+mesh = ExtResource("1_d5w42")

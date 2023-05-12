@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu4h3tkshcl3a"]
+[gd_scene load_steps=7 format=3 uid="uid://bc8v80us8av85"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3iqq6"]
 [ext_resource type="Script" path="res://scripts/player_camera.gd" id="2_tt006"]
 [ext_resource type="Script" path="res://scripts/InteractRay.gd" id="3_yo8p4"]
+[ext_resource type="Script" path="res://scripts/HeldItem.gd" id="4_j6w6c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3wqfa"]
 
@@ -22,9 +23,35 @@ script = ExtResource("2_tt006")
 
 [node name="Cam" type="Camera3D" parent="CamHolder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.1)
+cull_mask = 1048573
+current = true
 fov = 85.0
 
 [node name="InteractRay" type="RayCast3D" parent="CamHolder/Cam"]
 target_position = Vector3(0, 0, -2)
 collision_mask = 2
 script = ExtResource("3_yo8p4")
+
+[node name="HeldItem" type="Node3D" parent="CamHolder/Cam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.551, -0.416, -0.629)
+script = ExtResource("4_j6w6c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Cam" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.1)
+cull_mask = 2
+fov = 85.0

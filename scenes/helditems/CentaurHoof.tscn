@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7sgybjhgynkk"]
+
+[ext_resource type="ArrayMesh" uid="uid://bhjuuh2ju06gh" path="res://assets/models/helditems/CentaurHoof.obj" id="1_j2fdg"]
+
+[node name="CentaurHoof" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -2.15, 0.1)
+layers = 2
+mesh = ExtResource("1_j2fdg")

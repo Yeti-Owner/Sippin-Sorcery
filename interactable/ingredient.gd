@@ -40,14 +40,24 @@ func  _ready():
 	$Collision.shape.size = IngredientInfo[Ingredient][3]
 
 func get_interaction_text():
-	return "[center]Press E to grab [color=" + str(IngredientInfo[Ingredient][1].to_html()) + "]" + str(IngredientInfo[Ingredient][0]) + "[/color][/center]"
+	if EventBus.HeldItem == null:
+		return "[center]Press E to grab [color=" + str(IngredientInfo[Ingredient][1].to_html()) + "]" + str(IngredientInfo[Ingredient][0]) + "[/color][/center]"
+	elif EventBus.HeldItem == str(Ingredient):
+		return "[center]Press E to [color=" + str(IngredientInfo[Ingredient][1].to_html()) + "]put it back[/color][/center]"
+	else:
+		return "[center]your hands are [color=" + str(IngredientInfo[Ingredient][1].to_html()) + "]full[/color][/center]"
 
 func get_interaction_icon():
 	return EventBus.GrabTex
 
 func interact():
-	EventBus.HeldItem = str(Ingredient)
+	if EventBus.HeldItem == null:
+		EventBus.HeldItem = str(Ingredient)
+		EventBus.emit_signal("HeldItemChanged")
+	elif EventBus.HeldItem == str(Ingredient):
+		EventBus.HeldItem = null
+		EventBus.emit_signal("HeldItemChanged")
+	
 
 func _on_property_list_changed():
-	print("Change")
 	_ready()

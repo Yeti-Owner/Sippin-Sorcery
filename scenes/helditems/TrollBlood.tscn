@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://1qtajbh4omop"]
+
+[ext_resource type="ArrayMesh" uid="uid://dqhvwka8xymbv" path="res://assets/models/helditems/TrollBlood.obj" id="1_o3jsv"]
+
+[node name="DryadSap" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -2.15, 0.15)
+layers = 2
+mesh = ExtResource("1_o3jsv")

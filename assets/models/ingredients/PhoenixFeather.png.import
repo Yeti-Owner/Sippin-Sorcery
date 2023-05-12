@@ -3,26 +3,25 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://y6kt1wb3oehr"
-path.s3tc="res://.godot/imported/PhoenixFeather.png-c16b4f0b084ceb4da5dac3a9c7e4a28d.s3tc.ctex"
+path="res://.godot/imported/PhoenixFeather.png-c16b4f0b084ceb4da5dac3a9c7e4a28d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/models/ingredients/PhoenixFeather.png"
-dest_files=["res://.godot/imported/PhoenixFeather.png-c16b4f0b084ceb4da5dac3a9c7e4a28d.s3tc.ctex"]
+dest_files=["res://.godot/imported/PhoenixFeather.png-c16b4f0b084ceb4da5dac3a9c7e4a28d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

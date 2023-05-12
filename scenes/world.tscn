@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://gnhc6t2ppppg"]
+[gd_scene load_steps=17 format=3 uid="uid://gnhc6t2ppppg"]
 
-[ext_resource type="PackedScene" uid="uid://bu4h3tkshcl3a" path="res://scenes/player.tscn" id="1_8ige2"]
+[ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/player.tscn" id="1_8ige2"]
 [ext_resource type="PackedScene" uid="uid://beov0ucl8pycl" path="res://scenes/ui/gui.tscn" id="2_kdw4b"]
 [ext_resource type="PackedScene" uid="uid://d3doo5trm8sgg" path="res://scenes/objects/cauldron.tscn" id="3_6vfr5"]
 [ext_resource type="Resource" uid="uid://piluioy68tvp" path="res://resources/Charles.tres" id="4_mw46j"]
 [ext_resource type="PackedScene" uid="uid://dq0cttsvnw3ye" path="res://scenes/customer.tscn" id="6_8kxlc"]
 [ext_resource type="PackedScene" uid="uid://cxd2r0g8pikyj" path="res://scenes/objects/table.tscn" id="7_pjlhv"]
 [ext_resource type="ArrayMesh" uid="uid://b35uy1u4wdkii" path="res://assets/models/counter.obj" id="8_y1j6l"]
+[ext_resource type="PackedScene" uid="uid://cpifxwarrec0n" path="res://scenes/trash_can.tscn" id="9_dnsi5"]
 [ext_resource type="PackedScene" uid="uid://t5tfeeu3rfwu" path="res://scenes/objects/ingredient.tscn" id="13_nlje3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouuoy"]
@@ -181,3 +182,6 @@ mesh = ExtResource("8_y1j6l")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Counter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.4, -0.4)
 shape = SubResource("BoxShape3D_a8a46")
+
+[node name="TrashCan" parent="." instance=ExtResource("9_dnsi5")]
+transform = Transform3D(0.492404, 0, -0.0868241, 0, 0.5, 0, 0.0868241, 0, 0.492404, -3.5, 0, -2.4)

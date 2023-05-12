@@ -3,26 +3,25 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m05b45w3mpx"
-path.s3tc="res://.godot/imported/MandrakeRoot.png-cd2ecfdbbe9a25f76d5998757dfe4c04.s3tc.ctex"
+path="res://.godot/imported/MandrakeRoot.png-cd2ecfdbbe9a25f76d5998757dfe4c04.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/models/ingredients/MandrakeRoot.png"
-dest_files=["res://.godot/imported/MandrakeRoot.png-cd2ecfdbbe9a25f76d5998757dfe4c04.s3tc.ctex"]
+dest_files=["res://.godot/imported/MandrakeRoot.png-cd2ecfdbbe9a25f76d5998757dfe4c04.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

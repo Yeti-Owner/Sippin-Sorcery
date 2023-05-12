@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6h44qw42kd21"
+path="res://.godot/imported/FairyWings.obj-0276bf34f1ca9d0d950eca87afb9a047.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FairyWings.obj-0276bf34f1ca9d0d950eca87afb9a047.mesh"]
+
+source_file="res://assets/models/helditems/FairyWings.obj"
+dest_files=["res://.godot/imported/FairyWings.obj-0276bf34f1ca9d0d950eca87afb9a047.mesh", "res://.godot/imported/FairyWings.obj-0276bf34f1ca9d0d950eca87afb9a047.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnimismyoho45"]
+
+[ext_resource type="ArrayMesh" uid="uid://bneadr086kn54" path="res://assets/models/helditems/DragonflyWing.obj" id="1_au5gj"]
+
+[node name="DragonflyWing" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.15, -2.1, 0.05)
+layers = 2
+mesh = ExtResource("1_au5gj")

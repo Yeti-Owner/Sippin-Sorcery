@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://de241d06apvy"
+path="res://.godot/imported/DryadSap.obj-bdbf29c5482eae47dc8f02b42c9342df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/DryadSap.obj-bdbf29c5482eae47dc8f02b42c9342df.mesh"]
+
+source_file="res://assets/models/helditems/DryadSap.obj"
+dest_files=["res://.godot/imported/DryadSap.obj-bdbf29c5482eae47dc8f02b42c9342df.mesh", "res://.godot/imported/DryadSap.obj-bdbf29c5482eae47dc8f02b42c9342df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

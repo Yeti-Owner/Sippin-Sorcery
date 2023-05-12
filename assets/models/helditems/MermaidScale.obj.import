@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1mjyrfloel8c"
+path="res://.godot/imported/MermaidScale.obj-15f8e02c7c29c9d2ac2a64a463c63031.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MermaidScale.obj-15f8e02c7c29c9d2ac2a64a463c63031.mesh"]
+
+source_file="res://assets/models/helditems/MermaidScale.obj"
+dest_files=["res://.godot/imported/MermaidScale.obj-15f8e02c7c29c9d2ac2a64a463c63031.mesh", "res://.godot/imported/MermaidScale.obj-15f8e02c7c29c9d2ac2a64a463c63031.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

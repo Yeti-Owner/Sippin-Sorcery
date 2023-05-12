@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://doybip01c8qdp"]
+
+[ext_resource type="ArrayMesh" uid="uid://6h44qw42kd21" path="res://assets/models/helditems/FairyWings.obj" id="1_qvnqm"]
+
+[node name="DryadSap" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -2.05, 0.15)
+layers = 2
+mesh = ExtResource("1_qvnqm")
