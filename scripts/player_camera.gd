@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var _cam := $Cam
 
-var mouse_sensitivity = 0.36*1.5
+var mouse_sensitivity = 0.36*1.1
 
 
 func _ready() -> void:

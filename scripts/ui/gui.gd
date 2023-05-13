@@ -2,13 +2,13 @@ extends CanvasLayer
 
 @onready var InteractionLabel := $InteractionText
 @onready var InteractIcon := $Center/crosshair
+@onready var BalanceLabel := $Balance
 
 func _ready():
 	Engine.set_max_fps(60)
 	EventBus.interaction.connect(_set_interaction)
-
-func _process(delta):
-	pass
+	EventBus.connect("BalanceChanged", _balance)
+	_balance()
 
 func _set_interaction(icon, text):
 	if icon == null:
@@ -21,3 +21,6 @@ func _set_interaction(icon, text):
 	else:
 		InteractionLabel.set_text(text)
 		InteractionLabel.set_visible(true)
+
+func _balance():
+	BalanceLabel.text = str(str(EventBus.Balance) + " Sickles")

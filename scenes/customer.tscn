@@ -31,15 +31,16 @@ mesh = SubResource("QuadMesh_h4lt8")
 
 [node name="Dialogue" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.595, 0)
+pixel_size = 0.002
 billboard = 2
 double_sided = false
 no_depth_test = true
 render_priority = 2
-text = "s"
-font_size = 12
+text = "S"
+font_size = 26
 outline_size = 2
 autowrap_mode = 3
-width = 140.0
+width = 400.0
 
 [node name="Body" type="StaticBody3D" parent="."]
 collision_layer = 3
