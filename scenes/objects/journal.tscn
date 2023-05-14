@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cykgoo5c4uxuc"]
+
+[ext_resource type="Script" path="res://interactable/journal.gd" id="1_2u708"]
+[ext_resource type="ArrayMesh" uid="uid://bbryjjof6pv6i" path="res://assets/models/Journal.obj" id="1_8bgye"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nx5aw"]
+size = Vector3(1.8, 0.3, 1.8)
+
+[node name="Journal" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_2u708")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, -2, 0.9)
+mesh = ExtResource("1_8bgye")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_nx5aw")

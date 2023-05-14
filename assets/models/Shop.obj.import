@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wpspxpw70f78"
+path="res://.godot/imported/Shop.obj-80c6d9d6d6f7e5222eef10dd40ae7824.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Shop.obj-80c6d9d6d6f7e5222eef10dd40ae7824.mesh"]
+
+source_file="res://assets/models/Shop.obj"
+dest_files=["res://.godot/imported/Shop.obj-80c6d9d6d6f7e5222eef10dd40ae7824.mesh", "res://.godot/imported/Shop.obj-80c6d9d6d6f7e5222eef10dd40ae7824.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

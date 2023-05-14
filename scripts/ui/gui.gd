@@ -23,4 +23,4 @@ func _set_interaction(icon, text):
 		InteractionLabel.set_visible(true)
 
 func _balance():
-	BalanceLabel.text = str(str(EventBus.Balance) + " Sickles")
+	BalanceLabel.text = str(str(EventBus.Balance) + " Galleons")

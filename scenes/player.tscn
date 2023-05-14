@@ -28,7 +28,7 @@ current = true
 fov = 85.0
 
 [node name="InteractRay" type="RayCast3D" parent="CamHolder/Cam"]
-target_position = Vector3(0, 0, -2)
+target_position = Vector3(0, 0, -2.25)
 collision_mask = 2
 script = ExtResource("3_yo8p4")
 

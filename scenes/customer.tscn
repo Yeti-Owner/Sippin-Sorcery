@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq0cttsvnw3ye"]
+[gd_scene load_steps=8 format=3 uid="uid://dq0cttsvnw3ye"]
 
 [ext_resource type="Script" path="res://scripts/customer.gd" id="1_fesl2"]
 [ext_resource type="Texture2D" uid="uid://uxlw2bk58rwn" path="res://assets/textures/speech.png" id="2_wxqgo"]
-[ext_resource type="Resource" uid="uid://piluioy68tvp" path="res://resources/Charles.tres" id="2_y761b"]
 [ext_resource type="Script" path="res://interactable/CustomerBody.gd" id="4_3ec62"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wi8kg"]
@@ -19,8 +18,8 @@ material = SubResource("StandardMaterial3D_d7drc")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bo1v6"]
 
 [node name="Customer" type="PathFollow3D"]
+rotation_mode = 1
 script = ExtResource("1_fesl2")
-Info = ExtResource("2_y761b")
 
 [node name="BodyMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_wi8kg")
@@ -43,9 +42,21 @@ autowrap_mode = 3
 width = 400.0
 
 [node name="Body" type="StaticBody3D" parent="."]
-collision_layer = 3
+collision_layer = 7
 collision_mask = 3
 script = ExtResource("4_3ec62")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
 shape = SubResource("CapsuleShape3D_bo1v6")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.57)
+target_position = Vector3(0, 0, 0.77)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="WaitTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]

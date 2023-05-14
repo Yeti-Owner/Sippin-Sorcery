@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://d0ipomf5jrmat"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_s0s3x"]
+
+[resource]
+script = ExtResource("1_s0s3x")
+Name = "Ben"
+FavColor = Color(0.435294, 0, 0, 1)
+Dialog = "I have a swim meet tomorrow help!"
+Need = ["swimming"]
+Bonus = ["energy", "speed"]
+Budget = 10
+House = "Hufflepuff"

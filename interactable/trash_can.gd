@@ -5,7 +5,7 @@ func get_interaction_text():
 	return "[center]Press E to [color=BLACK]trash[/color] held item[/center]"
 
 func get_interaction_icon():
-	return EventBus.CrosshairTex
+	return EventBus.ActionTex
 
 func interact():
 	EventBus.HeldItem = null
