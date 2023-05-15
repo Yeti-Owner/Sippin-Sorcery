@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var InteractionLabel := $InteractionText
 @onready var InteractIcon := $Center/crosshair
-@onready var BalanceLabel := $Balance
+@onready var BalanceLabel := $Control/Balance
 
 func _ready():
 	Engine.set_max_fps(60)
@@ -22,5 +22,5 @@ func _set_interaction(icon, text):
 		InteractionLabel.set_text(text)
 		InteractionLabel.set_visible(true)
 
-func _balance():
-	BalanceLabel.text = str(str(EventBus.Balance) + " Galleons")
+func _balance(): # "ʛ"
+	BalanceLabel.text = str(" ʛ" + str(EventBus.Balance))

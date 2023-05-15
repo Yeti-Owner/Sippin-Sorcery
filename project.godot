@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Sippin-Sorcery"
-run/main_scene="res://scenes/world.tscn"
+run/main_scene="res://scenes/ui/first_scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 EventBus="*res://scripts/event_bus.gd"
+SceneManager="*res://scenes/scene_manager.tscn"
 
 [display]
 

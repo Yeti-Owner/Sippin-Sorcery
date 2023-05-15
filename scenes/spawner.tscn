@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv71x0apk4i5p"]
+
+[ext_resource type="Script" path="res://scripts/Spawner.gd" id="1_e184f"]
+
+[node name="Spawner" type="Path3D"]
+script = ExtResource("1_e184f")
+
+[node name="MiscTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="MiscTimer" to="." method="_on_misc_timer_timeout"]

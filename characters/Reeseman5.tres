@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bki28y1pxnlon"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_bbfou"]
+
+[resource]
+script = ExtResource("1_bbfou")
+Name = "Reeseman5"
+FavColor = Color(0.47451, 0, 0, 1)
+Dialog = "I hurt my hand doing electrical work please help"
+Need = ["health"]
+Bonus = ["lessPain", "electricalRes"]
+Budget = 50
+House = "Slytherin"

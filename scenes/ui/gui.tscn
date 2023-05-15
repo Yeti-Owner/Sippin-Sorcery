@@ -32,12 +32,20 @@ grow_vertical = 2
 mouse_filter = 2
 bbcode_enabled = true
 
-[node name="Balance" type="Label" parent="."]
-offset_left = 51.0
-offset_top = 45.0
-offset_right = 330.0
-offset_bottom = 122.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Balance" type="Label" parent="Control"]
+layout_mode = 1
+offset_right = 88.0
+offset_bottom = 77.0
 theme_override_colors/font_color = Color(1, 0.905882, 0.6, 1)
 theme_override_font_sizes/font_size = 54
-text = " 20 Sickles "
-horizontal_alignment = 1
+text = "20"
+vertical_alignment = 1

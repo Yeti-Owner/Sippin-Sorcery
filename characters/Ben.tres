@@ -6,7 +6,7 @@
 script = ExtResource("1_s0s3x")
 Name = "Ben"
 FavColor = Color(0.435294, 0, 0, 1)
-Dialog = "I have a swim meet tomorrow help!"
+Dialog = "I have a swim meet tomorrow and I need to win!"
 Need = ["swimming"]
 Bonus = ["energy", "speed"]
 Budget = 10

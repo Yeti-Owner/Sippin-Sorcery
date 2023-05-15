@@ -13,7 +13,7 @@ var ingredientEffects = {
 	"MermaidScale": ["swimming", "underwaterBreathing", "fishTalk"],
 	"SpiderSilk": ["sticky", "nightVision", "invisibility"],
 	"DragonflyWing": ["lessWeight", "hearing", "hovering"],
-	"PhoenixFeather": ["energy", "luck", "fireRes"],
+	"PhoenixFeather": ["health", "luck", "fireRes"],
 	"BasiliskFang": ["petrificationImmunity", "poison", "strength"],
 	"UnicornHorn": ["purity", "health", "heightenedSenses"],
 	"CentaurHoof": ["speed", "stability", "jumping"],
