@@ -3,12 +3,15 @@ extends Control
 @onready var Anims := $AnimPlayer
 @onready var Name := $Bg/Name
 @onready var Text := $Bg/HBoxContainer/Text
+@onready var Headshot := $Bg/HBoxContainer/Headshot
 var lines
 var time
 
-func _start(_lines:String, _time := 1):
+func _start(_lines:String, _name:String, _icon:String, _time := 1):
 	lines = _lines
 	time = _time
+	Name.text = str("[center]" + _name + "[/center]")
+	Headshot.texture = load(_icon)
 	Anims.play("start")
 
 func _talk(_lines:String, _time := 1.0):

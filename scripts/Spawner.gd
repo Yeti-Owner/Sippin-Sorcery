@@ -3,7 +3,7 @@ extends Path3D
 @export var Num:int = 1
 @onready var timer := $MiscTimer
 const Customer := preload("res://scenes/customer.tscn")
-const CustomerList := ["Ben", "Charles", "Reeseman5"]
+const CustomerList := ["Ben", "Charles", "Reeseman5", "Orion", "Artemis"]
 var Spawned := []
 
 func _ready():

@@ -14,7 +14,7 @@ var ingredientEffects = {
 	"SpiderSilk": ["sticky", "nightVision", "invisibility"],
 	"DragonflyWing": ["lessWeight", "hearing", "hovering"],
 	"PhoenixFeather": ["health", "luck", "fireRes"],
-	"BasiliskFang": ["petrificationImmunity", "poison", "strength"],
+	"BasiliskFang": ["petrification", "poison", "strength"],
 	"UnicornHorn": ["purity", "health", "heightenedSenses"],
 	"CentaurHoof": ["speed", "stability", "jumping"],
 	"HippogriffTalon": ["precision", "lessPain", "dexterity"],

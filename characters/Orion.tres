@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://ljqrf8uyku0g"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_4g74m"]
+
+[resource]
+script = ExtResource("1_4g74m")
+Name = "Orion"
+FavColor = Color(1, 1, 0, 1)
+Dialog = "Please help me beat that purple bitch"
+Need = ["strength", "speed"]
+Bonus = ["agility", "luck", "dexterity"]
+Budget = 20
+House = "Hufflepuff"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://t8k655dfwn7c"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_3h7xi"]
+
+[resource]
+script = ExtResource("1_3h7xi")
+Name = "Artemis"
+FavColor = Color(0.270588, 0.0823529, 0.941176, 1)
+Dialog = "Help me poison the yellow twerp"
+Need = ["poison"]
+Bonus = ["petrification"]
+Budget = 20
+House = "Ravenclaw"

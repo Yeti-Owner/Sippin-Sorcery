@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq0cttsvnw3ye"]
+[gd_scene load_steps=10 format=3 uid="uid://dq0cttsvnw3ye"]
 
 [ext_resource type="Script" path="res://scripts/customer.gd" id="1_fesl2"]
 [ext_resource type="Texture2D" uid="uid://uxlw2bk58rwn" path="res://assets/textures/speech.png" id="2_wxqgo"]
@@ -15,6 +15,21 @@ billboard_keep_scale = true
 [sub_resource type="QuadMesh" id="QuadMesh_h4lt8"]
 material = SubResource("StandardMaterial3D_d7drc")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_termo"]
+albedo_color = Color(0, 0, 0, 1)
+billboard_mode = 2
+
+[sub_resource type="TextMesh" id="TextMesh_x2xjw"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_termo")
+text = "s"
+font_size = 26
+autowrap_mode = 3
+pixel_size = 0.002
+depth = 0.005
+width = 425.0
+offset = Vector2(0, 20)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bo1v6"]
 
 [node name="Customer" type="PathFollow3D"]
@@ -28,18 +43,9 @@ mesh = SubResource("CapsuleMesh_wi8kg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 mesh = SubResource("QuadMesh_h4lt8")
 
-[node name="Dialogue" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.595, 0)
-pixel_size = 0.002
-billboard = 2
-double_sided = false
-no_depth_test = true
-render_priority = 2
-text = "S"
-font_size = 26
-outline_size = 2
-autowrap_mode = 3
-width = 400.0
+[node name="Text" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+mesh = SubResource("TextMesh_x2xjw")
 
 [node name="Body" type="StaticBody3D" parent="."]
 collision_layer = 7
@@ -51,7 +57,7 @@ shape = SubResource("CapsuleShape3D_bo1v6")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.57)
-target_position = Vector3(0, 0, 0.77)
+target_position = Vector3(0, 0, 0.65)
 collision_mask = 4
 collide_with_areas = true
 
