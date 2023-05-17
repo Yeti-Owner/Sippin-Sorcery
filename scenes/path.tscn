@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://0rc44krd45ob"]
+
+[ext_resource type="ArrayMesh" uid="uid://c8rk62y54r431" path="res://assets/models/Pathways.obj" id="1_apbkn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxnvl"]
+size = Vector3(3.2, 0.4, 3.2)
+
+[node name="Path" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_apbkn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_mxnvl")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cpi70xn4dh1mq"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_ht442"]
+
+[resource]
+script = ExtResource("1_ht442")
+Name = "Emma"
+FavColor = Color(0.780392, 0.596078, 0.443137, 1)
+Dialog = "I have a test tomorrow and need to stay up all night please help"
+Need = ["alertness"]
+Bonus = ["stamina", "luck"]
+Budget = 12
+House = "Gryffindor"

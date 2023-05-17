@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://dkbommtqilco2"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_knqg4"]
+
+[resource]
+script = ExtResource("1_knqg4")
+Name = "Mary"
+FavColor = Color(0.733333, 0.698039, 0.976471, 1)
+Dialog = "It's flu season and I can't get sick, do you have something to help protect me?"
+Need = ["resistance"]
+Bonus = ["health"]
+Budget = 10
+House = "Ravenclaw"
