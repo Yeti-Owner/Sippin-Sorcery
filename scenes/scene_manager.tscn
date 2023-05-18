@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsnjfvr7cigoi"]
+[gd_scene load_steps=8 format=3 uid="uid://bsnjfvr7cigoi"]
 
 [ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_g77b5"]
+[ext_resource type="PackedScene" uid="uid://ba1a6cgfrtyrv" path="res://scenes/ui/journal.tscn" id="2_1a421"]
 [ext_resource type="PackedScene" uid="uid://d4glay4qb2jn3" path="res://scenes/ui/dialogue.tscn" id="2_ep2mj"]
 
 [sub_resource type="Animation" id="Animation_ccog4"]
@@ -106,6 +107,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Journal" parent="GameScene" instance=ExtResource("2_1a421")]
 
 [node name="Dialogue" parent="GameScene" instance=ExtResource("2_ep2mj")]
 layout_mode = 2

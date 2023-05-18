@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by47yuopo8ymj"
-path="res://.godot/imported/HippogriffTalon.png-c48f6268de3b97ff331ac98d732bf90b.ctex"
+uid="uid://dhsrco4osgl71"
+path="res://.godot/imported/MandrakeRoot.png-d016cff4e482c9325d755e224570b3e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ingredients/HippogriffTalon.png"
-dest_files=["res://.godot/imported/HippogriffTalon.png-c48f6268de3b97ff331ac98d732bf90b.ctex"]
+source_file="res://assets/textures/ingredients/MandrakeRoot.png"
+dest_files=["res://.godot/imported/MandrakeRoot.png-d016cff4e482c9325d755e224570b3e8.ctex"]
 
 [params]
 

@@ -4,6 +4,7 @@ signal interaction(icon, text)
 signal HeldItemChanged
 signal BalanceChanged
 signal DialogueFinished
+signal JournalToggle
 
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"
 const GrabTex := "res://assets/textures/ui/grab.png"

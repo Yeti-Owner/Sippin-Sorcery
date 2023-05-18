@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba1a6cgfrtyrv"]
+
+[ext_resource type="Texture2D" uid="uid://mbtqkybqb2ng" path="res://assets/textures/ui/JournalUI.png" id="1_adjb6"]
+[ext_resource type="Script" path="res://scripts/ui/journal.gd" id="1_w1gam"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcfay"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e86a8"]
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12l0w"]
+bg_color = Color(0.431373, 0.431373, 0.431373, 1)
+corner_detail = 1
+
+[node name="Journal" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_w1gam")
+
+[node name="ClickOut" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Journal" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Journal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Journal/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_adjb6")
+
+[node name="MarginContainer" type="MarginContainer" parent="Journal/CenterContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 55
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Journal/CenterContainer/TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="LeftPage" type="Control" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Name" type="Label" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Potion Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PotionTex" type="TextureRect" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer"]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Description" type="Label" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Brief description of ingredient and how it is collected"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="RightPage" type="Control" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Notes" type="RichTextLabel" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=BLACK][center]Hello everybody my name is markiplier[/center]
+
+- S
+- S
+- S"
+
+[node name="Left" type="Button" parent="Journal/CenterContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -443.0
+offset_top = -354.5
+offset_right = -399.0
+offset_bottom = 354.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fcfay")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e86a8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_12l0w")
+
+[node name="Right" type="Button" parent="Journal/CenterContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 399.0
+offset_top = -354.5
+offset_right = 443.0
+offset_bottom = 354.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fcfay")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e86a8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_12l0w")
+
+[connection signal="pressed" from="ClickOut" to="." method="_on_click_out_pressed"]
+[connection signal="pressed" from="Journal/CenterContainer/TextureRect/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Journal/CenterContainer/TextureRect/Right" to="." method="_on_right_pressed"]

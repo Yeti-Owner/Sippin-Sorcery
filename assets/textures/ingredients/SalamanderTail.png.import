@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by47yuopo8ymj"
-path="res://.godot/imported/HippogriffTalon.png-c48f6268de3b97ff331ac98d732bf90b.ctex"
+uid="uid://ces6v0wt23i5w"
+path="res://.godot/imported/SalamanderTail.png-c8814e671d47c590fc6ee7a4ff0743c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ingredients/HippogriffTalon.png"
-dest_files=["res://.godot/imported/HippogriffTalon.png-c48f6268de3b97ff331ac98d732bf90b.ctex"]
+source_file="res://assets/textures/ingredients/SalamanderTail.png"
+dest_files=["res://.godot/imported/SalamanderTail.png-c8814e671d47c590fc6ee7a4ff0743c9.ctex"]
 
 [params]
 

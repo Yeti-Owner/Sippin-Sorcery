@@ -22,7 +22,7 @@ billboard_mode = 2
 [sub_resource type="TextMesh" id="TextMesh_x2xjw"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_termo")
-text = "s"
+text = "S"
 font_size = 26
 autowrap_mode = 3
 pixel_size = 0.002

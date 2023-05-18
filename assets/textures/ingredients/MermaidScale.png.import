@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by47yuopo8ymj"
-path="res://.godot/imported/HippogriffTalon.png-c48f6268de3b97ff331ac98d732bf90b.ctex"
+uid="uid://ctd1v6qwuaqfa"
+path="res://.godot/imported/MermaidScale.png-38b1bca21e435d149a54a9fe16e9c99b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ingredients/HippogriffTalon.png"
-dest_files=["res://.godot/imported/HippogriffTalon.png-c48f6268de3b97ff331ac98d732bf90b.ctex"]
+source_file="res://assets/textures/ingredients/MermaidScale.png"
+dest_files=["res://.godot/imported/MermaidScale.png-38b1bca21e435d149a54a9fe16e9c99b.ctex"]
 
 [params]
 

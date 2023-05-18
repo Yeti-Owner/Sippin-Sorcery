@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by47yuopo8ymj"
-path="res://.godot/imported/HippogriffTalon.png-c48f6268de3b97ff331ac98d732bf90b.ctex"
+uid="uid://cvn6ek0e1qw1p"
+path="res://.godot/imported/KrakenInk.png-77d9f8065ae2e46b7defdf4480296a09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ingredients/HippogriffTalon.png"
-dest_files=["res://.godot/imported/HippogriffTalon.png-c48f6268de3b97ff331ac98d732bf90b.ctex"]
+source_file="res://assets/textures/ingredients/KrakenInk.png"
+dest_files=["res://.godot/imported/KrakenInk.png-77d9f8065ae2e46b7defdf4480296a09.ctex"]
 
 [params]
 
