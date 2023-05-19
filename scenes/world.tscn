@@ -219,7 +219,8 @@ environment = SubResource("Environment_huoxf")
 
 [node name="Spawner" parent="." instance=ExtResource("10_818np")]
 curve = SubResource("Curve3D_a1qbb")
-Num = 5
+Num = 7
+List = 1
 
 [node name="Stop" type="StaticBody3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974, 2)

@@ -1,11 +1,16 @@
 extends Path3D
 
 @export var Num:int = 1
-#@export var List 
+@export_enum("Tutorial:0", "Basic:1") var List:int
 @onready var timer := $MiscTimer
 const Customer := preload("res://scenes/customer.tscn")
+
+const CustomerLists := {
+	0: TutorialCustomers,
+	1: BasicCustomers
+}
 const TutorialCustomers := ["Ben", "Mary", "Emma", "Charles"]
-const CustomerList := ["Ben", "Charles", "Reeseman5", "Orion", "Artemis", "Emma", "Mary"]
+const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Orion", "Artemis", "Emma", "Mary"]
 var Spawned := []
 
 func _ready():
@@ -17,7 +22,7 @@ func _on_misc_timer_timeout():
 	_spawn()
 
 func _spawn():
-	var CustomerRes := str("res://characters/" + str(CustomerList[randi() % CustomerList.size()]) + ".tres")
+	var CustomerRes := str("res://characters/" + str(CustomerLists[List][randi() % CustomerLists[List].size()]) + ".tres")
 	
 	if Spawned.has(CustomerRes):
 		_spawn()
