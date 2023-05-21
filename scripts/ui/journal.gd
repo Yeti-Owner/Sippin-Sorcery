@@ -26,15 +26,13 @@ var PotionInfo:Dictionary = {
 	16 : ["Unicorn Horn Shavings", "res://assets/textures/ingredients/UnicornHorn.png","Shavings collected from the horn of a unicorn, a legendary creature symbolizing purity and grace."]
 }
 var CurrentPage:int = 0
-var Visible:bool = false
 
 func _ready():
-	EventBus.connect("JournalToggle", _toggle)
+	EventBus.JournalToggle.connect(_toggle)
 	_hide()
 	_set_page(CurrentPage)
 
 func _pop_up():
-	Visible = true
 	self.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
@@ -54,12 +52,11 @@ func _on_click_out_pressed():
 	_hide()
 
 func _hide():
-	Visible = false
 	self.hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _toggle():
-	if Visible:
-		_hide()
-	else:
+func _toggle(value):
+	if value:
 		_pop_up()
+	else:
+		_hide()

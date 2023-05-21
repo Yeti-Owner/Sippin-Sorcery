@@ -7,8 +7,8 @@ func get_interaction_icon():
 	return EventBus.ActionTex
 
 func interact():
-	EventBus.emit_signal("JournalToggle")
+	EventBus.JournalToggle.emit(true)
 
 func _on_area_3d_body_exited(body):
 	if body.name == "Player":
-		EventBus.emit_signal("JournalToggle")
+		EventBus.JournalToggle.emit(false)
