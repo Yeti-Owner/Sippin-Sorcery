@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3tvp3hga7leb"]
+
+[ext_resource type="ArrayMesh" uid="uid://cbrcdwu373312" path="res://assets/models/House2.obj" id="1_wov2v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5lbul"]
+size = Vector3(8.4, 7.2, 8.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h32vk"]
+size = Vector3(9.6, 1, 9.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_563wt"]
+size = Vector3(5, 5, 9.6)
+
+[node name="House1" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+mesh = ExtResource("1_wov2v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, 0)
+shape = SubResource("BoxShape3D_5lbul")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7, 0)
+shape = SubResource("BoxShape3D_h32vk")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.9, 0)
+shape = SubResource("BoxShape3D_563wt")

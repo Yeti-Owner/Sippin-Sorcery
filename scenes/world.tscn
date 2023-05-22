@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://if1u4sirjk1n"]
+[gd_scene load_steps=28 format=3 uid="uid://if1u4sirjk1n"]
 
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/player.tscn" id="1_8ige2"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_667vr"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cykgoo5c4uxuc" path="res://scenes/objects/journal.tscn" id="5_otyph"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="7_v1ewq"]
 [ext_resource type="PackedScene" uid="uid://cpifxwarrec0n" path="res://scenes/trash_can.tscn" id="9_dnsi5"]
+[ext_resource type="PackedScene" uid="uid://did80556ot8rd" path="res://scenes/objects/house_1.tscn" id="10_2jlnp"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="10_818np"]
 [ext_resource type="PackedScene" uid="uid://0rc44krd45ob" path="res://scenes/path.tscn" id="10_q3tim"]
+[ext_resource type="PackedScene" uid="uid://d3tvp3hga7leb" path="res://scenes/objects/house_2.tscn" id="11_lxx5p"]
 [ext_resource type="PackedScene" uid="uid://t5tfeeu3rfwu" path="res://scenes/objects/ingredient.tscn" id="13_nlje3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouuoy"]
@@ -250,9 +252,6 @@ transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 
 [node name="Path3" parent="Paths" instance=ExtResource("10_q3tim")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -7.1, -0.599, 6.8)
 
-[node name="Path25" parent="Paths" instance=ExtResource("10_q3tim")]
-transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -11.9, -0.599, 6.8)
-
 [node name="Path4" parent="Paths" instance=ExtResource("10_q3tim")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 7.3, -0.599, 6.8)
 
@@ -315,3 +314,95 @@ transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 
 
 [node name="Path12" parent="Paths" instance=ExtResource("10_q3tim")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 7.3, -0.599, -7.6)
+
+[node name="Path25" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -16.7, -0.599, 6.8)
+
+[node name="Path26" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -21.5, -0.599, 6.8)
+
+[node name="Path27" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -26.3, -0.599, 6.8)
+
+[node name="Path28" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -11.9, -0.599, 6.8)
+
+[node name="Path29" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -16.7, -0.599, 11.6)
+
+[node name="Path30" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -21.5, -0.599, 11.6)
+
+[node name="Path31" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -26.3, -0.599, 11.6)
+
+[node name="Path32" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -11.9, -0.599, 11.6)
+
+[node name="Path33" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -16.7, -0.599, 16.4)
+
+[node name="Path34" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -21.5, -0.599, 16.4)
+
+[node name="Path35" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -26.3, -0.599, 16.4)
+
+[node name="Path36" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -11.9, -0.599, 16.4)
+
+[node name="Path37" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -16.7, -0.599, 21.2)
+
+[node name="Path38" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -21.5, -0.599, 21.2)
+
+[node name="Path39" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -26.3, -0.599, 21.2)
+
+[node name="Path40" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -11.9, -0.599, 21.2)
+
+[node name="Path41" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -26.3, -0.599, 2)
+
+[node name="Path42" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -11.9, -0.599, 2)
+
+[node name="Path43" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -26.3, -0.599, -2.8)
+
+[node name="Path44" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -11.9, -0.599, -2.8)
+
+[node name="Path45" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -16.7, -0.599, -7.6)
+
+[node name="Path46" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -21.5, -0.599, -7.6)
+
+[node name="Path47" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -26.3, -0.599, -7.6)
+
+[node name="Path48" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -11.9, -0.599, -7.6)
+
+[node name="Path49" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -16.7, -0.599, 2)
+
+[node name="Path50" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -21.5, -0.599, 2)
+
+[node name="Path51" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -16.7, -0.599, -2.8)
+
+[node name="Path52" parent="Paths" instance=ExtResource("10_q3tim")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -21.5, -0.599, -2.8)
+
+[node name="Houses" type="Node3D" parent="."]
+
+[node name="House1" parent="Houses" instance=ExtResource("10_2jlnp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, 0, 17)
+
+[node name="House2" parent="Houses" instance=ExtResource("11_lxx5p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, 0, 6)

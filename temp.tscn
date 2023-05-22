@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhad1b4kgslqm"]
-
-[ext_resource type="PackedScene" uid="uid://t5tfeeu3rfwu" path="res://scenes/objects/ingredient.tscn" id="1_ikgxm"]
-
-[node name="Temp" type="Node3D"]
-
-[node name="Ingredient" parent="." instance=ExtResource("1_ikgxm")]
-transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, -0.186468)
-Ingredient = "TrollBlood"
