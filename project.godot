@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 EventBus="*res://scripts/event_bus.gd"
 SceneManager="*res://scenes/scene_manager.tscn"
+PotionInfo="*res://scripts/PotionInfo.gd"
 
 [display]
 

@@ -4,25 +4,6 @@ extends Interactable
 @onready var CookingTimer := $CookingTimer
 
 var ItemsAdded:Array
-var ingredientEffects = {
-	"MandrakeRoot": ["resistance", "confusion", "health"],
-	"FairyWing": ["flexibility", "agility", "speed"],
-	"TrollBlood": ["courage", "stamina", "strength"],
-	"KrakenInk": ["badVision", "badSmell", "poison"],
-	"SalamanderTail": ["coldRes", "fireRes", "lessPain"],
-	"MermaidScale": ["swimming", "underwaterBreathing", "fishTalk"],
-	"SpiderSilk": ["sticky", "nightVision", "invisibility"],
-	"DragonflyWing": ["lessWeight", "hearing", "hovering"],
-	"PhoenixFeather": ["health", "luck", "fireRes"],
-	"BasiliskFang": ["petrification", "poison", "strength"],
-	"UnicornHorn": ["purity", "health", "heightenedSenses"],
-	"CentaurHoof": ["speed", "stability", "jumping"],
-	"HippogriffTalon": ["precision", "lessPain", "dexterity"],
-	"GriffinFeather": ["alertness", "perception", "electricalRes"],
-	"ChimeraFlame": ["strength", "explosionRes", "smokeImmunity"],
-	"GorgonBlood": ["petrificationRes", "poison", "betterSmell"],
-	"DryadSap": ["charisma", "health", "plantControl"]
-}
 
 var stages:Dictionary = {
 	1: 0.208,
@@ -68,7 +49,7 @@ func _mix():
 	var Effects = []
 	while ItemsAdded.size() > 0:
 		var amt = min(ItemsAdded.count(ItemsAdded[0])-1, 2)
-		Effects.append(ingredientEffects[ItemsAdded[0]][amt])
+		Effects.append(PotionInfo.CauldronPotions[ItemsAdded[0]][amt])
 		var tmp = ItemsAdded[0]
 		while ItemsAdded.has(tmp):
 			ItemsAdded.erase(tmp)

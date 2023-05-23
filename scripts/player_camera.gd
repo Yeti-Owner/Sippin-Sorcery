@@ -13,4 +13,3 @@ func _input(event: InputEvent) -> void:
 		_cam.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		_cam.rotation_degrees.x = clamp(_cam.rotation_degrees.x, -89.9, 89.9)
-

@@ -29,13 +29,13 @@ func _finished(success:int):
 		1:
 			Dialogue.mesh.text = "Thank you"
 		2:
-			Dialogue.mesh.text = "Thank you!"
+			Dialogue.mesh.text = "Thank you!!"
 		3:
 			Dialogue.mesh.text = "Thank you so much!"
 		4:
-			Dialogue.mesh.text = "Thank you so much!!"
+			Dialogue.mesh.text = "Awesome! Thank you so much!"
 		_:
-			Dialogue.mesh.text = "PERFECT!"
+			Dialogue.mesh.text = "PERFECT!!!"
 	
 	$WaitTimer.start()
 

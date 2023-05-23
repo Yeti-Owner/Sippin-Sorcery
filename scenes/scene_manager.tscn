@@ -120,6 +120,7 @@ mouse_filter = 2
 
 [node name="Game" type="SubViewport" parent="GameScene"]
 handle_input_locally = false
+use_occlusion_culling = true
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 size = Vector2i(1920, 1080)
