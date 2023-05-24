@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://f1v04wwererc"]
+[gd_scene load_steps=6 format=3 uid="uid://f1v04wwererc"]
 
 [ext_resource type="ArrayMesh" uid="uid://cbrcdwu373312" path="res://assets/models/houses/House2.obj" id="1_w7n7o"]
+[ext_resource type="ArrayMesh" uid="uid://dudyhgieqpyiq" path="res://assets/models/houses/Door.obj" id="2_wqvh6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5lbul"]
 size = Vector3(8.4, 7.2, 8.4)
@@ -29,3 +30,7 @@ shape = SubResource("BoxShape3D_h32vk")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.9, 0)
 shape = SubResource("BoxShape3D_563wt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 3.99202)
+mesh = ExtResource("2_wqvh6")

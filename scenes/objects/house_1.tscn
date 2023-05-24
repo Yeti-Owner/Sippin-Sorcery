@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjl53piuqeps5"]
+[gd_scene load_steps=7 format=3 uid="uid://cjl53piuqeps5"]
 
 [ext_resource type="Texture2D" uid="uid://c8brc08eiq61r" path="res://assets/models/houses/House1.png" id="2_46wka"]
+[ext_resource type="ArrayMesh" uid="uid://dudyhgieqpyiq" path="res://assets/models/houses/Door.obj" id="2_b0jtu"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ag2fk"]
 resource_local_to_scene = true
@@ -41,3 +42,7 @@ shape = SubResource("BoxShape3D_r3sa3")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7, 0)
 shape = SubResource("BoxShape3D_h32vk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 3.99202)
+mesh = ExtResource("2_b0jtu")

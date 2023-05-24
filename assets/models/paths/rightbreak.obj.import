@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://uugmtutpm3qb"
+path="res://.godot/imported/rightbreak.obj-02f750acbdc2a92dc920e91cc9aaf322.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rightbreak.obj-02f750acbdc2a92dc920e91cc9aaf322.mesh"]
+
+source_file="res://assets/models/paths/rightbreak.obj"
+dest_files=["res://.godot/imported/rightbreak.obj-02f750acbdc2a92dc920e91cc9aaf322.mesh", "res://.godot/imported/rightbreak.obj-02f750acbdc2a92dc920e91cc9aaf322.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

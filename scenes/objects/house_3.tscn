@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw4wuhf4m6c28"]
+[gd_scene load_steps=9 format=3 uid="uid://bw4wuhf4m6c28"]
 
 [ext_resource type="Texture2D" uid="uid://bixaxp5iw7q17" path="res://assets/models/houses/House3.png" id="1_p8hag"]
 [ext_resource type="Texture2D" uid="uid://c8brc08eiq61r" path="res://assets/models/houses/House1.png" id="2_ihtvx"]
+[ext_resource type="ArrayMesh" uid="uid://dudyhgieqpyiq" path="res://assets/models/houses/Door.obj" id="3_vp314"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2d51g"]
 resource_name = "palette"
@@ -47,3 +48,7 @@ shape = SubResource("BoxShape3D_5lbul")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7, 0)
 shape = SubResource("BoxShape3D_h32vk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 3.99202)
+mesh = ExtResource("3_vp314")

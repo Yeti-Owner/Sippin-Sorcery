@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cky5kag8q3cug"
+path="res://.godot/imported/fourway.obj-3a19d21d82373c74f8a3b1109a0e1e50.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fourway.obj-3a19d21d82373c74f8a3b1109a0e1e50.mesh"]
+
+source_file="res://assets/models/paths/fourway.obj"
+dest_files=["res://.godot/imported/fourway.obj-3a19d21d82373c74f8a3b1109a0e1e50.mesh", "res://.godot/imported/fourway.obj-3a19d21d82373c74f8a3b1109a0e1e50.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
