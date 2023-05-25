@@ -26,12 +26,13 @@ layout_mode = 2
 layout_mode = 2
 text = "Start"
 
-[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Options"
 
-[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

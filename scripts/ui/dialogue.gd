@@ -7,6 +7,9 @@ extends Control
 var lines
 var time
 
+func _ready():
+	EventBus.Dialogue = self
+
 func _start(_lines:String, _name:String, _icon:String, _time := 1):
 	lines = _lines
 	time = _time

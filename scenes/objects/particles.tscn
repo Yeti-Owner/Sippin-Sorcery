@@ -1,0 +1,146 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtllhpkqoaqtf"]
+
+[ext_resource type="ArrayMesh" uid="uid://dp52vx3es2qpf" path="res://assets/models/barrier.obj" id="1_nedaq"]
+[ext_resource type="ArrayMesh" uid="uid://cy17st2nm88ct" path="res://assets/models/gateway.obj" id="2_ae1xj"]
+
+[sub_resource type="Gradient" id="Gradient_hgbme"]
+offsets = PackedFloat32Array(0, 0.466258, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1, 0.160784, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xbwqk"]
+gradient = SubResource("Gradient_hgbme")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ffg6r"]
+lifetime_randomness = 0.35
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 22.0
+emission_ring_radius = 50.0
+emission_ring_inner_radius = 47.0
+direction = Vector3(1, 0, 1)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.07
+initial_velocity_max = 0.07
+tangential_accel_min = 0.13
+tangential_accel_max = 0.13
+color_ramp = SubResource("GradientTexture1D_xbwqk")
+collision_use_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2n4j"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_v2685"]
+material = SubResource("StandardMaterial3D_a2n4j")
+size = Vector3(3.5, 3.5, 3.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vodmc"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4yuel"]
+size = Vector3(59, 10.98, 1)
+
+[node name="Particles" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+lod_bias = 0.523
+ignore_occlusion_culling = true
+amount = 4000
+lifetime = 15.0
+randomness = 0.24
+fixed_fps = 15
+collision_base_size = 50.55
+visibility_aabb = AABB(-72, -14, -70, 144, 28, 140)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ffg6r")
+draw_pass_1 = SubResource("BoxMesh_v2685")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(13.3, 0, 0, 0, 2.2, 0, 0, 0, 13.3, 0, -1.688, 0)
+mesh = ExtResource("1_nedaq")
+surface_material_override/0 = SubResource("StandardMaterial3D_vodmc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.7, 47)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.7, -43.8)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, -5.7, -2)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -45, -5.7, -2)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -34.2, -5.7, -30)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, -0.819152, -22.7, -5.7, -38.1)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -35.9, -5.7, -24.4)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 29.8, -5.7, -32)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, -0.766044, 19.1, -5.7, -39.3)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, -0.34202, 40.4, -5.7, -18.3)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 38.1, -5.7, 23.1)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, 0.819152, 24, -5.7, 38.2)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 12.3, -5.7, 42.9)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.939692, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939692, -21.6, -5.7, 39.8)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.819152, 0, -0.573577, 0, 1, 0, 0.573577, 0, 0.819152, -31.1, -5.7, 33.8)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.642788, 0, -0.766045, 0, 1, 0, 0.766045, 0, 0.642788, -31.1, -5.7, 29.9)
+shape = SubResource("BoxShape3D_4yuel")
+
+[node name="Gateway1" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -44.2, -11.1, -13.5)
+mesh = ExtResource("2_ae1xj")
+
+[node name="ParticlesAttractor" type="GPUParticlesAttractorBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6, -8.394, -14.6)
+strength = -7.42
+attenuation = 0.329877
+size = Vector3(6.6, 7.6, 7.4)
+
+[node name="Gateway2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 1.5, 0, -2, 0, -8.74228e-08, 2.65, -11.1, 46.55)
+mesh = ExtResource("2_ae1xj")
+
+[node name="ParticlesAttractor2" type="GPUParticlesAttractorBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.95, -8.394, 44.95)
+strength = -7.42
+attenuation = 0.329877
+size = Vector3(6.6, 7.6, 8.2)

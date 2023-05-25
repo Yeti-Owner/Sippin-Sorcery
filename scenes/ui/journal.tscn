@@ -16,13 +16,6 @@ corner_detail = 1
 layer = 2
 script = ExtResource("1_w1gam")
 
-[node name="ClickOut" type="TextureButton" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Journal" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -38,6 +31,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ClickOut" type="TextureButton" parent="Journal/CenterContainer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="Journal/CenterContainer"]
 layout_mode = 2
@@ -147,6 +146,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_fcfay")
 theme_override_styles/hover = SubResource("StyleBoxFlat_e86a8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12l0w")
 
-[connection signal="pressed" from="ClickOut" to="." method="_on_click_out_pressed"]
+[connection signal="pressed" from="Journal/CenterContainer/ClickOut" to="." method="_on_click_out_pressed"]
 [connection signal="pressed" from="Journal/CenterContainer/TextureRect/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Journal/CenterContainer/TextureRect/Right" to="." method="_on_right_pressed"]

@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://interactable/CustomerBody.gd" id="4_3ec62"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wi8kg"]
+radius = 0.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7drc"]
 transparency = 1
@@ -31,6 +32,7 @@ width = 425.0
 offset = Vector2(0, 20)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bo1v6"]
+radius = 0.4
 
 [node name="Customer" type="PathFollow3D"]
 rotation_mode = 1

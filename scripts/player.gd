@@ -9,9 +9,6 @@ const JUMP_VELOCITY := 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func _ready():
-	SceneManager._swap_hud("res://scenes/ui/gui.tscn")
-
 func _physics_process(delta):
 	# Gravity
 	if not is_on_floor():

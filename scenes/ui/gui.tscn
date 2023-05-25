@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://beov0ucl8pycl"]
+[gd_scene load_steps=5 format=3 uid="uid://beov0ucl8pycl"]
 
 [ext_resource type="Texture2D" uid="uid://o8si4u72n2mj" path="res://assets/textures/ui/crosshair.png" id="1_2d1hi"]
 [ext_resource type="Script" path="res://scripts/ui/gui.gd" id="1_n2lwu"]
+[ext_resource type="PackedScene" uid="uid://d4glay4qb2jn3" path="res://scenes/ui/dialogue.tscn" id="3_tnblg"]
+[ext_resource type="PackedScene" uid="uid://ba1a6cgfrtyrv" path="res://scenes/ui/journal.tscn" id="4_a6ass"]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_n2lwu")
@@ -49,3 +51,7 @@ theme_override_colors/font_color = Color(1, 0.905882, 0.6, 1)
 theme_override_font_sizes/font_size = 54
 text = "20"
 vertical_alignment = 1
+
+[node name="Dialogue" parent="." instance=ExtResource("3_tnblg")]
+
+[node name="Journal" parent="." instance=ExtResource("4_a6ass")]

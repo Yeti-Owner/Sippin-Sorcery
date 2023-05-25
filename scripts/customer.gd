@@ -2,7 +2,7 @@ extends PathFollow3D
 
 @export var Info:CharacterSheet
 @onready var Dialogue := $Text
-const speed := 0.2
+const speed := 0.04
 
 func _ready():
 	Dialogue.mesh.text = Info.Dialog
@@ -41,3 +41,4 @@ func _finished(success:int):
 
 func _on_wait_timer_timeout():
 	$RayCast3D.collide_with_bodies = false
+

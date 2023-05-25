@@ -45,7 +45,7 @@ const CauldronPotions:Dictionary = {
 # Ingredient : [ Name, color, Collision Position, Collision Size ]
 const IngredientPotions:Dictionary = {
 	"DragonflyWing": ["Dragonfly Wing", Color(0.12549020349979, 0.29019609093666, 0.13333334028721), Vector3(0, 0.4, 0), Vector3(0.2, 0.8, 0.8)],
-	"FairyWing": ["Fairy Wing", Color(0.80000001192093, 0.32941177487373, 0.80000001192093), Vector3(0, 0.15, 0), Vector3(0.5, 0.3, 0.8)],
+	"FairyWing": ["Fairy Wing", Color(0.80000001192093, 0.32941177487373, 0.80000001192093), Vector3(0, 0.15, 0), Vector3(0.8, 0.3, 0.8)],
 	"KrakenInk": ["Kraken Ink", Color(0.12322875112295, 0.00120565423276, 0.12581461668015), Vector3(0, 0.35, 0), Vector3(0.4, 0.7, 0.4)],
 	"MandrakeRoot": ["Mandrake Root", Color(0.12549020349979, 0.29019609093666, 0.13333334028721), Vector3(0.05, 0.4, 0.05), Vector3(0.7, 0.8, 0.7)],
 	"MermaidScale": ["Mermaid Scale", Color(0.42352941632271, 0.22745098173618, 0.43921568989754), Vector3(0, 0.4, 0), Vector3(0.8, 0.8, 0.8)],
@@ -63,3 +63,23 @@ const IngredientPotions:Dictionary = {
 	"DryadSap": ["DryadSap", Color(0.48238503932953, 0.65542727708817, 0.40115711092949), Vector3(0, 0.35, 0), Vector3(0.4, 0.7, 0.4)]
 }
 
+# Journal ingredient entries
+const JournalIngredients := {
+	"MandrakeRoot": "",
+	"FairyWing": "",
+	"TrollBlood": "",
+	"KrakenInk": "",
+	"SalamanderTail": "",
+	"MermaidScale": "",
+	"SpiderSilk": "",
+	"DragonflyWing":"",
+	"PhoenixFeather": "",
+	"BasiliskFang": "",
+	"UnicornHorn": "",
+	"CentaurHoof": "",
+	"HippogriffTalon": "",
+	"GriffinFeather": "",
+	"ChimeraFlame": "",
+	"GorgonBlood": "",
+	"DryadSap": ""
+}

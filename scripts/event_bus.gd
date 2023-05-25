@@ -13,3 +13,8 @@ const ActionTex := "res://assets/textures/ui/action.png"
 var HeldItem
 var HeldEffect
 var Balance := 50
+
+var Dialogue = null : set = _set_dialogue
+
+func _set_dialogue(_node):
+	Dialogue = get_path_to(_node)
