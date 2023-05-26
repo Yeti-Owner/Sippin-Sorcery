@@ -22,6 +22,9 @@ func _on_misc_timer_timeout():
 	_spawn()
 
 func _spawn():
+	if Num <= 0:
+		return
+	
 	var CustomerRes := str("res://characters/" + str(CustomerLists[List][randi() % CustomerLists[List].size()]) + ".tres")
 	
 	if Spawned.has(CustomerRes):
