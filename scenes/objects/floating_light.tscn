@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://blm83hhh0wl4j"]
+
+[ext_resource type="Script" path="res://scripts/floating_light.gd" id="1_7ibch"]
+[ext_resource type="ArrayMesh" uid="uid://b4ypfojdd227w" path="res://assets/models/magiclight.obj" id="1_nshkb"]
+[ext_resource type="Texture2D" uid="uid://ckth763h0jgun" path="res://assets/models/magiclight.png" id="3_n4drh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0too"]
+resource_name = "palette"
+shading_mode = 0
+albedo_texture = ExtResource("3_n4drh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x81v1"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="Animation" id="Animation_8rcbw"]
+resource_name = "idle"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 1.3, 2.4, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.223, 0), Vector3(0, 0.223, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4b1hl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqx2i"]
+_data = {
+"RESET": SubResource("Animation_4b1hl"),
+"idle": SubResource("Animation_8rcbw")
+}
+
+[node name="FloatingLight" type="Node3D"]
+script = ExtResource("1_7ibch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.116592, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = ExtResource("1_nshkb")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_k0too")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_x81v1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0872379, 0)
+light_energy = 0.722
+omni_range = 8.681
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_pqx2i")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

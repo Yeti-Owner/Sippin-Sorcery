@@ -73,10 +73,14 @@ func _test_juice(effects:Array):
 		var Responses := ["I feel too many effects to sort them out, sorry I can't help.", "Too much is going on I can't separate them.", "Geez dude I'm feeling a lot, use less ingredients next time.","I'm gonna throw up, move.", "Dude, never do that again, too much."]
 		Results = Responses[randi() % Responses.size()]
 	else:
-		pass
+		Results = EffectsList[effects]
+		_record_journal(Results)
 	
-	_record_journal(Results)
+	
 	$Timer.start()
 
 func _record_journal(result):
+	pass
+
+func _effect():
 	pass

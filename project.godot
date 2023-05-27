@@ -28,6 +28,10 @@ window/size/viewport_height=1080
 window/size/mode=4
 window/vsync/vsync_mode=3
 
+[editor]
+
+movie_writer/movie_file="D:/Godot/Sippin-Sorcery/export/GameMovie.avi"
+
 [input]
 
 forward={

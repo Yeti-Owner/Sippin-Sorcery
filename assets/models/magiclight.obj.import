@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b4ypfojdd227w"
+path="res://.godot/imported/magiclight.obj-4ae0e9be2d005d2be6c23870f313c525.mesh"
+
+[deps]
+
+files=["res://.godot/imported/magiclight.obj-4ae0e9be2d005d2be6c23870f313c525.mesh"]
+
+source_file="res://assets/models/magiclight.obj"
+dest_files=["res://.godot/imported/magiclight.obj-4ae0e9be2d005d2be6c23870f313c525.mesh", "res://.godot/imported/magiclight.obj-4ae0e9be2d005d2be6c23870f313c525.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
