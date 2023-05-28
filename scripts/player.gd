@@ -9,6 +9,10 @@ const JUMP_VELOCITY := 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _ready():
+	EventBus.EnablePlayer.connect(_toggle)
+	_toggle(false)
+
 func _physics_process(delta):
 	# Gravity
 	if not is_on_floor():
@@ -32,3 +36,6 @@ func _physics_process(delta):
 
 func _process(_delta):
 	HeldCam.global_transform = Camera.global_transform
+
+func _toggle(value):
+	self.set_physics_process(value)

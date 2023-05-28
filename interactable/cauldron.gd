@@ -41,6 +41,7 @@ func interact():
 		elif EventBus.HeldItem != null:
 			_juice()
 			ItemsAdded.append(EventBus.HeldItem)
+			EventBus.InsertedItems = str(EventBus.HeldItem)
 			EventBus.HeldItem = null
 			EventBus.emit_signal("HeldItemChanged")
 		InteractTimer.start()

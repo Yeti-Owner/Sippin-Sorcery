@@ -15,7 +15,7 @@ var Spawned := []
 
 func _ready():
 	randomize()
-	timer.wait_time = randi_range(3, 8)
+	timer.wait_time = randi_range(5, 16)
 	timer.start()
 
 func _on_misc_timer_timeout():

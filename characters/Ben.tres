@@ -8,6 +8,6 @@ Name = "Ben"
 FavColor = Color(0.435294, 0, 0, 1)
 Dialog = "I have a swim meet tomorrow and I need to win!"
 Need = ["swimming"]
-Bonus = ["energy", "speed"]
+Bonus = ["stamina", "speed"]
 Budget = 10
 House = "Hufflepuff"

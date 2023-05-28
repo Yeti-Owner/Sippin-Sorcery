@@ -14,7 +14,7 @@ gradient = SubResource("Gradient_hgbme")
 lifetime_randomness = 0.35
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
-emission_ring_height = 22.0
+emission_ring_height = 19.0
 emission_ring_radius = 50.0
 emission_ring_inner_radius = 47.0
 direction = Vector3(1, 0, 1)
@@ -31,10 +31,10 @@ vertex_color_use_as_albedo = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_v2685"]
 material = SubResource("StandardMaterial3D_a2n4j")
-size = Vector3(3.5, 3.5, 3.5)
+size = Vector3(4.5, 4.5, 4.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vodmc"]
-albedo_color = Color(0, 0, 0, 1)
+albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4yuel"]
 size = Vector3(59, 10.98, 1)
@@ -42,10 +42,12 @@ size = Vector3(59, 10.98, 1)
 [node name="Particles" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175, 0)
+cast_shadow = 0
 lod_bias = 0.523
-ignore_occlusion_culling = true
-amount = 4000
-lifetime = 15.0
+gi_mode = 0
+amount = 2800
+lifetime = 25.0
 randomness = 0.24
 fixed_fps = 15
 collision_base_size = 50.55
@@ -56,6 +58,7 @@ draw_pass_1 = SubResource("BoxMesh_v2685")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(13.3, 0, 0, 0, 2.2, 0, 0, 0, 13.3, 0, -1.688, 0)
+cast_shadow = 0
 mesh = ExtResource("1_nedaq")
 surface_material_override/0 = SubResource("StandardMaterial3D_vodmc")
 

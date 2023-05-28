@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var BalanceLabel := $Control/Balance
 
 func _ready():
-	Engine.set_max_fps(60)
+#	Engine.set_max_fps(60)
 	EventBus.interaction.connect(_set_interaction)
 	EventBus.connect("BalanceChanged", _balance)
 	_balance()
