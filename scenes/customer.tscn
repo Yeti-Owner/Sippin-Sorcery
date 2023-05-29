@@ -1,35 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dq0cttsvnw3ye"]
+[gd_scene load_steps=6 format=3 uid="uid://dq0cttsvnw3ye"]
 
 [ext_resource type="Script" path="res://scripts/customer.gd" id="1_fesl2"]
-[ext_resource type="Texture2D" uid="uid://uxlw2bk58rwn" path="res://assets/textures/speech.png" id="2_wxqgo"]
+[ext_resource type="PackedScene" uid="uid://bjc8hh2jur0or" path="res://scenes/speech_bubble.tscn" id="3_cievq"]
 [ext_resource type="Script" path="res://interactable/CustomerBody.gd" id="4_3ec62"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wi8kg"]
 radius = 0.4
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7drc"]
-transparency = 1
-albedo_texture = ExtResource("2_wxqgo")
-billboard_mode = 2
-billboard_keep_scale = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_h4lt8"]
-material = SubResource("StandardMaterial3D_d7drc")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_termo"]
-albedo_color = Color(0, 0, 0, 1)
-billboard_mode = 2
-
-[sub_resource type="TextMesh" id="TextMesh_x2xjw"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_termo")
-text = "S"
-font_size = 26
-autowrap_mode = 3
-pixel_size = 0.002
-depth = 0.005
-width = 425.0
-offset = Vector2(0, 20)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bo1v6"]
 radius = 0.4
@@ -41,13 +17,7 @@ script = ExtResource("1_fesl2")
 [node name="BodyMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_wi8kg")
 
-[node name="SpeechBubble" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-mesh = SubResource("QuadMesh_h4lt8")
-
-[node name="Text" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
-mesh = SubResource("TextMesh_x2xjw")
+[node name="SpeechBubble" parent="." instance=ExtResource("3_cievq")]
 
 [node name="Body" type="StaticBody3D" parent="."]
 collision_layer = 7
@@ -64,7 +34,7 @@ collision_mask = 4
 collide_with_areas = true
 
 [node name="WaitTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 
 [connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]

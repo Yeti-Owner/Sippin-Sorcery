@@ -64,22 +64,29 @@ const IngredientPotions:Dictionary = {
 }
 
 # Journal ingredient entries
-const JournalIngredients := {
-	"MandrakeRoot": "",
-	"FairyWing": "",
-	"TrollBlood": "",
-	"KrakenInk": "",
-	"SalamanderTail": "",
-	"MermaidScale": "",
-	"SpiderSilk": "",
-	"DragonflyWing":"",
-	"PhoenixFeather": "",
-	"BasiliskFang": "",
-	"UnicornHorn": "",
-	"CentaurHoof": "",
-	"HippogriffTalon": "",
-	"GriffinFeather": "",
-	"ChimeraFlame": "",
-	"GorgonBlood": "",
-	"DryadSap": ""
+var JournalIngredients := {
+	"MandrakeRoot": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {resistance} \n\n[color=BLACK]Effect 2: \n- {confusion} \n\n[color=BLACK]Effect 3:\n- {health}",
+	"FairyWing": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {flexibility} \n\n[color=BLACK]Effect 2: \n- {agility} \n\n[color=BLACK]Effect 3:\n- {speed}",
+	"TrollBlood": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {courage} \n\n[color=BLACK]Effect 2: \n- {stamina} \n\n[color=BLACK]Effect 3:\n- {strength}",
+	"KrakenInk": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {badVision} \n\n[color=BLACK]Effect 2: \n- {badSmell} \n\n[color=BLACK]Effect 3:\n- {poison}",
+	"SalamanderTail": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {coldRes} \n\n[color=BLACK]Effect 2: \n- {fireRes} \n\n[color=BLACK]Effect 3:\n- {lessPain}",
+	"MermaidScale": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {swimming} \n\n[color=BLACK]Effect 2: \n- {underwaterBreathing} \n\n[color=BLACK]Effect 3:\n- {fishTalk}",
+	"SpiderSilk": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {sticky} \n\n[color=BLACK]Effect 2: \n- {nightVision} \n\n[color=BLACK]Effect 3:\n- {invisibility}",
+	"DragonflyWing":"[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {lessWeight} \n\n[color=BLACK]Effect 2: \n- {hearing} \n\n[color=BLACK]Effect 3:\n- {hovering}",
+	"PhoenixFeather": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {health} \n\n[color=BLACK]Effect 2: \n- {luck} \n\n[color=BLACK]Effect 3:\n- {fireRes}",
+	"BasiliskFang": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {petrification} \n\n[color=BLACK]Effect 2: \n- {poison} \n\n[color=BLACK]Effect 3:\n- {strength}",
+	"UnicornHorn": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {purity} \n\n[color=BLACK]Effect 2: \n- {health} \n\n[color=BLACK]Effect 3:\n- {heightenedSenses}",
+	"CentaurHoof": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {speed} \n\n[color=BLACK]Effect 2: \n- {stability} \n\n[color=BLACK]Effect 3:\n- {jumping}",
+	"HippogriffTalon": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {precision} \n\n[color=BLACK]Effect 2: \n- {lessPain} \n\n[color=BLACK]Effect 3:\n- {dexterity}",
+	"GriffinFeather": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {alertness} \n\n[color=BLACK]Effect 2: \n- {perception} \n\n[color=BLACK]Effect 3:\n- {electricalRes}",
+	"ChimeraFlame": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {strength} \n\n[color=BLACK]Effect 2: \n- {explosionRes} \n\n[color=BLACK]Effect 3:\n- {smokeImmunity}",
+	"GorgonBlood": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {petrificationRes} \n\n[color=BLACK]Effect 2: \n- {poison} \n\n[color=BLACK]Effect 3:\n- {betterSmell}",
+	"DryadSap": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {charisma} \n\n[color=BLACK]Effect 2: \n- {health} \n\n[color=BLACK]Effect 3:\n- {plantControl}"
 }
+
+
+# Just every effect in the game
+const EffectsList := ["resistance", "confusion", "health","flexibility", "agility", "speed","courage", "stamina", "strength","badVision", "badSmell", "poison","coldRes", "fireRes", "lessPain","swimming", "underwaterBreathing", "fishTalk","sticky", "nightVision", "invisibility","lessWeight", "hearing", "hovering","health", "luck", "fireRes","petrification", "poison", "strength","purity", "health", "heightenedSenses","speed", "stability", "jumping","precision", "lessPain", "dexterity","alertness", "perception", "electricalRes","strength", "explosionRes", "smokeImmunity","petrificationRes", "poison", "betterSmell","charisma", "health", "plantControl"]
+
+
+

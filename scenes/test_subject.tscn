@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dambb7t6cvu8j"]
+[gd_scene load_steps=6 format=3 uid="uid://dambb7t6cvu8j"]
 
 [ext_resource type="Script" path="res://scripts/test_subject.gd" id="1_mqk38"]
 [ext_resource type="Script" path="res://interactable/TestSubjectBody.gd" id="2_4hgvv"]
+[ext_resource type="PackedScene" uid="uid://bjc8hh2jur0or" path="res://scenes/speech_bubble.tscn" id="3_8nt06"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wpvf4"]
 radius = 0.4
@@ -26,5 +27,7 @@ shape = SubResource("CapsuleShape3D_2dukt")
 [node name="Timer" type="Timer" parent="Body"]
 wait_time = 2.0
 one_shot = true
+
+[node name="SpeechBubble" parent="Body" instance=ExtResource("3_8nt06")]
 
 [connection signal="timeout" from="Body/Timer" to="." method="_on_timer_timeout"]
