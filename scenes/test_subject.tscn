@@ -25,7 +25,7 @@ script = ExtResource("2_4hgvv")
 shape = SubResource("CapsuleShape3D_2dukt")
 
 [node name="Timer" type="Timer" parent="Body"]
-wait_time = 2.0
+wait_time = 4.0
 one_shot = true
 
 [node name="SpeechBubble" parent="Body" instance=ExtResource("3_8nt06")]

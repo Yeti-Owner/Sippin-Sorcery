@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc2meq0p8ncp"]
+
+[ext_resource type="Script" path="res://scripts/test_subject_spawner.gd" id="1_wn8bl"]
+
+[sub_resource type="Curve3D" id="Curve3D_ytg80"]
+
+[node name="TestSubjectSpawner" type="Path3D"]
+curve = SubResource("Curve3D_ytg80")
+script = ExtResource("1_wn8bl")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

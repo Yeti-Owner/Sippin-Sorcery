@@ -5,7 +5,7 @@ extends Interactable
 
 var ItemsAdded:Array
 
-var stages:Dictionary = {
+const stages:Dictionary = {
 	1: 0.208,
 	2: 0.243,
 	3: 0.278,
@@ -20,7 +20,17 @@ var stages:Dictionary = {
 	12: 0.572
 }
 
-var content
+const FlavorList := ["Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange"]
+const FlavorContent := {
+	"Strawberry": Color(1, 0, 0),
+	"Banana": Color(1, 0.92116665840149, 0.56999999284744),
+	"Pineapple": Color(0.89803922176361, 1, 0.09411764889956),
+	"Blueberry": Color(0.25, 0.37499988079071, 1),
+	"Watermelon": Color(0.25098040699959, 0.81960785388947, 0.02352941222489),
+	"Orange": Color(0.73000001907349, 0.41366666555405, 0)
+}
+
+var content := ""
 
 func get_interaction_text():
 	if InteractTimer.is_stopped():
@@ -39,9 +49,12 @@ func interact():
 		if EventBus.HeldItem == null and ItemsAdded.size() > 0:
 			_mix()
 		elif EventBus.HeldItem != null:
-			_juice()
-			ItemsAdded.append(EventBus.HeldItem)
-			EventBus.InsertedItems = str(EventBus.HeldItem)
+			if FlavorList.has(EventBus.HeldItem):
+				_juice(true)
+			else:
+				_juice()
+				ItemsAdded.append(EventBus.HeldItem)
+				EventBus.InsertedItems = str(EventBus.HeldItem)
 			EventBus.HeldItem = null
 			EventBus.emit_signal("HeldItemChanged")
 		InteractTimer.start()
@@ -54,14 +67,20 @@ func _mix():
 		var tmp = ItemsAdded[0]
 		while ItemsAdded.has(tmp):
 			ItemsAdded.erase(tmp)
+	EventBus.HeldFlavor = content
+	content = ""
 	EventBus.HeldEffect = Effects
 	EventBus.HeldItem = "Juice"
 	EventBus.emit_signal("HeldItemChanged")
 	_juice()
 
-func _juice():
+func _juice(FlavorAdded:bool = false):
 	if ItemsAdded.size() == 0:
 		$Juice.visible = false
 	else:
 		$Juice.visible = true
 		$Juice.position.y = stages[min(11, ItemsAdded.size())]
+	
+	if FlavorAdded:
+		content = EventBus.HeldItem
+		$Juice.mesh.material.albedo_color = FlavorContent[EventBus.HeldItem]

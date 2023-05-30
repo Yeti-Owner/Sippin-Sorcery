@@ -6,8 +6,14 @@
 script = ExtResource("1_3h7xi")
 Name = "Artemis"
 FavColor = Color(0.270588, 0.0823529, 0.941176, 1)
+House = "Ravenclaw"
 Dialog = "Help me poison the yellow twerp"
 Need = ["poison"]
 Bonus = ["petrification"]
 Budget = 20
-House = "Ravenclaw"
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = true
+Watermelon = false
+Orange = false

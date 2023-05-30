@@ -1,4 +1,3 @@
-@tool
 extends Interactable
 
 @export_enum("DragonflyWing", "FairyWing", "KrakenInk", "MandrakeRoot", "MermaidScale",

@@ -1,14 +1,16 @@
 extends Path3D
 
 @export var Num:int = 1
-@export_enum("Tutorial:0", "Basic:1") var List:int
+@export_enum("Tutorial:0", "Basic:1","Debug:-1") var List:int
 @onready var timer := $MiscTimer
 const Customer := preload("res://scenes/customer.tscn")
 
 const CustomerLists := {
+	-1: DEBUG,
 	0: TutorialCustomers,
 	1: BasicCustomers
 }
+const DEBUG := ["DebugDan"]
 const TutorialCustomers := ["Ben", "Mary", "Emma", "Charles"]
 const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Orion", "Artemis", "Emma", "Mary"]
 var Spawned := []

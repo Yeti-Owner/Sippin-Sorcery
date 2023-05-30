@@ -55,3 +55,4 @@ vertical_alignment = 1
 [node name="Dialogue" parent="." instance=ExtResource("3_tnblg")]
 
 [node name="Journal" parent="." instance=ExtResource("4_a6ass")]
+layer = 3

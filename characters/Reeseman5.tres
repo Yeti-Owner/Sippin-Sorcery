@@ -6,8 +6,14 @@
 script = ExtResource("1_bbfou")
 Name = "Reeseman5"
 FavColor = Color(0.47451, 0, 0, 1)
+House = "Slytherin"
 Dialog = "I hurt my hand doing electrical work please help"
 Need = ["health"]
 Bonus = ["lessPain", "electricalRes"]
 Budget = 50
-House = "Slytherin"
+Strawberry = false
+Banana = false
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = false

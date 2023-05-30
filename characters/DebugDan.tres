@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://68h5r773pjul"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_woij3"]
+
+[resource]
+script = ExtResource("1_woij3")
+Name = "Debug Dan"
+FavColor = Color(0, 0, 0, 1)
+House = "Ravenclaw"
+Dialog = "Hello"
+Need = ["speed"]
+Bonus = [""]
+Budget = 10
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = true
+Watermelon = true
+Orange = true

@@ -49,12 +49,16 @@ const EffectsList := {
 	"plantControl": "Is it just me or is the grass looking at me? I can control them it's like I'm the king of the greenery!",
 }
 
+var cost := 25
+
 func _ready():
 	randomize()
 
 func get_interaction_text():
-	if EventBus.HeldItem == "Juice":
-		return str("[center]Press E to test juice with [color=" + str(color.to_html()) + "] " + Char + "[/color][/center]")
+	if EventBus.HeldItem == "Juice" and EventBus.Balance >= 25:
+		return str("[center]Press E to test juice with [color=" + str(color.to_html()) + "] " + Char + "[/color] (Costs 25ʛ)[/center]")
+	elif EventBus.HeldItem == "Juice" and EventBus.Balance < 25:
+		return str("[center]Not enough money, 25ʛ required[/center]")
 	else:
 		return str("[center][color=" + str(color.to_html()) + "] " + Char + "[/color][/center]")
 
@@ -62,11 +66,14 @@ func get_interaction_icon():
 	return EventBus.ActionTex
 
 func interact():
-	if EventBus.HeldItem == "Juice":
+	if EventBus.HeldItem == "Juice" and EventBus.Balance >= 25:
+		EventBus.Balance -= 25
 		_test_juice(EventBus.HeldEffect)
+		EventBus.HeldFlavor = ""
 		EventBus.HeldEffect = null
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")
+		EventBus.emit_signal("BalanceChanged")
 
 func _test_juice(effects:Array):
 	var Results := ""

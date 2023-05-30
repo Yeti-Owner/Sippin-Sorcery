@@ -6,8 +6,14 @@
 script = ExtResource("1_4g74m")
 Name = "Orion"
 FavColor = Color(1, 1, 0, 1)
+House = "Hufflepuff"
 Dialog = "I'm not strong enough, please help me beat that purple bitch"
 Need = ["strength", "speed"]
 Bonus = ["agility", "luck", "dexterity"]
 Budget = 20
-House = "Hufflepuff"
+Strawberry = false
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = false

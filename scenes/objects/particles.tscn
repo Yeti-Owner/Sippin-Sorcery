@@ -42,7 +42,7 @@ size = Vector3(59, 10.98, 1)
 [node name="Particles" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.864, 0)
 cast_shadow = 0
 lod_bias = 0.523
 gi_mode = 0
@@ -57,7 +57,7 @@ process_material = SubResource("ParticleProcessMaterial_ffg6r")
 draw_pass_1 = SubResource("BoxMesh_v2685")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(13.3, 0, 0, 0, 2.2, 0, 0, 0, 13.3, 0, -1.688, 0)
+transform = Transform3D(13.3, 0, 0, 0, 2.058, 0, 0, 0, 13.3, 0, -1.688, 0)
 cast_shadow = 0
 mesh = ExtResource("1_nedaq")
 surface_material_override/0 = SubResource("StandardMaterial3D_vodmc")

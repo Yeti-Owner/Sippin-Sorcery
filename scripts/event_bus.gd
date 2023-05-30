@@ -13,6 +13,8 @@ const ActionTex := "res://assets/textures/ui/action.png"
 
 var HeldItem
 var HeldEffect
+var HeldFlavor := ""
+var InsertedItems
 var Balance := 50
 
 var Dialogue = null : set = _set_dialogue

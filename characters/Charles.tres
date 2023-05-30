@@ -6,8 +6,14 @@
 script = ExtResource("1_qaoit")
 Name = "Charles"
 FavColor = Color(0.290196, 0, 0.792157, 1)
+House = "Gryffindor"
 Dialog = "I have a date later and I'm nervous!"
 Need = ["courage"]
 Bonus = ["perception", "luck", "alertness", "charisma"]
 Budget = 20
-House = "Gryffindor"
+Strawberry = false
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = false
+Orange = false
