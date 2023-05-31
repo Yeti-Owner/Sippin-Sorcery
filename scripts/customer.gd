@@ -24,25 +24,27 @@ func _physics_process(delta):
 		self.queue_free()
 
 func _finished(success:int, flavor:bool):
-	# I should add some sort of check for this so each 
-	# flavor response matches the success response.
-	# Not too hard, just add to each match entry and make
-	# CorrectFlavor a bool to check which one to use.
-	var CorrectFlavor:String = ", tastes good" if flavor == true else ", I don't like that flavor"
 	match success:
 		-1:
+			var CorrectFlavor:String = " but it tastes good" if flavor == true else "and I don't like that flavor"
 			Dialogue._talk(str("That's not what I wanted" + CorrectFlavor))
 		0:
+			var CorrectFlavor:String = ", tastes good I guess" if flavor == true else ", don't like that flavor"
 			Dialogue._talk(str("okay then" + CorrectFlavor))
 		1:
-			Dialogue._talk(str("Thank you" + CorrectFlavor))
+			var CorrectFlavor:String = " and it tastes great" if flavor == true else " but use a different flavor next time"
+			Dialogue._talk(str("Thanks" + CorrectFlavor))
 		2:
+			var CorrectFlavor:String = " and it tastes perfect!!" if flavor == true else " almost perfect but not that flavor"
 			Dialogue._talk(str("Thank you!!" + CorrectFlavor))
 		3:
-			Dialogue._talk(str("Thank you so much!" + CorrectFlavor))
+			var CorrectFlavor:String = " love the flavor!!" if flavor == true else " hate that taste though"
+			Dialogue._talk(str("Thank you so much!!" + CorrectFlavor))
 		4:
-			Dialogue._talk(str("Awesome! Thank you so much!" + CorrectFlavor))
+			var CorrectFlavor:String = " tastes awesome!!" if flavor == true else " almost got it perfect, but use a new flavor"
+			Dialogue._talk(str("Awesome!! Thank you so much!!" + CorrectFlavor))
 		_:
+			var CorrectFlavor:String = " LOVE THIS FLAVOR" if flavor == true else " except the flavor..."
 			Dialogue._talk(str("PERFECT!!!" + CorrectFlavor))
 	
 	$WaitTimer.start()

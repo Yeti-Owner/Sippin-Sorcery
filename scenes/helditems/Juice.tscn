@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://nrxum3kglmtq"]
+[gd_scene load_steps=7 format=3 uid="uid://nrxum3kglmtq"]
 
 [ext_resource type="ArrayMesh" uid="uid://cvlyis4fixr6c" path="res://assets/models/JuiceCup.obj" id="1_ag4mc"]
+[ext_resource type="Script" path="res://scripts/JuiceHeldItem.gd" id="1_f8hv4"]
 [ext_resource type="Texture2D" uid="uid://mairr2nbj7xo" path="res://assets/models/JuiceCup.png" id="2_u2i1l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pfhe"]
@@ -15,6 +16,7 @@ material = SubResource("StandardMaterial3D_lm64u")
 size = Vector3(0.2, 0.367, 0.2)
 
 [node name="Juice" type="Node3D"]
+script = ExtResource("1_f8hv4")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.2, -2.3, -0.4)

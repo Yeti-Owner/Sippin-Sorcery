@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4glay4qb2jn3"]
+[gd_scene load_steps=9 format=3 uid="uid://d4glay4qb2jn3"]
 
 [ext_resource type="Texture2D" uid="uid://duqaotr8gsx1r" path="res://assets/textures/Wizard.png" id="1_lydxd"]
 [ext_resource type="Script" path="res://scripts/ui/dialogue.gd" id="1_rv8is"]
+[ext_resource type="FontFile" uid="uid://bpah2pdawj0a1" path="res://assets/theme/joystix monospace.otf" id="2_gpbfh"]
 
 [sub_resource type="Animation" id="Animation_d0x47"]
 length = 0.001
@@ -113,6 +114,7 @@ color = Color(0.215686, 0.215686, 0.215686, 0.552941)
 layout_mode = 0
 offset_top = -45.0
 offset_right = 250.0
+theme_override_fonts/normal_font = ExtResource("2_gpbfh")
 bbcode_enabled = true
 text = "[font_size=26][center]Wizard[/center][/font_size]"
 fit_content = true
@@ -133,6 +135,7 @@ expand_mode = 2
 [node name="Text" type="RichTextLabel" parent="Bg/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_gpbfh")
 bbcode_enabled = true
 visible_characters = 0
 visible_ratio = 0.0

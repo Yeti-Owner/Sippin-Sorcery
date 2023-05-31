@@ -1,6 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdfuoc7gyqwvi"]
+[gd_scene load_steps=8 format=3 uid="uid://cdfuoc7gyqwvi"]
 
 [ext_resource type="Script" path="res://scripts/ui/loading_screen.gd" id="1_vdjxe"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="2_eilid"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30cr2"]
+bg_color = Color(0.305882, 0.152941, 0.156863, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.176471, 0.0784314, 0.0823529, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_510x6"]
+bg_color = Color(0, 0.45098, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="Animation" id="Animation_g0gwb"]
 length = 0.001
@@ -58,7 +83,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.333333, 0.356863, 1, 1)
+color = Color(0.211765, 0.0980392, 0.101961, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 layout_mode = 1
@@ -74,14 +99,19 @@ theme_override_constants/separation = 40
 
 [node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_eilid")
 theme_override_font_sizes/font_size = 48
 text = "Loading please wait"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(700, 0)
+custom_minimum_size = Vector2(700, 20)
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/background = SubResource("StyleBoxFlat_30cr2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_510x6")
+show_percentage = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

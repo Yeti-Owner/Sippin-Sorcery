@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4dj18qgp6mla"]
+
+[ext_resource type="ArrayMesh" uid="uid://cbdjqove5hn7c" path="res://assets/models/helditems/banana.obj" id="1_kjhue"]
+
+[node name="Banana" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.25, 0.05)
+layers = 2
+mesh = ExtResource("1_kjhue")

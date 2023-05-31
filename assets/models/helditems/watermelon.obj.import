@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://3ydm2j668sml"
+path="res://.godot/imported/watermelon.obj-28d9acc41c5aa4e3e357f27a48a0f268.mesh"
+
+[deps]
+
+files=["res://.godot/imported/watermelon.obj-28d9acc41c5aa4e3e357f27a48a0f268.mesh"]
+
+source_file="res://assets/models/helditems/watermelon.obj"
+dest_files=["res://.godot/imported/watermelon.obj-28d9acc41c5aa4e3e357f27a48a0f268.mesh", "res://.godot/imported/watermelon.obj-28d9acc41c5aa4e3e357f27a48a0f268.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

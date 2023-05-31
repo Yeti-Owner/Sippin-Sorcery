@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjc8hh2jur0or"]
+[gd_scene load_steps=12 format=3 uid="uid://bjc8hh2jur0or"]
 
 [ext_resource type="Script" path="res://scripts/speech_bubble.gd" id="1_7hepl"]
 [ext_resource type="Texture2D" uid="uid://uxlw2bk58rwn" path="res://assets/textures/speech.png" id="1_eicfa"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_4qg7t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7drc"]
 resource_local_to_scene = true
@@ -22,7 +23,7 @@ billboard_mode = 2
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_termo")
 text = "S"
-font_size = 26
+font = ExtResource("3_4qg7t")
 autowrap_mode = 3
 pixel_size = 0.0001
 depth = 0.005
@@ -68,45 +69,6 @@ tracks/2/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_x23yn"]
-resource_name = "show"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BubbleMesh:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Text:mesh:pixel_size")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0001, 0.002]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Text:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.01, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, true]
-}
-
 [sub_resource type="Animation" id="Animation_cn1hg"]
 resource_name = "hide"
 tracks/0/type = "value"
@@ -144,6 +106,45 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_x23yn"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BubbleMesh:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text:mesh:pixel_size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0001, 0.002]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.01, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bln25"]

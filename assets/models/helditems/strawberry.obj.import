@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://t8d6e8bt6u6d"
+path="res://.godot/imported/strawberry.obj-a450bf3c82429519ba829d737655219e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/strawberry.obj-a450bf3c82429519ba829d737655219e.mesh"]
+
+source_file="res://assets/models/helditems/strawberry.obj"
+dest_files=["res://.godot/imported/strawberry.obj-a450bf3c82429519ba829d737655219e.mesh", "res://.godot/imported/strawberry.obj-a450bf3c82429519ba829d737655219e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba1a6cgfrtyrv"]
+[gd_scene load_steps=7 format=3 uid="uid://ba1a6cgfrtyrv"]
 
 [ext_resource type="Texture2D" uid="uid://mbtqkybqb2ng" path="res://assets/textures/ui/JournalUI.png" id="1_adjb6"]
 [ext_resource type="Script" path="res://scripts/ui/journal.gd" id="1_w1gam"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_qp538"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcfay"]
 
@@ -75,6 +76,8 @@ alignment = 1
 [node name="Name" type="Label" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qp538")
+theme_override_font_sizes/font_size = 12
 text = "Potion Name"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -87,6 +90,8 @@ stretch_mode = 3
 [node name="Description" type="Label" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qp538")
+theme_override_font_sizes/font_size = 12
 text = "Brief description of ingredient and how it is collected"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -103,6 +108,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_qp538")
 bbcode_enabled = true
 text = "[color=BLACK][center]Hello everybody my name is markiplier[/center]
 

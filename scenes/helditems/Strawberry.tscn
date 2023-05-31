@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://5jjdufsquc8b"]
+
+[ext_resource type="ArrayMesh" uid="uid://t8d6e8bt6u6d" path="res://assets/models/helditems/strawberry.obj" id="1_6klmx"]
+
+[node name="Strawberry" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.15, -0.05)
+layers = 2
+mesh = ExtResource("1_6klmx")

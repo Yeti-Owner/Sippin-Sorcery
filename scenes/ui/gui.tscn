@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://beov0ucl8pycl"]
+[gd_scene load_steps=6 format=3 uid="uid://beov0ucl8pycl"]
 
 [ext_resource type="Texture2D" uid="uid://o8si4u72n2mj" path="res://assets/textures/ui/crosshair.png" id="1_2d1hi"]
 [ext_resource type="Script" path="res://scripts/ui/gui.gd" id="1_n2lwu"]
 [ext_resource type="PackedScene" uid="uid://d4glay4qb2jn3" path="res://scenes/ui/dialogue.tscn" id="3_tnblg"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_xrjmy"]
 [ext_resource type="PackedScene" uid="uid://ba1a6cgfrtyrv" path="res://scenes/ui/journal.tscn" id="4_a6ass"]
 
 [node name="GUI" type="CanvasLayer"]
@@ -32,6 +33,7 @@ offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_xrjmy")
 bbcode_enabled = true
 
 [node name="Control" type="Control" parent="."]
@@ -45,10 +47,11 @@ mouse_filter = 2
 
 [node name="Balance" type="Label" parent="Control"]
 layout_mode = 1
-offset_right = 88.0
-offset_bottom = 77.0
+offset_right = 145.0
+offset_bottom = 104.0
 theme_override_colors/font_color = Color(1, 0.905882, 0.6, 1)
-theme_override_font_sizes/font_size = 54
+theme_override_fonts/font = ExtResource("3_xrjmy")
+theme_override_font_sizes/font_size = 32
 text = "20"
 vertical_alignment = 1
 
@@ -56,3 +59,13 @@ vertical_alignment = 1
 
 [node name="Journal" parent="." instance=ExtResource("4_a6ass")]
 layer = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

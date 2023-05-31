@@ -2,6 +2,7 @@ extends Interactable
 
 var CharName:String
 var color
+var Talk:bool = true
 
 func get_interaction_text():
 	if EventBus.HeldItem == "Juice":
@@ -14,11 +15,17 @@ func get_interaction_icon():
 
 func interact():
 	if EventBus.HeldItem == "Juice":
-		get_parent()._finished(_check_success())
+		get_parent()._finished(_check_success(), _check_flavor())
 		
 		EventBus.HeldEffect = null
+		EventBus.HeldFlavor = ""
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")
+	else:
+		if Talk:
+			_ask_flavors()
+		else:
+			_ask_problem()
 
 func _check_success() -> int:
 	var success = 0
@@ -65,4 +72,63 @@ func _check_success() -> int:
 	EventBus.Balance += Bonus
 	EventBus.emit_signal("BalanceChanged")
 	
+	success = max(success, -1)
 	return success
+
+func _check_flavor():
+	# There must be a better way but idfk
+	var FlavorList:Array
+	if get_parent().Info.Strawberry:
+		FlavorList.append("Strawberry")
+	if get_parent().Info.Banana:
+		FlavorList.append("Banana")
+	if get_parent().Info.Pineapple:
+		FlavorList.append("Pineapple")
+	if get_parent().Info.Blueberry:
+		FlavorList.append("Blueberry")
+	if get_parent().Info.Watermelon:
+		FlavorList.append("Watermelon")
+	if get_parent().Info.Orange:
+		FlavorList.append("Orange")
+	
+	var success := false
+	if FlavorList.has(EventBus.HeldFlavor):
+		success = true
+	
+	return success
+
+func _ask_flavors():
+	Talk = !Talk
+	var FlavorPreference:String
+	
+	var FlavorList:Array
+	if get_parent().Info.Strawberry:
+		FlavorList.append("Strawberry")
+	if get_parent().Info.Banana:
+		FlavorList.append("Banana")
+	if get_parent().Info.Pineapple:
+		FlavorList.append("Pineapple")
+	if get_parent().Info.Blueberry:
+		FlavorList.append("Blueberry")
+	if get_parent().Info.Watermelon:
+		FlavorList.append("Watermelon")
+	if get_parent().Info.Orange:
+		FlavorList.append("Orange")
+	
+	if FlavorList.size() == 1:
+		FlavorPreference = str("I like " + FlavorList[0])
+	elif FlavorList.size() == 2:
+		FlavorPreference = str("I like " + FlavorList[0] + " and " + FlavorList[1])
+	else:
+		FlavorPreference = "I like "
+		for taste in FlavorList.size():
+			if FlavorList.size() > 1:
+				FlavorPreference += str(FlavorList.pop_front() + ", ")
+			else:
+				FlavorPreference += str(" and " + FlavorList.pop_front())
+	
+	get_parent().Dialogue._talk(FlavorPreference)
+
+func _ask_problem():
+	Talk = !Talk
+	get_parent().Dialogue._talk(get_parent().Info.Dialog)

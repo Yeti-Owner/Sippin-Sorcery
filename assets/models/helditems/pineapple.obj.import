@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cm6ohjsvy7cyq"
+path="res://.godot/imported/pineapple.obj-ed511fba07038b3393f0a7a5569dc326.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pineapple.obj-ed511fba07038b3393f0a7a5569dc326.mesh"]
+
+source_file="res://assets/models/helditems/pineapple.obj"
+dest_files=["res://.godot/imported/pineapple.obj-ed511fba07038b3393f0a7a5569dc326.mesh", "res://.godot/imported/pineapple.obj-ed511fba07038b3393f0a7a5569dc326.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

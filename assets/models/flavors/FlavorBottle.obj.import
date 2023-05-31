@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1gvjw6s83k0p"
+path="res://.godot/imported/FlavorBottle.obj-5f3d1528891ee06d3affb7fbd2f25493.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FlavorBottle.obj-5f3d1528891ee06d3affb7fbd2f25493.mesh"]
+
+source_file="res://assets/models/flavors/FlavorBottle.obj"
+dest_files=["res://.godot/imported/FlavorBottle.obj-5f3d1528891ee06d3affb7fbd2f25493.mesh", "res://.godot/imported/FlavorBottle.obj-5f3d1528891ee06d3affb7fbd2f25493.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

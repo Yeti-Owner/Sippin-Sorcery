@@ -23,4 +23,9 @@ func _set_interaction(icon, text):
 		InteractionLabel.set_visible(true)
 
 func _balance(): # "ʛ"
-	BalanceLabel.text = str(" ʛ" + str(EventBus.Balance))
+	BalanceLabel.text = str(" ʛ " + str(EventBus.Balance))
+
+func _on_timer_timeout(): # Instane pause menu
+	var p = load("res://scenes/ui/pause_menu.tscn")
+	var _p = p.instantiate()
+	$CanvasLayer.add_child(_p)
