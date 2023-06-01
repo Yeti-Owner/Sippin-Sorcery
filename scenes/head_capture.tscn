@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://dulbac7qmtmo6"]
+
+[ext_resource type="ArrayMesh" uid="uid://00ppg15wqwii" path="res://assets/models/characters/heads/Wizard_Head.obj" id="1_8nsge"]
+[ext_resource type="ArrayMesh" uid="uid://d2cvvnxxukfe5" path="res://assets/models/characters/hats/WizardHat.obj" id="2_lawtw"]
+[ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="3_e5gw8"]
+[ext_resource type="ArrayMesh" uid="uid://bbq726ty5ywra" path="res://assets/models/characters/heads/Head1.obj" id="4_8qdpg"]
+[ext_resource type="ArrayMesh" uid="uid://hmha08ek0325" path="res://assets/models/characters/torsos/torso4.obj" id="5_2o0h7"]
+[ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="6_bt4la"]
+[ext_resource type="ArrayMesh" uid="uid://vbq11f40ynim" path="res://assets/models/characters/pants/pants1.obj" id="7_0y2wr"]
+[ext_resource type="ArrayMesh" uid="uid://v70u0xiskn6a" path="res://assets/models/characters/legs/leg1.obj" id="7_4bban"]
+
+[node name="HeadCapture" type="Node3D"]
+
+[node name="Head" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+mesh = ExtResource("1_8nsge")
+
+[node name="Hat" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.1, 0, 0, 0, 0.8, 0, 0, 0, 1.1, 0, 0.7, 0)
+cast_shadow = 0
+mesh = ExtResource("2_lawtw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0.947, 0.637, -1.1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-1, -8.88178e-16, -8.74228e-08, -7.6194e-09, 0.996195, 0.0871557, 8.70901e-08, 0.0871557, -0.996195, 0, 0.6, -3)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.35451e-08, -0.0871557, 0.996195, -3.8097e-09, 0.996195, 0.0871557, -1, -4.44089e-16, -4.37114e-08, 3, 0.6, 0)
+
+[node name="Character" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Hat" type="MeshInstance3D" parent="Character"]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0.7, 0)
+mesh = ExtResource("3_e5gw8")
+
+[node name="Head" type="MeshInstance3D" parent="Character"]
+mesh = ExtResource("4_8qdpg")
+
+[node name="Torso" type="MeshInstance3D" parent="Character"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+mesh = ExtResource("5_2o0h7")
+
+[node name="Arm1" type="MeshInstance3D" parent="Character"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1, 0)
+mesh = ExtResource("6_bt4la")
+
+[node name="Arm2" type="MeshInstance3D" parent="Character"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1, 0)
+mesh = ExtResource("6_bt4la")
+
+[node name="Pants" type="MeshInstance3D" parent="Character"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = ExtResource("7_0y2wr")
+
+[node name="Leg1" type="MeshInstance3D" parent="Character"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -2, -0.0999999)
+mesh = ExtResource("7_4bban")
+
+[node name="Leg2" type="MeshInstance3D" parent="Character"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -2, -0.0999999)
+mesh = ExtResource("7_4bban")

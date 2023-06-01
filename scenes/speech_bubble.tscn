@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/speech_bubble.gd" id="1_7hepl"]
 [ext_resource type="Texture2D" uid="uid://uxlw2bk58rwn" path="res://assets/textures/speech.png" id="1_eicfa"]
-[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_4qg7t"]
+[ext_resource type="FontFile" uid="uid://bpah2pdawj0a1" path="res://assets/theme/joystix monospace.otf" id="3_5ogh0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7drc"]
 resource_local_to_scene = true
@@ -23,7 +23,8 @@ billboard_mode = 2
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_termo")
 text = "S"
-font = ExtResource("3_4qg7t")
+font = ExtResource("3_5ogh0")
+font_size = 24
 autowrap_mode = 3
 pixel_size = 0.0001
 depth = 0.005

@@ -4,18 +4,22 @@ extends PathFollow3D
 @onready var Dialogue := $SpeechBubble
 const speed := 0.04
 var talked:bool = false
+var walking:bool = true
 
 func _ready():
 	$Body.CharName = Info.Name
 	$Body.color = Info.FavColor
+	$BodyMeshes/AnimationPlayer.play("walk")
 
 func _physics_process(delta):
 	if $RayCast3D.is_colliding() and ($RayCast3D.get_collider().name == "Body" or $RayCast3D.get_collider().name == "Stop"):
 		if $RayCast3D.get_collider().name == "Stop" and talked == false:
 			Dialogue._talk(Info.Dialog)
 			talked = true
+		walking = false
 		return
 	elif self.progress_ratio < 1:
+		walking = true
 		self.progress_ratio = min(self.progress_ratio + (speed * delta), 1)
 	elif self.progress_ratio == 1:
 		return
@@ -26,7 +30,7 @@ func _physics_process(delta):
 func _finished(success:int, flavor:bool):
 	match success:
 		-1:
-			var CorrectFlavor:String = " but it tastes good" if flavor == true else "and I don't like that flavor"
+			var CorrectFlavor:String = " but it tastes good" if flavor == true else " and I don't like that flavor"
 			Dialogue._talk(str("That's not what I wanted" + CorrectFlavor))
 		0:
 			var CorrectFlavor:String = ", tastes good I guess" if flavor == true else ", don't like that flavor"
@@ -51,3 +55,11 @@ func _finished(success:int, flavor:bool):
 
 func _on_wait_timer_timeout():
 	$RayCast3D.collide_with_bodies = false
+
+func _on_animation_player_animation_finished(_anim_name):
+	if walking:
+		$BodyMeshes/AnimationPlayer.play("walk")
+
+func _on_anim_timer_timeout():
+	if ($BodyMeshes/AnimationPlayer.is_playing() == false) and walking == true:
+		$BodyMeshes/AnimationPlayer.play("walk")

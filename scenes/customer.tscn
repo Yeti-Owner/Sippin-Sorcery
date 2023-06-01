@@ -1,11 +1,124 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq0cttsvnw3ye"]
+[gd_scene load_steps=14 format=3 uid="uid://dq0cttsvnw3ye"]
 
 [ext_resource type="Script" path="res://scripts/customer.gd" id="1_fesl2"]
+[ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="2_t8t06"]
 [ext_resource type="PackedScene" uid="uid://bjc8hh2jur0or" path="res://scenes/speech_bubble.tscn" id="3_cievq"]
+[ext_resource type="ArrayMesh" uid="uid://bbq726ty5ywra" path="res://assets/models/characters/heads/Head1.obj" id="3_y2f3r"]
 [ext_resource type="Script" path="res://interactable/CustomerBody.gd" id="4_3ec62"]
+[ext_resource type="ArrayMesh" uid="uid://hmha08ek0325" path="res://assets/models/characters/torsos/torso4.obj" id="4_hy1lf"]
+[ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="5_c72wd"]
+[ext_resource type="ArrayMesh" uid="uid://vbq11f40ynim" path="res://assets/models/characters/pants/pants1.obj" id="6_wx38o"]
+[ext_resource type="ArrayMesh" uid="uid://v70u0xiskn6a" path="res://assets/models/characters/legs/leg1.obj" id="7_4qg5j"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_wi8kg"]
-radius = 0.4
+[sub_resource type="Animation" id="Animation_rd5m8"]
+resource_name = "walk"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arm1:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(8.74228e-08, -8.74228e-08, 3.14159), Vector3(0.174533, 0, 3.14159), Vector3(-0.174533, 0, 3.14159), Vector3(8.74228e-08, -8.74228e-08, 3.14159)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arm2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(8.74228e-08, -8.74228e-08, 3.14159), Vector3(-0.174533, 0, 3.14159), Vector3(0.174533, 0, 3.14159), Vector3(8.74228e-08, -8.74228e-08, 3.14159)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leg1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75, 1.25, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(-0.401426, -3.14159, 0), Vector3(0.401426, -3.14159, 0), Vector3(-0.401426, -3.14159, 0), Vector3(0.401426, -3.14159, 0), Vector3(0, -3.14159, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leg2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75, 1.25, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0.401426, -3.14159, 0), Vector3(-0.401426, -3.14159, 0), Vector3(0.401426, -3.14159, 0), Vector3(-0.401426, -3.14159, 0), Vector3(0, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3sshc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arm1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(8.74228e-08, -8.74228e-08, 3.14159)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arm2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(8.74228e-08, -8.74228e-08, 3.14159)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leg1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leg2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8mls0"]
+_data = {
+"RESET": SubResource("Animation_3sshc"),
+"walk": SubResource("Animation_rd5m8")
+}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bo1v6"]
 radius = 0.4
@@ -14,8 +127,54 @@ radius = 0.4
 rotation_mode = 1
 script = ExtResource("1_fesl2")
 
-[node name="BodyMesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_wi8kg")
+[node name="BodyMeshes" type="Node3D" parent="."]
+transform = Transform3D(0.663, 0, 0, 0, 0.663, 0, 0, 0, 0.663, 0, -0.073, 0)
+
+[node name="Hat" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1.01, 0, -8.8297e-08, 0, 1.01, 0, 8.8297e-08, 0, -1.01, -1.33614e-08, 1.3, -0.05)
+mesh = ExtResource("2_t8t06")
+skeleton = NodePath("")
+
+[node name="Head" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.33614e-08, 0.6, -0.05)
+mesh = ExtResource("3_y2f3r")
+skeleton = NodePath("")
+
+[node name="Torso" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.33614e-08, -0.2, -0.05)
+mesh = ExtResource("4_hy1lf")
+skeleton = NodePath("")
+
+[node name="Arm1" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-0.99, 8.74228e-08, -8.65485e-08, -8.65485e-08, -1, -8.65485e-08, -8.65486e-08, -8.74228e-08, 0.99, 0.5, 0.21, -0.05)
+mesh = ExtResource("5_c72wd")
+skeleton = NodePath("")
+
+[node name="Arm2" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-0.99, 8.74228e-08, -8.65485e-08, -8.65485e-08, -1, -8.65485e-08, -8.65486e-08, -8.74228e-08, 0.99, -0.5, 0.2, -0.05)
+mesh = ExtResource("5_c72wd")
+skeleton = NodePath("")
+
+[node name="Pants" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.33614e-08, -0.4, -0.05)
+mesh = ExtResource("6_wx38o")
+skeleton = NodePath("")
+
+[node name="Leg1" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.2, -0.4, 0.05)
+mesh = ExtResource("7_4qg5j")
+skeleton = NodePath("")
+
+[node name="Leg2" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.2, -0.4, 0.0499999)
+mesh = ExtResource("7_4qg5j")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BodyMeshes"]
+speed_scale = 1.2
+libraries = {
+"": SubResource("AnimationLibrary_8mls0")
+}
 
 [node name="SpeechBubble" parent="." instance=ExtResource("3_cievq")]
 
@@ -37,4 +196,10 @@ collide_with_areas = true
 wait_time = 4.0
 one_shot = true
 
+[node name="AnimTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="animation_finished" from="BodyMeshes/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
+[connection signal="timeout" from="AnimTimer" to="." method="_on_anim_timer_timeout"]
