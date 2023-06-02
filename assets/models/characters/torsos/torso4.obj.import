@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://hmha08ek0325"
+path="res://.godot/imported/torso4.obj-c238aa6766814d8c9a020f6a552ec864.mesh"
+
+[deps]
+
+files=["res://.godot/imported/torso4.obj-c238aa6766814d8c9a020f6a552ec864.mesh"]
+
+source_file="res://assets/models/characters/torsos/torso4.obj"
+dest_files=["res://.godot/imported/torso4.obj-c238aa6766814d8c9a020f6a552ec864.mesh", "res://.godot/imported/torso4.obj-c238aa6766814d8c9a020f6a552ec864.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

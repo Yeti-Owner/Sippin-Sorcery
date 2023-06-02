@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://v70u0xiskn6a"
+path="res://.godot/imported/leg1.obj-478093463c6aa9916f1ca695bbc2ba60.mesh"
+
+[deps]
+
+files=["res://.godot/imported/leg1.obj-478093463c6aa9916f1ca695bbc2ba60.mesh"]
+
+source_file="res://assets/models/characters/legs/leg1.obj"
+dest_files=["res://.godot/imported/leg1.obj-478093463c6aa9916f1ca695bbc2ba60.mesh", "res://.godot/imported/leg1.obj-478093463c6aa9916f1ca695bbc2ba60.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

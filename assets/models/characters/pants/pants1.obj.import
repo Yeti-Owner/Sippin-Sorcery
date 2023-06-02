@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://vbq11f40ynim"
+path="res://.godot/imported/pants1.obj-789165b1f9db76bbe1a10e786db831ff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pants1.obj-789165b1f9db76bbe1a10e786db831ff.mesh"]
+
+source_file="res://assets/models/characters/pants/pants1.obj"
+dest_files=["res://.godot/imported/pants1.obj-789165b1f9db76bbe1a10e786db831ff.mesh", "res://.godot/imported/pants1.obj-789165b1f9db76bbe1a10e786db831ff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

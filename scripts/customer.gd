@@ -2,6 +2,7 @@ extends PathFollow3D
 
 @export var Info:CharacterSheet
 @onready var Dialogue := $SpeechBubble
+@onready var AnimPlayer := $BodyMeshes/AnimationPlayer
 const speed := 0.04
 var talked:bool = false
 var walking:bool = true
@@ -9,7 +10,8 @@ var walking:bool = true
 func _ready():
 	$Body.CharName = Info.Name
 	$Body.color = Info.FavColor
-	$BodyMeshes/AnimationPlayer.play("walk")
+	AnimPlayer.play("walk")
+	_dress()
 
 func _physics_process(delta):
 	if $RayCast3D.is_colliding() and ($RayCast3D.get_collider().name == "Body" or $RayCast3D.get_collider().name == "Stop"):
@@ -17,6 +19,7 @@ func _physics_process(delta):
 			Dialogue._talk(Info.Dialog)
 			talked = true
 		walking = false
+		AnimPlayer.play("RESET", 0.2)
 		return
 	elif self.progress_ratio < 1:
 		walking = true
@@ -26,6 +29,16 @@ func _physics_process(delta):
 	
 	if $RayCast3D.is_colliding() and $RayCast3D.get_collider().name == "Kill":
 		self.queue_free()
+
+func _dress():
+	$BodyMeshes/Hat.set_mesh(Info.Hat)
+	$BodyMeshes/Head.set_mesh(Info.Head)
+	$BodyMeshes/Torso.set_mesh(Info.Torso)
+	$BodyMeshes/Arm1.set_mesh(Info.Arm)
+	$BodyMeshes/Arm2.set_mesh(Info.Arm)
+	$BodyMeshes/Pants.set_mesh(Info.Pants)
+	$BodyMeshes/Leg1.set_mesh(Info.Leg)
+	$BodyMeshes/Leg2.set_mesh(Info.Leg)
 
 func _finished(success:int, flavor:bool):
 	match success:
@@ -58,8 +71,8 @@ func _on_wait_timer_timeout():
 
 func _on_animation_player_animation_finished(_anim_name):
 	if walking:
-		$BodyMeshes/AnimationPlayer.play("walk")
+		AnimPlayer.play("walk")
 
 func _on_anim_timer_timeout():
-	if ($BodyMeshes/AnimationPlayer.is_playing() == false) and walking == true:
-		$BodyMeshes/AnimationPlayer.play("walk")
+	if (AnimPlayer.is_playing() == false) and walking == true:
+		AnimPlayer.play("walk")
