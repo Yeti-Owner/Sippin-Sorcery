@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuermyfj43qgy"
-path="res://.godot/imported/Hair2.png-3a13959d3862f787707a70f938dc5ee9.ctex"
+uid="uid://k26tberjeibj"
+path.s3tc="res://.godot/imported/Hair2.png-3a13959d3862f787707a70f938dc5ee9.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/characters/hats/Hair2.png"
-dest_files=["res://.godot/imported/Hair2.png-3a13959d3862f787707a70f938dc5ee9.ctex"]
+dest_files=["res://.godot/imported/Hair2.png-3a13959d3862f787707a70f938dc5ee9.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

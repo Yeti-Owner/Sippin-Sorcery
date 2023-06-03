@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cpi70xn4dh1mq"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=4 format=3 uid="uid://cpi70xn4dh1mq"]
 
+[ext_resource type="ArrayMesh" uid="uid://8e4m536hyi00" path="res://assets/models/characters/hats/Hair3.obj" id="1_dripd"]
 [ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_ht442"]
+[ext_resource type="ArrayMesh" uid="uid://bp4qcgtpkxhbd" path="res://assets/models/characters/pants/pants3.obj" id="2_4cquy"]
 
 [resource]
 script = ExtResource("1_ht442")
@@ -17,3 +19,5 @@ Pineapple = false
 Blueberry = false
 Watermelon = false
 Orange = true
+Hat = ExtResource("1_dripd")
+Pants = ExtResource("2_4cquy")

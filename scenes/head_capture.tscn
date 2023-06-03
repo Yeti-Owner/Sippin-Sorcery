@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dulbac7qmtmo6"]
+[gd_scene load_steps=8 format=3 uid="uid://dulbac7qmtmo6"]
 
 [ext_resource type="ArrayMesh" uid="uid://00ppg15wqwii" path="res://assets/models/characters/heads/Wizard_Head.obj" id="1_8nsge"]
 [ext_resource type="ArrayMesh" uid="uid://d2cvvnxxukfe5" path="res://assets/models/characters/hats/WizardHat.obj" id="2_lawtw"]
-[ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="3_e5gw8"]
 [ext_resource type="ArrayMesh" uid="uid://bbq726ty5ywra" path="res://assets/models/characters/heads/Head1.obj" id="4_8qdpg"]
 [ext_resource type="ArrayMesh" uid="uid://hmha08ek0325" path="res://assets/models/characters/torsos/torso4.obj" id="5_2o0h7"]
 [ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="6_bt4la"]
@@ -34,7 +33,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
 [node name="Hat" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0.7, 0)
-mesh = ExtResource("3_e5gw8")
 
 [node name="Head" type="MeshInstance3D" parent="Character"]
 mesh = ExtResource("4_8qdpg")

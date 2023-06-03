@@ -32,6 +32,11 @@ func _physics_process(delta):
 
 func _dress():
 	$BodyMeshes/Hat.set_mesh(Info.Hat)
+	
+	var mat = StandardMaterial3D.new()
+	mat.albedo_texture = Info.HatColor
+	$BodyMeshes/Hat.set_surface_override_material(0, mat)
+	
 	$BodyMeshes/Head.set_mesh(Info.Head)
 	$BodyMeshes/Torso.set_mesh(Info.Torso)
 	$BodyMeshes/Arm1.set_mesh(Info.Arm)

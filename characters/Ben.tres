@@ -1,6 +1,9 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://d0ipomf5jrmat"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=5 format=3 uid="uid://d0ipomf5jrmat"]
 
 [ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_s0s3x"]
+[ext_resource type="ArrayMesh" uid="uid://biqnq8kcdcpj0" path="res://assets/models/characters/hats/Hair2.obj" id="1_yla6e"]
+[ext_resource type="Texture2D" uid="uid://n8q8byy4b6th" path="res://assets/models/characters/hats/HairColor2.png" id="2_q8yfq"]
+[ext_resource type="ArrayMesh" uid="uid://hmha08ek0325" path="res://assets/models/characters/torsos/torso4.obj" id="3_1hp87"]
 
 [resource]
 script = ExtResource("1_s0s3x")
@@ -17,3 +20,6 @@ Pineapple = false
 Blueberry = false
 Watermelon = true
 Orange = true
+Hat = ExtResource("1_yla6e")
+HatColor = ExtResource("2_q8yfq")
+Torso = ExtResource("3_1hp87")

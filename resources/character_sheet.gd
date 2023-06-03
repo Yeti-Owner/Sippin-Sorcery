@@ -22,6 +22,7 @@ class_name CharacterSheet
 
 @export_category("Looks")
 @export var Hat:Mesh = load("res://assets/models/characters/hats/Hair1.obj")
+@export var HatColor:Texture = load("res://assets/models/characters/hats/HairColor1.png")
 @export var Head:Mesh = load("res://assets/models/characters/heads/Head1.obj")
 @export var Torso:Mesh = load("res://assets/models/characters/torsos/torso2.obj")
 var Arm:Mesh = load("res://assets/models/characters/arm.obj")
