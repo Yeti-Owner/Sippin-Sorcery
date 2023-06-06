@@ -130,6 +130,7 @@ shape = SubResource("BoxShape3D_4yuel")
 
 [node name="Gateway1" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -44.2, -11.1, -13.5)
+cast_shadow = 0
 mesh = ExtResource("2_ae1xj")
 
 [node name="ParticlesAttractor" type="GPUParticlesAttractorBox3D" parent="."]
@@ -140,6 +141,7 @@ size = Vector3(6.6, 7.6, 7.4)
 
 [node name="Gateway2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 1.5, 0, -2, 0, -8.74228e-08, 2.65, -11.1, 46.55)
+cast_shadow = 0
 mesh = ExtResource("2_ae1xj")
 
 [node name="ParticlesAttractor2" type="GPUParticlesAttractorBox3D" parent="."]
