@@ -18,6 +18,7 @@ var InsertedItems
 var Balance := 50
 
 var Dialogue = null : set = _set_dialogue
+var PlayerName:String = "Callum"
 
 func _set_dialogue(_node):
 	Dialogue = get_path_to(_node)

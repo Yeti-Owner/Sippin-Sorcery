@@ -16,4 +16,4 @@ func _tutorial():
 			dialogue._end()
 
 func _on_loading_screen_loading_done():
-	dialogue._start("[font_size=48]Hello! My name is bob the wizard and I am here to help you on your juice making journey![/font_size]", "[font_size=26]Bob[/font_size]", "res://assets/textures/Wizard.png", 2)
+	dialogue._start(str("[font_size=48]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the potion mixing.[/font_size]"), "[font_size=26]Bob[/font_size]", "res://assets/textures/Wizard.png", 2)

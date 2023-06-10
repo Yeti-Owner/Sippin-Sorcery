@@ -8,7 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://vbq11f40ynim" path="res://assets/models/characters/pants/pants1.obj" id="7_0y2wr"]
 [ext_resource type="ArrayMesh" uid="uid://v70u0xiskn6a" path="res://assets/models/characters/legs/leg1.obj" id="7_4bban"]
 
-[node name="HeadCapture" type="Node3D"]
+[node name="CharacterCustomization" type="Node3D"]
 
 [node name="Head" type="MeshInstance3D" parent="."]
 cast_shadow = 0
@@ -19,7 +19,7 @@ transform = Transform3D(1.1, 0, 0, 0, 0.8, 0, 0, 0, 1.1, 0, 0.7, 0)
 cast_shadow = 0
 mesh = ExtResource("2_lawtw")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="FaceCam" type="Camera3D" parent="."]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0.947, 0.637, -1.1)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
@@ -30,6 +30,7 @@ transform = Transform3D(-4.35451e-08, -0.0871557, 0.996195, -3.8097e-09, 0.99619
 
 [node name="Character" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+visible = false
 
 [node name="Hat" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0.7, 0)
