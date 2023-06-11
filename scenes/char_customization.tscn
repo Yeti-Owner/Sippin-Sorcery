@@ -1,63 +1,178 @@
-[gd_scene load_steps=8 format=3 uid="uid://dulbac7qmtmo6"]
+[gd_scene load_steps=17 format=3 uid="uid://dulbac7qmtmo6"]
 
-[ext_resource type="ArrayMesh" uid="uid://00ppg15wqwii" path="res://assets/models/characters/heads/Wizard_Head.obj" id="1_8nsge"]
-[ext_resource type="ArrayMesh" uid="uid://d2cvvnxxukfe5" path="res://assets/models/characters/hats/WizardHat.obj" id="2_lawtw"]
-[ext_resource type="ArrayMesh" uid="uid://bbq726ty5ywra" path="res://assets/models/characters/heads/Head1.obj" id="4_8qdpg"]
-[ext_resource type="ArrayMesh" uid="uid://hmha08ek0325" path="res://assets/models/characters/torsos/torso4.obj" id="5_2o0h7"]
-[ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="6_bt4la"]
-[ext_resource type="ArrayMesh" uid="uid://vbq11f40ynim" path="res://assets/models/characters/pants/pants1.obj" id="7_0y2wr"]
-[ext_resource type="ArrayMesh" uid="uid://v70u0xiskn6a" path="res://assets/models/characters/legs/leg1.obj" id="7_4bban"]
+[ext_resource type="Script" path="res://scripts/char_customization.gd" id="1_y2itm"]
+[ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="2_sqjmt"]
+[ext_resource type="Texture2D" uid="uid://bv3txf1axbk3n" path="res://assets/models/characters/hats/HairColor1.png" id="3_6lgva"]
+[ext_resource type="ArrayMesh" uid="uid://bbq726ty5ywra" path="res://assets/models/characters/heads/Head1.obj" id="3_uvicc"]
+[ext_resource type="ArrayMesh" uid="uid://4vugutqtxore" path="res://assets/models/characters/torsos/torso1.obj" id="5_835pe"]
+[ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="5_hprss"]
+[ext_resource type="ArrayMesh" uid="uid://vbq11f40ynim" path="res://assets/models/characters/pants/pants1.obj" id="6_rk34n"]
+[ext_resource type="ArrayMesh" uid="uid://v70u0xiskn6a" path="res://assets/models/characters/legs/leg1.obj" id="7_q70l6"]
+[ext_resource type="ArrayMesh" uid="uid://dk3kiyk64sfi4" path="res://assets/models/houses/House1.obj" id="8_gcuw8"]
+[ext_resource type="Texture2D" uid="uid://q50a3551g70w" path="res://assets/models/houses/HouseColor3.png" id="9_jmi03"]
+[ext_resource type="ArrayMesh" uid="uid://4c0y07n3ds0j" path="res://assets/models/Post.obj" id="12_5ii5j"]
+[ext_resource type="ArrayMesh" uid="uid://b2yfoawgcbu4o" path="res://assets/models/Arrow.obj" id="12_un70k"]
 
-[node name="CharacterCustomization" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0rwk"]
+albedo_texture = ExtResource("3_6lgva")
 
-[node name="Head" type="MeshInstance3D" parent="."]
-cast_shadow = 0
-mesh = ExtResource("1_8nsge")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wam71"]
+albedo_texture = ExtResource("9_jmi03")
 
-[node name="Hat" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.1, 0, 0, 0, 0.8, 0, 0, 0, 1.1, 0, 0.7, 0)
-cast_shadow = 0
-mesh = ExtResource("2_lawtw")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns721"]
+albedo_color = Color(0.129412, 0.0745098, 0.0823529, 1)
 
-[node name="FaceCam" type="Camera3D" parent="."]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0.947, 0.637, -1.1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypmn2"]
+size = Vector3(0.8, 0.8, 0.2)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(-1, -8.88178e-16, -8.74228e-08, -7.6194e-09, 0.996195, 0.0871557, 8.70901e-08, 0.0871557, -0.996195, 0, 0.6, -3)
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(-4.35451e-08, -0.0871557, 0.996195, -3.8097e-09, 0.996195, 0.0871557, -1, -4.44089e-16, -4.37114e-08, 3, 0.6, 0)
+[node name="CharacterCustomization" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y2itm")
 
 [node name="Character" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.673, 0)
 
 [node name="Hat" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0.7, 0)
+transform = Transform3D(1.1, 0, 0, 0, 0.8, 0, 0, 0, 1.1, 0, 1.773, 0)
+cast_shadow = 0
+mesh = ExtResource("2_sqjmt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_r0rwk")
 
 [node name="Head" type="MeshInstance3D" parent="Character"]
-mesh = ExtResource("4_8qdpg")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, 0)
+cast_shadow = 0
+mesh = ExtResource("3_uvicc")
+skeleton = NodePath("../..")
 
 [node name="Torso" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
-mesh = ExtResource("5_2o0h7")
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1.13084e-08, 0.3, 0.0166666)
+mesh = ExtResource("5_835pe")
+skeleton = NodePath("")
 
 [node name="Arm1" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1, 0)
-mesh = ExtResource("6_bt4la")
+transform = Transform3D(0.99, 2.53518e-06, 2.13163e-14, 2.50983e-06, -1, -8.65486e-08, -1.98952e-13, 8.74228e-08, -0.99, -0.5, 0.71, 0.0166667)
+mesh = ExtResource("5_hprss")
+skeleton = NodePath("")
 
 [node name="Arm2" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1, 0)
-mesh = ExtResource("6_bt4la")
+transform = Transform3D(0.99, 2.53518e-06, 2.13163e-14, 2.50983e-06, -1, -8.65486e-08, -1.98952e-13, 8.74228e-08, -0.99, 0.5, 0.7, 0.0166666)
+mesh = ExtResource("5_hprss")
+skeleton = NodePath("")
 
 [node name="Pants" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-mesh = ExtResource("7_0y2wr")
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1.13084e-08, 0.1, 0.0166666)
+mesh = ExtResource("6_rk34n")
+skeleton = NodePath("")
 
 [node name="Leg1" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -2, -0.0999999)
-mesh = ExtResource("7_4bban")
+transform = Transform3D(1, 0, 2.6226e-06, 0, 1, 0, -2.6226e-06, 0, 1, 0.2, 0.1, -0.0833334)
+mesh = ExtResource("7_q70l6")
+skeleton = NodePath("")
 
 [node name="Leg2" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -2, -0.0999999)
-mesh = ExtResource("7_4bban")
+transform = Transform3D(1, 0, 2.6226e-06, 0, 1, 0, -2.6226e-06, 0, 1, -0.2, 0.1, -0.0833333)
+mesh = ExtResource("7_q70l6")
+skeleton = NodePath("")
+
+[node name="FaceCam" type="Camera3D" parent="."]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0.947, 0.923, -1.1)
+visible = false
+
+[node name="FaceLight1" type="SpotLight3D" parent="FaceCam"]
+transform = Transform3D(0.707107, -0.0616284, 0.704416, -7.6194e-09, 0.996195, 0.0871557, -0.707107, -0.0616284, 0.704416, 2.01313, -0.323, 0.673873)
+
+[node name="FaceLight2" type="SpotLight3D" parent="FaceCam"]
+transform = Transform3D(0.707107, 0.0616284, -0.704416, -3.8097e-09, 0.996195, 0.0871557, 0.707107, -0.0616284, 0.704416, -2.22951, -0.323, 0.673873)
+
+[node name="House" type="MeshInstance3D" parent="."]
+transform = Transform3D(-20, 0, -3.01992e-06, 0, 20, 0, 3.01992e-06, 0, -20, 3.578, -5.452, -10.9)
+mesh = ExtResource("8_gcuw8")
+surface_material_override/0 = SubResource("StandardMaterial3D_wam71")
+
+[node name="Cam" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.146, -3.9)
+current = true
+fov = 82.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cam"]
+transform = Transform3D(1, 5.01436e-08, 1.58102e-08, -5.01436e-08, 0.819152, 0.573576, 1.58102e-08, -0.573576, 0.819152, -2.62268e-08, 3.3, 0.3)
+light_energy = 1.172
+spot_range = 16.2
+spot_angle = 69.386
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Cam"]
+transform = Transform3D(1, -2.62129e-08, 4.02237e-09, 2.62129e-08, 0.95399, -0.29984, 4.02238e-09, 0.29984, 0.95399, -2.62268e-08, -3.05667, 0.3)
+light_energy = 1.172
+spot_range = 16.2
+spot_angle = 69.386
+
+[node name="RayCast3D" type="RayCast3D" parent="Cam"]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
+
+[node name="Arrows" type="Node3D" parent="."]
+
+[node name="Up" type="StaticBody3D" parent="Arrows"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.4, 2.3, -0.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Arrows/Up"]
+mesh = ExtResource("12_un70k")
+
+[node name="Post" type="MeshInstance3D" parent="Arrows/Up"]
+transform = Transform3D(-2.18557e-08, -5, 0, 0.5, -2.18557e-07, 0, 0, 0, 0.5, 4.1, 0.4, 0.15)
+mesh = ExtResource("12_5ii5j")
+surface_material_override/0 = SubResource("StandardMaterial3D_ns721")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arrows/Up"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_ypmn2")
+
+[node name="Down" type="StaticBody3D" parent="Arrows"]
+transform = Transform3D(-7.54979e-08, -1, 1.50996e-07, -1, 7.54979e-08, 0, 1.13999e-14, 1.50996e-07, 1, 0.4, -2.2, -0.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Arrows/Down"]
+mesh = ExtResource("12_un70k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arrows/Down"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_ypmn2")
+
+[node name="Post" type="MeshInstance3D" parent="Arrows/Down"]
+transform = Transform3D(-2.18557e-08, -5, 0, 0.5, -2.18557e-07, 0, 0, 0, 0.5, 4.1, 0.4, 0.15)
+mesh = ExtResource("12_5ii5j")
+surface_material_override/0 = SubResource("StandardMaterial3D_ns721")
+
+[node name="Left" type="StaticBody3D" parent="Arrows"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -0.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Arrows/Left"]
+mesh = ExtResource("12_un70k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arrows/Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_ypmn2")
+
+[node name="Post" type="MeshInstance3D" parent="Arrows/Left"]
+transform = Transform3D(-0.5, 1.05697e-06, 0, -7.54979e-08, -7, 0, 0, 0, 0.5, -0.1, 6.2, 0.15)
+mesh = ExtResource("12_5ii5j")
+surface_material_override/0 = SubResource("StandardMaterial3D_ns721")
+
+[node name="Right" type="StaticBody3D" parent="Arrows"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 1, -0.3)
+
+[node name="Mesh" type="MeshInstance3D" parent="Arrows/Right"]
+mesh = ExtResource("12_un70k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arrows/Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_ypmn2")
+
+[node name="Post" type="MeshInstance3D" parent="Arrows/Right"]
+transform = Transform3D(-0.5, 1.05697e-06, 0, -7.54979e-08, -7, 0, 0, 0, 0.5, -0.1, 6.1, -0.15)
+mesh = ExtResource("12_5ii5j")
+surface_material_override/0 = SubResource("StandardMaterial3D_ns721")

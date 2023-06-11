@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4c0y07n3ds0j"
+path="res://.godot/imported/Post.obj-74349f94261314a5c73853e7cad17702.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Post.obj-74349f94261314a5c73853e7cad17702.mesh"]
+
+source_file="res://assets/models/Post.obj"
+dest_files=["res://.godot/imported/Post.obj-74349f94261314a5c73853e7cad17702.mesh", "res://.godot/imported/Post.obj-74349f94261314a5c73853e7cad17702.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
