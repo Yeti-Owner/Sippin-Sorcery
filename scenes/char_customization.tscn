@@ -34,11 +34,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y2itm")
 
+[node name="PicViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(175, 175)
+render_target_update_mode = 4
+
+[node name="FaceCam" type="Camera3D" parent="PicViewport"]
+transform = Transform3D(-0.836764, 0, 0.547563, 0, 1, 0, -0.547563, 0, -0.836764, 0.688, 0.923, -1.236)
+cull_mask = 2
+
+[node name="FaceLight1" type="SpotLight3D" parent="PicViewport/FaceCam"]
+transform = Transform3D(0.707107, -0.0616284, 0.704416, -7.6194e-09, 0.996195, 0.0871557, -0.707107, -0.0616284, 0.704416, 2.01313, -0.323, 0.673873)
+layers = 2
+
+[node name="FaceLight2" type="SpotLight3D" parent="PicViewport/FaceCam"]
+transform = Transform3D(0.707107, 0.0616284, -0.704416, -3.8097e-09, 0.996195, 0.0871557, 0.707107, -0.0616284, 0.704416, -2.22951, -0.323, 0.673873)
+layers = 2
+
 [node name="Character" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.673, 0)
 
 [node name="Hat" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1.1, 0, 0, 0, 0.8, 0, 0, 0, 1.1, 0, 1.773, 0)
+layers = 3
 cast_shadow = 0
 mesh = ExtResource("2_sqjmt")
 skeleton = NodePath("../..")
@@ -46,49 +64,46 @@ surface_material_override/0 = SubResource("StandardMaterial3D_r0rwk")
 
 [node name="Head" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, 0)
+layers = 3
 cast_shadow = 0
 mesh = ExtResource("3_uvicc")
 skeleton = NodePath("../..")
 
 [node name="Torso" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1.13084e-08, 0.3, 0.0166666)
+layers = 3
 mesh = ExtResource("5_835pe")
 skeleton = NodePath("")
 
 [node name="Arm1" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(0.99, 2.53518e-06, 2.13163e-14, 2.50983e-06, -1, -8.65486e-08, -1.98952e-13, 8.74228e-08, -0.99, -0.5, 0.71, 0.0166667)
+layers = 3
 mesh = ExtResource("5_hprss")
 skeleton = NodePath("")
 
 [node name="Arm2" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(0.99, 2.53518e-06, 2.13163e-14, 2.50983e-06, -1, -8.65486e-08, -1.98952e-13, 8.74228e-08, -0.99, 0.5, 0.7, 0.0166666)
+layers = 3
 mesh = ExtResource("5_hprss")
 skeleton = NodePath("")
 
 [node name="Pants" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 1.13084e-08, 0.1, 0.0166666)
+layers = 3
 mesh = ExtResource("6_rk34n")
 skeleton = NodePath("")
 
 [node name="Leg1" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1, 0, 2.6226e-06, 0, 1, 0, -2.6226e-06, 0, 1, 0.2, 0.1, -0.0833334)
+layers = 3
 mesh = ExtResource("7_q70l6")
 skeleton = NodePath("")
 
 [node name="Leg2" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1, 0, 2.6226e-06, 0, 1, 0, -2.6226e-06, 0, 1, -0.2, 0.1, -0.0833333)
+layers = 3
 mesh = ExtResource("7_q70l6")
 skeleton = NodePath("")
-
-[node name="FaceCam" type="Camera3D" parent="."]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0.947, 0.923, -1.1)
-visible = false
-
-[node name="FaceLight1" type="SpotLight3D" parent="FaceCam"]
-transform = Transform3D(0.707107, -0.0616284, 0.704416, -7.6194e-09, 0.996195, 0.0871557, -0.707107, -0.0616284, 0.704416, 2.01313, -0.323, 0.673873)
-
-[node name="FaceLight2" type="SpotLight3D" parent="FaceCam"]
-transform = Transform3D(0.707107, 0.0616284, -0.704416, -3.8097e-09, 0.996195, 0.0871557, 0.707107, -0.0616284, 0.704416, -2.22951, -0.323, 0.673873)
 
 [node name="House" type="MeshInstance3D" parent="."]
 transform = Transform3D(-20, 0, -3.01992e-06, 0, 20, 0, 3.01992e-06, 0, -20, 3.578, -5.452, -10.9)

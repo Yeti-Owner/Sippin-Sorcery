@@ -7,7 +7,6 @@ var Hovered := ""
 @onready var Left := $Arrows/Left
 @onready var Right := $Arrows/Right
 var Stage:int = 5
-var Direction:int = 1
 
 const HatList := ["res://assets/models/characters/hats/Hair1.obj","res://assets/models/characters/hats/Hair2.obj","res://assets/models/characters/hats/Hair3.obj"]
 const HatColor := ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png"]
@@ -34,9 +33,9 @@ func _physics_process(_delta):
 				"Down":
 					_change_stage(Stage - 1)
 				"Left":
-					_swap_part(Direction - 1)
+					_swap_part(-1)
 				"Right":
-					_swap_part(Direction + 1)
+					_swap_part(1)
 		return
 	
 	Hovered = Ray.get_collider().name
@@ -53,16 +52,48 @@ func _change_stage(CurStage):
 	
 	Stage = CurStage
 
-func _swap_part(direction):
+func _swap_part(direction:int):
 	match Stage:
-		1:
-			direction = wrap(direction, 0, 7) # I hate myself, just manually calculated it I'll make a smarter sys some other time
-		2:
-			direction = wrap(direction, 0, HeadList.size() + 1)
-		3:
-			direction = wrap(direction, 0, TorsoList.size() + 1)
-		4:
-			direction = wrap(direction, 0, PantList.size() + 1)
 		5:
-			direction = wrap(direction, 0, LegList.size() + 1)
+			var b = HatList.bsearch(EventBus.PlayerOutfit[0])
+			direction += b
+			direction = wrap(direction, 0, 3) #7 I hate myself, just manually calculated it I'll make a smarter sys some other time
+			EventBus.PlayerOutfit[0] = HatList[direction]
+			$Character/Hat.set_mesh(load(EventBus.PlayerOutfit[0]))
+		4:
+			var b = HeadList.bsearch(EventBus.PlayerOutfit[1])
+			direction += b
+			direction = wrap(direction, 0, HeadList.size())
+			EventBus.PlayerOutfit[1] = HeadList[direction]
+			$Character/Head.set_mesh(load(EventBus.PlayerOutfit[1]))
+		3:
+			var b = TorsoList.bsearch(EventBus.PlayerOutfit[2])
+			direction += b
+			direction = wrap(direction, 0, TorsoList.size())
+			EventBus.PlayerOutfit[2] = TorsoList[direction]
+			$Character/Torso.set_mesh(load(EventBus.PlayerOutfit[2]))
+		2:
+			var b = PantList.bsearch(EventBus.PlayerOutfit[3])
+			direction += b
+			direction = wrap(direction, 0, PantList.size())
+			EventBus.PlayerOutfit[3] = PantList[direction]
+			$Character/Pants.set_mesh(load(EventBus.PlayerOutfit[3]))
+		1:
+			var b = LegList.bsearch(EventBus.PlayerOutfit[4])
+			direction += b
+			direction = wrap(direction, 0, LegList.size())
+			EventBus.PlayerOutfit[4] = LegList[direction]
+			$Character/Leg1.set_mesh(load(EventBus.PlayerOutfit[4]))
+			$Character/Leg2.set_mesh(load(EventBus.PlayerOutfit[4]))
+
+func _capture_headshot():
+	# Setup Scene for capture
+	$PicViewport/FaceCam.visible = true
+	$Cam.visible = false
 	
+	# Viewport pic shenanigans
+	await get_tree().process_frame
+	var vpt:SubViewport = $PicViewport
+	var tex:Texture = vpt.get_texture()
+	var img:Image = tex.get_image()
+	img.save_png("user://headshot.png")

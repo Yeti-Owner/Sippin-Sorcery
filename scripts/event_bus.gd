@@ -18,7 +18,9 @@ var InsertedItems
 var Balance := 50
 
 var Dialogue = null : set = _set_dialogue
+
 var PlayerName:String = "Callum"
+var PlayerOutfit:Array = ["res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/torsos/torso1.obj", "res://assets/models/characters/pants/pants1.obj", "res://assets/models/characters/legs/leg1.obj"]
 
 func _set_dialogue(_node):
 	Dialogue = get_path_to(_node)
