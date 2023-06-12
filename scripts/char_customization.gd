@@ -1,19 +1,39 @@
 extends Control
 
 @onready var Ray := $Cam/RayCast3D
-var colliding:bool = false
-var Hovered := ""
+var colliding: bool = false
+var Hovered: String = ""
 
 @onready var Left := $Arrows/Left
 @onready var Right := $Arrows/Right
-var Stage:int = 5
+var Stage: int = 6
 
-const HatList := ["res://assets/models/characters/hats/Hair1.obj","res://assets/models/characters/hats/Hair2.obj","res://assets/models/characters/hats/Hair3.obj"]
-const HatColor := ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png"]
-const HeadList := ["res://assets/models/characters/heads/Head1.obj","res://assets/models/characters/heads/Head2.obj","res://assets/models/characters/heads/Head3.obj","res://assets/models/characters/heads/Head4.obj","res://assets/models/characters/heads/Head5.obj"]
-const TorsoList := ["res://assets/models/characters/torsos/torso1.obj","res://assets/models/characters/torsos/torso2.obj","res://assets/models/characters/torsos/torso3.obj","res://assets/models/characters/torsos/torso4.obj"]
-const PantList := ["res://assets/models/characters/pants/pants1.obj","res://assets/models/characters/pants/pants3.obj"]
-const LegList := ["res://assets/models/characters/legs/leg1.obj"]
+@onready var OutfitParts := {
+	6: {
+		"list": ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png"],
+		"node": $Character/HatColor
+	},
+	5: {
+		"list": ["res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/hats/Hair2.obj", "res://assets/models/characters/hats/Hair3.obj"],
+		"node": $Character/Hat
+	},
+	4: {
+		"list": ["res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/heads/Head2.obj", "res://assets/models/characters/heads/Head3.obj", "res://assets/models/characters/heads/Head4.obj", "res://assets/models/characters/heads/Head5.obj"],
+		"node": $Character/Head
+	},
+	3: {
+		"list": ["res://assets/models/characters/torsos/torso1.obj", "res://assets/models/characters/torsos/torso2.obj", "res://assets/models/characters/torsos/torso3.obj", "res://assets/models/characters/torsos/torso4.obj"],
+		"node": $Character/Torso
+	},
+	2: {
+		"list": ["res://assets/models/characters/pants/pants1.obj", "res://assets/models/characters/pants/pants3.obj"],
+		"node": $Character/Pants
+	},
+	1: {
+		"list": ["res://assets/models/characters/legs/leg1.obj"],
+		"node": $Character/Leg1
+	}
+}
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -25,7 +45,7 @@ func _physics_process(_delta):
 		Hovered = ""
 		return
 	
-	if colliding == true:
+	if colliding:
 		if Input.is_action_just_pressed("select"):
 			match Hovered:
 				"Up":
@@ -42,9 +62,9 @@ func _physics_process(_delta):
 	colliding = true
 
 func _change_stage(CurStage):
-	CurStage = wrap(CurStage, 1, 6)
+	CurStage = wrap(CurStage, 1, 7)
 	
-	var StageList := [-1.5, -0.9, -0.4, 0.3, 1]
+	var StageList := [-1.5, -0.9, -0.4, 0.3, 1, 1.4]
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property(Left, "position:y", StageList[int(CurStage-1)], 0.25)
@@ -52,39 +72,22 @@ func _change_stage(CurStage):
 	
 	Stage = CurStage
 
-func _swap_part(direction:int):
-	match Stage:
-		5:
-			var b = HatList.bsearch(EventBus.PlayerOutfit[0])
-			direction += b
-			direction = wrap(direction, 0, 3) #7 I hate myself, just manually calculated it I'll make a smarter sys some other time
-			EventBus.PlayerOutfit[0] = HatList[direction]
-			$Character/Hat.set_mesh(load(EventBus.PlayerOutfit[0]))
-		4:
-			var b = HeadList.bsearch(EventBus.PlayerOutfit[1])
-			direction += b
-			direction = wrap(direction, 0, HeadList.size())
-			EventBus.PlayerOutfit[1] = HeadList[direction]
-			$Character/Head.set_mesh(load(EventBus.PlayerOutfit[1]))
-		3:
-			var b = TorsoList.bsearch(EventBus.PlayerOutfit[2])
-			direction += b
-			direction = wrap(direction, 0, TorsoList.size())
-			EventBus.PlayerOutfit[2] = TorsoList[direction]
-			$Character/Torso.set_mesh(load(EventBus.PlayerOutfit[2]))
-		2:
-			var b = PantList.bsearch(EventBus.PlayerOutfit[3])
-			direction += b
-			direction = wrap(direction, 0, PantList.size())
-			EventBus.PlayerOutfit[3] = PantList[direction]
-			$Character/Pants.set_mesh(load(EventBus.PlayerOutfit[3]))
-		1:
-			var b = LegList.bsearch(EventBus.PlayerOutfit[4])
-			direction += b
-			direction = wrap(direction, 0, LegList.size())
-			EventBus.PlayerOutfit[4] = LegList[direction]
-			$Character/Leg1.set_mesh(load(EventBus.PlayerOutfit[4]))
-			$Character/Leg2.set_mesh(load(EventBus.PlayerOutfit[4]))
+func _swap_part(direction: int):
+	var outfitPart = OutfitParts[Stage]
+	var partList = outfitPart["list"]
+	var partNode = outfitPart["node"]
+	
+	var b = partList.bsearch(EventBus.PlayerOutfit[Stage - 1])
+	direction += b
+	direction = wrap(direction, 0, partList.size())
+	EventBus.PlayerOutfit[Stage - 1] = partList[direction]
+	if Stage != 6:
+		partNode.set_mesh(load(EventBus.PlayerOutfit[Stage - 1]))
+	else:
+		var mat = StandardMaterial3D.new()
+		mat.albedo_texture = load(EventBus.PlayerOutfit[Stage - 1])
+		partNode.set_surface_override_material(0, mat)
+		$Character/Hat.set_surface_override_material(0, mat)
 
 func _capture_headshot():
 	# Setup Scene for capture

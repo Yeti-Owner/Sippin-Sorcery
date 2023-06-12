@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dulbac7qmtmo6"]
+[gd_scene load_steps=19 format=3 uid="uid://dulbac7qmtmo6"]
 
 [ext_resource type="Script" path="res://scripts/char_customization.gd" id="1_y2itm"]
 [ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="2_sqjmt"]
@@ -13,7 +13,14 @@
 [ext_resource type="ArrayMesh" uid="uid://4c0y07n3ds0j" path="res://assets/models/Post.obj" id="12_5ii5j"]
 [ext_resource type="ArrayMesh" uid="uid://b2yfoawgcbu4o" path="res://assets/models/Arrow.obj" id="12_un70k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0rwk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4o605"]
+albedo_texture = ExtResource("3_6lgva")
+
+[sub_resource type="BoxMesh" id="BoxMesh_1yh7g"]
+material = SubResource("StandardMaterial3D_4o605")
+size = Vector3(0.4, 0.4, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr6fa"]
 albedo_texture = ExtResource("3_6lgva")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wam71"]
@@ -54,13 +61,17 @@ layers = 2
 [node name="Character" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.673, 0)
 
+[node name="HatColor" type="MeshInstance3D" parent="Character"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.345, 0)
+mesh = SubResource("BoxMesh_1yh7g")
+
 [node name="Hat" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(1.1, 0, 0, 0, 0.8, 0, 0, 0, 1.1, 0, 1.773, 0)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.773, 0)
 layers = 3
 cast_shadow = 0
 mesh = ExtResource("2_sqjmt")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_r0rwk")
+surface_material_override/0 = SubResource("StandardMaterial3D_wr6fa")
 
 [node name="Head" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, 0)
@@ -163,7 +174,7 @@ mesh = ExtResource("12_5ii5j")
 surface_material_override/0 = SubResource("StandardMaterial3D_ns721")
 
 [node name="Left" type="StaticBody3D" parent="Arrows"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -0.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.4, -0.3)
 
 [node name="Mesh" type="MeshInstance3D" parent="Arrows/Left"]
 mesh = ExtResource("12_un70k")
@@ -178,7 +189,7 @@ mesh = ExtResource("12_5ii5j")
 surface_material_override/0 = SubResource("StandardMaterial3D_ns721")
 
 [node name="Right" type="StaticBody3D" parent="Arrows"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 1, -0.3)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 1.4, -0.3)
 
 [node name="Mesh" type="MeshInstance3D" parent="Arrows/Right"]
 mesh = ExtResource("12_un70k")
