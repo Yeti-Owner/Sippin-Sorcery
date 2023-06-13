@@ -1,23 +1,20 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=4 format=3 uid="uid://bki28y1pxnlon"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bki28y1pxnlon"]
 
-[ext_resource type="ArrayMesh" uid="uid://8e4m536hyi00" path="res://assets/models/characters/hats/Hair3.obj" id="1_08egr"]
 [ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_bbfou"]
-[ext_resource type="Texture2D" uid="uid://dvghp5ulyav04" path="res://assets/models/characters/hats/HairColor4.png" id="2_dvg84"]
 
 [resource]
 script = ExtResource("1_bbfou")
 Name = "Reeseman5"
 FavColor = Color(0.47451, 0, 0, 1)
-House = "Slytherin"
 Dialog = "I hurt my hand doing electrical work please help"
 Need = ["health"]
 Bonus = ["lessPain", "electricalRes"]
 Budget = 50
+House = 3
+Gender = "Male"
 Strawberry = false
 Banana = false
 Pineapple = true
 Blueberry = true
 Watermelon = true
 Orange = false
-Hat = ExtResource("1_08egr")
-HatColor = ExtResource("2_dvg84")

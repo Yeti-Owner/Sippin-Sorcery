@@ -5,15 +5,16 @@
 [resource]
 script = ExtResource("1_woij3")
 Name = "Debug Dan"
-FavColor = Color(0, 0, 0, 1)
-House = "Ravenclaw"
+FavColor = Color(0.14902, 0.14902, 0.14902, 1)
 Dialog = "Hello"
 Need = ["speed"]
-Bonus = [""]
-Budget = 10
+Bonus = []
+Budget = 100
+House = 3
+Gender = "Male"
 Strawberry = true
-Banana = false
+Banana = true
 Pineapple = false
-Blueberry = true
+Blueberry = false
 Watermelon = true
 Orange = true

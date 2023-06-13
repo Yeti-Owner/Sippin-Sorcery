@@ -1,27 +1,20 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=6 format=3 uid="uid://t8k655dfwn7c"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://t8k655dfwn7c"]
 
 [ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_3h7xi"]
-[ext_resource type="ArrayMesh" uid="uid://8e4m536hyi00" path="res://assets/models/characters/hats/Hair3.obj" id="1_f6467"]
-[ext_resource type="ArrayMesh" uid="uid://bp4qcgtpkxhbd" path="res://assets/models/characters/pants/pants3.obj" id="2_68xj5"]
-[ext_resource type="Texture2D" uid="uid://cmdo5i86yp0oi" path="res://assets/models/characters/hats/HairColor3.png" id="2_yngyi"]
-[ext_resource type="ArrayMesh" uid="uid://4vugutqtxore" path="res://assets/models/characters/torsos/torso1.obj" id="3_3k6ld"]
 
 [resource]
 script = ExtResource("1_3h7xi")
 Name = "Artemis"
 FavColor = Color(0.270588, 0.0823529, 0.941176, 1)
-House = "Ravenclaw"
 Dialog = "Help me poison the yellow twerp"
 Need = ["poison"]
 Bonus = ["petrification"]
 Budget = 20
+House = 1
+Gender = "Female"
 Strawberry = true
 Banana = false
 Pineapple = false
 Blueberry = true
 Watermelon = false
 Orange = false
-Hat = ExtResource("1_f6467")
-HatColor = ExtResource("2_yngyi")
-Torso = ExtResource("3_3k6ld")
-Pants = ExtResource("2_68xj5")

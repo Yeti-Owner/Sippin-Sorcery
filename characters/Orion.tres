@@ -1,21 +1,20 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=3 format=3 uid="uid://ljqrf8uyku0g"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://ljqrf8uyku0g"]
 
 [ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_4g74m"]
-[ext_resource type="ArrayMesh" uid="uid://vbq11f40ynim" path="res://assets/models/characters/pants/pants1.obj" id="1_t2xej"]
 
 [resource]
 script = ExtResource("1_4g74m")
 Name = "Orion"
 FavColor = Color(1, 1, 0, 1)
-House = "Hufflepuff"
 Dialog = "I'm not strong enough, please help me beat that purple bitch"
 Need = ["strength", "speed"]
 Bonus = ["agility", "luck", "dexterity"]
 Budget = 20
+House = 2
+Gender = "Male"
 Strawberry = false
 Banana = false
 Pineapple = true
 Blueberry = false
 Watermelon = false
 Orange = false
-Pants = ExtResource("1_t2xej")

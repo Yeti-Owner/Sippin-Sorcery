@@ -89,4 +89,13 @@ var JournalIngredients := {
 const EffectsList := ["resistance", "confusion", "health","flexibility", "agility", "speed","courage", "stamina", "strength","badVision", "badSmell", "poison","coldRes", "fireRes", "lessPain","swimming", "underwaterBreathing", "fishTalk","sticky", "nightVision", "invisibility","lessWeight", "hearing", "hovering","health", "luck", "fireRes","petrification", "poison", "strength","purity", "health", "heightenedSenses","speed", "stability", "jumping","precision", "lessPain", "dexterity","alertness", "perception", "electricalRes","strength", "explosionRes", "smokeImmunity","petrificationRes", "poison", "betterSmell","charisma", "health", "plantControl"]
 
 
+# Used by Customer and test subject for clothing
+const MaleHatList = ["res://assets/models/characters/hats/Hair1.obj","res://assets/models/characters/hats/Hair2.obj","res://assets/models/characters/hats/Hair3.obj"]
+const FemaleHatList = ["res://assets/models/characters/hats/Hair3.obj"]
+const HatColorList = ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png"]
+const HeadList = ["res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/heads/Head2.obj", "res://assets/models/characters/heads/Head3.obj", "res://assets/models/characters/heads/Head4.obj", "res://assets/models/characters/heads/Head5.obj"]
+const TorsoList = ["res://assets/models/characters/torsos/torso1.obj","res://assets/models/characters/torsos/torso2.obj","res://assets/models/characters/torsos/torso3.obj","res://assets/models/characters/torsos/torso4.obj"]
+const MalePantList = ["res://assets/models/characters/pants/pants1.obj"]
+const FemalePantList = ["res://assets/models/characters/pants/pants3.obj"]
+const LegList = ["res://assets/models/characters/legs/leg1.obj"]
 

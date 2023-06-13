@@ -16,7 +16,7 @@ const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Orion", "Artemis", "Emm
 var Spawned := []
 
 func _ready():
-	randomize()
+	randomize() 
 	timer.wait_time = randi_range(5, 16)
 	timer.start()
 

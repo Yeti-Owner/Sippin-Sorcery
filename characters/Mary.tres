@@ -1,27 +1,20 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=6 format=3 uid="uid://dkbommtqilco2"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://dkbommtqilco2"]
 
-[ext_resource type="ArrayMesh" uid="uid://8e4m536hyi00" path="res://assets/models/characters/hats/Hair3.obj" id="1_8lxl4"]
 [ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_knqg4"]
-[ext_resource type="Texture2D" uid="uid://cmdo5i86yp0oi" path="res://assets/models/characters/hats/HairColor3.png" id="2_r0xks"]
-[ext_resource type="ArrayMesh" uid="uid://bp4qcgtpkxhbd" path="res://assets/models/characters/pants/pants3.obj" id="3_3x3e0"]
-[ext_resource type="ArrayMesh" uid="uid://4vugutqtxore" path="res://assets/models/characters/torsos/torso1.obj" id="4_8a683"]
 
 [resource]
 script = ExtResource("1_knqg4")
 Name = "Mary"
 FavColor = Color(0.733333, 0.698039, 0.976471, 1)
-House = "Ravenclaw"
 Dialog = "It's flu season and I can't get sick, do you have something to help protect me?"
 Need = ["resistance"]
 Bonus = ["health"]
 Budget = 10
+House = 0
+Gender = "Female"
 Strawberry = true
 Banana = true
 Pineapple = false
 Blueberry = true
 Watermelon = true
 Orange = true
-Hat = ExtResource("1_8lxl4")
-HatColor = ExtResource("2_r0xks")
-Torso = ExtResource("4_8a683")
-Pants = ExtResource("3_3x3e0")
