@@ -2,8 +2,8 @@ extends Interactable
 
 @onready var color := Color(randf(), randf(), randf())
 @onready var SpeechBubble := $SpeechBubble
-var CharName := ["Jack", "Emily", "Thomas", "Jessica", "James", "Charlotte", "Daniel", "Sophie", "Joshua", "Olivia", "Matthew", "Emma", "William", "Hannah", "Joseph", "Amy", "Benjamin", "Lucy", "Samuel", "Rebecca", "David", "Megan", "Oliver", "Lauren", "Christopher", "Katie", "Alexander", "Ellie", "Ryan", "Grace"]
-var Char:String = CharName[randi() % CharName.size()]
+#var CharName := ["Jack", "Emily", "Thomas", "Jessica", "James", "Charlotte", "Daniel", "Sophie", "Joshua", "Olivia", "Matthew", "Emma", "William", "Hannah", "Joseph", "Amy", "Benjamin", "Lucy", "Samuel", "Rebecca", "David", "Megan", "Oliver", "Lauren", "Christopher", "Katie", "Alexander", "Ellie", "Ryan", "Grace"]
+#@onready var Char:String = get_parent().CharName
 
 const EffectsList := {
 	"resistance": "I don't know why, but suddenly it's like I'm tougher than usual. Like nothing can touch me, you know?",
@@ -56,11 +56,11 @@ func _ready():
 
 func get_interaction_text():
 	if EventBus.HeldItem == "Juice" and EventBus.Balance >= 25:
-		return str("[center]Press E to test juice with [color=" + str(color.to_html()) + "] " + Char + "[/color] (Costs 25ʛ)[/center]")
+		return str("[center]Press E to test juice with [color=" + str(color.to_html()) + "] " + get_parent().CharName + "[/color] (Costs 25ʛ)[/center]")
 	elif EventBus.HeldItem == "Juice" and EventBus.Balance < 25:
 		return str("[center]Not enough money, 25ʛ required[/center]")
 	else:
-		return str("[center][color=" + str(color.to_html()) + "] " + Char + "[/color][/center]")
+		return str("[center][color=" + str(color.to_html()) + "] " + get_parent().CharName + "[/color][/center]")
 
 func get_interaction_icon():
 	return EventBus.ActionTex
@@ -88,7 +88,7 @@ func _test_juice(effects:Array):
 	$Timer.start()
 
 func _record_journal(result, effect):
-	var NewEntry:String = str(result + " ([color=" + str(color.to_html()) + "]" + Char + "[/color]" + ")")
+	var NewEntry:String = str(result + " ([color=" + str(color.to_html()) + "]" + get_parent().CharName + "[/color]" + ")")
 	PotionInfo.JournalIngredients[EventBus.InsertedItems] = PotionInfo.JournalIngredients[EventBus.InsertedItems].format({effect: str(NewEntry)})
 
 func _effect():

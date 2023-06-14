@@ -70,8 +70,8 @@ func _dress():
 	var L = load(PotionInfo.LegList[randi() % PotionInfo.LegList.size()])
 	$BodyMeshes/Leg1.set_mesh(L)
 	$BodyMeshes/Leg2.set_mesh(L)
-	$BodyMeshes/Arm1.set_mesh(load("res://assets/models/characters/arm.obj"))
-	$BodyMeshes/Arm2.set_mesh(load("res://assets/models/characters/arm.obj"))
+#	$BodyMeshes/Arm1.set_mesh(load("res://assets/models/characters/arm.obj"))
+#	$BodyMeshes/Arm2.set_mesh(load("res://assets/models/characters/arm.obj"))
 	
 
 const DIALOGUE_TEXTS = {

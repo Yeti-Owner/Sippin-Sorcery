@@ -1,19 +1,23 @@
 extends RayCast3D
 
 var current_collider: Interactable = null
+var Interacted:bool = false
 
 func _ready():
 	EventBus.interaction.emit(EventBus.CrosshairTex, null)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventAction and event.action == "interact" and event.is_pressed() and current_collider != null:
+	if (event.is_action("interact")) and (current_collider != null) and (Interacted == false):
 		current_collider.interact()
 		EventBus.interaction.emit(current_collider.get_interaction_icon(), current_collider.get_interaction_text())
+		Interacted = true
+	if (event.is_action_released("interact")):
+		Interacted = false
 
 func _process(_delta) -> void:
 	var collider = get_collider()
 	
-	if is_colliding() and collider is Interactable:
+	if (is_colliding()) and (collider is Interactable):
 		if current_collider != collider:
 			EventBus.interaction.emit(collider.get_interaction_icon(), collider.get_interaction_text())
 			current_collider = collider

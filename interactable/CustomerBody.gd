@@ -77,6 +77,7 @@ func _check_success() -> int:
 
 func _check_flavor():
 	# There must be a better way but idfk
+	@warning_ignore("unassigned_variable")
 	var FlavorList:Array
 	if get_parent().Info.Strawberry:
 		FlavorList.append("Strawberry")
@@ -101,6 +102,7 @@ func _ask_flavors():
 	Talk = !Talk
 	var FlavorPreference:String
 	
+	@warning_ignore("unassigned_variable")
 	var FlavorList:Array
 	if get_parent().Info.Strawberry:
 		FlavorList.append("Strawberry")
