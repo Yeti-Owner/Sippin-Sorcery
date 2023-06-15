@@ -1,5 +1,7 @@
 extends Control
 
+@onready var Anims := $AnimPlayer
+
 @onready var Ray := $Cam/RayCast3D
 var colliding: bool = false
 var Hovered: String = ""
@@ -37,6 +39,14 @@ var Stage: int = 6
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	set_physics_process(false)
+	Anims.play("Start")
+
+func _on_name_text_submitted(new_text):
+	$CenterContainer/VBoxContainer/Name.editable = false
+	EventBus.PlayerName = new_text
+	$Text.text = str("Please customize your character " + new_text)
+	Anims.play("Next")
 
 func _physics_process(_delta):
 	Ray.target_position = $Cam.project_local_ray_normal(get_global_mouse_position())
@@ -56,6 +66,9 @@ func _physics_process(_delta):
 					_swap_part(-1)
 				"Right":
 					_swap_part(1)
+				"Done":
+					Anims.play("End")
+					set_physics_process(false)
 		return
 	
 	Hovered = Ray.get_collider().name
@@ -100,3 +113,10 @@ func _capture_headshot():
 	var tex:Texture = vpt.get_texture()
 	var img:Image = tex.get_image()
 	img.save_png("user://headshot.png")
+
+
+func _on_anim_player_animation_finished(anim_name):
+	if anim_name == "Next":
+		set_physics_process(true)
+	elif anim_name == "End":
+		get_tree().change_scene_to_file("res://scenes/world.tscn")

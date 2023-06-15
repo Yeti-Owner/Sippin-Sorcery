@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dulbac7qmtmo6"]
+[gd_scene load_steps=27 format=3 uid="uid://dulbac7qmtmo6"]
 
 [ext_resource type="Script" path="res://scripts/char_customization.gd" id="1_y2itm"]
 [ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="2_sqjmt"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://q50a3551g70w" path="res://assets/models/houses/HouseColor3.png" id="9_jmi03"]
 [ext_resource type="ArrayMesh" uid="uid://4c0y07n3ds0j" path="res://assets/models/Post.obj" id="12_5ii5j"]
 [ext_resource type="ArrayMesh" uid="uid://b2yfoawgcbu4o" path="res://assets/models/Arrow.obj" id="12_un70k"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="13_l50my"]
+[ext_resource type="ArrayMesh" uid="uid://bmpupgh3l0muy" path="res://assets/models/sign.obj" id="14_ojmya"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4o605"]
 albedo_texture = ExtResource("3_6lgva")
@@ -31,6 +33,175 @@ albedo_color = Color(0.129412, 0.0745098, 0.0823529, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ypmn2"]
 size = Vector3(0.8, 0.8, 0.2)
+
+[sub_resource type="Animation" id="Animation_2qmwe"]
+resource_name = "End"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fader:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_smlr2"]
+resource_name = "Next"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fader:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Done:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-6.5, -1.574, 0), Vector3(-3.067, -1.574, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g7kvs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fader:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Done:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.5, -1.574, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mara5"]
+resource_name = "Start"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fader:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Done:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.5, -1.574, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8luq1"]
+_data = {
+"End": SubResource("Animation_2qmwe"),
+"Next": SubResource("Animation_smlr2"),
+"RESET": SubResource("Animation_g7kvs"),
+"Start": SubResource("Animation_mara5")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xfs2p"]
+size = Vector3(1.3, 0.5, 1)
 
 [node name="CharacterCustomization" type="Control"]
 layout_mode = 3
@@ -139,7 +310,7 @@ spot_range = 16.2
 spot_angle = 69.386
 
 [node name="RayCast3D" type="RayCast3D" parent="Cam"]
-transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, 0)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 
 [node name="Arrows" type="Node3D" parent="."]
 
@@ -202,3 +373,83 @@ shape = SubResource("BoxShape3D_ypmn2")
 transform = Transform3D(-0.5, 1.05697e-06, 0, -7.54979e-08, -7, 0, 0, 0, 0.5, -0.1, 6.1, -0.15)
 mesh = ExtResource("12_5ii5j")
 surface_material_override/0 = SubResource("StandardMaterial3D_ns721")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Text" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_l50my")
+theme_override_font_sizes/font_size = 32
+text = "Enter your name"
+horizontal_alignment = 1
+
+[node name="Name" type="LineEdit" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(550, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_l50my")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "name"
+max_length = 15
+context_menu_enabled = false
+shortcut_keys_enabled = false
+
+[node name="AnimPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8luq1")
+}
+
+[node name="Text" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("13_l50my")
+theme_override_font_sizes/font_size = 32
+text = "Please customize your character"
+horizontal_alignment = 1
+
+[node name="Fader" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Done" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.707107, -3.09086e-08, 0.707107, -0.707107, 3.09086e-08, 0.707107, -6.5, -1.574, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Done"]
+transform = Transform3D(0.506196, 0.682836, -0.236677, 0, 0.907318, 0.374537, 0.482044, -0.717049, 0.248536, 0, 0, 0)
+mesh = ExtResource("14_ojmya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Done"]
+transform = Transform3D(0.512359, -0.433778, 0.741166, 0.64468, 0.764451, 0.00174496, -0.567341, 0.476921, 0.671322, 0.353554, 0.5, -0.353553)
+shape = SubResource("BoxShape3D_xfs2p")
+
+[node name="Label3D" type="Label3D" parent="Done"]
+transform = Transform3D(0.5, 0.707107, 0.5, 0.707107, -3.09086e-08, -0.707107, -0.5, 0.707107, -0.5, 0.405879, 0.333, -0.442649)
+text = "Done"
+font = ExtResource("13_l50my")
+font_size = 64
+
+[connection signal="text_submitted" from="CenterContainer/VBoxContainer/Name" to="." method="_on_name_text_submitted"]
+[connection signal="animation_finished" from="AnimPlayer" to="." method="_on_anim_player_animation_finished"]

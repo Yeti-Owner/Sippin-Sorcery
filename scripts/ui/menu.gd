@@ -6,6 +6,8 @@ var Hovered := ""
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	set_physics_process(false)
+	$Anims.play("Start")
 
 func _physics_process(_delta):
 	Ray.target_position = $Camera3D.project_local_ray_normal(get_global_mouse_position())
@@ -21,7 +23,7 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed("select"):
 			match Hovered:
 				"Start":
-					get_tree().change_scene_to_file("res://scenes/world.tscn")
+					$Anims.play("End")
 				"Options":
 					$Anims.play("options")
 				"Quit":
@@ -38,3 +40,10 @@ func _physics_process(_delta):
 	Hovered = Ray.get_collider().name
 	
 	colliding = true
+
+func _on_anims_animation_finished(anim_name):
+	if anim_name == "Start":
+		set_physics_process(true)
+	elif anim_name == "End":
+		get_tree().change_scene_to_file("res://scenes/char_customization.tscn")
+

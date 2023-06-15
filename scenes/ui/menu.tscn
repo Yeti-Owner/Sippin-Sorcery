@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://syb05k3lr8yt"]
+[gd_scene load_steps=25 format=3 uid="uid://syb05k3lr8yt"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_n2mbh"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_3qqco"]
@@ -75,6 +75,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(-0.41888, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fader:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_8uqh3"]
 resource_name = "options"
@@ -91,9 +103,41 @@ tracks/0/keys = {
 "values": [Vector3(-0.41888, 0, 0), Vector3(-0.418879, 1.5708, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_pcurc"]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fader:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tparb"]
+resource_name = "End"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fader:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_umwx8"]
 _data = {
+"End": SubResource("Animation_tparb"),
 "RESET": SubResource("Animation_lw1ox"),
+"Start": SubResource("Animation_pcurc"),
 "options": SubResource("Animation_8uqh3")
 }
 
@@ -233,3 +277,15 @@ outline_size = 16
 libraries = {
 "": SubResource("AnimationLibrary_umwx8")
 }
+
+[node name="Fader" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="animation_finished" from="Anims" to="." method="_on_anims_animation_finished"]
