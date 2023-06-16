@@ -112,8 +112,9 @@ func _capture_headshot():
 	var vpt:SubViewport = $PicViewport
 	var tex:Texture = vpt.get_texture()
 	var img:Image = tex.get_image()
-	img.save_png("user://headshot.png")
-
+	img.save_png("user://PlayerHeadshot.png")
+	
+	EventBus._player_headshot()
 
 func _on_anim_player_animation_finished(anim_name):
 	if anim_name == "Next":

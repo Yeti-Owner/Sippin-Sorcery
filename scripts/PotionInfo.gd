@@ -90,7 +90,7 @@ const EffectsList := ["resistance", "confusion", "health","flexibility", "agilit
 
 
 # Used by Customer and test subject for clothing
-const MaleHatList = ["res://assets/models/characters/hats/Hair1.obj","res://assets/models/characters/hats/Hair2.obj","res://assets/models/characters/hats/Hair3.obj"]
+const MaleHatList = ["res://assets/models/characters/hats/Hair1.obj","res://assets/models/characters/hats/Hair2.obj"]
 const FemaleHatList = ["res://assets/models/characters/hats/Hair3.obj"]
 const HatColorList = ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png"]
 const HeadList = ["res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/heads/Head2.obj", "res://assets/models/characters/heads/Head3.obj", "res://assets/models/characters/heads/Head4.obj", "res://assets/models/characters/heads/Head5.obj"]
