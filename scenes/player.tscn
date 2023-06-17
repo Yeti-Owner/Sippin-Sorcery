@@ -16,6 +16,7 @@ script = ExtResource("1_3iqq6")
 shape = SubResource("CapsuleShape3D_3wqfa")
 
 [node name="Body" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_fs65c")
 
 [node name="CamHolder" type="Node3D" parent="."]

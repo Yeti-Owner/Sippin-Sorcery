@@ -4,31 +4,51 @@ extends Control
 @onready var Name := $Bg/Name
 @onready var Text := $Bg/HBoxContainer/Text
 @onready var Headshot := $Bg/HBoxContainer/Headshot
-var lines
-var time
+@onready var Counter := $Counter
+var Visible:bool = false
+var delay:float = 2.0
 
 func _ready():
 	EventBus.Dialogue = self
 
-func _start(_lines:String, _name:String, _icon:String, _time := 1):
-	lines = _lines
-	time = _time
-	Name.text = str("[center]" + _name + "[/center]")
-	Headshot.texture = load(_icon)
-	Anims.play("start")
-
-func _talk(_lines:String, _time := 1.0):
-	Text.text = str("[center]" + str(_lines) + "[/center]")
-	Anims.play("talk", -1, _time)
-
-func _end():
-	Anims.play("end", 1)
-
 func _on_anim_player_animation_finished(anim_name):
 	if anim_name == "start":
-		_talk(lines, time)
-	elif anim_name == "talk":
-		$DelayTimer.start(2)
+		Counter.start()
+
+func _new_person(_name:String, _words:String, _icon, _delay := 2.0):
+	delay = _delay
+	Text.visible_ratio = 0
+	Name.text = str("[center]" + _name + "[/center]")
+	Headshot.texture = _icon
+
+	Text.text = str(_words)
+	
+	if not Visible:
+		Anims.play("start")
+		Visible = true
+	else:
+		Counter.start()
+
+func _talk(_words, _delay := 2.0):
+	delay = _delay
+	Text.visible_ratio = 0
+	
+	Text.text = str(_words)
+	Counter.start()
+
+func _done():
+	Anims.play("end")
+	Visible = false
+
+func _on_counter_timeout():
+	Text.visible_characters += 1
+	if Text.visible_ratio >= 1:
+		$DelayTimer.start(delay)
+		delay = 2.0
+	else:
+		Counter.start()
 
 func _on_delay_timer_timeout():
+	Text.text = ""
+	Text.visible_ratio = 0
 	EventBus.emit_signal("DialogueFinished")
