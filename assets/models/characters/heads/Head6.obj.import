@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blc6h83xi34y3"
+path="res://.godot/imported/Head6.obj-5869d6799f5182535b090d2b78fcd037.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Head6.obj-5869d6799f5182535b090d2b78fcd037.mesh"]
+
+source_file="res://assets/models/characters/heads/Head6.obj"
+dest_files=["res://.godot/imported/Head6.obj-5869d6799f5182535b090d2b78fcd037.mesh", "res://.godot/imported/Head6.obj-5869d6799f5182535b090d2b78fcd037.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

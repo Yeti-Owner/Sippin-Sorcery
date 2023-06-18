@@ -12,15 +12,15 @@ var Stage: int = 6
 
 @onready var OutfitParts := {
 	6: {
-		"list": ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png"],
+		"list": ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png","res://assets/models/characters/hats/HairColor5.png","res://assets/models/characters/hats/HairColor6.png"],
 		"node": $Character/HatColor
 	},
 	5: {
-		"list": ["res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/hats/Hair2.obj", "res://assets/models/characters/hats/Hair3.obj"],
+		"list": ["res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/hats/Hair2.obj", "res://assets/models/characters/hats/Hair3.obj","res://assets/models/characters/hats/Hair4.obj","res://assets/models/characters/hats/Hair5.obj"],
 		"node": $Character/Hat
 	},
 	4: {
-		"list": ["res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/heads/Head2.obj", "res://assets/models/characters/heads/Head3.obj", "res://assets/models/characters/heads/Head4.obj", "res://assets/models/characters/heads/Head5.obj"],
+		"list": ["res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/heads/Head2.obj", "res://assets/models/characters/heads/Head3.obj", "res://assets/models/characters/heads/Head4.obj", "res://assets/models/characters/heads/Head5.obj","res://assets/models/characters/heads/Head6.obj"],
 		"node": $Character/Head
 	},
 	3: {
@@ -32,7 +32,7 @@ var Stage: int = 6
 		"node": $Character/Pants
 	},
 	1: {
-		"list": ["res://assets/models/characters/legs/leg1.obj"],
+		"list": ["res://assets/models/characters/legs/leg1.obj","res://assets/models/characters/legs/leg2.obj","res://assets/models/characters/legs/leg3.obj","res://assets/models/characters/legs/leg4.obj"],
 		"node": $Character/Leg1
 	}
 }
@@ -94,13 +94,16 @@ func _swap_part(direction: int):
 	direction += b
 	direction = wrap(direction, 0, partList.size())
 	EventBus.PlayerOutfit[Stage - 1] = partList[direction]
-	if Stage != 6:
-		partNode.set_mesh(load(EventBus.PlayerOutfit[Stage - 1]))
-	else:
+	if Stage == 6:
 		var mat = StandardMaterial3D.new()
 		mat.albedo_texture = load(EventBus.PlayerOutfit[Stage - 1])
 		partNode.set_surface_override_material(0, mat)
 		$Character/Hat.set_surface_override_material(0, mat)
+	elif Stage == 1:
+		partNode.set_mesh(load(EventBus.PlayerOutfit[Stage - 1]))
+		$Character/Leg2.set_mesh(load(EventBus.PlayerOutfit[Stage - 1]))
+	else:
+		partNode.set_mesh(load(EventBus.PlayerOutfit[Stage - 1]))
 
 func _capture_headshot():
 	# Setup Scene for capture

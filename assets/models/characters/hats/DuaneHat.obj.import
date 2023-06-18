@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cl28as320tp07"
+path="res://.godot/imported/DuaneHat.obj-bc572c03001dd6a8a3e2349f0552eaf3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/DuaneHat.obj-bc572c03001dd6a8a3e2349f0552eaf3.mesh"]
+
+source_file="res://assets/models/characters/hats/DuaneHat.obj"
+dest_files=["res://.godot/imported/DuaneHat.obj-bc572c03001dd6a8a3e2349f0552eaf3.mesh", "res://.godot/imported/DuaneHat.obj-bc572c03001dd6a8a3e2349f0552eaf3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

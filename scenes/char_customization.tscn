@@ -22,7 +22,7 @@ albedo_texture = ExtResource("3_6lgva")
 material = SubResource("StandardMaterial3D_4o605")
 size = Vector3(0.4, 0.4, 0.4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1xq0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjywa"]
 albedo_texture = ExtResource("3_6lgva")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wam71"]
@@ -257,7 +257,7 @@ layers = 3
 cast_shadow = 0
 mesh = ExtResource("2_sqjmt")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_o1xq0")
+surface_material_override/0 = SubResource("StandardMaterial3D_jjywa")
 
 [node name="Head" type="MeshInstance3D" parent="Character"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.073, 0)
