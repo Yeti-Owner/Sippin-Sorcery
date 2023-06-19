@@ -189,6 +189,11 @@ one_shot = true
 wait_time = 0.1
 autostart = true
 
+[node name="LeaveTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
 [connection signal="animation_finished" from="BodyMeshes/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
 [connection signal="timeout" from="AnimTimer" to="." method="_on_anim_timer_timeout"]
+[connection signal="timeout" from="LeaveTimer" to="." method="_on_leave_timer_timeout"]

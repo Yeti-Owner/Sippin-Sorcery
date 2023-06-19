@@ -3,12 +3,18 @@ extends PathFollow3D
 @export var Info:CharacterSheet
 @onready var Dialogue := $SpeechBubble
 @onready var AnimPlayer := $BodyMeshes/AnimationPlayer
+@onready var Apparation := preload("res://scenes/apparation.tscn")
 const speed := 0.04
 var talked:bool = false
 var walking:bool = true
+var Frustrated:bool = false
 
 func _ready():
 	randomize()
+	
+	var a := Apparation.instantiate()
+	add_child(a)
+	
 	$Body.CharName = Info.Name
 	$Body.color = Info.FavColor
 	AnimPlayer.play("walk")
@@ -20,9 +26,16 @@ func _physics_process(delta):
 		var colliderName = collider.name
 		
 		if colliderName == "Kill":
+			$BodyMeshes/Hat.set_surface_override_material(0, null)
+			
+			var a := Apparation.instantiate()
+			a.position = self.position
+			get_parent().add_child(a)
+			
 			self.queue_free()
 			return
 		elif colliderName == "Stop" and not talked:
+			$LeaveTimer.start()
 			Dialogue._talk(Info.Dialog)
 			talked = true
 		
@@ -34,22 +47,6 @@ func _physics_process(delta):
 	if self.progress_ratio < 1:
 		walking = true
 		self.progress_ratio = min(self.progress_ratio + (speed * delta), 1)
-
-# Old Dress Function
-#func _dress():
-#	$BodyMeshes/Hat.set_mesh(Info.Hat)
-#
-#	var mat = StandardMaterial3D.new()
-#	mat.albedo_texture = Info.HatColor
-#	$BodyMeshes/Hat.set_surface_override_material(0, mat)
-#
-#	$BodyMeshes/Head.set_mesh(Info.Head)
-#	$BodyMeshes/Torso.set_mesh(Info.Torso)
-#	$BodyMeshes/Arm1.set_mesh(Info.Arm)
-#	$BodyMeshes/Arm2.set_mesh(Info.Arm)
-#	$BodyMeshes/Pants.set_mesh(Info.Pants)
-#	$BodyMeshes/Leg1.set_mesh(Info.Leg)
-#	$BodyMeshes/Leg2.set_mesh(Info.Leg)
 
 # New Dress Function
 func _dress():
@@ -66,6 +63,8 @@ func _dress():
 	var mat = StandardMaterial3D.new()
 	mat.albedo_texture = load(PotionInfo.HatColorList[randi() % PotionInfo.HatColorList.size()])
 	$BodyMeshes/Hat.set_surface_override_material(0, mat)
+	
+	
 	$BodyMeshes/Head.set_mesh(load(PotionInfo.HeadList[randi() % PotionInfo.HeadList.size()]))
 	var L = load(PotionInfo.LegList[randi() % PotionInfo.LegList.size()])
 	$BodyMeshes/Leg1.set_mesh(L)
@@ -101,3 +100,15 @@ func _on_animation_player_animation_finished(_anim_name):
 func _on_anim_timer_timeout():
 	if (AnimPlayer.is_playing() == false) and walking == true:
 		AnimPlayer.play("walk")
+
+func _on_leave_timer_timeout():
+	if Frustrated == false:
+		var HurryList := ["Mind hurrying up?","I have places to be you know.","Taking your sweet time huh.","Could you speed it up?","Dude, could you go any slower.","I'll be shriveled up and old by the time you're done.","I'm begging you to hurry up dude."]
+		Dialogue._talk(HurryList[randi() % HurryList.size()])
+		$LeaveTimer.start(30)
+		Frustrated = true
+	else:
+		var GoneList := ["Yeah I'm leaving.","This takes way too long dude.","Next time hurry up.","I'm never returning.","I hope you go out of business."]
+		Dialogue._talk(GoneList[randi() % GoneList.size()])
+		$WaitTimer.start()
+		get_node("Body").Used = true

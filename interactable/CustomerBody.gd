@@ -3,9 +3,10 @@ extends Interactable
 var CharName:String
 var color
 var Talk:bool = true
+var Used:bool = false
 
 func get_interaction_text():
-	if EventBus.HeldItem == "Juice":
+	if EventBus.HeldItem == "Juice" and Used == false:
 		return str("[center]Press E to give juice to [color=" + str(color.to_html()) + "] " + str(CharName) + "[/color][/center]")
 	else:
 		return str("[center][color=" + str(color.to_html()) + "] " + str(CharName) + "[/color][/center]")
@@ -14,6 +15,9 @@ func get_interaction_icon():
 	return EventBus.ActionTex
 
 func interact():
+	if Used == true:
+		return
+	
 	if EventBus.HeldItem == "Juice":
 		get_parent()._finished(_check_success(), _check_flavor())
 		
@@ -21,6 +25,7 @@ func interact():
 		EventBus.HeldFlavor = ""
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")
+		Used = true
 	else:
 		if Talk:
 			_ask_flavors()

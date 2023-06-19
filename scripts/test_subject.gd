@@ -1,6 +1,7 @@
 extends PathFollow3D
 
 @onready var AnimPlayer := $BodyMeshes/AnimationPlayer
+@onready var Apparation := preload("res://scenes/apparation.tscn")
 
 const MaleNames := ["Jack","Thomas","James","Daniel", "Joshua","Matthew","William","David","Joseph","Benjamin","Oliver","Ryan","Alexander","Christopher","Samuel"]
 const FemaleNames := ["Emily","Jessica", "Charlotte","Sophie", "Olivia", "Emma", "Hannah", "Amy", "Lucy", "Rebecca", "Megan", "Lauren", "Katie", "Ellie", "Grace"]
@@ -13,6 +14,10 @@ var state := "walk"
 
 func _ready():
 	randomize()
+	
+	var a := Apparation.instantiate()
+	add_child(a)
+	
 	AnimPlayer.play("walk")
 	if (randi() % 2 == 1):
 		Gender = "Male"
@@ -34,7 +39,12 @@ func _physics_process(delta):
 			if self.progress_ratio > 0:
 				self.progress_ratio = max((self.progress_ratio - (speed * delta)), 0)
 			else:
-				print("del1")
+				var a := Apparation.instantiate()
+				a.position = self.position
+				get_parent().add_child(a)
+				
+				$BodyMeshes/Hat.set_surface_override_material(0, null)
+				
 				self.queue_free()
 		"stop":
 			if self.progress_ratio == 1:
@@ -43,6 +53,7 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	state = "leave"
+	$BodyMeshes.rotation_degrees = Vector3(0, 180, 0)
 
 func _on_animation_player_animation_finished(_anim_name):
 	if state == "walk" or state == "leave":
@@ -63,9 +74,12 @@ func _dress():
 			$BodyMeshes/Hat.set_mesh(load(PotionInfo.FemaleHatList[randi() % PotionInfo.FemaleHatList.size()]))
 			$BodyMeshes/Pants.set_mesh(load(PotionInfo.FemalePantList[randi() % PotionInfo.FemalePantList.size()]))
 	
-	var mat = StandardMaterial3D.new()
-	mat.albedo_texture = load(PotionInfo.HatColorList[randi() % PotionInfo.HatColorList.size()])
+	var mat := StandardMaterial3D.new()
+	@warning_ignore("int_as_enum_without_cast")
+	mat.set_texture(0, load(PotionInfo.HatColorList[randi() % PotionInfo.HatColorList.size()]))
 	$BodyMeshes/Hat.set_surface_override_material(0, mat)
+	
+	
 	$BodyMeshes/Head.set_mesh(load(PotionInfo.HeadList[randi() % PotionInfo.HeadList.size()]))
 	var L = load(PotionInfo.LegList[randi() % PotionInfo.LegList.size()])
 	$BodyMeshes/Leg1.set_mesh(L)

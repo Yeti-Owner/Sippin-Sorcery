@@ -66,6 +66,10 @@ func _physics_process(_delta):
 					_swap_part(-1)
 				"Right":
 					_swap_part(1)
+				"RotateR":
+					$Character.rotation_degrees.y += 45
+				"RotateL":
+					$Character.rotation_degrees.y -= 45
 				"Done":
 					Anims.play("End")
 					set_physics_process(false)

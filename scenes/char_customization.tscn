@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dulbac7qmtmo6"]
+[gd_scene load_steps=28 format=3 uid="uid://dulbac7qmtmo6"]
 
 [ext_resource type="Script" path="res://scripts/char_customization.gd" id="1_y2itm"]
 [ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="2_sqjmt"]
@@ -217,6 +217,9 @@ _data = {
 "RESET": SubResource("Animation_g7kvs"),
 "Start": SubResource("Animation_mara5")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sk5lj"]
+size = Vector3(1.6, 1, 0.4)
 
 [node name="CharacterCustomization" type="Control"]
 layout_mode = 3
@@ -465,6 +468,47 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="RotateR" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -1.6, -1.954, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotateR"]
+mesh = ExtResource("14_ojmya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotateR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.5, 0)
+shape = SubResource("BoxShape3D_sk5lj")
+
+[node name="Label3D" type="Label3D" parent="RotateR"]
+transform = Transform3D(1, -1.74846e-07, 1.50996e-07, -1.74846e-07, -1, -7.64274e-15, 1.50996e-07, -1.87582e-14, -1, 1.19209e-06, 0.534561, -0.296999)
+pixel_size = 0.004
+shaded = true
+double_sided = false
+text = "R"
+font = ExtResource("13_l50my")
+font_size = 64
+outline_size = 16
+
+[node name="RotateL" type="StaticBody3D" parent="."]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, 0, -8.74228e-08, 7.64274e-15, -1, 1.6, -1.954, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotateL"]
+transform = Transform3D(1, 6.6815e-22, -4.38606e-43, -6.6815e-22, 1, -6.56615e-22, 0, 6.56615e-22, 1, 0, 0, 0)
+mesh = ExtResource("14_ojmya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RotateL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-07, 0.5, 0)
+shape = SubResource("BoxShape3D_sk5lj")
+
+[node name="Label3D" type="Label3D" parent="RotateL"]
+transform = Transform3D(-1, 2.97619e-21, -2.38419e-07, 2.49032e-21, -1, 2.6401e-14, -2.38419e-07, 2.64009e-14, 1, 1.90735e-06, 0.534561, 0.203001)
+pixel_size = 0.004
+shaded = true
+double_sided = false
+text = "L"
+font = ExtResource("13_l50my")
+font_size = 64
+outline_size = 16
 
 [connection signal="text_submitted" from="CenterContainer/VBoxContainer/Name" to="." method="_on_name_text_submitted"]
 [connection signal="animation_finished" from="AnimPlayer" to="." method="_on_anim_player_animation_finished"]
