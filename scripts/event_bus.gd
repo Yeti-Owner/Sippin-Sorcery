@@ -24,7 +24,7 @@ var Dialogue = null : set = _set_dialogue
 # Player Info
 var PlayerName:String = "Callum"
 var PlayerOutfit:Array = ["res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/torsos/torso1.obj", "res://assets/models/characters/pants/pants1.obj", "res://assets/models/characters/legs/leg1.obj", "res://assets/models/characters/hats/HairColor1.png"]
-var Balance := 50
+var Balance := 75
 var PlayerHeadshot
 var Reputation := 0
 

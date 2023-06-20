@@ -58,7 +58,7 @@ func _check_success() -> int:
 			success -= 1
 	
 	# Make sure success is at most 0 if needed strings are missing
-	if success > 0 and not all_need_present:
+	if success > 0 and all_need_present == false:
 		success = 0
 	
 	# Determine Reward
@@ -74,6 +74,8 @@ func _check_success() -> int:
 	
 	
 	# Apply Bonus
+	if all_need_present == false:
+		Bonus = 0
 	EventBus.Balance += Bonus
 	EventBus.emit_signal("BalanceChanged")
 	

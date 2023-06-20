@@ -17,6 +17,8 @@ var Spawned := []
 
 func _ready():
 	randomize() 
+
+func _start():
 	timer.wait_time = randi_range(5, 16)
 	timer.start()
 

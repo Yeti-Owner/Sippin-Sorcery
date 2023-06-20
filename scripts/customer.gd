@@ -4,10 +4,12 @@ extends PathFollow3D
 @onready var Dialogue := $SpeechBubble
 @onready var AnimPlayer := $BodyMeshes/AnimationPlayer
 @onready var Apparation := preload("res://scenes/apparation.tscn")
+@onready var Difficulty:int = get_parent().List
 const speed := 0.04
 var talked:bool = false
 var walking:bool = true
 var Frustrated:bool = false
+var LeaveTime:int
 
 func _ready():
 	randomize()
@@ -19,6 +21,17 @@ func _ready():
 	$Body.color = Info.FavColor
 	AnimPlayer.play("walk")
 	_dress()
+	
+	match Difficulty:
+		-1:
+			LeaveTime = 90
+		0:
+			LeaveTime = 60
+		1:
+			LeaveTime = 30
+		2:
+			pass
+
 
 func _physics_process(delta):
 	if $RayCast3D.is_colliding():
@@ -35,7 +48,7 @@ func _physics_process(delta):
 			self.queue_free()
 			return
 		elif colliderName == "Stop" and not talked:
-			$LeaveTimer.start()
+			$LeaveTimer.start(LeaveTime)
 			Dialogue._talk(Info.Dialog)
 			talked = true
 		
@@ -86,6 +99,8 @@ func _finished(success: int, flavor: bool):
 	var correctFlavor: String = "" if flavor else " and I don't like that flavor"
 	var dialogueText: String = DIALOGUE_TEXTS.get(success, "PERFECT!!!%s")
 	
+	EventBus.Reputation += clamp(success, 0, 4)
+	
 	dialogueText = dialogueText % correctFlavor
 	Dialogue._talk(dialogueText)
 	$WaitTimer.start()
@@ -105,7 +120,7 @@ func _on_leave_timer_timeout():
 	if Frustrated == false:
 		var HurryList := ["Mind hurrying up?","I have places to be you know.","Taking your sweet time huh.","Could you speed it up?","Dude, could you go any slower.","I'll be shriveled up and old by the time you're done.","I'm begging you to hurry up dude."]
 		Dialogue._talk(HurryList[randi() % HurryList.size()])
-		$LeaveTimer.start(30)
+		$LeaveTimer.start(LeaveTime)
 		Frustrated = true
 	else:
 		var GoneList := ["Yeah I'm leaving.","This takes way too long dude.","Next time hurry up.","I'm never returning.","I hope you go out of business."]
