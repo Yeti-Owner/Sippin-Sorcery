@@ -1,0 +1,285 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3s5j3hlu32e0"]
+
+[ext_resource type="Script" path="res://scripts/ui/id.gd" id="1_cexjj"]
+[ext_resource type="FontFile" uid="uid://cte56ou5xtpk5" path="res://assets/theme/SourceSansPro-Regular.ttf" id="1_cn6lj"]
+[ext_resource type="Texture2D" uid="uid://duqaotr8gsx1r" path="res://assets/textures/Wizard.png" id="2_djxac"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41sma"]
+bg_color = Color(0.960784, 0.960784, 0.960784, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.172549)
+shadow_size = 8
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhhf6"]
+bg_color = Color(0.14902, 0.133333, 0.380392, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_detail = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ffohs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vw4l4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.14902, 0.133333, 0.380392, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5aiyq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqkxr"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="ID" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_cexjj")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_41sma")
+
+[node name="TopBar" type="Panel" parent="CenterContainer/Bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -249.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uhhf6")
+
+[node name="Label" type="Label" parent="CenterContainer/Bg/TopBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.960784, 0.960784, 0.960784, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+theme_override_font_sizes/font_size = 28
+text = "Identification Card"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="HolderPhoto" type="Panel" parent="CenterContainer/Bg/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ffohs")
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Bg/HBoxContainer/HolderPhoto"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PhotoBorder" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderPhoto/CenterContainer"]
+custom_minimum_size = Vector2(185, 185)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vw4l4")
+
+[node name="Photo" type="TextureRect" parent="CenterContainer/Bg/HBoxContainer/HolderPhoto/CenterContainer/PhotoBorder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -87.5
+offset_right = 87.5
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_djxac")
+expand_mode = 1
+
+[node name="HolderInfo" type="Panel" parent="CenterContainer/Bg/HBoxContainer"]
+custom_minimum_size = Vector2(355, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5aiyq")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Name" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Name"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.184314, 0.184314, 0.184314, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+text = "Name:"
+vertical_alignment = 1
+
+[node name="NameText" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+theme_override_font_sizes/font_size = 22
+text = "Callum"
+vertical_alignment = 1
+
+[node name="Idnumber" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Idnumber"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.184314, 0.184314, 0.184314, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+text = "ID No:"
+vertical_alignment = 1
+
+[node name="NumLabel" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Idnumber"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+theme_override_font_sizes/font_size = 22
+text = "7126849187465918"
+vertical_alignment = 1
+
+[node name="Issued" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Issued"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.184314, 0.184314, 0.184314, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+text = "Issued:"
+vertical_alignment = 1
+
+[node name="IssuedLabel" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Issued"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+theme_override_font_sizes/font_size = 22
+text = "6/20/23"
+vertical_alignment = 1
+
+[node name="Reputation" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Reputation"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.184314, 0.184314, 0.184314, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+text = "Reputation:"
+vertical_alignment = 1
+
+[node name="RepLabel" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Reputation"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+theme_override_font_sizes/font_size = 22
+text = "0"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.184314, 0.184314, 0.184314, 1)
+theme_override_fonts/font = ExtResource("1_cn6lj")
+text = "Completions:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Panel8" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+
+[node name="Panel9" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+
+[node name="Panel10" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+
+[node name="Panel11" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+
+[node name="Panel12" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+
+[node name="UpdateTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="UpdateTimer" to="." method="_on_update_timer_timeout"]

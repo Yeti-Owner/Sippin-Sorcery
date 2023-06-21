@@ -27,6 +27,12 @@ var PlayerOutfit:Array = ["res://assets/models/characters/hats/Hair1.obj", "res:
 var Balance := 75
 var PlayerHeadshot
 var Reputation := 0
+var IdNum:int
+var StartDate:String = Time.get_date_string_from_system()
+
+func _ready():
+	randomize()
+	IdNum = randi_range(100000, 99999999)
 
 func _player_headshot():
 	var image = Image.load_from_file("user://PlayerHeadshot.png")

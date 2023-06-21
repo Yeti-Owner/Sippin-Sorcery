@@ -39,7 +39,7 @@ var Stage: int = 6
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	set_physics_process(false)
+	_off()
 	Anims.play("Start")
 
 func _on_name_text_submitted(new_text):
@@ -71,8 +71,8 @@ func _physics_process(_delta):
 				"RotateL":
 					$Character.rotation_degrees.y -= 45
 				"Done":
-					Anims.play("End")
-					set_physics_process(false)
+					_ending()
+					_off()
 		return
 	
 	Hovered = Ray.get_collider().name
@@ -125,6 +125,23 @@ func _capture_headshot():
 
 func _on_anim_player_animation_finished(anim_name):
 	if anim_name == "Next":
-		set_physics_process(true)
-	elif anim_name == "End":
+		_on()
+	elif anim_name == "NewEnd":
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
+
+func _on():
+	set_physics_process(true)
+
+func _off():
+	set_physics_process(false)
+
+func _ending():
+	var tween = get_tree().create_tween()
+	tween.tween_property(Left, "position:y", 1.4, 0.5)
+	tween.tween_property(Right, "position:y", 1.4, 0.5)
+	tween.tween_property($Character, "rotation_degrees:y", 0, 0.5)
+	tween.tween_property($Text, "modulate", Color(1, 1, 1, 0), 1)
+	tween.tween_callback(_test)
+
+func _test():
+	Anims.play("NewEnd")
