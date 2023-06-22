@@ -19,7 +19,7 @@ func _ready():
 	randomize() 
 
 func _start():
-	timer.wait_time = randi_range(5, 16)
+	timer.wait_time = randi_range(7, 10)
 	timer.start()
 
 func _on_misc_timer_timeout():
