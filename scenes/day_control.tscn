@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8v65hrtcpabn"]
+
+[ext_resource type="Script" path="res://scripts/day_control.gd" id="1_fvsw5"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_8d36v"]
+
+[sub_resource type="Sky" id="Sky_08ayf"]
+sky_material = SubResource("PhysicalSkyMaterial_8d36v")
+
+[sub_resource type="Environment" id="Environment_huoxf"]
+background_mode = 2
+sky = SubResource("Sky_08ayf")
+tonemap_mode = 3
+tonemap_exposure = 1.7
+tonemap_white = 4.28
+sdfgi_use_occlusion = true
+glow_bloom = 0.2
+volumetric_fog_density = 0.0125
+volumetric_fog_sky_affect = 0.007
+adjustment_saturation = 1.08
+
+[node name="DayControl" type="Node3D"]
+transform = Transform3D(0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, 0, 0, 14)
+script = ExtResource("1_fvsw5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, -2.02296e-08, 7.54979e-08, -7.54979e-08, -0.5, 0.866025, 2.02296e-08, -0.866026, -0.5, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_huoxf")
