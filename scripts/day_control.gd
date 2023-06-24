@@ -13,11 +13,16 @@ func _ready():
 			CharTime = 30
 		2:
 			pass
-	
+	# Needs to have enough time for all customers to leave on their own, plus 30 seconds.
+	_set_speed(((CharTime * SpawnerAmt) + 30))
 
-# Needs to have enough time for all customers to leave on their own, plus 30 seconds.
-# First step is convert CharTime to the time they have
-# then find speed for it to get to certain rotation at certain time
-# Shouldn't be hard just Tween ig?
-func _start():
-	pass
+func _set_speed(duration):
+	duration = 20
+#	print(duration)
+	var tween := get_tree().create_tween()
+	tween.tween_property($DirectionalLight3D, "rotation", Vector3(-175, 0, 0), float(duration))
+	tween.tween_callback(temp)
+
+func temp():
+	EventBus.emit_signal("DayDone")
+	print("Day Done")

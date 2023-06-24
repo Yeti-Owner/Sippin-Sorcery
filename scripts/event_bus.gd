@@ -7,6 +7,7 @@ signal BalanceChanged
 signal DialogueFinished
 signal JournalToggle(toggle:bool)
 signal EnablePlayer(toggle:bool)
+signal DayDone
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"
