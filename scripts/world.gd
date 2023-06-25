@@ -72,6 +72,8 @@ func _tutorial():
 			dialogue._talk(str("[font_size=36]Looks like that will be all the customers today. I recommend you research some ingredients and once the sun goes down close the shop.[/font_size]"))
 		31:
 			dialogue._talk(str("[font_size=36]You did good " + EventBus.PlayerName + ".[/font_size]"))
+		32:
+			dialogue._done()
 
 func _on_loading_screen_loading_done():
 	dialogue._new_person("[font_size=26]Bob[/font_size]", str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), load("res://assets/textures/Wizard.png"))

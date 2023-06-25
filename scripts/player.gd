@@ -4,10 +4,10 @@ extends CharacterBody3D
 @onready var Camera := $CamHolder/Cam
 @onready var HeldCam := $CanvasLayer/SubViewportContainer/SubViewport/Cam
 const SPEED := 5.0
-const JUMP_VELOCITY := 4.5
+const JUMP_VELOCITY := 5.4
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity:float = 15.8
 
 func _ready():
 	EventBus.EnablePlayer.connect(_toggle)
@@ -19,7 +19,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 	# Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
 	# Movement

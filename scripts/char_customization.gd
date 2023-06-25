@@ -137,10 +137,10 @@ func _off():
 
 func _ending():
 	var tween = get_tree().create_tween()
+	tween.tween_property($Text, "modulate", Color(1, 1, 1, 0), 1)
 	tween.tween_property(Left, "position:y", 1.4, 0.5)
 	tween.tween_property(Right, "position:y", 1.4, 0.5)
 	tween.tween_property($Character, "rotation_degrees:y", 0, 0.5)
-	tween.tween_property($Text, "modulate", Color(1, 1, 1, 0), 1)
 	tween.tween_callback(_test)
 
 func _test():
