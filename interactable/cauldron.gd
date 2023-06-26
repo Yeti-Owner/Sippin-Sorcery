@@ -60,6 +60,7 @@ func interact():
 		InteractTimer.start()
 
 func _mix():
+	$AudioStreamPlayer3D.play()
 	var Effects = []
 	while ItemsAdded.size() > 0:
 		var amt = min(ItemsAdded.count(ItemsAdded[0])-1, 2)

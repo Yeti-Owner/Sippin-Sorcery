@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3doo5trm8sgg"]
+[gd_scene load_steps=7 format=3 uid="uid://d3doo5trm8sgg"]
 
 [ext_resource type="Script" path="res://interactable/cauldron.gd" id="1_32e5k"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_a2ww8"]
+[ext_resource type="AudioStream" uid="uid://wwcwi4c7p2lc" path="res://assets/audio/bubbling.wav" id="3_7fq6x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vobn0"]
 size = Vector3(0.8, 0.6, 0.8)
@@ -36,3 +37,8 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.208, 0)
 visible = false
 mesh = SubResource("QuadMesh_3b3dc")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.530955, 0)
+stream = ExtResource("3_7fq6x")
+unit_size = 5.03

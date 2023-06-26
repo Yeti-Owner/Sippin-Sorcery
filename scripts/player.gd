@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var cam := $CamHolder
 @onready var Camera := $CamHolder/Cam
 @onready var HeldCam := $CanvasLayer/SubViewportContainer/SubViewport/Cam
+@onready var Anims := $AnimationPlayer
 const SPEED := 5.0
 const JUMP_VELOCITY := 5.4
 
@@ -33,6 +34,9 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	move_and_slide()
+	
+	if (velocity.x != 0) or (velocity.z != 0):
+		Anims.play("head_bob")
 
 func _process(_delta):
 	HeldCam.global_transform = Camera.global_transform

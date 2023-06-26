@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bc8v80us8av85"]
+[gd_scene load_steps=10 format=3 uid="uid://bc8v80us8av85"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3iqq6"]
 [ext_resource type="Script" path="res://scripts/player_camera.gd" id="2_tt006"]
@@ -8,6 +8,44 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3wqfa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fs65c"]
+
+[sub_resource type="Animation" id="Animation_7ctos"]
+resource_name = "head_bob"
+length = 0.5
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CamHolder/Cam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.325, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.6, -0.1), Vector3(0, 0.7, -0.1), Vector3(0, 0.6, -0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_vq5ox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CamHolder/Cam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.6, -0.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hmbqq"]
+_data = {
+"RESET": SubResource("Animation_vq5ox"),
+"head_bob": SubResource("Animation_7ctos")
+}
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_3iqq6")
@@ -58,3 +96,8 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.1)
 cull_mask = 2
 fov = 85.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hmbqq")
+}
