@@ -14,7 +14,7 @@ gradient = SubResource("Gradient_hgbme")
 lifetime_randomness = 0.35
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
-emission_ring_height = 19.0
+emission_ring_height = 16.0
 emission_ring_radius = 50.0
 emission_ring_inner_radius = 47.0
 direction = Vector3(1, 0, 1)
@@ -24,7 +24,6 @@ initial_velocity_max = 0.07
 tangential_accel_min = 0.13
 tangential_accel_max = 0.13
 color_ramp = SubResource("GradientTexture1D_xbwqk")
-collision_use_scale = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2n4j"]
 vertex_color_use_as_albedo = true
@@ -43,10 +42,10 @@ size = Vector3(59, 10.98, 1)
 [node name="Particles" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.864, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.318, 0)
 cast_shadow = 0
 gi_mode = 2
-amount = 2800
+amount = 2700
 lifetime = 25.0
 randomness = 0.24
 fixed_fps = 15
@@ -57,7 +56,7 @@ process_material = SubResource("ParticleProcessMaterial_ffg6r")
 draw_pass_1 = SubResource("BoxMesh_v2685")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(13.3, 0, 0, 0, 2.058, 0, 0, 0, 13.3, 0, -1.688, 0)
+transform = Transform3D(13.3, 0, 0, 0, 1.893, 0, 0, 0, 13.3, 0, -2.455, 0)
 cast_shadow = 0
 mesh = ExtResource("1_nedaq")
 surface_material_override/0 = SubResource("StandardMaterial3D_vodmc")

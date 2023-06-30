@@ -2,6 +2,7 @@ extends Interactable
 
 @onready var InteractTimer := $InteractTimer
 @onready var CookingTimer := $CookingTimer
+@onready var particles := $JuiceParticles
 
 var ItemsAdded:Array
 
@@ -29,6 +30,7 @@ const FlavorContent := {
 	"Watermelon": Color(0.25098040699959, 0.81960785388947, 0.02352941222489),
 	"Orange": Color(0.73000001907349, 0.41366666555405, 0)
 }
+const DefaultGreen := Color(0.2392156869173, 0.67058825492859, 0.10588235408068)
 
 var content := ""
 
@@ -61,6 +63,7 @@ func interact():
 
 func _mix():
 	$AudioStreamPlayer3D.play()
+	_particles()
 	var Effects = []
 	while ItemsAdded.size() > 0:
 		var amt = min(ItemsAdded.count(ItemsAdded[0])-1, 2)
@@ -74,6 +77,7 @@ func _mix():
 	EventBus.HeldItem = "Juice"
 	EventBus.emit_signal("HeldItemChanged")
 	_juice()
+	$Juice.mesh.material.albedo_color = DefaultGreen
 
 func _juice(FlavorAdded:bool = false):
 	if ItemsAdded.size() == 0:
@@ -85,3 +89,8 @@ func _juice(FlavorAdded:bool = false):
 	if FlavorAdded:
 		content = EventBus.HeldItem
 		$Juice.mesh.material.albedo_color = FlavorContent[EventBus.HeldItem]
+
+func _particles():
+	particles.position.y = $Juice.position.y
+	particles.draw_pass_1.material.albedo_color = $Juice.mesh.material.albedo_color
+	particles.set_emitting(true)

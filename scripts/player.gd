@@ -35,7 +35,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-	if (velocity.x != 0) or (velocity.z != 0):
+	if (velocity.y == 0) and ((velocity.x != 0) or (velocity.z != 0)):
 		Anims.play("head_bob")
 
 func _process(_delta):

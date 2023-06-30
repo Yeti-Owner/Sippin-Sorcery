@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3doo5trm8sgg"]
+[gd_scene load_steps=10 format=3 uid="uid://d3doo5trm8sgg"]
 
 [ext_resource type="Script" path="res://interactable/cauldron.gd" id="1_32e5k"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_a2ww8"]
@@ -13,6 +13,26 @@ albedo_color = Color(0.239216, 0.670588, 0.105882, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_3b3dc"]
 material = SubResource("StandardMaterial3D_yrdog")
 size = Vector2(0.6, 0.6)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_03csn"]
+lifetime_randomness = 0.3
+direction = Vector3(0, 1, 0)
+spread = 50.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.52
+initial_velocity_max = 0.64
+linear_accel_max = 0.8
+radial_accel_min = 0.1
+radial_accel_max = 0.1
+scale_max = 1.18
+hue_variation_max = 0.11
+attractor_interaction_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qucg4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_28wcw"]
+material = SubResource("StandardMaterial3D_qucg4")
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Cauldron" type="StaticBody3D"]
 collision_layer = 3
@@ -42,3 +62,14 @@ mesh = SubResource("QuadMesh_3b3dc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.530955, 0)
 stream = ExtResource("3_7fq6x")
 unit_size = 5.03
+
+[node name="JuiceParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.697395, 0)
+cast_shadow = 0
+emitting = false
+lifetime = 1.5
+one_shot = true
+explosiveness = 0.51
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_03csn")
+draw_pass_1 = SubResource("BoxMesh_28wcw")
