@@ -160,18 +160,18 @@ fov = 48.9
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
-[node name="Options" type="StaticBody3D" parent="."]
+[node name="Credits" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4934, 0.122952, -5.84179)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Options"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Credits"]
 transform = Transform3D(0.997254, 0.00145575, -0.07404, 0.023078, 0.943909, 0.329399, 0.0703666, -0.330203, 0.941284, 0.178497, 0.248022, -0.226677)
 shape = SubResource("BoxShape3D_m5wwv")
 
-[node name="Mesh" type="MeshInstance3D" parent="Options"]
+[node name="Mesh" type="MeshInstance3D" parent="Credits"]
 transform = Transform3D(0.493, 0, 0, 0, 0.182717, -0.45789, 0, 0.45789, 0.182717, -0.276, -0.574, -1.042)
 mesh = ExtResource("2_rp3pl")
 
-[node name="Outline" type="MeshInstance3D" parent="Options"]
+[node name="Outline" type="MeshInstance3D" parent="Credits"]
 transform = Transform3D(0.969331, 0.00134366, -0.068339, 0.0224318, 0.871228, 0.304035, 0.0683964, -0.304777, 0.868805, 0.203, 0.248, -0.227)
 visible = false
 mesh = SubResource("BoxMesh_xdrwb")
@@ -219,20 +219,20 @@ mesh = ExtResource("4_i4eog")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72708, -3.36159)
 shadow_enabled = true
 
-[node name="OptionsSign" type="Node3D" parent="."]
+[node name="CreditsSign" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.615, 0)
 
-[node name="OptionsSign" type="MeshInstance3D" parent="OptionsSign"]
+[node name="CreditsSign" type="MeshInstance3D" parent="CreditsSign"]
 transform = Transform3D(0.397, 0, 0, 0, 0.445, 0, 0, 0, 0.257, -0.6, 1.094, -5.028)
 mesh = ExtResource("7_0rp7b")
 skeleton = NodePath("../..")
 
-[node name="Label3D" type="Label3D" parent="OptionsSign/OptionsSign"]
+[node name="Label3D" type="Label3D" parent="CreditsSign/CreditsSign"]
 transform = Transform3D(0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0.522323, 0.203001)
 pixel_size = 0.004
 shaded = true
 double_sided = false
-text = "Options"
+text = "Credits"
 font = ExtResource("8_7rmre")
 font_size = 52
 outline_size = 16

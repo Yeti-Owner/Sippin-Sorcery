@@ -62,6 +62,7 @@ mesh = SubResource("QuadMesh_3b3dc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.530955, 0)
 stream = ExtResource("3_7fq6x")
 unit_size = 5.03
+bus = &"Sfx"
 
 [node name="JuiceParticles" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.697395, 0)

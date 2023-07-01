@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c42ypjsi2ya3y"]
+[gd_scene load_steps=14 format=3 uid="uid://c42ypjsi2ya3y"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_fqv4r"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="2_tyros"]
@@ -94,6 +94,52 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 corner_detail = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds50b"]
+bg_color = Color(0.211765, 0.0980392, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+
+[sub_resource type="MeshTexture" id="MeshTexture_4qhqq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3om1"]
+bg_color = Color(0.176471, 0.0784314, 0.0823529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_top = 20.0
+expand_margin_right = 8.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vc47o"]
+bg_color = Color(0.352941, 0.607843, 0.356863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.443137, 0.733333, 0.447059, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+expand_margin_top = 12.0
+expand_margin_bottom = 12.0
+
 [node name="PauseMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -187,6 +233,113 @@ theme_override_font_sizes/font_size = 26
 text = "Quit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -135.0
+offset_right = 935.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="Panel" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ds50b")
+
+[node name="GridContainer" type="GridContainer" parent="Options/Bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="MusicLabel" type="Label" parent="Options/Bg/GridContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_tyros")
+theme_override_font_sizes/font_size = 16
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Options/Bg/GridContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = SubResource("MeshTexture_4qhqq")
+theme_override_icons/grabber_highlight = SubResource("MeshTexture_4qhqq")
+theme_override_icons/grabber_disabled = SubResource("MeshTexture_4qhqq")
+theme_override_icons/tick = SubResource("MeshTexture_4qhqq")
+theme_override_styles/slider = SubResource("StyleBoxFlat_o3om1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vc47o")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vc47o")
+value = 50.0
+
+[node name="SfxLabel" type="Label" parent="Options/Bg/GridContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_tyros")
+theme_override_font_sizes/font_size = 16
+text = "Sfx Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="Options/Bg/GridContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = SubResource("MeshTexture_4qhqq")
+theme_override_icons/grabber_highlight = SubResource("MeshTexture_4qhqq")
+theme_override_icons/grabber_disabled = SubResource("MeshTexture_4qhqq")
+theme_override_icons/tick = SubResource("MeshTexture_4qhqq")
+theme_override_styles/slider = SubResource("StyleBoxFlat_o3om1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vc47o")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vc47o")
+value = 50.0
+
+[node name="SensLabel" type="Label" parent="Options/Bg/GridContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_tyros")
+theme_override_font_sizes/font_size = 16
+text = "Mouse Sensitivity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SensSlider" type="HSlider" parent="Options/Bg/GridContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = SubResource("MeshTexture_4qhqq")
+theme_override_icons/grabber_highlight = SubResource("MeshTexture_4qhqq")
+theme_override_icons/grabber_disabled = SubResource("MeshTexture_4qhqq")
+theme_override_icons/tick = SubResource("MeshTexture_4qhqq")
+theme_override_styles/slider = SubResource("StyleBoxFlat_o3om1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vc47o")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vc47o")
+value = 50.0
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

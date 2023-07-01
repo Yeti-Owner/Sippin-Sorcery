@@ -24,14 +24,14 @@ func _physics_process(_delta):
 			match Hovered:
 				"Start":
 					$Anims.play("End")
-				"Options":
-					pass
+				"Credits":
+					print("Credits Clicked")
 #					$Anims.play("options")
 				"Quit":
 					get_tree().quit()
 		return
 	
-	var PossibleButtons := ["Start","Quit","Options"]
+	var PossibleButtons := ["Start","Quit","Credits"]
 	
 	if PossibleButtons.has(Ray.get_collider().name):
 		Ray.get_collider().get_node("Outline").visible = true
