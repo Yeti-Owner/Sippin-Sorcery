@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c42ypjsi2ya3y"]
+[gd_scene load_steps=15 format=3 uid="uid://c42ypjsi2ya3y"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_fqv4r"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="2_tyros"]
+[ext_resource type="Script" path="res://scripts/ui/Options.gd" id="3_2qbkq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uxy6"]
 bg_color = Color(0.211765, 0.0980392, 0.101961, 1)
@@ -241,12 +242,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 100.0
+offset_left = 1000.0
 offset_top = -135.0
-offset_right = 935.0
+offset_right = 1835.0
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_2qbkq")
 
 [node name="Bg" type="Panel" parent="Options"]
 layout_mode = 1
@@ -342,4 +344,5 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vc47o")
 value = 50.0
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
