@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bawfbcho6xt3o"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_4sv73"]
+
+[resource]
+script = ExtResource("1_4sv73")
+Name = "Krystal"
+FavColor = Color(0.839216, 0.670588, 1, 1)
+Dialog = "I have public speaking later and I'm scared"
+Need = ["courage"]
+Bonus = ["charisma"]
+Budget = 36
+House = 3
+Gender = "Female"
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = true

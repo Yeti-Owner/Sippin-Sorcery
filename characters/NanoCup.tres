@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://8arif5ibcvsw"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_nleyq"]
+
+[resource]
+script = ExtResource("1_nleyq")
+Name = "Nano Cup"
+FavColor = Color(1, 0.466667, 0.964706, 1)
+Dialog = "I play the piano, give me something for dexterity"
+Need = ["dexterity"]
+Bonus = ["flexibility"]
+Budget = 26
+House = 0
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = true

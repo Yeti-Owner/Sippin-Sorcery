@@ -64,7 +64,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_hcfcx"]
 resource_name = "NewEnd"
-length = 10.1
+length = 12.1
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -72,7 +72,7 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.3, 6.6, 10),
+"times": PackedFloat32Array(0, 5.3, 6.6, 12),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": [],
@@ -251,10 +251,11 @@ tracks/14/path = NodePath("Text:text")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 5.8, 7.8, 7.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 5.8, 7.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["Get ready for your photo!", "Almost ready!", "Done", "Done, you look great!"]
+"values": ["Get ready for your photo!", "Almost ready!", "Done, you look great!
+Remember, use Q to view your ID!"]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -275,7 +276,7 @@ tracks/16/path = NodePath("Fader:color")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(7.7, 7.8, 7.9, 8.9, 9.9),
+"times": PackedFloat32Array(7.7, 7.8, 7.9, 11, 12),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]

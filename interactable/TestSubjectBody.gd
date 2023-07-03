@@ -6,6 +6,7 @@ extends Interactable
 #@onready var Char:String = get_parent().CharName
 
 const EffectsList := {
+	"sleep": "I feel really sleepy now, I'm gonna go lie down",
 	"resistance": "I don't know why, but suddenly it's like I'm tougher than usual. Like nothing can touch me, you know?",
 	"confusion": "Whoa, everything's kinda spinning in my head. Like, I can't even remember what I had for breakfast this morning.",
 	"health": "Man, I was feeling a bit ill earlier, but it's totally cleared up thank you!",

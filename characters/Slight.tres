@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://wirl2a1pl1ir"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_uub6s"]
+
+[resource]
+script = ExtResource("1_uub6s")
+Name = "Slight"
+FavColor = Color(0.00392157, 0.00392157, 0.00392157, 1)
+Dialog = "I need a little boost for the gym."
+Need = ["strength", "stamina"]
+Bonus = ["health", "lessPain"]
+Budget = 43
+House = 0
+Gender = "Male"
+Strawberry = false
+Banana = false
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = true

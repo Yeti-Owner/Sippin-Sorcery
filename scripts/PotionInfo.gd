@@ -31,7 +31,7 @@ const CauldronPotions:Dictionary = {
 	"MermaidScale": ["swimming", "underwaterBreathing", "fishTalk"],
 	"SpiderSilk": ["sticky", "nightVision", "invisibility"],
 	"DragonflyWing": ["lessWeight", "hearing", "hovering"],
-	"PhoenixFeather": ["health", "luck", "fireRes"],
+	"PhoenixFeather": ["sleep", "luck", "fireRes"],
 	"BasiliskFang": ["petrification", "poison", "strength"],
 	"UnicornHorn": ["purity", "health", "heightenedSenses"],
 	"CentaurHoof": ["speed", "stability", "jumping"],
@@ -73,7 +73,7 @@ var JournalIngredients := {
 	"MermaidScale": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {swimming} \n\n[color=BLACK]Effect 2: \n- {underwaterBreathing} \n\n[color=BLACK]Effect 3:\n- {fishTalk}",
 	"SpiderSilk": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {sticky} \n\n[color=BLACK]Effect 2: \n- {nightVision} \n\n[color=BLACK]Effect 3:\n- {invisibility}",
 	"DragonflyWing":"[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {lessWeight} \n\n[color=BLACK]Effect 2: \n- {hearing} \n\n[color=BLACK]Effect 3:\n- {hovering}",
-	"PhoenixFeather": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {health} \n\n[color=BLACK]Effect 2: \n- {luck} \n\n[color=BLACK]Effect 3:\n- {fireRes}",
+	"PhoenixFeather": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {sleep} \n\n[color=BLACK]Effect 2: \n- {luck} \n\n[color=BLACK]Effect 3:\n- {fireRes}",
 	"BasiliskFang": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {petrification} \n\n[color=BLACK]Effect 2: \n- {poison} \n\n[color=BLACK]Effect 3:\n- {strength}",
 	"UnicornHorn": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {purity} \n\n[color=BLACK]Effect 2: \n- {health} \n\n[color=BLACK]Effect 3:\n- {heightenedSenses}",
 	"CentaurHoof": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {speed} \n\n[color=BLACK]Effect 2: \n- {stability} \n\n[color=BLACK]Effect 3:\n- {jumping}",
@@ -86,7 +86,7 @@ var JournalIngredients := {
 
 
 # Just every effect in the game
-const EffectsList := ["resistance", "confusion", "health","flexibility", "agility", "speed","courage", "stamina", "strength","badVision", "badSmell", "poison","coldRes", "fireRes", "lessPain","swimming", "underwaterBreathing", "fishTalk","sticky", "nightVision", "invisibility","lessWeight", "hearing", "hovering","health", "luck", "fireRes","petrification", "poison", "strength","purity", "health", "heightenedSenses","speed", "stability", "jumping","precision", "lessPain", "dexterity","alertness", "perception", "electricalRes","strength", "explosionRes", "smokeImmunity","petrificationRes", "poison", "betterSmell","charisma", "health", "plantControl"]
+const EffectsList := ["resistance", "confusion", "health","flexibility", "agility", "speed","courage", "stamina", "strength","badVision", "badSmell", "poison","coldRes", "fireRes", "lessPain","swimming", "underwaterBreathing", "fishTalk","sticky", "nightVision", "invisibility","lessWeight", "hearing", "hovering","health", "luck", "fireRes","petrification", "poison", "strength","purity", "health", "heightenedSenses","speed", "stability", "jumping","precision", "lessPain", "dexterity","alertness", "perception", "electricalRes","strength", "explosionRes", "smokeImmunity","petrificationRes", "poison", "betterSmell","charisma", "health", "plantControl", "sleep"]
 
 
 # Used by Customer and test subject for clothing

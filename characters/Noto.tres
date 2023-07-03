@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://ca3ds7yy5oobj"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_mqk1h"]
+
+[resource]
+script = ExtResource("1_mqk1h")
+Name = "Noto"
+FavColor = Color(0.360784, 0.117647, 0.537255, 1)
+Dialog = "I need help to convince TWK to buff Axe."
+Need = ["charisma"]
+Bonus = ["strength", "luck"]
+Budget = 29
+House = 1
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = true

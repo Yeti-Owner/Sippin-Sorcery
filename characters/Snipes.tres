@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://drvmc1otr025u"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_km7ck"]
+
+[resource]
+script = ExtResource("1_km7ck")
+Name = "Snipes"
+FavColor = Color(0.45098, 0, 0.529412, 1)
+Dialog = "Help me with rock climbing please."
+Need = ["flexibility", "strength"]
+Bonus = ["speed", "stability", "dexterity"]
+Budget = 83
+House = 2
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = true
+Watermelon = false
+Orange = true

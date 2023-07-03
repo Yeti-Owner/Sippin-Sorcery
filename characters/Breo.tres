@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://dxc33fayh8bdt"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_1iena"]
+
+[resource]
+script = ExtResource("1_1iena")
+Name = "Breo"
+FavColor = Color(0.215686, 0, 0.419608, 1)
+Dialog = "You have something to help me with my art? Like my hands maybe?"
+Need = ["dexterity"]
+Bonus = ["perception"]
+Budget = 57
+House = 1
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = false
+Orange = true

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://86atavoooi4a"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_qgxt4"]
+
+[resource]
+script = ExtResource("1_qgxt4")
+Name = "Hunter"
+FavColor = Color(0.282353, 0.784314, 0, 1)
+Dialog = "I'm scared of death, any help?"
+Need = ["courage"]
+Bonus = ["sleep"]
+Budget = 29
+House = 3
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = true

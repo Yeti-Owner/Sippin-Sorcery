@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bu864pt4ggvoo"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_b1dk7"]
+
+[resource]
+script = ExtResource("1_b1dk7")
+Name = "High"
+FavColor = Color(0.654902, 0, 0, 1)
+Dialog = "I feel awkward, could you help?"
+Need = ["charisma"]
+Bonus = ["courage"]
+Budget = 29
+House = 3
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = false
+Blueberry = true
+Watermelon = true
+Orange = true

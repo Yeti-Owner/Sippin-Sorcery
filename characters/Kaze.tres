@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://3hguqh55bimy"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_i1mhl"]
+
+[resource]
+script = ExtResource("1_i1mhl")
+Name = "Kaze"
+FavColor = Color(0.709804, 0.666667, 0.607843, 1)
+Dialog = "My hands are killing me please help!"
+Need = ["health"]
+Bonus = ["flexibility"]
+Budget = 25
+House = 2
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = true

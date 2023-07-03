@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bug7le5hl7wam"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_v55j7"]
+
+[resource]
+script = ExtResource("1_v55j7")
+Name = "Skup the Cup"
+FavColor = Color(0.396078, 0, 0, 1)
+Dialog = "I want to have intercourse with sooo many women"
+Need = ["charisma", "stamina"]
+Bonus = ["luck", "strength"]
+Budget = 90
+House = 3
+Gender = "Male"
+Strawberry = false
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = false

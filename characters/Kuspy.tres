@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://b3p5konwhqidk"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_mkaiy"]
+
+[resource]
+script = ExtResource("1_mkaiy")
+Name = "Kuspy"
+FavColor = Color(0.596078, 0.223529, 0, 1)
+Dialog = "Weird request, but do you have something to help me petrify my boss?"
+Need = ["petrification"]
+Bonus = ["poison"]
+Budget = 53
+House = 2
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = true
+Watermelon = true
+Orange = true

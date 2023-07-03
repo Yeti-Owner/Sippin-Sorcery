@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cdixsr8rpq5ft"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_hsf0k"]
+
+[resource]
+script = ExtResource("1_hsf0k")
+Name = "Jokez"
+FavColor = Color(0.00392157, 0.00392157, 0.00392157, 1)
+Dialog = "You have something for my sleep and overall health?"
+Need = ["sleep"]
+Bonus = ["resistance", "health"]
+Budget = 40
+House = 1
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = true
