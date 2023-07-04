@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba1a6cgfrtyrv"]
+[gd_scene load_steps=8 format=3 uid="uid://ba1a6cgfrtyrv"]
 
 [ext_resource type="Texture2D" uid="uid://mbtqkybqb2ng" path="res://assets/textures/ui/JournalUI.png" id="1_adjb6"]
 [ext_resource type="Script" path="res://scripts/ui/journal.gd" id="1_w1gam"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_qp538"]
+[ext_resource type="Texture2D" uid="uid://ba4003lmovkj3" path="res://assets/textures/ui/arrow.png" id="4_3jxwb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcfay"]
 
@@ -134,6 +135,15 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_fcfay")
 theme_override_styles/hover = SubResource("StyleBoxFlat_e86a8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12l0w")
 
+[node name="Arrow" type="TextureRect" parent="Journal/CenterContainer/TextureRect/Left"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 665.0
+offset_right = 108.0
+offset_bottom = 729.0
+scale = Vector2(-0.681, 0.681)
+texture = ExtResource("4_3jxwb")
+
 [node name="Right" type="Button" parent="Journal/CenterContainer/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
@@ -151,6 +161,13 @@ focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fcfay")
 theme_override_styles/hover = SubResource("StyleBoxFlat_e86a8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12l0w")
+
+[node name="Arrow" type="TextureRect" parent="Journal/CenterContainer/TextureRect/Right"]
+offset_top = 709.0
+offset_right = 64.0
+offset_bottom = 773.0
+scale = Vector2(0.681, -0.681)
+texture = ExtResource("4_3jxwb")
 
 [connection signal="pressed" from="Journal/CenterContainer/ClickOut" to="." method="_on_click_out_pressed"]
 [connection signal="pressed" from="Journal/CenterContainer/TextureRect/Left" to="." method="_on_left_pressed"]

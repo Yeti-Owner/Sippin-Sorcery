@@ -11,7 +11,7 @@ const EffectsList := {
 	"confusion": "Whoa, everything's kinda spinning in my head. Like, I can't even remember what I had for breakfast this morning.",
 	"health": "Man, I was feeling a bit ill earlier, but it's totally cleared up thank you!",
 	"flexibility": "I swear, my body feels all loose and limber, like I could bend in crazy ways.",
-	"agility": "You won't believe it, but I'm moving so fast right now! I feel like I could outrun a Quidditch player. Zoom!",
+	"agility": "You won't believe it, but I'm moving so fast right now! I feel like I could outrun a Quidditch player.",
 	"speed": "I feel like I've been zapped with a dose of lightning! My legs are moving quicker than I thought possible.",
 	"courage": "I don't know what came over me, but suddenly I'm braver than a lion. Nothing scares me anymore! Let's do this!",
 	"stamina": "I could run laps around the castle and not even lose my breath! It's like I've got an endless supply of energy.",
@@ -27,7 +27,7 @@ const EffectsList := {
 	"fishTalk": "Something is off, I feel a strange urge to go swimming, I swear I can hear the fish from here. And they're talking?!",
 	"sticky": "My hands are all tacky and clingy. Everything I touch just sticks to me. It's like I've got super glue on my fingers.",
 	"nightVision": "It's dark out here, but I can see through the shadows crystal clear. It's like I've got these cool night vision goggles or something.",
-	"invisibility": "Hey, where did I go? I can't see myself. This is mad.",
+	"invisibility": "Subject turned invisible?",
 	"lessWeight": "I feel so light on my feet, like I could float away if I'm not careful. It's like gravity has forgotten about me!",
 	"hearing": "I can hear a pin drop from across the room. My ears are super sensitive right now. It's like I've got supersonic hearing or something.",
 	"hovering": "Look, I'm floating! I can hover a few inches off the ground!",
@@ -49,17 +49,25 @@ const EffectsList := {
 	"charisma": "I've got charm oozing out of me. I can tell you can't resist my words, I'm gonna convince the teachers to not assign homework!",
 	"plantControl": "Is it just me or is the grass looking at me? I can control them it's like I'm the king of the greenery!",
 }
+var AdditionalList1 := ["hovering", "invisibility", "agility", "speed"]
+var AdditionalList2 := ["petrification"]
 
 var cost := 25
 
 func _ready():
 	randomize()
+	
+	await  get_tree().process_frame
+	await  get_tree().process_frame
+	await  get_tree().process_frame
+	if get_parent().CharName == "Michael":
+		get_parent().get_node("BodyMeshes").rotation_degrees.y += 180
 
 func get_interaction_text():
 	if EventBus.HeldItem == "Juice" and EventBus.Balance >= 25:
 		return str("[center]Press E to test juice with [color=" + str(color.to_html()) + "] " + get_parent().CharName + "[/color] (Costs 25ʛ)[/center]")
 	elif EventBus.HeldItem == "Juice" and EventBus.Balance < 25:
-		return str("[center]Not enough money, 25ʛ required[/center]")
+		return str("[center]Not enough money, [color=GOLD]25ʛ required[/color][/center]")
 	else:
 		return str("[center][color=" + str(color.to_html()) + "] " + get_parent().CharName + "[/color][/center]")
 
@@ -81,16 +89,45 @@ func _test_juice(effects:Array):
 	if effects.size() > 1:
 		var Responses := ["I feel too many effects to sort them out, sorry I can't help.", "Too much is going on I can't separate them.", "Geez dude I'm feeling a lot, use less ingredients next time.","I'm gonna throw up, move.", "Dude, never do that again, too much."]
 		Results = Responses[randi() % Responses.size()]
+		
+		SpeechBubble._talk(Results)
+		$Timer.start(4)
+		return
 	else:
 		Results = EffectsList[effects[0]]
 		_record_journal(Results, effects[0])
 	
+	
+	if AdditionalList1.has(effects[0]):
+		_effect(effects[0], Results)
+		$Timer.start(4)
+		return
+	elif AdditionalList2.has(effects[0]):
+		SpeechBubble._talk("...")
+		$Timer.start(8)
+		return
+	
 	SpeechBubble._talk(Results)
-	$Timer.start()
+	$Timer.start(4)
 
 func _record_journal(result, effect):
 	var NewEntry:String = str(result + " ([color=" + str(color.to_html()) + "]" + get_parent().CharName + "[/color]" + ")")
 	PotionInfo.JournalIngredients[EventBus.InsertedItems] = PotionInfo.JournalIngredients[EventBus.InsertedItems].format({effect: str(NewEntry)})
 
-func _effect():
-	pass
+func _effect(effect:String, _results:String):
+	match effect:
+		"hovering":
+			var tween := get_tree().create_tween()
+			tween.tween_property(get_parent(), "position:y", get_parent().position.y + 0.8, 0.75).set_trans(Tween.TRANS_CUBIC)
+			tween.tween_property(get_parent(), "position:y", get_parent().position.y + 0.8, 2)
+			tween.tween_property(get_parent(), "position:y", get_parent().position.y, 0.75).set_trans(Tween.TRANS_CUBIC)
+			SpeechBubble._talk(_results)
+		"invisibility":
+			get_parent().get_node("BodyMeshes").visible = false
+			SpeechBubble._talk("I don't feel any different, you sure you mixed it right?")
+		"agility":
+			get_parent().speed = 0.3
+			SpeechBubble._talk(_results)
+		"speed":
+			get_parent().speed = 0.3
+			SpeechBubble._talk(_results)

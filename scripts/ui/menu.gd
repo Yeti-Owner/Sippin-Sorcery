@@ -13,8 +13,9 @@ func _physics_process(_delta):
 	Ray.target_position = $Camera3D.project_local_ray_normal(get_global_mouse_position())
 	if not Ray.is_colliding():
 		if Hovered != "":
-			var tween = get_tree().create_tween()
-			tween.tween_property(get_node(str(Hovered) + "Sign"), "position", Vector3(0, 0.615, 0), 0.5)
+			if has_node((str(Hovered) + "Sign")):
+				var tween = get_tree().create_tween()
+				tween.tween_property(get_node(str(Hovered) + "Sign"), "position", Vector3(0, 0.615, 0), 0.5)
 			get_node(Hovered).get_node("Outline").visible = false
 		colliding = false
 		Hovered = ""
@@ -23,21 +24,26 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed("select"):
 			match Hovered:
 				"Start":
-					get_tree().change_scene_to_file("res://scenes/world.tscn")
-#					$Anims.play("End")
+#					get_tree().change_scene_to_file("res://scenes/world.tscn")
+					$Anims.play("End")
 				"Credits":
-					print("Credits Clicked")
-#					$Anims.play("credits")
+					$Anims.play("credits")
 				"Quit":
 					get_tree().quit()
+				"Feedback":
+					$CreditsSection/FeedbackText.text = str("WIP, dm me")
+					print("-- Feedback Clicked --")
+				"Back":
+					$Anims.play("Back")
 		return
 	
-	var PossibleButtons := ["Start","Quit","Credits"]
+	var PossibleButtons := ["Start","Quit","Credits", "Feedback", "Back"]
 	
 	if PossibleButtons.has(Ray.get_collider().name):
 		Ray.get_collider().get_node("Outline").visible = true
-		var tween = get_tree().create_tween()
-		tween.tween_property(get_node(str(Ray.get_collider().name + "Sign")), "position", Vector3(0,0,0), 0.5)
+		if has_node((str(Ray.get_collider().name + "Sign"))):
+			var tween = get_tree().create_tween()
+			tween.tween_property(get_node(str(Ray.get_collider().name + "Sign")), "position", Vector3(0,0,0), 0.5)
 	
 	Hovered = Ray.get_collider().name
 	

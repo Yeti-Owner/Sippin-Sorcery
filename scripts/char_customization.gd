@@ -126,6 +126,7 @@ func _capture_headshot():
 func _on_anim_player_animation_finished(anim_name):
 	if anim_name == "Next":
 		_on()
+		$CenterContainer/VBoxContainer/Name.queue_free()
 	elif anim_name == "NewEnd":
 		get_tree().change_scene_to_file("res://scenes/world.tscn")
 

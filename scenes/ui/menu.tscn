@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://syb05k3lr8yt"]
+[gd_scene load_steps=36 format=3 uid="uid://syb05k3lr8yt"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_n2mbh"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_3qqco"]
@@ -60,6 +60,21 @@ size = Vector3(0.859134, 0.844604, 0.851722)
 [sub_resource type="BoxMesh" id="BoxMesh_ssf50"]
 material = SubResource("ShaderMaterial_7qtyy")
 size = Vector3(0.859134, 0.844604, 0.851722)
+
+[sub_resource type="Animation" id="Animation_xkgut"]
+resource_name = "Back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.418879, 1.5708, 0), Vector3(-0.41888, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_tparb"]
 resource_name = "End"
@@ -135,6 +150,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_umwx8"]
 _data = {
+"Back": SubResource("Animation_xkgut"),
 "End": SubResource("Animation_tparb"),
 "RESET": SubResource("Animation_lw1ox"),
 "Start": SubResource("Animation_pcurc"),
@@ -144,6 +160,32 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtc2c"]
 albedo_color = Color(0.223529, 0.0941176, 0.101961, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_yntdu"]
+material = SubResource("StandardMaterial3D_gtc2c")
+size = Vector3(0.25, 0.273, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pohba"]
+material = SubResource("ShaderMaterial_7qtyy")
+size = Vector3(0.375, 0.372, 0.753)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xgegk"]
+size = Vector3(0.280117, 0.282219, 0.815839)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vw2e8"]
+material = SubResource("StandardMaterial3D_gtc2c")
+size = Vector3(0.148, 0.459, 0.815)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j8v0g"]
+material = SubResource("StandardMaterial3D_gtc2c")
+size = Vector3(0.025, 0.852, 0.167)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7kcfl"]
+size = Vector3(0.193632, 0.458337, 0.812432)
+
+[sub_resource type="BoxMesh" id="BoxMesh_35sm7"]
+material = SubResource("ShaderMaterial_7qtyy")
+size = Vector3(0.18, 0.566, 0.776)
+
 [sub_resource type="BoxMesh" id="BoxMesh_tv0lt"]
 material = SubResource("StandardMaterial3D_gtc2c")
 size = Vector3(0.25, 0.891, 1.5)
@@ -151,10 +193,6 @@ size = Vector3(0.25, 0.891, 1.5)
 [sub_resource type="BoxMesh" id="BoxMesh_7fjpu"]
 material = SubResource("StandardMaterial3D_gtc2c")
 size = Vector3(0.082, 1.139, 0.21)
-
-[sub_resource type="BoxMesh" id="BoxMesh_yntdu"]
-material = SubResource("StandardMaterial3D_gtc2c")
-size = Vector3(0.25, 0.273, 0.8)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -303,6 +341,51 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Feedback" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.091, 0)
+
+[node name="FeedbackM" type="MeshInstance3D" parent="Feedback"]
+transform = Transform3D(0.944187, -0.329411, 0, 0.329411, 0.944187, 0, 0, 0, 1, -1.53568, -0.0703933, -3.413)
+mesh = SubResource("BoxMesh_yntdu")
+skeleton = NodePath("../..")
+
+[node name="Outline" type="MeshInstance3D" parent="Feedback"]
+transform = Transform3D(0.864236, -0.334814, -0.00595758, 0.387134, 0.747436, -0.0026687, 0.00575152, 0, 1.07498, -1.52251, -0.0783401, -3.4101)
+visible = false
+mesh = SubResource("BoxMesh_pohba")
+skeleton = NodePath("../../CreditsSection")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Feedback"]
+transform = Transform3D(0.942145, -0.335205, 0, 0.335205, 0.942145, 0, 0, 0, 1, -1.52579, -0.0710755, -3.41247)
+shape = SubResource("BoxShape3D_xgegk")
+
+[node name="Back" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.856, -0.21, -4.512)
+
+[node name="Sign" type="MeshInstance3D" parent="Back"]
+mesh = SubResource("BoxMesh_vw2e8")
+skeleton = NodePath("../../CreditsSection")
+
+[node name="post" type="MeshInstance3D" parent="Back/Sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00511563, -0.534751, 0)
+mesh = SubResource("BoxMesh_j8v0g")
+
+[node name="BackText" type="Label3D" parent="Back"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0855528, -0.0254559, 0.00951052)
+pixel_size = 0.0024
+text = "Back"
+font = ExtResource("8_7rmre")
+font_size = 80
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Back"]
+shape = SubResource("BoxShape3D_7kcfl")
+
+[node name="Outline" type="MeshInstance3D" parent="Back"]
+transform = Transform3D(0.946874, 0.0124355, -0.00652724, -0.0143788, 0.818905, 9.91204e-05, 0.00575152, -1.74026e-10, 1.07498, 0.0111039, 0.00528385, 0.0010705)
+visible = false
+mesh = SubResource("BoxMesh_35sm7")
+skeleton = NodePath("../../CreditsSection")
+
 [node name="CreditsSection" type="Node3D" parent="."]
 
 [node name="CreditsText" type="Label3D" parent="CreditsSection"]
@@ -312,7 +395,7 @@ join the game. This was a very fun project and I
 enjoyed learning many new skills from it.
 If you would like to support me you can follow 
 me on twitter @Yeti_Owner
-on Itch.io as YetiOwner
+on itch.io as YetiOwner
 and submit feedback below.
 Thank you for playing!"
 
@@ -325,15 +408,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0315912, -0.738256, 0)
 mesh = SubResource("BoxMesh_7fjpu")
 
-[node name="Feedback" type="StaticBody3D" parent="CreditsSection"]
-
-[node name="FeedbackM" type="MeshInstance3D" parent="CreditsSection/Feedback"]
-transform = Transform3D(0.944187, -0.329411, 0, 0.329411, 0.944187, 0, 0, 0, 1, -1.53568, -0.0703933, -3.413)
-mesh = SubResource("BoxMesh_yntdu")
-skeleton = NodePath("../../..")
-
 [node name="FeedbackText" type="Label3D" parent="CreditsSection"]
-transform = Transform3D(-4.37114e-08, -0.328867, 0.944376, 0, 0.944376, 0.328867, -1, 1.43752e-08, -4.128e-08, -1.40476, -0.033016, -3.413)
+transform = Transform3D(-4.37114e-08, -0.328867, 0.944376, 0, 0.944376, 0.328867, -1, 1.43752e-08, -4.128e-08, -1.40476, 0.0695593, -3.413)
 pixel_size = 0.0024
 text = "Feedback?"
 font = ExtResource("8_7rmre")

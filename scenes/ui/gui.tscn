@@ -56,10 +56,13 @@ theme_override_font_sizes/font_size = 32
 text = "20"
 vertical_alignment = 1
 
-[node name="Dialogue" parent="." instance=ExtResource("3_tnblg")]
-
 [node name="Journal" parent="." instance=ExtResource("4_a6ass")]
 layer = 3
+
+[node name="DialogueLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="Dialogue" parent="DialogueLayer" instance=ExtResource("3_tnblg")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 4

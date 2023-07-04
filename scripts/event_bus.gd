@@ -34,6 +34,12 @@ var StartDate:String = Time.get_date_string_from_system()
 # Misc
 var ActiveCustomers:int = 0
 
+# Settings
+var MasterVolume:float = 0
+var MusicVolume:float = 0
+var SfxVolume:float = 0
+var MouseSens:float = 0.4
+
 func _ready():
 	randomize()
 	IdNum = randi_range(100000, 99999999)

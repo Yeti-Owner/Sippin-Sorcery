@@ -271,6 +271,33 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 2
 
+[node name="MasterLabel" type="Label" parent="Options/Bg/GridContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_tyros")
+theme_override_font_sizes/font_size = 16
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="Options/Bg/GridContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = SubResource("MeshTexture_4qhqq")
+theme_override_icons/grabber_highlight = SubResource("MeshTexture_4qhqq")
+theme_override_icons/grabber_disabled = SubResource("MeshTexture_4qhqq")
+theme_override_icons/tick = SubResource("MeshTexture_4qhqq")
+theme_override_styles/slider = SubResource("StyleBoxFlat_o3om1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vc47o")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vc47o")
+min_value = -15.0
+max_value = 10.0
+step = 0.2
+value = -2.4
+
 [node name="MusicLabel" type="Label" parent="Options/Bg/GridContainer"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
@@ -293,7 +320,10 @@ theme_override_icons/tick = SubResource("MeshTexture_4qhqq")
 theme_override_styles/slider = SubResource("StyleBoxFlat_o3om1")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vc47o")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vc47o")
-value = 50.0
+min_value = -15.0
+max_value = 10.0
+step = 0.2
+value = -2.4
 
 [node name="SfxLabel" type="Label" parent="Options/Bg/GridContainer"]
 custom_minimum_size = Vector2(220, 0)
@@ -317,7 +347,10 @@ theme_override_icons/tick = SubResource("MeshTexture_4qhqq")
 theme_override_styles/slider = SubResource("StyleBoxFlat_o3om1")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vc47o")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vc47o")
-value = 50.0
+min_value = -15.0
+max_value = 10.0
+step = 0.2
+value = -2.4
 
 [node name="SensLabel" type="Label" parent="Options/Bg/GridContainer"]
 custom_minimum_size = Vector2(220, 0)
@@ -341,8 +374,15 @@ theme_override_icons/tick = SubResource("MeshTexture_4qhqq")
 theme_override_styles/slider = SubResource("StyleBoxFlat_o3om1")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vc47o")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vc47o")
-value = 50.0
+min_value = 0.05
+max_value = 0.8
+step = 0.01
+value = 0.4
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="Options/Bg/GridContainer/MasterSlider" to="Options" method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Options/Bg/GridContainer/MusicSlider" to="Options" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Options/Bg/GridContainer/SfxSlider" to="Options" method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Options/Bg/GridContainer/SensSlider" to="Options" method="_on_sens_slider_value_changed"]

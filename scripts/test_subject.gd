@@ -3,12 +3,12 @@ extends PathFollow3D
 @onready var AnimPlayer := $BodyMeshes/AnimationPlayer
 @onready var Apparation := preload("res://scenes/apparation.tscn")
 
-const MaleNames := ["Jack","Thomas","James","Daniel", "Joshua","Matthew","William","David","Joseph","Benjamin","Oliver","Ryan","Alexander","Christopher","Samuel"]
+const MaleNames := ["Jack","Thomas","James","Daniel", "Joshua","Matthew","William","David","Joseph","Benjamin","Oliver","Ryan","Alexander","Christopher","Samuel","Michael"]
 const FemaleNames := ["Emily","Jessica", "Charlotte","Sophie", "Olivia", "Emma", "Hannah", "Amy", "Lucy", "Rebecca", "Megan", "Lauren", "Katie", "Ellie", "Grace"]
 var CharName:String
 var Gender:String
 
-const speed := 0.14
+var speed := 0.14
 var state := "walk"
 
 
@@ -53,7 +53,7 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	state = "leave"
-	$BodyMeshes.rotation_degrees = Vector3(0, 180, 0)
+	$BodyMeshes.rotation_degrees.y += 180
 
 func _on_animation_player_animation_finished(_anim_name):
 	if state == "walk" or state == "leave":
