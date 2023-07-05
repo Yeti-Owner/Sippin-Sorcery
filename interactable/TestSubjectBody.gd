@@ -40,7 +40,7 @@ const EffectsList := {
 	"precision": "I can pick up the tiniest objects with pinpoint accuracy. It's like my fingers have become precision tools.",
 	"dexterity": "I can twist and turn my fingers in ways I never thought possible. It's like I've got the hands of a master magician.",
 	"alertness": "Wow I'm wide awake, like I've had a whole cauldron of coffee. I need to run a marathon to cool off.",
-	"perception": "Colors seem more vibrant and I can read your body language. It's like I'm experiencing the world in high definition!",
+	"perception": "Colors seem more vibrant, the juice must increase your perception!",
 	"electricalRes": "I feel rubbery, not in a stretchy way like an insulated way. odd.",
 	"explosionRes": "I feel off, I can't explain it but I know I could survive a bomb being dropped on me, mark it down as explosion resistance dude.",
 	"smokeImmunity": "My lungs feel stronger, I couldn't breathe underwater or anything but you get the idea.",

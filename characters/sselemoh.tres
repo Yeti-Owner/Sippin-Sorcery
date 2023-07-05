@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://ycxsvdv41kln"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_7mant"]
+
+[resource]
+script = ExtResource("1_7mant")
+Name = "sselemoh"
+FavColor = Color(0.980392, 0.933333, 0.0196078, 1)
+Dialog = "Give me something to help forget the past"
+Need = ["confusion"]
+Bonus = ["lessPain"]
+Budget = 26
+House = 3
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = false
+Orange = false

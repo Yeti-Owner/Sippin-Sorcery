@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bvusllygommmo"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_j3b1r"]
+
+[resource]
+script = ExtResource("1_j3b1r")
+Name = "Leah"
+FavColor = Color(0.796078, 0.415686, 1, 1)
+Dialog = "I'm scared of drowning can you help?"
+Need = ["swimming", "underwaterBreathing"]
+Bonus = ["courage", "fishTalk"]
+Budget = 83
+House = 2
+Gender = "Female"
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = false

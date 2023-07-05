@@ -11,10 +11,10 @@ const CustomerLists := {
 	1: BasicCustomers
 }
 const DEBUG := ["DebugDan"]
-const TutorialCustomers := ["Ben", "Mary", "Emma", "Charles", "Krystal", "Jokez", "Hunter"]
-const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Artemis", "Emma", "Mary", "Krystal", "Krystal2", "Jokez", "Imoorzy", "Noto", "Hunter", "Formag", "Kuspy", "45Glockz"]
-const MediumCustomers := ["Jokez", "High", "Kaze", "Imoorzy", "Noto", "NanoCup", "Formag", "Kuspy", "45Glockz"]
-const HardCustomers := ["Slight", "Breo", "Skup", "Snipes", "Orion"]
+const TutorialCustomers := ["Ben", "Mary", "Emma", "Charles", "Krystal", "Jokez", "Hunter", "Dalidoah"]
+const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Artemis", "Emma", "Mary", "Krystal", "Krystal2", "Jokez", "Imoorzy", "Noto", "Hunter", "Formag", "Kuspy", "45Glockz", "Deathrow", "Carlito", "Sly", "sselemoh", "Nevaa", "Dalidoah"]
+const MediumCustomers := ["Jokez", "High", "Kaze", "Imoorzy", "Noto", "NanoCup", "Formag", "Kuspy", "45Glockz", "Moriarty", "Moriarty2", "Carlito2", "Ufrz", "Nevaa", "Reeseman5", "MrInfernal"]
+const HardCustomers := ["Slight", "Breo", "Skup", "Snipes", "Orion", "TCArk", "Leah"]
 var Spawned := []
 
 func _ready():

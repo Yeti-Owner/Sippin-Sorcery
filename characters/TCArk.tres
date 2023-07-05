@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://ushhtlm06ohn"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_vbb85"]
+
+[resource]
+script = ExtResource("1_vbb85")
+Name = "TCArk"
+FavColor = Color(0.705882, 0, 0, 1)
+Dialog = "My girlfriend lives far away, can you give me something to help get to her?"
+Need = ["agility", "speed"]
+Bonus = ["stamina"]
+Budget = 67
+House = 0
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = false

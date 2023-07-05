@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cqny3tcqct84"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_3t6xx"]
+
+[resource]
+script = ExtResource("1_3t6xx")
+Name = "Moriarty"
+FavColor = Color(0.87451, 0.541176, 1, 1)
+Dialog = "Can you give me something to help with voice acting? Make me more charismatic?"
+Need = ["charisma"]
+Bonus = ["luck"]
+Budget = 33
+House = 2
+Gender = "Female"
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = true
+Watermelon = false
+Orange = false

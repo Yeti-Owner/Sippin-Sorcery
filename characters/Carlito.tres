@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://l1qjb2n3i44x"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_rpek7"]
+
+[resource]
+script = ExtResource("1_rpek7")
+Name = "Carlito"
+FavColor = Color(0, 0, 0, 1)
+Dialog = "Help me poison an IRS agent, I'm not paying any taxes."
+Need = ["poison"]
+Bonus = ["petrification", "confusion"]
+Budget = 46
+House = 2
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = true

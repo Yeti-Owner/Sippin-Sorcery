@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bedg5lb7ridhp"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_cps8d"]
+
+[resource]
+script = ExtResource("1_cps8d")
+Name = "Mr. Infernal"
+FavColor = Color(0, 0, 0.521569, 1)
+Dialog = "Give me something to help outrun the bees chasing me."
+Need = ["speed"]
+Bonus = ["agility"]
+Budget = 31
+House = 1
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = false
