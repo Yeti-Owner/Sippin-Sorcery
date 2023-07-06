@@ -142,6 +142,7 @@ offset_top = 665.0
 offset_right = 108.0
 offset_bottom = 729.0
 scale = Vector2(-0.681, 0.681)
+mouse_filter = 2
 texture = ExtResource("4_3jxwb")
 
 [node name="Right" type="Button" parent="Journal/CenterContainer/TextureRect"]
@@ -163,12 +164,19 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_e86a8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12l0w")
 
 [node name="Arrow" type="TextureRect" parent="Journal/CenterContainer/TextureRect/Right"]
+layout_mode = 0
 offset_top = 709.0
 offset_right = 64.0
 offset_bottom = 773.0
 scale = Vector2(0.681, -0.681)
+mouse_filter = 2
 texture = ExtResource("4_3jxwb")
+
+[node name="delay" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 
 [connection signal="pressed" from="Journal/CenterContainer/ClickOut" to="." method="_on_click_out_pressed"]
 [connection signal="pressed" from="Journal/CenterContainer/TextureRect/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Journal/CenterContainer/TextureRect/Right" to="." method="_on_right_pressed"]
+[connection signal="timeout" from="delay" to="." method="_on_delay_timeout"]

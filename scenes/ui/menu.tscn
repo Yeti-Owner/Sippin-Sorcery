@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://syb05k3lr8yt"]
+[gd_scene load_steps=37 format=3 uid="uid://syb05k3lr8yt"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_n2mbh"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_3qqco"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dy27f2xfxh0e4" path="res://assets/models/TrashCan.obj" id="5_lf4an"]
 [ext_resource type="ArrayMesh" uid="uid://bmpupgh3l0muy" path="res://assets/models/sign.obj" id="7_0rp7b"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="8_7rmre"]
+[ext_resource type="FontFile" uid="uid://cte56ou5xtpk5" path="res://assets/theme/SourceSansPro-Regular.ttf" id="9_s08e2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d7srl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -398,6 +399,7 @@ me on twitter @Yeti_Owner
 on itch.io as YetiOwner
 and submit feedback below.
 Thank you for playing!"
+font = ExtResource("9_s08e2")
 
 [node name="Credits" type="MeshInstance3D" parent="CreditsSection"]
 transform = Transform3D(0.944187, -0.329411, 0, 0.329411, 0.944187, 0, 0, 0, 1, -1.898, 0.604, -3.413)

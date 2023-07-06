@@ -79,12 +79,14 @@ anchor_bottom = 1.0
 offset_top = -255.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 color = Color(0.215686, 0.215686, 0.215686, 0.552941)
 
 [node name="Name" type="RichTextLabel" parent="Bg"]
 layout_mode = 0
 offset_top = -45.0
 offset_right = 250.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_gpbfh")
 bbcode_enabled = true
 text = "[font_size=26][center]Wizard[/center][/font_size]"
@@ -97,15 +99,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Headshot" type="TextureRect" parent="Bg/HBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_lydxd")
 expand_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Bg/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_gpbfh")
 bbcode_enabled = true
 text = "Mixing the potions is simple, George. Find the ingredients scattered on the shelves around us, and add them to the cauldron right in front of you. Remember, George, the effects of each ingredient change as you add more, up to a maximum of three."

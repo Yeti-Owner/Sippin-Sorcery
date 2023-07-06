@@ -28,7 +28,7 @@ font_size = 24
 autowrap_mode = 3
 pixel_size = 0.0001
 depth = 0.005
-width = 425.0
+width = 400.0
 offset = Vector2(0, 20)
 
 [sub_resource type="Animation" id="Animation_tclnu"]
@@ -163,7 +163,7 @@ transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.5, 0)
 mesh = SubResource("QuadMesh_7xrol")
 
 [node name="Text" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.531, 0)
 mesh = SubResource("TextMesh_ds8bn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

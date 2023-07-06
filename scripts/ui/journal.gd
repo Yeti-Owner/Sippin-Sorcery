@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var PotionDesc := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer/Description
 @onready var PotionNotes := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/Notes
 
+var enabled:bool = false
+
 # Name, Icon, Desc
 var CurrentPage:int = 0
 
@@ -15,10 +17,15 @@ func _ready():
 	_hide()
 	_set_page(CurrentPage)
 
+func _physics_process(_delta) -> void:
+	if ((Input.is_action_just_pressed("interact")) or (Input.is_action_just_pressed("pause"))) and (self.visible == true) and (enabled == true):
+		self._hide()
+
 func _pop_up():
 	self.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	_set_page(CurrentPage)
+	$delay.start()
 
 func _set_page(_page):
 	CurrentPage = clamp(_page, 0, 16)
@@ -45,9 +52,13 @@ func _on_click_out_pressed():
 func _hide():
 	self.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	enabled = false
 
 func _toggle(value):
 	if value:
 		_pop_up()
 	else:
 		_hide()
+
+func _on_delay_timeout():
+	enabled = true
