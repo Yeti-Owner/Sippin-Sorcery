@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bbd5d33y7iuec"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_c47fh"]
+
+[resource]
+script = ExtResource("1_c47fh")
+Name = "Jammi"
+FavColor = Color(0.94902, 0.027451, 0.690196, 1)
+Dialog = "Help me sneak my boyfriend away, something so he won't be seen."
+Need = ["invisibility"]
+Bonus = ["speed", "agility"]
+Budget = 30
+House = 2
+Gender = "Male"
+Strawberry = false
+Banana = false
+Pineapple = false
+Blueberry = false
+Watermelon = true
+Orange = false

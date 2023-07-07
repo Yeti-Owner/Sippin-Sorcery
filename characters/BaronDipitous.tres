@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://tyy42a1l26ig"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_tv3n4"]
+
+[resource]
+script = ExtResource("1_tv3n4")
+Name = "Baron Dipitous"
+FavColor = Color(0.00392157, 0.113725, 0.552941, 1)
+Dialog = "Give me something to help me sneak up on misinformers."
+Need = ["invisibility"]
+Bonus = ["agility"]
+Budget = 45
+House = 2
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = false
+Blueberry = false
+Watermelon = true
+Orange = true

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cxmtch4i40vfq"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_7yx6m"]
+
+[resource]
+script = ExtResource("1_7yx6m")
+Name = "Flueve"
+FavColor = Color(0.27451, 0, 0.862745, 1)
+Dialog = "I plan to blow up New Jersey but I'm scared I'll get caught in the explosion."
+Need = ["explosionRes"]
+Bonus = ["speed", "agility"]
+Budget = 30
+House = 1
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = false
+Orange = true

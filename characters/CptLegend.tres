@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://hbjhwsahv4gp"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_ns8bm"]
+
+[resource]
+script = ExtResource("1_ns8bm")
+Name = "CptLegend"
+FavColor = Color(0.94902, 0.803922, 0.227451, 1)
+Dialog = "Can you blind me so I don't have to see Among Us?"
+Need = ["badVision"]
+Bonus = ["poison"]
+Budget = 31
+House = 2
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = false

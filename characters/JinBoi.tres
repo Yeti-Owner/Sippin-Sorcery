@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://sixli5glrqkn"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_lhq5c"]
+
+[resource]
+script = ExtResource("1_lhq5c")
+Name = "Jin boi"
+FavColor = Color(0, 0.501961, 0.501961, 1)
+Dialog = "I hurt myself at the gym mind helping?"
+Need = ["health"]
+Bonus = ["strength", "dexterity"]
+Budget = 41
+House = 1
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = true

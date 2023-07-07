@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://clpjiqpj7cyyc"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_nmwgd"]
+
+[resource]
+script = ExtResource("1_nmwgd")
+Name = "BedHeadNinja"
+FavColor = Color(0.301961, 0.545098, 0.0862745, 1)
+Dialog = "I have a plan to mess with the stock market, I need nightvision and to jump higher."
+Need = ["jumping", "nightVision"]
+Bonus = ["luck"]
+Budget = 66
+House = 1
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = false

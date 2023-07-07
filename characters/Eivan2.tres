@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://xqdq7m1doe7r"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_c05jo"]
+
+[resource]
+script = ExtResource("1_c05jo")
+Name = "Eivan"
+FavColor = Color(1, 0, 0, 1)
+Dialog = "I love chicken and rice and eat it till it hurts, make it not hurt."
+Need = ["lessPain"]
+Bonus = ["poison"]
+Budget = 40
+House = 0
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = false

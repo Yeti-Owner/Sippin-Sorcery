@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://21db7klodckb"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_p6o71"]
+
+[resource]
+script = ExtResource("1_p6o71")
+Name = "BurgerkingCandycrush"
+FavColor = Color(1, 0.899667, 0.57, 1)
+Dialog = "I've been giving lasagna to cats and keep getting scratched, give me something to numb the pain."
+Need = ["lessPain"]
+Bonus = ["health"]
+Budget = 34
+House = 2
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = true

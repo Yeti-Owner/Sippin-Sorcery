@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://g4s7e1w38p1n"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_bsypc"]
+
+[resource]
+script = ExtResource("1_bsypc")
+Name = "Eidolonic"
+FavColor = Color(100, 100, 0, 1)
+Dialog = "I need help with public speaking, I'm nervous and I stutter!"
+Need = ["charisma", "courage"]
+Bonus = ["stability"]
+Budget = 56
+House = 1
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = true
+Watermelon = true
+Orange = true

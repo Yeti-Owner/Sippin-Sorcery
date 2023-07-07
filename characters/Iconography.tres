@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://gffd7gn4uiph"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_xxpsa"]
+
+[resource]
+script = ExtResource("1_xxpsa")
+Name = "Iconography"
+FavColor = Color(0, 0.556863, 0, 1)
+Dialog = "There are monsters in my community, give me something to protect from fire and electricity."
+Need = ["fireRes", "electricalRes"]
+Bonus = ["courage", "agility", "strength"]
+Budget = 77
+House = 3
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = true
+Blueberry = false
+Watermelon = true
+Orange = false

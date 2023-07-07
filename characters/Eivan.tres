@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://xafttkyqmu7b"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_cs161"]
+
+[resource]
+script = ExtResource("1_cs161")
+Name = "Eivan"
+FavColor = Color(0.909804, 0, 0, 1)
+Dialog = "Give me the strength required to save the Orangutans."
+Need = ["strength"]
+Bonus = ["courage"]
+Budget = 24
+House = 0
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = false
