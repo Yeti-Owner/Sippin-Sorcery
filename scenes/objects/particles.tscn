@@ -42,6 +42,7 @@ size = Vector3(59, 10.98, 1)
 [node name="Particles" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.197, 0)
 cast_shadow = 0
 gi_mode = 2

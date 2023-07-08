@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://qdw01ltyywby"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_qc48h"]
+
+[resource]
+script = ExtResource("1_qc48h")
+Name = "Keta"
+FavColor = Color(0.447059, 0, 0, 1)
+Dialog = "Help me convince my parents to let me take creatine (and maybe steroids)."
+Need = ["charisma"]
+Bonus = []
+Budget = 20
+House = 0
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = false

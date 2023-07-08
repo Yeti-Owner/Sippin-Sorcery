@@ -21,7 +21,12 @@ func _on_resume_pressed():
 	_toggle()
 
 func _on_options_pressed():
+	$Help.Visible += 0
 	$Options.Visible += 1
+
+func _on_help_pressed():
+	$Options.Visible = 0
+	$Help.Visible += 1
 
 func _on_quit_pressed():
 	get_tree().quit()

@@ -24,8 +24,8 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed("select"):
 			match Hovered:
 				"Start":
-#					get_tree().change_scene_to_file("res://scenes/world.tscn")
-					$Anims.play("End")
+					get_tree().change_scene_to_file("res://scenes/world.tscn")
+#					$Anims.play("End")
 				"Credits":
 					$Anims.play("credits")
 				"Quit":

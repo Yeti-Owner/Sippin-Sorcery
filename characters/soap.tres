@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://c6vj5gd8f8s8d"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_51wxp"]
+
+[resource]
+script = ExtResource("1_51wxp")
+Name = "soap"
+FavColor = Color(0.2, 0.427451, 1, 1)
+Dialog = "I'm scared of heights and need to go near some tomorrow help please."
+Need = ["courage"]
+Bonus = []
+Budget = 19
+House = 2
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = false
+Blueberry = true
+Watermelon = true
+Orange = true

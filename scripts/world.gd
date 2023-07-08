@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var dialogue := get_node(EventBus.Dialogue)
 
-var Stage:int = 0
+var Stage:int = -1
 
 func _ready():
 	EventBus.connect("DialogueFinished", _tutorial)
@@ -10,10 +10,12 @@ func _ready():
 func _tutorial():
 	Stage += 1
 	match Stage:
-		1:
+		0:
 			dialogue._talk(str("[font_size=36]Hey Bob! I'm excited to get started.[/font_size]"), "Self")
+		1:
+			dialogue._talk(str("[font_size=36]For legal reasons this is a juice shop and you sell juice, but don't worry about that I'll handle the business side.[/font_size]"), "Bob")
 		2:
-			dialogue._talk(str("[font_size=36]Mixing the juice is simple. Find the ingredients scattered on the shelves around us, and add them to the cauldron right in front of you. Remember " + EventBus.PlayerName + ", the effects of each ingredient change as you add more, up to a maximum of three.[/font_size]"), "Bob")
+			dialogue._talk(str("[font_size=36]Mixing the juice is simple. Find the ingredients scattered on the shelves around us, and add them to the cauldron right in front of you. Remember " + EventBus.PlayerName + ", the effects of each ingredient change as you add more, up to a maximum of three.[/font_size]"))
 		3:
 			dialogue._talk(str("[font_size=36]Each juice needs a flavor to make it more appealing. You'll find the flavor options below the cauldron. Ask the customers what flavor they want and add it after the ingredients before mixing the juice.[/font_size]"))
 		4:

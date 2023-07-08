@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://dybep0qljlmpb"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_3pd0t"]
+
+[resource]
+script = ExtResource("1_3pd0t")
+Name = "Kangaroo_Knight"
+FavColor = Color(0, 0, 0.537255, 1)
+Dialog = "My dream car is a 1969 Corvette Stingray and I have a plan to get one. I just need something to make me immune to explosions."
+Need = ["explosionRes"]
+Bonus = []
+Budget = 50
+House = 1
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = false

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cofv5nj8cv5m6"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_arwjk"]
+
+[resource]
+script = ExtResource("1_arwjk")
+Name = "Strabster"
+FavColor = Color(0, 0.615686, 0, 1)
+Dialog = "I have severe back pain from my dumptruck ass, please help"
+Need = ["lessWeight", "lessPain"]
+Bonus = ["health"]
+Budget = 78
+House = 0
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = true

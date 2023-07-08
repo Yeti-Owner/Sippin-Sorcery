@@ -1,0 +1,153 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjrux7dsxqvps"]
+
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="1_4qtt4"]
+[ext_resource type="Script" path="res://scripts/ui/HelpMenu.gd" id="1_o2pd8"]
+[ext_resource type="Texture2D" uid="uid://5uxv04hb0q63" path="res://assets/textures/ui/HelpArrow.png" id="2_txl6d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds50b"]
+bg_color = Color(0.211765, 0.0980392, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjeoc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dolvj"]
+bg_color = Color(0.176471, 0.0784314, 0.0823529, 0.545098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8upn"]
+bg_color = Color(0.176471, 0.0784314, 0.0823529, 0.745098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pma1y"]
+bg_color = Color(0.211765, 0.0980392, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_detail = 16
+
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1100.0
+offset_bottom = -1100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o2pd8")
+
+[node name="Bg" type="Panel" parent="."]
+custom_minimum_size = Vector2(1100, 700)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ds50b")
+
+[node name="MarginContainer" type="MarginContainer" parent="Bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HelpLabel" type="RichTextLabel" parent="Bg/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 18
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("1_4qtt4")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+
+[node name="CloseBtn" type="Button" parent="Bg"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_4qtt4")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjeoc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dolvj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k8upn")
+text = "close?"
+
+[node name="Post" type="Panel" parent="."]
+custom_minimum_size = Vector2(50, 192)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_top = -192.0
+offset_right = 25.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pma1y")
+
+[node name="NextArrow" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 600.0
+offset_top = -50.0
+offset_right = 700.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_txl6d")
+texture_pressed = ExtResource("2_txl6d")
+texture_hover = ExtResource("2_txl6d")
+
+[node name="BackArrow" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -50.0
+offset_right = -600.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_txl6d")
+texture_pressed = ExtResource("2_txl6d")
+texture_hover = ExtResource("2_txl6d")
+flip_h = true
+
+[connection signal="pressed" from="Bg/CloseBtn" to="." method="_on_close_btn_pressed"]
+[connection signal="pressed" from="NextArrow" to="." method="_on_next_arrow_pressed"]
+[connection signal="pressed" from="BackArrow" to="." method="_on_back_arrow_pressed"]
