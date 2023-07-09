@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cu0oi5xl6gypg"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_cgxty"]
+
+[resource]
+script = ExtResource("1_cgxty")
+Name = "Reibean"
+FavColor = Color(0.976471, 0.356863, 0, 1)
+Dialog = "I don't think the Cuban Missile crisis was real, give me poison to interrogate someone."
+Need = ["poison"]
+Bonus = ["confusion"]
+Budget = 26
+House = 3
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = true
+Orange = false

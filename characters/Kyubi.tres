@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://belpac2hi2a0h"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_hmypx"]
+
+[resource]
+script = ExtResource("1_hmypx")
+Name = "Kyubi"
+FavColor = Color(0.388235, 0.607843, 1, 1)
+Dialog = "I need help, I'm learning the guitar and my fingers can't keep up."
+Need = ["dexterity"]
+Bonus = ["speed"]
+Budget = 30
+House = 2
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = true

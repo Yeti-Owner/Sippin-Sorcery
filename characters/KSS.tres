@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bq027cnqgr4r5"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_s0jfe"]
+
+[resource]
+script = ExtResource("1_s0jfe")
+Name = "KSS"
+FavColor = Color(0, 0.435294, 0, 1)
+Dialog = "I'm just really tired, any ideas?"
+Need = ["alertness"]
+Bonus = ["health"]
+Budget = 28
+House = 3
+Gender = "Male"
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = false

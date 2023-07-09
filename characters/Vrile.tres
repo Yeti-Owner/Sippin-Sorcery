@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://b10vw0jjhcagh"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_me1oj"]
+
+[resource]
+script = ExtResource("1_me1oj")
+Name = "Vrile"
+FavColor = Color(0.647059, 0.921569, 0, 1)
+Dialog = "I like making my friends laugh, any ideas?"
+Need = ["charisma"]
+Bonus = []
+Budget = 20
+House = 2
+Gender = "Male"
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = true

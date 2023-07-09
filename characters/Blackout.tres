@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://exevacnkux2k"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_or1gk"]
+
+[resource]
+script = ExtResource("1_or1gk")
+Name = "Blackout"
+FavColor = Color(0, 0, 0.419608, 1)
+Dialog = "Can you help me grow stronger?"
+Need = ["strength"]
+Bonus = ["health"]
+Budget = 20
+House = 1
+Gender = "Male"
+Strawberry = false
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = true
+Orange = false

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://dj6jwvhdjefxx"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_4q5ip"]
+
+[resource]
+script = ExtResource("1_4q5ip")
+Name = "Whatmaster"
+FavColor = Color(0, 0, 0.486275, 1)
+Dialog = "I love walking, can you give me something to walk more?"
+Need = ["stamina"]
+Bonus = ["health"]
+Budget = 30
+House = 3
+Gender = "Male"
+Strawberry = false
+Banana = true
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = false
