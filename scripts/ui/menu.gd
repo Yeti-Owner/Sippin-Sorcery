@@ -1,6 +1,8 @@
 extends Control
 
 @onready var Ray := $Camera3D/RayCast3D
+@onready var Click := $ClickSound
+@onready var Back := $BackSound
 var colliding:bool = false
 var Hovered := ""
 
@@ -24,16 +26,21 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed("select"):
 			match Hovered:
 				"Start":
+					Click.play()
 					get_tree().change_scene_to_file("res://scenes/world.tscn")
 #					$Anims.play("End")
 				"Credits":
+					Click.play()
 					$Anims.play("credits")
 				"Quit":
+					Back.play()
 					get_tree().quit()
 				"Feedback":
+					Click.play()
 					$CreditsSection/FeedbackText.text = str("WIP, dm me")
 					print("-- Feedback Clicked --")
 				"Back":
+					Back.play()
 					$Anims.play("Back")
 		return
 	

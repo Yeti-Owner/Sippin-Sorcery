@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+@onready var FlipPage := $FlipPageSound
+@onready var OpenClose := $OpenCloseSound
+
 @onready var PotionName := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer/Name
 @onready var PotionIcon := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer/PotionTex
 @onready var PotionDesc := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer/Description
@@ -22,6 +25,7 @@ func _physics_process(_delta) -> void:
 		self._hide()
 
 func _pop_up():
+	OpenClose.play()
 	self.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	_set_page(CurrentPage)
@@ -41,15 +45,19 @@ func _set_page(_page):
 	PotionNotes.text = NewText
 
 func _on_left_pressed():
+	FlipPage.play()
 	_set_page(CurrentPage - 1)
 
 func _on_right_pressed():
+	FlipPage.play()
 	_set_page(CurrentPage + 1)
 
 func _on_click_out_pressed():
 	_hide()
 
 func _hide():
+	if enabled == true:
+		OpenClose.play()
 	self.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	enabled = false

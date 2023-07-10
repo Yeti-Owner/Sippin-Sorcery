@@ -1,5 +1,7 @@
 extends Control
 
+@onready var Click := $ClickSound
+@onready var Back := $BackSound
 var isPaused:bool = false
 
 func _ready():
@@ -17,16 +19,20 @@ func _toggle():
 	$Options.Visible = 0
 
 func _on_resume_pressed():
+	Click.play()
 	isPaused = false
 	_toggle()
 
 func _on_options_pressed():
+	Click.play()
 	$Help.Visible += 0
 	$Options.Visible += 1
 
 func _on_help_pressed():
+	Click.play()
 	$Options.Visible = 0
 	$Help.Visible += 1
 
 func _on_quit_pressed():
+	Back.play()
 	get_tree().quit()

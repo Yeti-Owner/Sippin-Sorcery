@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ba1a6cgfrtyrv"]
+[gd_scene load_steps=10 format=3 uid="uid://ba1a6cgfrtyrv"]
 
 [ext_resource type="Texture2D" uid="uid://mbtqkybqb2ng" path="res://assets/textures/ui/JournalUI.png" id="1_adjb6"]
 [ext_resource type="Script" path="res://scripts/ui/journal.gd" id="1_w1gam"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_qp538"]
 [ext_resource type="Texture2D" uid="uid://ba4003lmovkj3" path="res://assets/textures/ui/arrow.png" id="4_3jxwb"]
+[ext_resource type="AudioStream" uid="uid://ndoupxvd5dtl" path="res://assets/audio/bookFlip2.ogg" id="5_fymyx"]
+[ext_resource type="AudioStream" uid="uid://1fljpibg26ve" path="res://assets/audio/bookOpen.ogg" id="6_x50el"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcfay"]
 
@@ -175,6 +177,12 @@ texture = ExtResource("4_3jxwb")
 [node name="delay" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="FlipPageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fymyx")
+
+[node name="OpenCloseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_x50el")
 
 [connection signal="pressed" from="Journal/CenterContainer/ClickOut" to="." method="_on_click_out_pressed"]
 [connection signal="pressed" from="Journal/CenterContainer/TextureRect/Left" to="." method="_on_left_pressed"]
