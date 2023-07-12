@@ -16,9 +16,9 @@ func  _ready():
 
 func get_interaction_text():
 	if EventBus.HeldItem == null:
-		return str("[center]Press E to grab [color=" + str(FlavorSetup[Flavor].to_html()) + "]" + str(Flavor) + "[/color][/center]")
+		return str("[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to grab [color=" + str(FlavorSetup[Flavor].to_html()) + "]" + str(Flavor) + "[/color][/center]")
 	elif EventBus.HeldItem == str(Flavor):
-		return "[center]Press E to [color=" + str(FlavorSetup[Flavor].to_html()) + "]put it back[/color][/center]"
+		return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=" + str(FlavorSetup[Flavor].to_html()) + "]put it back[/color][/center]"
 	else:
 		return "[center]your hands are [color=" + str(FlavorSetup[Flavor].to_html()) + "]full[/color][/center]"
 

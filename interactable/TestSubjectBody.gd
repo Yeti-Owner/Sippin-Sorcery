@@ -65,7 +65,7 @@ func _ready():
 
 func get_interaction_text():
 	if EventBus.HeldItem == "Juice" and EventBus.Balance >= 25:
-		return str("[center]Press E to test juice with [color=" + str(color.to_html()) + "] " + get_parent().CharName + "[/color] (Costs 25ʛ)[/center]")
+		return str("[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to test juice with [color=" + str(color.to_html()) + "] " + get_parent().CharName + "[/color] (Costs 25ʛ)[/center]")
 	elif EventBus.HeldItem == "Juice" and EventBus.Balance < 25:
 		return str("[center]Not enough money, [color=GOLD]25ʛ required[/color][/center]")
 	else:

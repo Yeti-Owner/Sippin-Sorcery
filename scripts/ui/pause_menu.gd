@@ -17,6 +17,8 @@ func _toggle():
 	get_tree().set_pause(isPaused)
 	self.visible = isPaused
 	$Options.Visible = 0
+	$Help.Visible = 0
+	$Controls.Visible = 0
 
 func _on_resume_pressed():
 	Click.play()
@@ -25,14 +27,23 @@ func _on_resume_pressed():
 
 func _on_options_pressed():
 	Click.play()
-	$Help.Visible += 0
+	$Help.Visible = 0
+	$Controls.Visible = 0
 	$Options.Visible += 1
+
+func _on_controls_pressed():
+	Click.play()
+	$Help.Visible = 0
+	$Options.Visible = 0
+	$Controls.Visible += 1
 
 func _on_help_pressed():
 	Click.play()
 	$Options.Visible = 0
+	$Controls.Visible = 0
 	$Help.Visible += 1
 
 func _on_quit_pressed():
 	Back.play()
 	get_tree().quit()
+

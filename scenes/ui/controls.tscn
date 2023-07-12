@@ -1,0 +1,206 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8leyiyucal1g"]
+
+[ext_resource type="Script" path="res://scripts/ui/controls.gd" id="1_gc2un"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8la0"]
+bg_color = Color(0.211765, 0.0980392, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+
+[node name="Controls" type="Control"]
+custom_minimum_size = Vector2(835, 270)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1850.0
+offset_top = -135.0
+offset_right = -1015.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gc2un")
+
+[node name="Bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8la0")
+
+[node name="GridContainer" type="GridContainer" parent="Bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="forward" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/forward"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Forward"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/forward"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "WWWW"
+
+[node name="backward" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/backward"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Backward"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/backward"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "S"
+
+[node name="left" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/left"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/left"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "A"
+
+[node name="right" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/right"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Right"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/right"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "D"
+
+[node name="jump" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/jump"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/jump"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Space"
+
+[node name="interact" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/interact"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/interact"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "E"
+
+[node name="pause" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/pause"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/pause"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Esc"
+
+[node name="id" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/id"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "ID"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/id"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Q"
+
+[connection signal="pressed" from="Bg/GridContainer/forward/Button" to="." method="_on_button_pressed" binds= [0]]
+[connection signal="pressed" from="Bg/GridContainer/backward/Button" to="." method="_on_button_pressed" binds= [1]]
+[connection signal="pressed" from="Bg/GridContainer/left/Button" to="." method="_on_button_pressed" binds= [2]]
+[connection signal="pressed" from="Bg/GridContainer/right/Button" to="." method="_on_button_pressed" binds= [3]]
+[connection signal="pressed" from="Bg/GridContainer/jump/Button" to="." method="_on_button_pressed" binds= [4]]
+[connection signal="pressed" from="Bg/GridContainer/interact/Button" to="." method="_on_button_pressed" binds= [5]]
+[connection signal="pressed" from="Bg/GridContainer/pause/Button" to="." method="_on_button_pressed" binds= [6]]
+[connection signal="pressed" from="Bg/GridContainer/id/Button" to="." method="_on_button_pressed" binds= [7]]

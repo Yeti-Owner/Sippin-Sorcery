@@ -7,7 +7,7 @@ var Used:bool = false
 
 func get_interaction_text():
 	if EventBus.HeldItem == "Juice" and Used == false:
-		return str("[center]Press E to give juice to [color=" + str(color.to_html()) + "] " + str(CharName) + "[/color][/center]")
+		return str("[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to give juice to [color=" + str(color.to_html()) + "] " + str(CharName) + "[/color][/center]")
 	else:
 		return str("[center][color=" + str(color.to_html()) + "] " + str(CharName) + "[/color][/center]")
 
