@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnrg78npaasgb"]
+
+[ext_resource type="ArrayMesh" uid="uid://boh0l33hmsy0v" path="res://assets/models/clock.obj" id="1_eokgy"]
+[ext_resource type="Script" path="res://interactable/Clock.gd" id="1_pbglp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_obn58"]
+size = Vector3(0.9, 0.9, 0.3)
+
+[node name="Clock" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_pbglp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_eokgy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.45, -0.05)
+shape = SubResource("BoxShape3D_obn58")

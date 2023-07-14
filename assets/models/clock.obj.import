@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://boh0l33hmsy0v"
+path="res://.godot/imported/clock.obj-18215e7e49b1c00be3530980dfe2155c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/clock.obj-18215e7e49b1c00be3530980dfe2155c.mesh"]
+
+source_file="res://assets/models/clock.obj"
+dest_files=["res://.godot/imported/clock.obj-18215e7e49b1c00be3530980dfe2155c.mesh", "res://.godot/imported/clock.obj-18215e7e49b1c00be3530980dfe2155c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
