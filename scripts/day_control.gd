@@ -20,7 +20,6 @@ func _set_rotation(deg):
  
 func fin():
 	EventBus.emit_signal("DayDone")
-	print("Day Done")
 
 func _on_loading_screen_loading_done():
 	if Showcase == true:
@@ -30,11 +29,8 @@ func _on_loading_screen_loading_done():
 
 func _next_stage():
 	StepAmt += 1
-	
-#	print("Next Stage")
-	
+
 	# calculate the next degrees
 	var d:float = RotationSteps * StepAmt
 	_set_rotation(d)
-	print(d)
 

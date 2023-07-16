@@ -65,7 +65,7 @@ _data = {
 }
 
 [node name="LoadingScreen" type="CanvasLayer"]
-layer = 4
+layer = 5
 script = ExtResource("1_vdjxe")
 
 [node name="Control" type="Control" parent="."]

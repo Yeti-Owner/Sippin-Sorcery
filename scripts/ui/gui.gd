@@ -8,6 +8,7 @@ func _ready():
 #	Engine.set_max_fps(60)
 	EventBus.interaction.connect(_set_interaction)
 	EventBus.connect("BalanceChanged", _balance)
+	EventBus.Fade.connect(_fade)
 	_balance()
 
 func _set_interaction(icon, text):
@@ -29,3 +30,9 @@ func _on_timer_timeout(): # Instane pause menu
 	var p = load("res://scenes/ui/pause_menu.tscn")
 	var _p = p.instantiate()
 	$CanvasLayer.add_child(_p)
+
+func _fade(value):
+	if value == true:
+		$Fader/AnimationPlayer.play("fade_in")
+	else:
+		$Fader/AnimationPlayer.play("fade_out")

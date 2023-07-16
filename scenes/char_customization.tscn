@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dulbac7qmtmo6"]
+[gd_scene load_steps=32 format=3 uid="uid://dulbac7qmtmo6"]
 
 [ext_resource type="Script" path="res://scripts/char_customization.gd" id="1_y2itm"]
 [ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="2_sqjmt"]
@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://v70u0xiskn6a" path="res://assets/models/characters/legs/leg1.obj" id="7_q70l6"]
 [ext_resource type="ArrayMesh" uid="uid://4c0y07n3ds0j" path="res://assets/models/Post.obj" id="12_5ii5j"]
 [ext_resource type="ArrayMesh" uid="uid://b2yfoawgcbu4o" path="res://assets/models/Arrow.obj" id="12_un70k"]
+[ext_resource type="AudioStream" uid="uid://7mrq8j1nle0j" path="res://assets/audio/click_001.ogg" id="13_b6cfs"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="13_l50my"]
 [ext_resource type="ArrayMesh" uid="uid://bmpupgh3l0muy" path="res://assets/models/sign.obj" id="14_ojmya"]
 
@@ -942,6 +943,10 @@ skeleton = NodePath("../..")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.1, 1.5, -6.4)
 mesh = SubResource("BoxMesh_fgiua")
 skeleton = NodePath("../..")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_b6cfs")
+bus = &"Sfx"
 
 [connection signal="text_submitted" from="CenterContainer/VBoxContainer/Name" to="." method="_on_name_text_submitted"]
 [connection signal="animation_finished" from="AnimPlayer" to="." method="_on_anim_player_animation_finished"]

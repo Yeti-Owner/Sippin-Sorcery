@@ -1,6 +1,7 @@
 extends Control
 
 @onready var Anims := $AnimPlayer
+@onready var Click := $ClickSound
 
 @onready var Ray := $Cam/RayCast3D
 var colliding: bool = false
@@ -59,18 +60,25 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed("select"):
 			match Hovered:
 				"Up":
+					Click.play()
 					_change_stage(Stage + 1)
 				"Down":
+					Click.play()
 					_change_stage(Stage - 1)
 				"Left":
+					Click.play()
 					_swap_part(-1)
 				"Right":
+					Click.play()
 					_swap_part(1)
 				"RotateR":
+					Click.play()
 					$Character.rotation_degrees.y += 45
 				"RotateL":
+					Click.play()
 					$Character.rotation_degrees.y -= 45
 				"Done":
+					Click.play()
 					_ending()
 					_off()
 		return

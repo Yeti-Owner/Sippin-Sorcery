@@ -70,18 +70,14 @@ func _tutorial():
 		29:
 			dialogue._talk(str("[font_size=36]Well done " + EventBus.PlayerName + "![/font_size]"), "Bob")
 		30:
-			dialogue._talk(str("[font_size=36]Looks like that will be all the customers today. I recommend you research some ingredients and once the sun goes down close the shop.[/font_size]"))
+			dialogue._talk(str("[font_size=36]Looks like that will be all the customers today. I recommend you research some ingredients then close shop whenever you're done.[/font_size]"))
 		31:
 			dialogue._talk(str("[font_size=36]You did good " + EventBus.PlayerName + ", I'm proud of you.[/font_size]"))
 		32:
 			dialogue._done()
-			$TempTimer.start(5)
-		33:
-			dialogue._talk(str("[font_size=36]And yes I'm aware there is no music and basically no audio, that's a WIP so ignore for now please.[/font_size]"), "Duane", 5)
-		34:
-			dialogue._done()
 
 func _on_loading_screen_loading_done():
+	EventBus.Fade.emit(true)
 	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), "Bob")
 
 func _on_temp_timer_timeout():
@@ -93,8 +89,8 @@ func _on_temp_timer_timeout():
 		_tutorial()
 	elif Stage == 25 and EventBus.ActiveCustomers != 0:
 		$TempTimer.start(5)
-	elif Stage == 32:
-		dialogue._talk(str("[font_size=36]That's all for now " + EventBus.PlayerName + ", thank you for playtesting and PLEASE let me know what you think.[/font_size]"), "Bob", 2)
+	elif Stage == 30:
+		get_tree().change_scene_to_file("res://scenes/levels/Level1.tscn")
 
 func _duane_journal():
 	PotionInfo.JournalIngredients["MermaidScale"] = PotionInfo.JournalIngredients["MermaidScale"].format({"swimming": str("Enhanced swimming ([color=DARK_GRAY]Duane[/color]" + ")")})
@@ -102,3 +98,8 @@ func _duane_journal():
 	PotionInfo.JournalIngredients["MandrakeRoot"] = PotionInfo.JournalIngredients["MandrakeRoot"].format({"resistance": str("Overall resistance to common illnesses ([color=DARK_GRAY]Duane[/color]" + ")")})
 	PotionInfo.JournalIngredients["TrollBlood"] = PotionInfo.JournalIngredients["TrollBlood"].format({"courage": str("Courage ([color=DARK_GRAY]Duane[/color]" + ")")})
 	PotionInfo.JournalIngredients["PhoenixFeather"] = PotionInfo.JournalIngredients["PhoenixFeather"].format({"sleep": str("Sleep/calming effect ([color=DARK_GRAY]Duane[/color]" + ")")})
+
+func _on_clock_next_day():
+	EventBus.Fade.emit(false)
+	$TempTimer.start(1)
+	Stage = 30

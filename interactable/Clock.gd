@@ -1,5 +1,6 @@
 extends Interactable
 
+signal NextDay
 var Night:bool = false
 
 func _ready():
@@ -18,7 +19,8 @@ func get_interaction_icon():
 		return EventBus.CrosshairTex
 
 func interact():
-	pass
- 
+	if Night == true:
+		emit_signal("NextDay")
+
 func _day_done():
 	Night = true
