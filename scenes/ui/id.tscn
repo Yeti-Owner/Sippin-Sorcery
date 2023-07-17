@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3s5j3hlu32e0"]
+[gd_scene load_steps=9 format=3 uid="uid://c3s5j3hlu32e0"]
 
 [ext_resource type="Script" path="res://scripts/ui/id.gd" id="1_cexjj"]
 [ext_resource type="FontFile" uid="uid://cte56ou5xtpk5" path="res://assets/theme/SourceSansPro-Regular.ttf" id="1_cn6lj"]
@@ -33,15 +33,7 @@ border_color = Color(0.14902, 0.133333, 0.380392, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5aiyq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nqkxr"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
 [node name="ID" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -249,35 +241,30 @@ vertical_alignment = 1
 layout_mode = 2
 alignment = 1
 
-[node name="Panel8" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="boss1" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+color = Color(0, 0, 0, 1)
 
-[node name="Panel9" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="boss2" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+color = Color(0, 0, 0, 1)
 
-[node name="Panel10" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="boss3" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+color = Color(0, 0, 0, 1)
 
-[node name="Panel11" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="boss4" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+color = Color(0, 0, 0, 1)
 
-[node name="Panel12" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="boss5" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_nqkxr")
+color = Color(0, 0, 0, 1)
 
 [node name="UpdateTimer" type="Timer" parent="."]
 autostart = true

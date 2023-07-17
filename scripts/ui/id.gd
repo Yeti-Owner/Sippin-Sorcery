@@ -26,4 +26,7 @@ func _setup():
 
 func _on_update_timer_timeout():
 	Reputation.text = str(EventBus.Reputation)
-	# Also update completions when that is set up
+	
+	if EventBus.BossesBeaten != 0:
+		for i in EventBus.BossesBeaten:
+			get_node(str("CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer/boss" + str(i + 1))).color = Color(0, 1, 0)

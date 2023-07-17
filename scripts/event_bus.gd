@@ -29,8 +29,9 @@ var PlayerName:String = "Callum"
 var PlayerOutfit:Array = ["res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/torsos/torso1.obj", "res://assets/models/characters/pants/pants1.obj", "res://assets/models/characters/legs/leg1.obj", "res://assets/models/characters/hats/HairColor1.png"]
 var Balance := 75
 var PlayerHeadshot
-var Reputation := 0
+var Reputation := 0 : set = _check_rep
 var IdNum:int
+var BossesBeaten:int = 0
 var StartDate:String = Time.get_date_string_from_system()
 
 # Misc
@@ -53,3 +54,7 @@ func _player_headshot():
 
 func _set_dialogue(_node):
 	Dialogue = get_path_to(_node)
+
+func _check_rep(_rep):
+	var MaxRep := (BossesBeaten + 1) * 25
+	Reputation = clamp(_rep, 0, MaxRep)
