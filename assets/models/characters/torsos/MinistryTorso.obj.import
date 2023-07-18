@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbibs0xueji0i"
+path="res://.godot/imported/MinistryTorso.obj-3dd0f38f151fd743877a094263e983a5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MinistryTorso.obj-3dd0f38f151fd743877a094263e983a5.mesh"]
+
+source_file="res://assets/models/characters/torsos/MinistryTorso.obj"
+dest_files=["res://.godot/imported/MinistryTorso.obj-3dd0f38f151fd743877a094263e983a5.mesh", "res://.godot/imported/MinistryTorso.obj-3dd0f38f151fd743877a094263e983a5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

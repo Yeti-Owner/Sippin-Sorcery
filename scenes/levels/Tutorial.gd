@@ -5,6 +5,7 @@ extends Node3D
 var Stage:int = -1
 
 func _ready():
+	$Spawner._start()
 	EventBus.connect("DialogueFinished", _tutorial)
 
 func _tutorial():
