@@ -43,7 +43,7 @@ func _on_help_pressed():
 	$Controls.Visible = 0
 	$Help.Visible += 1
 
-func _on_quit_pressed():
+func _on_menu_pressed():
 	Back.play()
-	get_tree().quit()
-
+	get_tree().set_pause(false)
+	get_tree().change_scene_to_file("res://scenes/ui/menu.tscn")

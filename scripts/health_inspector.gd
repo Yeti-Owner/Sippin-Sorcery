@@ -2,9 +2,13 @@ extends PathFollow3D
 
 @onready var AnimPlayer := $BodyMeshes/AnimationPlayer
 @onready var Apparation := preload("res://scenes/apparation.tscn")
+@onready var Dialogue := $SpeechBubble
 
 const MaleNames := ["Jack","Thomas","James","Daniel", "Joshua","Matthew","William","David","Joseph","Benjamin","Oliver","Ryan","Alexander","Christopher","Samuel","Michael"]
 const FemaleNames := ["Emily","Jessica", "Charlotte","Sophie", "Olivia", "Emma", "Hannah", "Amy", "Lucy", "Rebecca", "Megan", "Lauren", "Katie", "Ellie", "Grace"]
+
+const Problems := ["Give me a potion of strength please.","Do you have a potion of levitation?","You got a potion of charisma?","Can I get a draught of sleep potion?","Hmm have something for swimming?","Do you perchance have a potion of petrification?","Give me a potion of invisibility.","Potion of flexibility?","Potion of luck please.","Could I please buy a potion of speed?","I would like 1 potion of agility please."]
+@onready var Problem:String = Problems[randi() % Problems.size()]
 var CharName:String
 var Gender:String
 
@@ -29,8 +33,6 @@ func _ready():
 		CharName = FemaleNames[randi() % FemaleNames.size()]
 	
 	_dress()
-
-
 
 func _physics_process(delta):
 	if $RayCast3D.is_colliding():
@@ -60,6 +62,26 @@ func _physics_process(delta):
 	if self.progress_ratio < 1:
 		walking = true
 		self.progress_ratio = min(self.progress_ratio + (speed * delta), 1)
+
+func _result(success:bool, flavor:bool):
+	var Response:String
+	if success:
+		# Good
+		Response = "Oh it's just juice"
+		EventBus.Balance += 10
+	else:
+		Response = "I knew you were selling illegal potions"
+		EventBus.Balance -= 25
+		EventBus.Reputation -= 10
+	
+	if flavor:
+		Response += ", tastes good."
+		EventBus.Balance += 10
+	else:
+		Response += ", don't like that flavor."
+		EventBus.Balance -= 10
+	
+	EventBus.emit_signal("BalanceChanged")
 
 # New Dress Function
 func _dress():

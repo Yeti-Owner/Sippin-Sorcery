@@ -36,6 +36,7 @@ var StartDate:String = Time.get_date_string_from_system()
 
 # Misc
 var ActiveCustomers:int = 0
+var CurrentLevel:String = "res://scenes/char_customization.tscn"
 
 # Settings
 var MasterVolume:float = 0

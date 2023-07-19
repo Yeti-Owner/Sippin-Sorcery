@@ -2,10 +2,9 @@ extends Interactable
 
 @onready var color := Color(randf(), randf(), randf())
 @onready var Dialogue := get_parent().get_node("SpeechBubble")
-
-
-
-var Talk:bool = true
+const Flavors := ["Strawberry","Watermelon","Orange","Blueberry","Pineapple","Banana"]
+@onready var Flavor:String = Flavors[randi() % Flavors.size()]
+var Talk:bool = false
 var Used:bool = false
 
 func get_interaction_text():
@@ -22,7 +21,7 @@ func interact():
 		return
 	
 	if EventBus.HeldItem == "Juice":
-		# Check if it is just water + flavor
+		_check(EventBus.HeldEffect, EventBus.HeldFlavor)
 		
 		EventBus.HeldEffect = null
 		EventBus.HeldFlavor = ""
@@ -35,12 +34,19 @@ func interact():
 		else:
 			_ask_problem()
 
-# Dialogue._talk(Info.Dialog)
-
 func _ask_problem():
 	Talk = !Talk
-	# Say problem
+	Dialogue._talk(get_parent().Problem)
 
 func _ask_flavors():
 	Talk = !Talk
-	# Say flavor
+	Dialogue._talk(str("I would like " + Flavor + " please."))
+
+# Check if it is just water + flavor
+func _check(effects, flavor:String):
+	var CorrectFlavor:bool = (flavor == Flavor)
+	var success:bool = false
+	if (effects.size() == 1) and (effects[0] == "water"):
+		success = true
+	
+	get_parent()._result(success, CorrectFlavor)

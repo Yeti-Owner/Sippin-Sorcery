@@ -174,7 +174,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Controls" type="Button" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(160, 60)
+custom_minimum_size = Vector2(240, 60)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_a645l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ifs4x")
@@ -215,14 +215,14 @@ text = "Help"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Menu" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(160, 60)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_kcc0f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ifs4x")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_y41mw")
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Quit"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/Menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -232,7 +232,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_tyros")
 theme_override_font_sizes/font_size = 26
-text = "Quit"
+text = "Main Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -258,4 +258,4 @@ bus = &"Sfx"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Help" to="." method="_on_help_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

@@ -2,6 +2,7 @@ extends Node3D
 
 func _ready():
 	$Spawner._start()
+	EventBus.CurrentLevel = "res://scenes/levels/Level2.tscn"
 
 func _on_loading_screen_loading_done():
 	EventBus.Fade.emit(true)

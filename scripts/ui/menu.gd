@@ -60,5 +60,5 @@ func _on_anims_animation_finished(anim_name):
 	if anim_name == "Start":
 		set_physics_process(true)
 	elif anim_name == "End":
-		get_tree().change_scene_to_file("res://scenes/char_customization.tscn")
+		get_tree().change_scene_to_file(EventBus.CurrentLevel)
 

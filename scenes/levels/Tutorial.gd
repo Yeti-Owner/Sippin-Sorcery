@@ -7,6 +7,7 @@ var Stage:int = -1
 func _ready():
 	$Spawner._start()
 	EventBus.connect("DialogueFinished", _tutorial)
+	EventBus.CurrentLevel = "res://scenes/levels/Tutorial.tscn"
 
 func _tutorial():
 	Stage += 1
