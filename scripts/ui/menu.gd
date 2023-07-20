@@ -27,8 +27,8 @@ func _physics_process(_delta):
 			match Hovered:
 				"Start":
 					Click.play()
-					get_tree().change_scene_to_file("res://scenes/levels/Tutorial.tscn")
-#					$Anims.play("End")
+#					get_tree().change_scene_to_file("res://scenes/levels/Tutorial.tscn")
+					$Anims.play("End")
 				"Credits":
 					Click.play()
 					$Anims.play("credits")

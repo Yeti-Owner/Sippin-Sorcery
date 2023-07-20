@@ -39,7 +39,8 @@ const CauldronPotions:Dictionary = {
 	"GriffinFeather": ["alertness", "perception", "electricalRes"],
 	"ChimeraFlame": ["strength", "explosionRes", "smokeImmunity"],
 	"GorgonBlood": ["petrificationRes", "poison", "betterSmell"],
-	"DryadSap": ["charisma", "health", "plantControl"]
+	"DryadSap": ["charisma", "health", "plantControl"],
+	"Water": ["water","water","water"]
 }
 
 # Ingredient : [ Name, color, Collision Position, Collision Size ]

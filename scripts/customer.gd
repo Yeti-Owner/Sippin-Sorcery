@@ -30,9 +30,11 @@ func _ready():
 		0:
 			LeaveTime = 60
 		1:
-			LeaveTime = 30
+			LeaveTime = 60
 		2:
-			pass
+			LeaveTime = 80
+		3:
+			LeaveTime = 90
 
 
 func _physics_process(delta):

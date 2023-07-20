@@ -81,7 +81,9 @@ func _result(success:bool, flavor:bool):
 		Response += ", don't like that flavor."
 		EventBus.Balance -= 10
 	
+	Dialogue._talk(Response)
 	EventBus.emit_signal("BalanceChanged")
+	$WaitTimer.start()
 
 # New Dress Function
 func _dress():
@@ -106,7 +108,6 @@ func _dress():
 	$BodyMeshes/Leg2.set_mesh(L)
 #	$BodyMeshes/Arm1.set_mesh(load("res://assets/models/characters/arm.obj"))
 #	$BodyMeshes/Arm2.set_mesh(load("res://assets/models/characters/arm.obj"))
-	
 
 func _on_wait_timer_timeout():
 	$RayCast3D.collide_with_bodies = false

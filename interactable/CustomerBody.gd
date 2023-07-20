@@ -1,5 +1,7 @@
 extends Interactable
 
+@onready var LeaveTimer := get_parent().get_node("LeaveTimer")
+
 var CharName:String
 var color
 var Talk:bool = true
@@ -19,6 +21,7 @@ func interact():
 		return
 	
 	if EventBus.HeldItem == "Juice":
+		LeaveTimer.stop()
 		get_parent()._finished(_check_success(), _check_flavor())
 		
 		EventBus.HeldEffect = null

@@ -3,7 +3,6 @@ extends Node3D
 @onready var BubbleText := $Text
 @onready var AnimPlayer := $AnimationPlayer
 
-
 func _ready():
 	self.hide()
 

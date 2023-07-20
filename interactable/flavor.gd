@@ -1,6 +1,6 @@
 extends Interactable
 
-@export_enum("Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange") var Flavor:String
+@export_enum("Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange","Water") var Flavor:String
 
 const FlavorSetup := {
 	"Strawberry": Color(1, 0, 0),
@@ -8,7 +8,8 @@ const FlavorSetup := {
 	"Pineapple": Color(0.89803922176361, 1, 0.09411764889956),
 	"Blueberry": Color(0.25, 0.37499988079071, 1),
 	"Watermelon": Color(0.25098040699959, 0.81960785388947, 0.02352941222489),
-	"Orange": Color(0.73000001907349, 0.41366666555405, 0)
+	"Orange": Color(0.73000001907349, 0.41366666555405, 0),
+	"Water": Color(0, 0.5686274766922, 0.75686275959015)
 }
 
 func  _ready():

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7ir318b3i6sm"]
+
+[ext_resource type="ArrayMesh" uid="uid://cyqqkx5cq7f2g" path="res://assets/models/helditems/water.obj" id="1_hojng"]
+
+[node name="Water" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.15, -0.05)
+layers = 2
+mesh = ExtResource("1_hojng")

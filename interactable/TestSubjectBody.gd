@@ -32,7 +32,7 @@ const EffectsList := {
 	"hearing": "I can hear a pin drop from across the room. My ears are super sensitive right now. It's like I've got supersonic hearing or something.",
 	"hovering": "Look, I'm floating! I can hover a few inches off the ground!",
 	"luck": "I don't know what's happening, but I feel like buying a lottery ticket. I just know I can win!",
-	"petrification": "Subject froze",
+	"petrification": "Subject was petrified.",
 	"purity": "I feel so pure and clean, like I just took the most refreshing shower ever. It's like I've been cleansed from the inside out.",
 	"heightenedSenses": "I can see a bit better, hear footsteps a touch louder, and my smell is maybe better. My senses just improved that's nice.",
 	"stability": "Whoa, I feel steady on my feet. I could balance on one leg without wobbling at all.",
