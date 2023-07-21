@@ -13,6 +13,6 @@ func _on_clock_next_day():
 
 func _on_temp_timer_timeout():
 	if EventBus.Reputation == 25:
-		pass # go to level 3
+		get_tree().change_scene_to_file("res://scenes/levels/Level3.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/levels/Level2.tscn")
