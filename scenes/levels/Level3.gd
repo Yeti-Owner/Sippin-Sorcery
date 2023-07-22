@@ -38,12 +38,13 @@ func _level():
 			dialogue._done()
 
 func _on_loading_screen_loading_done():
-	EventBus.Fade.emit(true)
+	EventBus.Fade.emit("day")
 	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", so we have a minor problem but don't worry![/font_size]"), "Bob")
 
 func _on_clock_next_day():
-	EventBus.Fade.emit(false)
+	EventBus.Fade.emit("out")
 	$TempTimer.start()
+	EventBus.DayNum += 1
 
 func _on_temp_timer_timeout():
 	print("Go to next level")

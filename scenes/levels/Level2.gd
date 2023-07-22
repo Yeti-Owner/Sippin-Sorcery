@@ -5,11 +5,12 @@ func _ready():
 	EventBus.CurrentLevel = "res://scenes/levels/Level2.tscn"
 
 func _on_loading_screen_loading_done():
-	EventBus.Fade.emit(true)
+	EventBus.Fade.emit("day")
 
 func _on_clock_next_day():
-	EventBus.Fade.emit(false)
+	EventBus.Fade.emit("out")
 	$TempTimer.start()
+	EventBus.DayNum += 1
 
 func _on_temp_timer_timeout():
 	if EventBus.Reputation == 25:

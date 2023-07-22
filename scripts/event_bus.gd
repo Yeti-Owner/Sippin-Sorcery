@@ -9,7 +9,7 @@ signal JournalToggle(toggle:bool)
 signal EnablePlayer(toggle:bool)
 signal DayDone
 signal CustomerDone
-signal Fade(value:bool)
+signal Fade(type:String)
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"
@@ -37,6 +37,7 @@ var StartDate:String = Time.get_date_string_from_system()
 # Misc
 var ActiveCustomers:int = 0
 var CurrentLevel:String = "res://scenes/char_customization.tscn"
+var DayNum:int = 1
 
 # Settings
 var MasterVolume:float = 0

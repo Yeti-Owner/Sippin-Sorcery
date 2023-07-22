@@ -78,7 +78,7 @@ func _tutorial():
 			dialogue._done()
 
 func _on_loading_screen_loading_done():
-	EventBus.Fade.emit(true)
+	EventBus.Fade.emit("day")
 	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), "Bob")
 
 func _on_temp_timer_timeout():
@@ -101,6 +101,7 @@ func _duane_journal():
 	PotionInfo.JournalIngredients["PhoenixFeather"] = PotionInfo.JournalIngredients["PhoenixFeather"].format({"sleep": str("Sleep/calming effect ([color=DARK_GRAY]Duane[/color]" + ")")})
 
 func _on_clock_next_day():
-	EventBus.Fade.emit(false)
+	EventBus.Fade.emit("out")
 	$TempTimer.start(1)
 	Stage = 30
+	EventBus.DayNum += 1

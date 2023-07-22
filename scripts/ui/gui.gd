@@ -3,13 +3,15 @@ extends CanvasLayer
 @onready var InteractionLabel := $InteractionText
 @onready var InteractIcon := $Center/crosshair
 @onready var BalanceLabel := $Control/Balance
+@onready var DayNumText := $Fader/Day
 
 func _ready():
-#	Engine.set_max_fps(60)
+	Engine.set_max_fps(60)
 	EventBus.interaction.connect(_set_interaction)
 	EventBus.connect("BalanceChanged", _balance)
 	EventBus.Fade.connect(_fade)
 	_balance()
+	DayNumText.text = str("Day " + str(EventBus.DayNum))
 
 func _set_interaction(icon, text):
 	if icon == null:
@@ -31,8 +33,11 @@ func _on_timer_timeout(): # Instane pause menu
 	var _p = p.instantiate()
 	$CanvasLayer.add_child(_p)
 
-func _fade(value):
-	if value == true:
-		$Fader/AnimationPlayer.play("fade_in")
-	else:
-		$Fader/AnimationPlayer.play("fade_out")
+func _fade(type:String):
+	match type:
+		"in":
+			$Fader/AnimationPlayer.play("fade_in")
+		"out":
+			$Fader/AnimationPlayer.play("fade_out")
+		"day":
+			$Fader/AnimationPlayer.play("day_in")
