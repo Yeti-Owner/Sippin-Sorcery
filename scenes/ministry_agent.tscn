@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxohweetbo45m"]
+[gd_scene load_steps=9 format=3 uid="uid://ct66v5cshml1b"]
 
-[ext_resource type="Script" path="res://scripts/health_inspector.gd" id="1_5dky4"]
-[ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="2_4ylio"]
-[ext_resource type="Script" path="res://interactable/HealthInspectorBody.gd" id="3_4xpw2"]
-[ext_resource type="PackedScene" uid="uid://bjc8hh2jur0or" path="res://scenes/speech_bubble.tscn" id="4_wht4w"]
+[ext_resource type="Script" path="res://scripts/ministry_agent.gd" id="1_e87rm"]
+[ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="2_u0wvn"]
+[ext_resource type="PackedScene" uid="uid://bjc8hh2jur0or" path="res://scenes/speech_bubble.tscn" id="3_giv36"]
+[ext_resource type="Script" path="res://interactable/MinistryAgentBody.gd" id="4_rvvtu"]
 
 [sub_resource type="Animation" id="Animation_3sshc"]
 length = 0.001
@@ -118,9 +118,9 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bo1v6"]
 radius = 0.4
 
-[node name="HealthInspector" type="PathFollow3D"]
+[node name="MinistryAgent" type="PathFollow3D"]
 rotation_mode = 1
-script = ExtResource("1_5dky4")
+script = ExtResource("1_e87rm")
 
 [node name="BodyMeshes" type="Node3D" parent="."]
 transform = Transform3D(0.663, 0, 0, 0, 0.663, 0, 0, 0, 0.663, 0, -0.073, 0)
@@ -139,12 +139,12 @@ skeleton = NodePath("")
 
 [node name="Arm1" type="MeshInstance3D" parent="BodyMeshes"]
 transform = Transform3D(-0.99, -2.53518e-06, -8.65486e-08, 2.50983e-06, -1, -8.65486e-08, -8.65484e-08, -8.7423e-08, 0.99, 0.5, 0.21, -0.05)
-mesh = ExtResource("2_4ylio")
+mesh = ExtResource("2_u0wvn")
 skeleton = NodePath("")
 
 [node name="Arm2" type="MeshInstance3D" parent="BodyMeshes"]
 transform = Transform3D(-0.99, -2.53518e-06, -8.65486e-08, 2.50983e-06, -1, -8.65486e-08, -8.65484e-08, -8.7423e-08, 0.99, -0.5, 0.2, -0.05)
-mesh = ExtResource("2_4ylio")
+mesh = ExtResource("2_u0wvn")
 skeleton = NodePath("")
 
 [node name="Pants" type="MeshInstance3D" parent="BodyMeshes"]
@@ -165,12 +165,12 @@ libraries = {
 "": SubResource("AnimationLibrary_8mls0")
 }
 
-[node name="SpeechBubble" parent="." instance=ExtResource("4_wht4w")]
+[node name="SpeechBubble" parent="." instance=ExtResource("3_giv36")]
 
 [node name="Body" type="StaticBody3D" parent="."]
 collision_layer = 7
 collision_mask = 3
-script = ExtResource("3_4xpw2")
+script = ExtResource("4_rvvtu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
 shape = SubResource("CapsuleShape3D_bo1v6")

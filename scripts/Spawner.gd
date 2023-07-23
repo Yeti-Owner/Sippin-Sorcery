@@ -12,7 +12,7 @@ extends Path3D
 
 @onready var timer := $MiscTimer
 const Customer := preload("res://scenes/customer.tscn")
-const HealthInspector := preload("res://scenes/health_inspector.tscn")
+const HealthInspector := preload("res://scenes/ministry_agent.tscn")
 
 const CustomerLists := {
 	0: TutorialCustomers,
@@ -21,7 +21,7 @@ const CustomerLists := {
 	3: HardCustomers
 }
 const TutorialCustomers := ["Ben", "Mary", "Emma", "Charles", "Krystal", "Jokez", "Hunter", "Dalidoah"]
-const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Artemis", "Emma", "Mary", "Krystal", "Krystal2", "Jokez", "Imoorzy", "Noto", "Hunter", "Formag", "Kuspy", "45Glockz", "Deathrow", "Carlito", "Sly", "sselemoh", "Nevaa", "Dalidoah", "Vrile", "Yurei", "Eivan", "Keta", "Flueve", "soap", "CptLegend", "Reibean", "Teethbat", "KSS", "Whatmaster", "Proccessing", "Blackout"]
+const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Artemis", "Emma", "Mary", "Krystal", "Krystal2", "Jokez", "Imoorzy", "Noto", "Hunter", "Formag", "Kuspy", "45Glockz", "Deathrow", "Carlito", "Sly", "sselemoh", "Nevaa", "Dalidoah", "Vrile", "Yurei", "Eivan", "Keta", "Flueve", "soap", "CptLegend", "Reibean", "Teethbat", "KSS", "Whatmaster", "Proccessing", "Blackout","Bruhgby"]
 const MediumCustomers := ["Jokez", "High", "Kaze", "Imoorzy", "Noto", "NanoCup", "Formag", "Kuspy", "45Glockz", "Moriarty", "Moriarty2", "Carlito2", "Ufrz", "Nevaa", "Reeseman5", "MrInfernal", "Kangaroo_Knight", "Iconography", "BurgerkingCandycrush", "BaronDipitous", "Eivan2", "CptLegend", "April", "Benzeenee10", "Jammi", "Kyubi", "JinBoi"]
 const HardCustomers := ["Slight", "Breo", "Skup", "Snipes", "Orion", "TCArk", "Leah", "Iconography", "Eidolonic", "BedHeadNinja", "Strabster"]
 var Spawned := []

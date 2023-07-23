@@ -4,8 +4,8 @@ extends PathFollow3D
 @onready var Apparation := preload("res://scenes/apparation.tscn")
 @onready var Dialogue := $SpeechBubble
 
-const MaleNames := ["Jack","Thomas","James","Daniel", "Joshua","Matthew","William","David","Joseph","Benjamin","Oliver","Ryan","Alexander","Christopher","Samuel","Michael"]
-const FemaleNames := ["Emily","Jessica", "Charlotte","Sophie", "Olivia", "Emma", "Hannah", "Amy", "Lucy", "Rebecca", "Megan", "Lauren", "Katie", "Ellie", "Grace"]
+const MaleNames := ["Liam", "Noah", "Ethan", "Oliver", "Aiden", "Ben", "Elijah", "James", "William", "Benjamin", "Lucas", "Mason", "Logan", "Alexander", "Michael"]
+const FemaleNames :=  ["Hannah", "Olivia", "Ava", "Isabella", "Sophia", "Mia", "Amelia", "Grace", "Evelyn", "Abigail", "Emily", "Elizabeth", "Charlotte", "Sofia", "Aria"]
 
 const Problems := ["Give me a potion of strength please.","Do you have a potion of levitation?","You got a potion of charisma?","Can I get a draught of sleep potion?","Hmm have something for swimming?","Do you perchance have a potion of petrification?","Give me a potion of invisibility.","Potion of flexibility?","Potion of luck please.","Could I please buy a potion of speed?","I would like 1 potion of agility please."]
 @onready var Problem:String = Problems[randi() % Problems.size()]
