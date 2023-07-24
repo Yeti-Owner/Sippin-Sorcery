@@ -34,6 +34,7 @@ func _physics_process(_delta):
 					$Anims.play("credits")
 				"Quit":
 					Back.play()
+					EventBus._save()
 					get_tree().quit()
 				"Feedback":
 					Click.play()

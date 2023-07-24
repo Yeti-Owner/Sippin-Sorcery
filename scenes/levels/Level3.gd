@@ -7,6 +7,8 @@ var Stage:int = 0
 func _ready():
 	EventBus.connect("DialogueFinished", _level)
 	EventBus.CurrentLevel = "res://scenes/levels/Level3.tscn"
+	EventBus._save()
+	EventBus._discord_presence()
 
 func _level():
 	Stage += 1
@@ -47,4 +49,4 @@ func _on_clock_next_day():
 	EventBus.DayNum += 1
 
 func _on_temp_timer_timeout():
-	print("Go to next level")
+	get_tree().change_scene_to_file("res://scenes/levels/Level4.tscn")
