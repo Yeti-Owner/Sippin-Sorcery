@@ -8,7 +8,7 @@ func _ready():
 	EventBus.connect("DialogueFinished", _tutorial)
 	EventBus.CurrentLevel = "res://scenes/levels/Tutorial.tscn"
 	EventBus._save()
-	EventBus._discord_presence()
+	EventBus._update_presence()
 
 func _tutorial():
 	Stage += 1

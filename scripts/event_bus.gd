@@ -122,3 +122,7 @@ func _discord_presence():
 	# discord_sdk.end_timestamp = int(Time.get_unix_time_from_system()) + 3600 # +1 hour in unix time / "01:00 remaining"
 	
 	discord_sdk.refresh() # Always refresh after changing the values!
+
+func _update_presence():
+	discord_sdk.state = str("Day #" + str(DayNum))
+	discord_sdk.refresh()

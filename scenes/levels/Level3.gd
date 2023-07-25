@@ -8,7 +8,7 @@ func _ready():
 	EventBus.connect("DialogueFinished", _level)
 	EventBus.CurrentLevel = "res://scenes/levels/Level3.tscn"
 	EventBus._save()
-	EventBus._discord_presence()
+	EventBus._update_presence()
 
 func _level():
 	Stage += 1
@@ -16,7 +16,7 @@ func _level():
 		1:
 			dialogue._talk(str("[font_size=36]That sounds bad.[/font_size]"), "Self")
 		2:
-			dialogue._talk(str("[font_size=36]Nonsense just remember those Ministry of Magic agents I mentioned earlier? The health inspectors?[/font_size]"), "Bob")
+			dialogue._talk(str("[font_size=36]Nonsense just remember those Ministry of Magic agents I mentioned earlier? The legal fellows?[/font_size]"), "Bob")
 		3:
 			dialogue._talk(str("[font_size=36]Yeah.[/font_size]"), "Self")
 		4:
