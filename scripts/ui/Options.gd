@@ -1,6 +1,6 @@
 extends Control
 
-var values := [Vector2(1960, 405), Vector2(1060, 405)]
+var values := [Vector2(1960, 405), Vector2(1090, 405)]
 var Visible:int = 0 : set = _set_visible
 
 func _set_visible(new_vis):

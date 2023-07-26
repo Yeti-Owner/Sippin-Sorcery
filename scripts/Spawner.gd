@@ -85,6 +85,7 @@ func _spawn_customer():
 	timer.start()
 
 func _spawn_ministry():
+	MinistryNum -= 1
 	var m = HealthInspector.instantiate()
 	add_child(m)
 	

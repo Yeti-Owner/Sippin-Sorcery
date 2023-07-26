@@ -14,7 +14,7 @@ func _ready():
 
 func _set_rotation(deg):
 	var tween := get_tree().create_tween()
-	tween.tween_property(WorldSun, "rotation_degrees", Vector3((-15 + deg), -40, 0), 10)
+	tween.tween_property(WorldSun, "rotation_degrees", Vector3((-15 + deg), -40, 0), 15)
 	if deg == -150:
 		tween.tween_callback(fin)
  

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba1a6cgfrtyrv"]
+[gd_scene load_steps=13 format=3 uid="uid://ba1a6cgfrtyrv"]
 
 [ext_resource type="Texture2D" uid="uid://mbtqkybqb2ng" path="res://assets/textures/ui/JournalUI.png" id="1_adjb6"]
 [ext_resource type="Script" path="res://scripts/ui/journal.gd" id="1_w1gam"]
@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://ba4003lmovkj3" path="res://assets/textures/ui/arrow.png" id="4_3jxwb"]
 [ext_resource type="AudioStream" uid="uid://ndoupxvd5dtl" path="res://assets/audio/bookFlip2.ogg" id="5_fymyx"]
 [ext_resource type="AudioStream" uid="uid://1fljpibg26ve" path="res://assets/audio/bookOpen.ogg" id="6_x50el"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gkaum"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eepsj"]
+bg_color = Color(0, 0, 0, 0.172549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1tmr"]
+bg_color = Color(0, 0, 0, 0.32549)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fcfay"]
 
@@ -36,11 +44,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ClickOut" type="TextureButton" parent="Journal/CenterContainer"]
+[node name="ClickOut" type="Button" parent="Journal/CenterContainer"]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 2
-ignore_texture_size = true
-stretch_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gkaum")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eepsj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v1tmr")
 
 [node name="TextureRect" type="TextureRect" parent="Journal/CenterContainer"]
 layout_mode = 2

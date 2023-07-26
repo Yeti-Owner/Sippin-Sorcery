@@ -19,8 +19,6 @@ var walking:bool = true
 func _ready():
 	randomize()
 	
-	EventBus.ActiveCustomers += 1
-	
 	var a := Apparation.instantiate()
 	add_child(a)
 	
@@ -46,8 +44,6 @@ func _physics_process(delta):
 			a.position = self.position
 			get_parent().add_child(a)
 			
-			EventBus.ActiveCustomers -= 1
-			EventBus.emit_signal("CustomerDone")
 			self.queue_free()
 			return
 		elif colliderName == "Stop" and not talked:

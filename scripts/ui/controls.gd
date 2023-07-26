@@ -5,7 +5,7 @@ extends Control
 const ControlArray := ["forward", "backward", "left", "right", "jump", "interact", "pause", "id"]
 var OldControl:String
 var NewAction
-var values := [Vector2(-890, 405), Vector2(25, 405)]
+var values := [Vector2(-890, 405), Vector2(-5, 405)]
 var Visible:int = 0 : set = _set_visible
 
 func _set_visible(new_vis):
@@ -38,6 +38,7 @@ func _new_key(key):
 	get_node(str("Bg/GridContainer/" + OldControl + str("/Button"))).text = str(OS.get_keycode_string(InputMap.action_get_events(OldControl)[0].keycode))
 
 func _assign_key(control):
+	EventBus.Keybinds[control] = NewAction
 	InputMap.action_erase_events(control)
 	InputMap.action_add_event(control, NewAction)
 

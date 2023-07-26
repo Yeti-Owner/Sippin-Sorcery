@@ -8,9 +8,9 @@ func _ready():
 
 func get_interaction_text():
 	if Night == true:
-		return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=DIM_GRAY]close shop.[/color][/center]"
+		return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=BLACK]close shop.[/color][/center]"
 	else:
-		return "[center][color=DIM_GRAY]Day[/color] is not complete yet.[/center]"
+		return "[center][color=BLACK]Day[/color] is not complete yet.[/center]"
 
 func get_interaction_icon():
 	if Night == true:

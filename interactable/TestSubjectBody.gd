@@ -15,7 +15,7 @@ const EffectsList := {
 	"speed": "I feel like I've been zapped with a dose of lightning! My legs are moving quicker than I thought possible.",
 	"courage": "I don't know what came over me, but suddenly I'm braver than a lion. Nothing scares me anymore! Let's do this!",
 	"stamina": "I could run laps around the castle and not even lose my breath! It's like I've got an endless supply of energy.",
-	"strength": "I could lift a heavy cauldron like it's a feather! I've got some serious muscles going on right now.",
+	"strength": "I could lift a heavy cauldron like it's a feather! I'm seriously strong right now.",
 	"badVision": "Uh-oh, everything's a bit blurry. Is this supposed to happen? I can't see straight!",
 	"badSmell": "I can't smell a thing, very weird. Is this a potion gone wrong or something?",
 	"poison": "Ugh, I don't feel so good. My stomach's churning, and I've got this weird taste in my mouth. Something's definitely not right.",
@@ -49,7 +49,7 @@ const EffectsList := {
 	"charisma": "I've got charm oozing out of me. I can tell you can't resist my words, I'm gonna convince the teachers to not assign homework!",
 	"plantControl": "Is it just me or is the grass looking at me? I can control them it's like I'm the king of the greenery!",
 }
-var AdditionalList1 := ["hovering", "invisibility", "agility", "speed"]
+var AdditionalList1 := ["hovering", "invisibility", "agility", "speed","strength"]
 var AdditionalList2 := ["petrification"]
 
 var cost := 25
@@ -130,4 +130,8 @@ func _effect(effect:String, _results:String):
 			SpeechBubble._talk(_results)
 		"speed":
 			get_parent().speed = 0.3
+			SpeechBubble._talk(_results)
+		"strength":
+			get_parent().get_node("BodyMeshes/Arm1").scale = Vector3(1.5, 1, 1.5)
+			get_parent().get_node("BodyMeshes/Arm2").scale = Vector3(1.5, 1, 1.5)
 			SpeechBubble._talk(_results)
