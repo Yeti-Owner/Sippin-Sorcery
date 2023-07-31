@@ -38,6 +38,7 @@ func _new_key(key):
 	get_node(str("Bg/GridContainer/" + OldControl + str("/Button"))).text = str(OS.get_keycode_string(InputMap.action_get_events(OldControl)[0].keycode))
 
 func _assign_key(control):
+	print(NewAction)
 	EventBus.Keybinds[control] = NewAction
 	InputMap.action_erase_events(control)
 	InputMap.action_add_event(control, NewAction)

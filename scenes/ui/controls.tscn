@@ -1,9 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8leyiyucal1g"]
+[gd_scene load_steps=7 format=3 uid="uid://b8leyiyucal1g"]
 
 [ext_resource type="Script" path="res://scripts/ui/controls.gd" id="1_gc2un"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="2_d1t4a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8la0"]
+bg_color = Color(0.266667, 0.129412, 0.133333, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifecm"]
 bg_color = Color(0.211765, 0.0980392, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyvhl"]
+bg_color = Color(0.305882, 0.152941, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fjjo"]
+bg_color = Color(0.176471, 0.0784314, 0.0823529, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -45,7 +85,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = -6.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 10
@@ -61,14 +104,21 @@ alignment = 1
 [node name="Label" type="Label" parent="Bg/GridContainer/forward"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
 text = "Forward"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Bg/GridContainer/forward"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 6
-text = "WWWW"
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
+text = "W"
 
 [node name="backward" type="VBoxContainer" parent="Bg/GridContainer"]
 layout_mode = 2
@@ -79,13 +129,20 @@ alignment = 1
 [node name="Label" type="Label" parent="Bg/GridContainer/backward"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
 text = "Backward"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Bg/GridContainer/backward"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
 text = "S"
 
 [node name="left" type="VBoxContainer" parent="Bg/GridContainer"]
@@ -97,13 +154,20 @@ alignment = 1
 [node name="Label" type="Label" parent="Bg/GridContainer/left"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
 text = "Left"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Bg/GridContainer/left"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
 text = "A"
 
 [node name="right" type="VBoxContainer" parent="Bg/GridContainer"]
@@ -115,13 +179,20 @@ alignment = 1
 [node name="Label" type="Label" parent="Bg/GridContainer/right"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
 text = "Right"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Bg/GridContainer/right"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
 text = "D"
 
 [node name="jump" type="VBoxContainer" parent="Bg/GridContainer"]
@@ -133,13 +204,20 @@ alignment = 1
 [node name="Label" type="Label" parent="Bg/GridContainer/jump"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
 text = "Jump"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Bg/GridContainer/jump"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
 text = "Space"
 
 [node name="interact" type="VBoxContainer" parent="Bg/GridContainer"]
@@ -151,13 +229,20 @@ alignment = 1
 [node name="Label" type="Label" parent="Bg/GridContainer/interact"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
 text = "Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Bg/GridContainer/interact"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
 text = "E"
 
 [node name="pause" type="VBoxContainer" parent="Bg/GridContainer"]
@@ -169,13 +254,20 @@ alignment = 1
 [node name="Label" type="Label" parent="Bg/GridContainer/pause"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
 text = "Pause"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Bg/GridContainer/pause"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
 text = "Esc"
 
 [node name="id" type="VBoxContainer" parent="Bg/GridContainer"]
@@ -187,13 +279,20 @@ alignment = 1
 [node name="Label" type="Label" parent="Bg/GridContainer/id"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
 text = "ID"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Bg/GridContainer/id"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
 text = "Q"
 
 [connection signal="pressed" from="Bg/GridContainer/forward/Button" to="." method="_on_button_pressed" binds= [0]]

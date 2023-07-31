@@ -45,6 +45,16 @@ var MasterVolume:float = 0
 var MusicVolume:float = 0
 var SfxVolume:float = 0
 var MouseSens:float = 0.4
+var Keybinds:Dictionary = {
+	"forward" : InputMap.action_get_events("forward")[0],
+	"backward" : InputMap.action_get_events("backward")[0],
+	"left" : InputMap.action_get_events("left")[0],
+	"right" : InputMap.action_get_events("right")[0],
+	"jump" : InputMap.action_get_events("jump")[0],
+	"interact" : InputMap.action_get_events("interact")[0],
+	"pause" : InputMap.action_get_events("pause")[0],
+	"id" : InputMap.action_get_events("id")[0]
+}
 
 func _ready():
 	randomize()
@@ -52,6 +62,7 @@ func _ready():
 	if FileAccess.file_exists(PlayerData):
 		_load()
 		_player_headshot()
+		_assign_keys()
 	else:
 		_save()
 	
@@ -85,7 +96,9 @@ func _save():
 		"MASTERVOLUME" : MasterVolume,
 		"MUSICVOLUME" : MusicVolume,
 		"SFXVOLUME" : SfxVolume,
-		"MOUSESENS" : MouseSens
+		"MOUSESENS" : MouseSens,
+		"JOURNALINGREDIENTS" : PotionInfo.JournalIngredients,
+		"KEYBINDS" : Keybinds
 	}
 	file.store_var(SavedData)
 
@@ -106,6 +119,15 @@ func _load():
 	MusicVolume = LoadedData.MUSICVOLUME
 	SfxVolume = LoadedData.SFXVOLUME
 	MouseSens = LoadedData.MOUSESENS
+	PotionInfo.JournalIngredients = LoadedData.JOURNALINGREDIENTS
+	Keybinds = LoadedData.KEYBINDS
+#	print(Keybinds)
+
+func _assign_keys():
+	var binds := ["forward", "backward", "left", "right", "jump", "interact", "pause", "id"]
+	for key in binds:
+		InputMap.action_erase_events(key)
+		InputMap.action_add_event(key, instance_from_id(Keybinds[key].object_id))
 
 func _discord_presence():
 	discord_sdk.app_id = 1132705061659758742
@@ -118,10 +140,10 @@ func _discord_presence():
 #	discord_sdk.small_image = "cauldron"
 #	discord_sdk.small_image_text = "Free on itch.io!"
 	
-	discord_sdk.start_timestamp = int(Time.get_unix_time_from_system()) # "02:46 elapsed"
+	discord_sdk.start_timestamp = int(Time.get_unix_time_from_system())
 	# discord_sdk.end_timestamp = int(Time.get_unix_time_from_system()) + 3600 # +1 hour in unix time / "01:00 remaining"
 	
-	discord_sdk.refresh() # Always refresh after changing the values!
+	discord_sdk.refresh()
 
 func _update_presence():
 	discord_sdk.state = str("Day #" + str(DayNum))
