@@ -39,6 +39,7 @@ const PlayerData := "user://save.dat"
 var ActiveCustomers:int = 0
 var CurrentLevel:String = "res://scenes/char_customization.tscn"
 var DayNum:int = 1
+var SentFeedback:bool = false
 
 # Settings
 var MasterVolume:float = 0
@@ -98,7 +99,8 @@ func _save():
 		"SFXVOLUME" : SfxVolume,
 		"MOUSESENS" : MouseSens,
 		"JOURNALINGREDIENTS" : PotionInfo.JournalIngredients,
-		"KEYBINDS" : Keybinds
+		"KEYBINDS" : Keybinds,
+		"SENTFEEDBACK" : SentFeedback
 	}
 	file.store_var(SavedData)
 
@@ -121,7 +123,7 @@ func _load():
 	MouseSens = LoadedData.MOUSESENS
 	PotionInfo.JournalIngredients = LoadedData.JOURNALINGREDIENTS
 	Keybinds = LoadedData.KEYBINDS
-#	print(Keybinds)
+	SentFeedback = LoadedData.SENTFEEDBACK
 
 func _assign_keys():
 	var binds := ["forward", "backward", "left", "right", "jump", "interact", "pause", "id"]

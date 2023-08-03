@@ -228,7 +228,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HSlider" type="HSlider" parent="Container/1/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(560, 40)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_icons/grabber = SubResource("MeshTexture_lex0h")
 theme_override_icons/grabber_highlight = SubResource("MeshTexture_lex0h")
@@ -435,7 +437,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 500
 theme_override_constants/margin_right = 500
 
-[node name="Button" type="Button" parent="Container/MarginContainer"]
+[node name="SubmitBtn" type="Button" parent="Container/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_sf1oc")
 theme_override_font_sizes/font_size = 22
@@ -445,3 +447,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_1m7vo")
 text = "Submit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="HTTP" type="HTTPRequest" parent="."]
+
+[connection signal="value_changed" from="Container/1/MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Container/MarginContainer/SubmitBtn" to="." method="_on_submit_btn_pressed"]
