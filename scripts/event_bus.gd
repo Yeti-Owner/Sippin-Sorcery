@@ -6,7 +6,6 @@ signal HeldItemChanged
 signal BalanceChanged
 signal DialogueFinished
 signal JournalToggle(toggle:bool)
-signal EnablePlayer(toggle:bool)
 signal DayDone
 signal CustomerDone
 signal Fade(type:String)

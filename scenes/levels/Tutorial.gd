@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var dialogue := get_node(EventBus.Dialogue)
+var dialogue
 
 var Stage:int = -1
 
@@ -9,6 +9,9 @@ func _ready():
 	EventBus.CurrentLevel = "res://scenes/levels/Tutorial.tscn"
 	EventBus._save()
 	EventBus._update_presence()
+	EventBus.Fade.emit("day")
+	dialogue = get_node(EventBus.Dialogue)
+	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), "Bob")
 
 func _tutorial():
 	Stage += 1
@@ -78,10 +81,6 @@ func _tutorial():
 			dialogue._talk(str("[font_size=36]You did good " + EventBus.PlayerName + ", I'm proud of you.[/font_size]"))
 		32:
 			dialogue._done()
-
-func _on_loading_screen_loading_done():
-	EventBus.Fade.emit("day")
-	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), "Bob")
 
 func _on_temp_timer_timeout():
 	if Stage == 18:

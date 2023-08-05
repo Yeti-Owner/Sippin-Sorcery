@@ -48,6 +48,7 @@ cast_shadow = 0
 gi_mode = 2
 amount = 1400
 lifetime = 25.0
+preprocess = 10.0
 randomness = 0.24
 fixed_fps = 15
 collision_base_size = 50.55

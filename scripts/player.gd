@@ -14,8 +14,6 @@ var tBob := 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	EventBus.EnablePlayer.connect(_toggle)
-	_toggle(false)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion && Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -56,7 +54,3 @@ func _head_bob(time) -> Vector3:
 	pos.y = sin(time * freq) * amp
 	pos.x = cos(time * freq / 2.5) * amp
 	return pos
-
-func _toggle(value):
-	self.set_physics_process(value)
-	self.set_process_unhandled_input(value)

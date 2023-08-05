@@ -136,7 +136,8 @@ func _on_anim_player_animation_finished(anim_name):
 		_on()
 		$CenterContainer/VBoxContainer/Name.queue_free()
 	elif anim_name == "NewEnd":
-		get_tree().change_scene_to_file("res://scenes/levels/Tutorial.tscn")
+		SceneManager._change_scene("res://scenes/levels/Tutorial.tscn")
+		SceneManager._swap_hud("res://scenes/ui/gui.tscn")
 
 func _on():
 	set_physics_process(true)

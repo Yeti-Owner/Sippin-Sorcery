@@ -4,12 +4,12 @@ extends Node
 @onready var GameScene := $GameScene
 @onready var HUD := $GameScene/HUD
 @onready var Game := $GameScene/Game
-@onready var Dialogue := $GameScene/Dialogue
 
 var SceneToLoad: String
 var CurrentScene:Node
 var NextTransition:String
 var CurrentMode:String
+var CurrentMouse := Input.MOUSE_MODE_VISIBLE
 
 func _ready():
 	Game.use_occlusion_culling = true
@@ -48,3 +48,10 @@ func _swap_hud(hud):
 	var scene:PackedScene = load(hud)
 	var _scene:Node = scene.instantiate()
 	HUD.add_child(_scene)
+
+func _on_game_scene_mouse_entered():
+	Input.set_mouse_mode(CurrentMouse)
+
+func _on_game_scene_mouse_exited():
+	CurrentMouse = Input.get_mouse_mode()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
