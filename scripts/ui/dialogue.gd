@@ -17,9 +17,6 @@ var LastUsed:String
 var Visible:bool = false
 var delay:float = 2.0
 
-func _ready():
-	EventBus.Dialogue = self
-
 func _on_anim_player_animation_finished(anim_name):
 	if anim_name == "start":
 		Counter.start()

@@ -8,7 +8,6 @@ signal DialogueFinished
 signal JournalToggle(toggle:bool)
 signal DayDone
 signal CustomerDone
-signal Fade(type:String)
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"
@@ -20,8 +19,6 @@ var HeldItem
 var HeldEffect
 var HeldFlavor := ""
 var InsertedItems
-
-var Dialogue = null : set = _set_dialogue
 
 # Player Info
 var PlayerName:String = "Callum"
@@ -73,9 +70,6 @@ func _player_headshot():
 	var texture = ImageTexture.create_from_image(image)
 	PlayerHeadshot = texture
 
-func _set_dialogue(_node):
-	Dialogue = get_path_to(_node)
-
 func _check_rep(_rep):
 	var MaxRep := (BossesBeaten + 1) * 25
 	Reputation = clamp(_rep, 0, MaxRep)
@@ -125,8 +119,10 @@ func _load():
 	SentFeedback = LoadedData.SENTFEEDBACK
 
 func _assign_keys():
+	return
 	var binds := ["forward", "backward", "left", "right", "jump", "interact", "pause", "id"]
 	for key in binds:
+		print(typeof(Keybinds[key]))
 		InputMap.action_erase_events(key)
 		InputMap.action_add_event(key, instance_from_id(Keybinds[key].object_id))
 

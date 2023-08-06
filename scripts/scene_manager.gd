@@ -4,6 +4,7 @@ extends Node
 @onready var GameScene := $GameScene
 @onready var HUD := $GameScene/HUD
 @onready var Game := $GameScene/Game
+@onready var BossTimer := $BossTimer
 
 var SceneToLoad: String
 var CurrentScene:Node
@@ -20,6 +21,11 @@ func _change_scene(scene:String, type:String = "normal"):
 	match type:
 		"normal":
 			NextTransition = "fade_in"
+			TransitionPlayer.play("fade_out")
+			SceneToLoad = scene
+		"day":
+			NextTransition = "day_in"
+			$CanvasLayer/Transitions/DayNum.text = str("Day " + str(EventBus.DayNum))
 			TransitionPlayer.play("fade_out")
 			SceneToLoad = scene
 
@@ -40,14 +46,14 @@ func _fade_in():
 	if NextTransition != null:
 		TransitionPlayer.play(NextTransition)
 
-func _swap_hud(hud):
+func _swap_hud(hud = null):
 	# Clear out old HUD/GUI
 	for child in HUD.get_children():
 		child.queue_free()
 	
-	var scene:PackedScene = load(hud)
-	var _scene:Node = scene.instantiate()
-	HUD.add_child(_scene)
+	if hud != null:
+		var scene = load(hud).instantiate()
+		HUD.add_child(scene)
 
 func _on_game_scene_mouse_entered():
 	Input.set_mouse_mode(CurrentMouse)
@@ -55,3 +61,16 @@ func _on_game_scene_mouse_entered():
 func _on_game_scene_mouse_exited():
 	CurrentMouse = Input.get_mouse_mode()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func _boss(Name:String, time:float):
+	$CanvasLayer/Boss/BossName.text = Name
+	TransitionPlayer.play("boss_in")
+	# This is wrong fix this later
+	# Callum do not keep this code
+	# I am Callum but still
+	var TimerTime := float(100/time)
+	BossTimer.wait_time = TimerTime
+	BossTimer.start()
+
+func _on_boss_timer_timeout():
+	pass # Replace with function body.

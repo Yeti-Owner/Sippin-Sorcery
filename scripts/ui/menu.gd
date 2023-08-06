@@ -61,5 +61,9 @@ func _on_anims_animation_finished(anim_name):
 	if anim_name == "Start":
 		set_physics_process(true)
 	elif anim_name == "End":
-		SceneManager._change_scene(EventBus.CurrentLevel)
-
+		if EventBus.CurrentLevel != "res://scenes/char_customization.tscn":
+			SceneManager._swap_hud("res://scenes/ui/gui.tscn")
+			await get_tree().process_frame
+			SceneManager._change_scene(EventBus.CurrentLevel, "day")
+		else:
+			SceneManager._change_scene(EventBus.CurrentLevel)

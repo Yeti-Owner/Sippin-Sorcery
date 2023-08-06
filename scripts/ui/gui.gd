@@ -3,15 +3,12 @@ extends CanvasLayer
 @onready var InteractionLabel := $InteractionText
 @onready var InteractIcon := $Center/crosshair
 @onready var BalanceLabel := $Control/Balance
-@onready var DayNumText := $Fader/Day
 
 func _ready():
 	Engine.set_max_fps(60)
 	EventBus.interaction.connect(_set_interaction)
 	EventBus.connect("BalanceChanged", _balance)
-	EventBus.Fade.connect(_fade)
 	_balance()
-	DayNumText.text = str("Day " + str(EventBus.DayNum))
 
 func _set_interaction(icon, text):
 	if icon == null:
