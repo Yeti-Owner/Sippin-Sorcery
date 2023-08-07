@@ -1,6 +1,6 @@
 extends Node3D
 
-var dialogue
+@onready var dialogue := get_node("/root/SceneManager/GameScene/HUD/GUI/DialogueLayer/Dialogue")#get_node(EventBus.Dialogue)
 
 var Stage:int = -1
 
@@ -9,8 +9,6 @@ func _ready():
 	EventBus.CurrentLevel = "res://scenes/levels/Tutorial.tscn"
 	EventBus._save()
 	EventBus._update_presence()
-	EventBus.Fade.emit("day")
-	dialogue = get_node(EventBus.Dialogue)
 	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), "Bob")
 
 func _tutorial():
@@ -91,8 +89,6 @@ func _on_temp_timer_timeout():
 		_tutorial()
 	elif Stage == 25 and EventBus.ActiveCustomers != 0:
 		$TempTimer.start(5)
-	elif Stage == 30:
-		get_tree().change_scene_to_file("res://scenes/levels/Level1.tscn")
 
 func _duane_journal():
 	PotionInfo.JournalIngredients["MermaidScale"] = PotionInfo.JournalIngredients["MermaidScale"].format({"swimming": str("Enhanced swimming ([color=DARK_GRAY]Duane[/color]" + ")")})
@@ -102,7 +98,5 @@ func _duane_journal():
 	PotionInfo.JournalIngredients["PhoenixFeather"] = PotionInfo.JournalIngredients["PhoenixFeather"].format({"sleep": str("Sleep/calming effect ([color=DARK_GRAY]Duane[/color]" + ")")})
 
 func _on_clock_next_day():
-	EventBus.Fade.emit("out")
-	$TempTimer.start(1)
-	Stage = 30
+	SceneManager._change_scene("res://scenes/levels/Level1.tscn", "day")
 	EventBus.DayNum += 1

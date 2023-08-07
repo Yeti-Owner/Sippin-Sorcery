@@ -1,9 +1,7 @@
-[gd_scene load_steps=72 format=3 uid="uid://i8we41wusyf"]
+[gd_scene load_steps=70 format=3 uid="uid://i8we41wusyf"]
 
 [ext_resource type="Script" path="res://scenes/levels/Level3.gd" id="1_4hlic"]
-[ext_resource type="PackedScene" uid="uid://cdfuoc7gyqwvi" path="res://scenes/ui/loading_screen.tscn" id="2_hd4le"]
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/player.tscn" id="3_o1ir3"]
-[ext_resource type="PackedScene" uid="uid://beov0ucl8pycl" path="res://scenes/ui/gui.tscn" id="4_f8nqt"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="5_fjqh4"]
 [ext_resource type="PackedScene" uid="uid://t5tfeeu3rfwu" path="res://scenes/objects/ingredient.tscn" id="6_gqtp5"]
 [ext_resource type="PackedScene" uid="uid://5po6mejw7fgv" path="res://scenes/objects/flavor.tscn" id="7_l44is"]
@@ -71,7 +69,7 @@ point_count = 7
 resource_name = "palette"
 albedo_texture = ExtResource("16_q7arj")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_d4qte"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_c4r0l"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -89,7 +87,7 @@ _surfaces = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tekha"]
 albedo_texture = ExtResource("17_bap2r")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_b0qyh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_otk2p"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -108,7 +106,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("18_omwlv")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_o8fxq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_q1jr2"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -133,7 +131,7 @@ albedo_texture = ExtResource("22_mdn3f")
 resource_name = "palette"
 albedo_texture = ExtResource("16_q7arj")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_dd5v7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_047qe"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -155,7 +153,7 @@ albedo_texture = ExtResource("23_v5dp8")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnn3r"]
 albedo_texture = ExtResource("24_rraje")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_x6g2a"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0xyjy"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -173,7 +171,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("18_omwlv")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_iwvs4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8lssy"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -191,7 +189,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("17_bap2r")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_py3tr"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_t2lxp"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -213,7 +211,7 @@ albedo_texture = ExtResource("25_dpshf")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5fkq"]
 albedo_texture = ExtResource("20_7c8ia")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_j7lle"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_mgnyk"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -231,7 +229,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("22_mdn3f")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0i8y2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_dutje"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -250,7 +248,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("24_rraje")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2866q"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_81dgr"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -268,7 +266,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("25_dpshf")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_nm1sk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ismi1"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -290,7 +288,7 @@ albedo_texture = ExtResource("17_bap2r")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u46li"]
 albedo_texture = ExtResource("20_7c8ia")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cmxww"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3qawq"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -319,14 +317,9 @@ point_count = 4
 [node name="world" type="Node3D"]
 script = ExtResource("1_4hlic")
 
-[node name="LoadingScreen" parent="." instance=ExtResource("2_hd4le")]
-
 [node name="Player" parent="." instance=ExtResource("3_o1ir3")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 1.2, -0.5)
-
-[node name="GUI" parent="." instance=ExtResource("4_f8nqt")]
-layer = 2
 
 [node name="Shop" type="StaticBody3D" parent="."]
 collision_layer = 7
@@ -531,17 +524,17 @@ shape = SubResource("BoxShape3D_3av3a")
 
 [node name="House1" parent="Houses" instance=ExtResource("15_h3wta")]
 transform = Transform3D(7.86805e-07, 0, -6, 0, 6, 0, 6, 0, 7.86805e-07, 26, 0, 4.75)
-mesh = SubResource("ArrayMesh_d4qte")
+mesh = SubResource("ArrayMesh_c4r0l")
 surface_material_override/0 = SubResource("StandardMaterial3D_tekha")
 
 [node name="House2" parent="Houses" instance=ExtResource("15_h3wta")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 12.85, 0, -5.3)
-mesh = SubResource("ArrayMesh_b0qyh")
+mesh = SubResource("ArrayMesh_otk2p")
 surface_material_override/0 = SubResource("StandardMaterial3D_p32tx")
 
 [node name="House3" parent="Houses" instance=ExtResource("19_lnp41")]
 transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, 9.8, 0, 22.8)
-mesh = SubResource("ArrayMesh_o8fxq")
+mesh = SubResource("ArrayMesh_q1jr2")
 surface_material_override/0 = SubResource("StandardMaterial3D_elqgm")
 
 [node name="House4" parent="Houses" instance=ExtResource("21_i6eda")]
@@ -550,7 +543,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_e7ftn")
 
 [node name="House5" parent="Houses" instance=ExtResource("15_h3wta")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 9.75, 0, 33.9)
-mesh = SubResource("ArrayMesh_dd5v7")
+mesh = SubResource("ArrayMesh_047qe")
 surface_material_override/0 = SubResource("StandardMaterial3D_yoacd")
 
 [node name="House6" parent="Houses" instance=ExtResource("21_i6eda")]
@@ -559,17 +552,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lnn3r")
 
 [node name="House7" parent="Houses" instance=ExtResource("19_lnp41")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, 27, 0, 30.4)
-mesh = SubResource("ArrayMesh_x6g2a")
+mesh = SubResource("ArrayMesh_0xyjy")
 surface_material_override/0 = SubResource("StandardMaterial3D_ugakb")
 
 [node name="House8" parent="Houses" instance=ExtResource("19_lnp41")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, -16, 0, -1.6)
-mesh = SubResource("ArrayMesh_iwvs4")
+mesh = SubResource("ArrayMesh_8lssy")
 surface_material_override/0 = SubResource("StandardMaterial3D_gjgak")
 
 [node name="House9" parent="Houses" instance=ExtResource("15_h3wta")]
 transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, -29, 0, -4.7)
-mesh = SubResource("ArrayMesh_py3tr")
+mesh = SubResource("ArrayMesh_t2lxp")
 surface_material_override/0 = SubResource("StandardMaterial3D_my8bf")
 
 [node name="House10" parent="Houses" instance=ExtResource("21_i6eda")]
@@ -578,22 +571,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_t5fkq")
 
 [node name="House11" parent="Houses" instance=ExtResource("19_lnp41")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, -10.3, 0, 43.2)
-mesh = SubResource("ArrayMesh_j7lle")
+mesh = SubResource("ArrayMesh_mgnyk")
 surface_material_override/0 = SubResource("StandardMaterial3D_ermew")
 
 [node name="House12" parent="Houses" instance=ExtResource("15_h3wta")]
 transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, -25.4, 0, 49)
-mesh = SubResource("ArrayMesh_0i8y2")
+mesh = SubResource("ArrayMesh_dutje")
 surface_material_override/0 = SubResource("StandardMaterial3D_3rxsj")
 
 [node name="House13" parent="Houses" instance=ExtResource("19_lnp41")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -28.7, 0, 33.2)
-mesh = SubResource("ArrayMesh_2866q")
+mesh = SubResource("ArrayMesh_81dgr")
 surface_material_override/0 = SubResource("StandardMaterial3D_5k5o1")
 
 [node name="House14" parent="Houses" instance=ExtResource("15_h3wta")]
 transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, -28, 0, 20.8)
-mesh = SubResource("ArrayMesh_nm1sk")
+mesh = SubResource("ArrayMesh_ismi1")
 surface_material_override/0 = SubResource("StandardMaterial3D_ohqtj")
 
 [node name="House15" parent="Houses" instance=ExtResource("21_i6eda")]
@@ -602,7 +595,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u46li")
 
 [node name="House16" parent="Houses" instance=ExtResource("15_h3wta")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, 29.1, 0, 43.2)
-mesh = SubResource("ArrayMesh_cmxww")
+mesh = SubResource("ArrayMesh_3qawq")
 surface_material_override/0 = SubResource("StandardMaterial3D_fwpag")
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -676,10 +669,4 @@ transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, -20.7, 3.8, -0.29999
 [node name="FloatingLight18" parent="Lights" instance=ExtResource("11_eol4v")]
 transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, 24.3, 3.7, 42.4)
 
-[node name="TempTimer" type="Timer" parent="."]
-one_shot = true
-
-[connection signal="LoadingDone" from="LoadingScreen" to="." method="_on_loading_screen_loading_done"]
-[connection signal="LoadingDone" from="LoadingScreen" to="DayControl" method="_on_loading_screen_loading_done"]
 [connection signal="NextDay" from="Misc/Clock" to="." method="_on_clock_next_day"]
-[connection signal="timeout" from="TempTimer" to="." method="_on_temp_timer_timeout"]

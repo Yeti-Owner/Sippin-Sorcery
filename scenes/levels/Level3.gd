@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var dialogue := get_node(EventBus.Dialogue)
+@onready var dialogue := get_node("/root/SceneManager/GameScene/HUD/GUI/DialogueLayer/Dialogue")#get_node(EventBus.Dialogue)
 
 var Stage:int = 0
 
@@ -9,6 +9,7 @@ func _ready():
 	EventBus.CurrentLevel = "res://scenes/levels/Level3.tscn"
 	EventBus._save()
 	EventBus._update_presence()
+	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", so we have a minor problem but don't worry![/font_size]"), "Bob")
 
 func _level():
 	Stage += 1
@@ -39,14 +40,6 @@ func _level():
 		12:
 			dialogue._done()
 
-func _on_loading_screen_loading_done():
-	EventBus.Fade.emit("day")
-	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", so we have a minor problem but don't worry![/font_size]"), "Bob")
-
 func _on_clock_next_day():
-	EventBus.Fade.emit("out")
-	$TempTimer.start()
 	EventBus.DayNum += 1
-
-func _on_temp_timer_timeout():
-	get_tree().change_scene_to_file("res://scenes/levels/Level4.tscn")
+	SceneManager._change_scene("res://scenes/levels/Level4.tscn", "day")

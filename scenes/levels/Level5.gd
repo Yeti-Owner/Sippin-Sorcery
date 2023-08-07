@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var dialogue := get_node(EventBus.Dialogue)
+@onready var dialogue := get_node("/root/SceneManager/GameScene/HUD/GUI/DialogueLayer/Dialogue")#get_node(EventBus.Dialogue)
 var Stage:int = 0
 
 # This is a boss level, need to add dialogue explaining stuff and then the boss itself.
@@ -10,6 +10,7 @@ func _ready():
 	EventBus.CurrentLevel = "res://scenes/levels/Level5.tscn"
 	EventBus._save()
 	EventBus._update_presence()
+	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", this is the end of the play test.[/font_size]"), "Callum", 1.5)
 
 func _level():
 	Stage += 1
@@ -26,14 +27,6 @@ func _level():
 			dialogue._done()
 			$Spawner._start()
 
-func _on_loading_screen_loading_done():
-	EventBus.Fade.emit("day")
-	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", this is the end of the play test.[/font_size]"), "Callum", 1.5)
-
 func _on_clock_next_day():
-	EventBus.Fade.emit("out")
-	$TempTimer.start()
 	EventBus.DayNum += 1
-
-func _on_temp_timer_timeout():
 	print("Go to next level")
