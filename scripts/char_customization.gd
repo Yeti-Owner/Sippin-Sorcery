@@ -137,9 +137,6 @@ func _on_anim_player_animation_finished(anim_name):
 		$CenterContainer/VBoxContainer/Name.queue_free()
 	elif anim_name == "NewEnd":
 		SceneManager._swap_hud("res://scenes/ui/gui.tscn")
-		await get_tree().process_frame
-		await get_tree().process_frame
-		await get_tree().process_frame
 		SceneManager._change_scene("res://scenes/levels/Tutorial.tscn", "day")
 
 func _on():

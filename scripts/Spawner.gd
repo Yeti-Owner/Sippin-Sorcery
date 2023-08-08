@@ -8,7 +8,7 @@ extends Path3D
 @export var MinistryNum:int = 0
 
 @export_category("Boss Spawning")
-@export_enum("None:0", "Monkey:1","Garfield:2") var BossSpawn:int
+@export_enum("None:0", "Humphrey:1", "Monkey:2","Garfield:3") var BossSpawn:int
 
 @onready var timer := $MiscTimer
 const Customer := preload("res://scenes/customer.tscn")
