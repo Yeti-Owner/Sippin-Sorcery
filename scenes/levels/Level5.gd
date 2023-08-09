@@ -22,7 +22,7 @@ func _level():
 		3:
 			dialogue._talk(str("[font_size=36]There is more planned for the game and I hope that you have enjoyed what is currently added as well as what will be added.[/font_size]"), "Callum", 1.5)
 		4:
-			dialogue._talk(str("[font_size=36]Also if you decided to stream this Harper I hope it was a good stream![/font_size]"), "Callum", 4)
+			dialogue._talk(str("[font_size=36]Have a good day![/font_size]"), "Callum", 3)
 		5:
 			dialogue._done()
 			$Spawner._start()

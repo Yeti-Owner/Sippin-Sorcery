@@ -428,4 +428,8 @@ stream = ExtResource("11_peyst")
 volume_db = -13.5
 bus = &"Sfx"
 
+[node name="SceneTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="animation_finished" from="Anims" to="." method="_on_anims_animation_finished"]
+[connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]

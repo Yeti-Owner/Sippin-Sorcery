@@ -62,9 +62,13 @@ func _swap_hud(hud = null):
 		HUD.add_child(scene)
 
 func _on_game_scene_mouse_entered():
+	return
+	@warning_ignore("unreachable_code")
 	Input.set_mouse_mode(CurrentMouse)
 
 func _on_game_scene_mouse_exited():
+	return
+	@warning_ignore("unreachable_code")
 	CurrentMouse = Input.get_mouse_mode()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

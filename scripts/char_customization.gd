@@ -136,7 +136,7 @@ func _on_anim_player_animation_finished(anim_name):
 		_on()
 		$CenterContainer/VBoxContainer/Name.queue_free()
 	elif anim_name == "NewEnd":
-		SceneManager._swap_hud("res://scenes/ui/gui.tscn")
+		$SceneTimer.start()
 		SceneManager._change_scene("res://scenes/levels/Tutorial.tscn", "day")
 
 func _on():
@@ -155,3 +155,6 @@ func _ending():
 
 func _test():
 	Anims.play("NewEnd")
+
+func _on_scene_timer_timeout():
+	SceneManager._swap_hud("res://scenes/ui/gui.tscn")

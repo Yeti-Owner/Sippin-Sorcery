@@ -1,13 +1,7 @@
 extends Control
 
-# This script needs to have 2 main functions
-# 1, it needs to make sure there is data entered for every question
-# 2, it needs to then send that data + additional info to pipedream
-# Pipe dream will hopefully be able to send data to a google sheet and then
-# I can view all the info from there.
-
 @onready var Http := $HTTP
-const URL:String = "" # Input pipedream url when I have it
+const URL:String = "https://eoktuawmkbntzuy.m.pipedream.net"
 
 var Data:Dictionary = {
 	"Rate" : null,
@@ -40,14 +34,20 @@ func _on_submit_btn_pressed():
 	
 	if (Completed == true) and (EventBus.SentFeedback == false):
 		EventBus.SentFeedback = true
-#		_send_data()
+		_send_data()
+		$AnimationPlayer.play("complete")
+		$Container/MarginContainer/SubmitBtn.disabled = true
 	elif (Completed == true) and (EventBus.SentFeedback == true):
-		pass # Thank them and act as if it sent but don't send
+		$AnimationPlayer.play("complete")
+		$Container/MarginContainer/SubmitBtn.disabled = true
 
 func _send_data():
 	# Convert data to json string:
 	var query := JSON.stringify(Data)
-	# Add 'Content-Type' header:
 	var headers := ["Content-Type: application/json"]
 	Http.request(URL, headers, HTTPClient.METHOD_POST, query)
 
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "complete":
+		SceneManager._change_scene("res://scenes/ui/menu.tscn")
+		SceneManager._swap_hud(null)

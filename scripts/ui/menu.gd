@@ -27,7 +27,6 @@ func _physics_process(_delta):
 			match Hovered:
 				"Start":
 					Click.play()
-#					get_tree().change_scene_to_file("res://scenes/levels/Tutorial.tscn")
 					$Anims.play("End")
 				"Credits":
 					Click.play()
@@ -39,7 +38,12 @@ func _physics_process(_delta):
 				"Feedback":
 					Click.play()
 					$CreditsSection/FeedbackText.text = str("WIP, dm me")
-					print("-- Feedback Clicked --")
+					return
+					if EventBus.SentFeedback == false:
+						SceneManager._change_scene("", "none")
+						SceneManager._swap_hud("res://scenes/ui/feedback.tscn")
+					else:
+						$CreditsSection/FeedbackText.text = str("Completed")
 				"Back":
 					Back.play()
 					$Anims.play("Back")
@@ -62,8 +66,10 @@ func _on_anims_animation_finished(anim_name):
 		set_physics_process(true)
 	elif anim_name == "End":
 		if EventBus.CurrentLevel != "res://scenes/char_customization.tscn":
-			SceneManager._swap_hud("res://scenes/ui/gui.tscn")
-			await get_tree().process_frame
+			$SceneTimer.start()
 			SceneManager._change_scene(EventBus.CurrentLevel, "day")
 		else:
 			SceneManager._change_scene(EventBus.CurrentLevel)
+
+func _on_scene_timer_timeout():
+	SceneManager._swap_hud("res://scenes/ui/gui.tscn")
