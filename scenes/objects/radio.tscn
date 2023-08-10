@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvixdrqmpqchd"]
+
+[ext_resource type="ArrayMesh" uid="uid://yeoey563f1xs" path="res://assets/models/radio.obj" id="1_bdibv"]
+[ext_resource type="Script" path="res://scripts/radio.gd" id="1_osj15"]
+
+[node name="Radio" type="Node3D"]
+script = ExtResource("1_osj15")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = ExtResource("1_bdibv")
