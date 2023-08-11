@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvixdrqmpqchd"]
+[gd_scene load_steps=6 format=3 uid="uid://bvixdrqmpqchd"]
 
 [ext_resource type="ArrayMesh" uid="uid://yeoey563f1xs" path="res://assets/models/radio.obj" id="1_bdibv"]
 [ext_resource type="Script" path="res://scripts/radio.gd" id="1_osj15"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_0uak5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ji3hb"]
+size = Vector3(0.32, 0.96, 1.28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opnhi"]
+size = Vector3(0.122, 0.216, 0.167)
 
 [node name="Radio" type="Node3D"]
 script = ExtResource("1_osj15")
@@ -9,3 +16,41 @@ script = ExtResource("1_osj15")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 mesh = ExtResource("1_bdibv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48, 0)
+shape = SubResource("BoxShape3D_ji3hb")
+
+[node name="BackBtn" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackBtn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149025, 0.279223, 0.0947854)
+shape = SubResource("BoxShape3D_opnhi")
+
+[node name="NextBtn" type="StaticBody3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextBtn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149025, 0.279223, -0.0936636)
+shape = SubResource("BoxShape3D_opnhi")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.161, 0.559787, 0)
+pixel_size = 0.002
+shaded = true
+text = "Hellow"
+font = ExtResource("3_0uak5")
+font_size = 54
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
