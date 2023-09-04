@@ -42,15 +42,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149025, 0.279223, -0.093663
 shape = SubResource("BoxShape3D_opnhi")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.161, 0.559787, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.161, 0.579, 0)
 pixel_size = 0.002
 shaded = true
-text = "Hellow"
 font = ExtResource("3_0uak5")
 font_size = 54
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
