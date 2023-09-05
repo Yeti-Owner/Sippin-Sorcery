@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvixdrqmpqchd"]
+[gd_scene load_steps=7 format=3 uid="uid://bvixdrqmpqchd"]
 
 [ext_resource type="ArrayMesh" uid="uid://yeoey563f1xs" path="res://assets/models/radio.obj" id="1_bdibv"]
 [ext_resource type="Script" path="res://scripts/radio.gd" id="1_osj15"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_0uak5"]
+[ext_resource type="Script" path="res://interactable/RadioBtn.gd" id="3_q1ejg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ji3hb"]
 size = Vector3(0.32, 0.96, 1.28)
@@ -28,6 +29,7 @@ shape = SubResource("BoxShape3D_ji3hb")
 [node name="BackBtn" type="StaticBody3D" parent="."]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("3_q1ejg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BackBtn"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149025, 0.279223, 0.0947854)
@@ -36,6 +38,7 @@ shape = SubResource("BoxShape3D_opnhi")
 [node name="NextBtn" type="StaticBody3D" parent="."]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("3_q1ejg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NextBtn"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149025, 0.279223, -0.0936636)
@@ -45,6 +48,7 @@ shape = SubResource("BoxShape3D_opnhi")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.161, 0.579, 0)
 pixel_size = 0.002
 shaded = true
+text = "WWWW"
 font = ExtResource("3_0uak5")
 font_size = 54
 
@@ -52,4 +56,11 @@ font_size = 54
 wait_time = 0.5
 autostart = true
 
+[node name="MusicPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.302623, 0)
+unit_size = 19.0
+autoplay = true
+bus = &"Music"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="MusicPlayer" to="." method="_on_music_player_finished"]
