@@ -8,7 +8,7 @@ extends Path3D
 @export var MinistryNum:int = 0
 
 @export_category("Boss Spawning")
-@export_enum("None:0", "Humphrey:1", "Monkey:2","Garfield:3") var BossSpawn:int
+@export_enum("None:-1", "Humphrey:0", "Monkey:1","Garfield:2") var BossSpawn:int
 
 @onready var timer := $MiscTimer
 const Customer := preload("res://scenes/customer.tscn")
@@ -40,7 +40,7 @@ func _spawn():
 	if Num == 0:
 		if MinistryNum != 0:
 			_spawn_ministry()
-		elif BossSpawn != 0:
+		elif BossSpawn != -1:
 			_spawn_boss()
 	else:
 		var RNG := randi() % 3
