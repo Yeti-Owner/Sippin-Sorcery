@@ -6,11 +6,13 @@ extends PathFollow3D
 
 # "Name" : Gender, Problem, Flavor
 const BossList := {
-	"Humphrey": ["Male", "Give me 1 of everything, and quickly or I'll fail you.", "Any flavor just make it snappy."],
-	"Monkey": ["Male"],
+	"Humphrey": ["Male", "Give me 1 of everything, and quickly or I'll fail you", "Any flavor just make it snappy"],
+	"Monkey": ["Male", "I want to turn people into monkeys, make a potion", "banana"],
 	"Garfield": ["Male"]
 }
-@onready var BossId:String = (BossList.keys()[get_parent().BossSpawn])
+@onready var BossId:String = (BossList.keys()[get_parent().BossSpawn]) # like "Humphrey"
+var BossProblem:String
+var BossTaste:String
 
 var CharName:String
 var Gender:String
@@ -29,6 +31,8 @@ func _ready():
 	
 	CharName = BossId
 	Gender = BossList[BossId][0]
+	BossProblem = BossList[BossId][1]
+	BossTaste = BossList[BossId][2]
 	
 	_dress()
 
@@ -61,21 +65,14 @@ func _physics_process(delta):
 
 func _result(success:bool, flavor:bool):
 	var Response:String
-	if success:
+	if (success) and (flavor):
 		# Good
-		Response = "Oh it's just juice"
-		EventBus.Balance += 10
+		Response = "Alright I guess you'll pass"
+		EventBus.Balance += 15
 	else:
-		Response = "I knew you were selling illegal potions"
-		EventBus.Balance -= 25
-		EventBus.Reputation -= 10
-	
-	if flavor:
-		Response += ", tastes good."
-		EventBus.Balance += 10
-	else:
-		Response += ", don't like that flavor."
-		EventBus.Balance -= 10
+		Response = "Nice try, you fail this inspection"
+		EventBus.Balance -= 35
+		EventBus.Reputation -= 15
 	
 	Dialogue._talk(Response)
 	EventBus.emit_signal("BalanceChanged")
