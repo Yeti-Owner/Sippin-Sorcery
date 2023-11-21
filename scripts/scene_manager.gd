@@ -90,10 +90,10 @@ func _start_boss(Name:String, time:int = 100):
 func _end_boss(success:bool):
 	if success:
 		# Good ending, tween whatever value is in the healthbar to 0
+		$Timer.stop()
 		var tween := get_tree().create_tween()
 		tween.tween_property(BossBar, "value", 0, 3)
 		TransitionPlayer.play("boss_out")
-#		tween.tween_callback(_end_boss.bind(false))
 	else: # bad ending, just fade transition is called
 		TransitionPlayer.play("boss_out")
 

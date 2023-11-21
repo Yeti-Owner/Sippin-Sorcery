@@ -8,11 +8,12 @@ extends Path3D
 @export var MinistryNum:int = 0
 
 @export_category("Boss Spawning")
-@export_enum("None:-1", "Humphrey:0", "Monkey:1","Garfield:2") var BossSpawn:int
+@export_enum("None:-1","Tom:0", "Humphrey:1", "Monkey:2","Garfield:3") var BossSpawn:int = -1
 
 @onready var timer := $MiscTimer
 const Customer := preload("res://scenes/customer.tscn")
-const HealthInspector := preload("res://scenes/ministry_agent.tscn")
+const MinistryAgent := preload("res://scenes/ministry_agent.tscn")
+const HealthInspector := preload("res://scenes/health_inspector.tscn") # Boss
 
 const CustomerLists := {
 	0: TutorialCustomers,
@@ -86,7 +87,7 @@ func _spawn_customer():
 
 func _spawn_ministry():
 	MinistryNum -= 1
-	var m = HealthInspector.instantiate()
+	var m = MinistryAgent.instantiate()
 	add_child(m)
 	
 	timer.wait_time = randi_range(10, 20)
@@ -94,6 +95,11 @@ func _spawn_ministry():
 
 func _spawn_boss():
 	# Spawn boss
+	var b = HealthInspector.instantiate()
+	add_child(b)
 	
-	timer.wait_time = randi_range(10, 20)
-	timer.start()
+	return
+#	BossSpawn = -1
+#	# technically last thing spawned so can prolly remove this code?
+#	timer.wait_time = randi_range(10, 20)
+#	timer.start()

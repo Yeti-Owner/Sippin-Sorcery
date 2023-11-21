@@ -4,10 +4,11 @@ extends PathFollow3D
 @onready var Apparation := preload("res://scenes/apparation.tscn")
 @onready var Dialogue := $SpeechBubble
 
-# "Name" : Gender, Problem, Flavor
+# "Name" : Gender, Problem, Flavor, Time
 const BossList := {
-	"Humphrey": ["Male", "Give me 1 of everything, and quickly or I'll fail you", "Any flavor just make it snappy"],
-	"Monkey": ["Male", "I want to turn people into monkeys, make a potion", "banana"],
+	"Tom": ["Male", "Give me Courage", "Orange or Banana please", 30],
+	"Humphrey": ["Male", "Give me 1 of everything, and quickly or I'll fail you", "Any flavor just make it snappy", 120],
+	"Monkey": ["Male", "I want to turn people into monkeys, make a potion", "banana", "100"],
 	"Garfield": ["Male"]
 }
 @onready var BossId:String = (BossList.keys()[get_parent().BossSpawn]) # like "Humphrey"
@@ -29,12 +30,14 @@ func _ready():
 	
 	AnimPlayer.play("walk")
 	
-	CharName = BossId
+	$Body.CharName = BossId
 	Gender = BossList[BossId][0]
 	BossProblem = BossList[BossId][1]
 	BossTaste = BossList[BossId][2]
 	
 	_dress()
+	
+	SceneManager._start_boss(BossId, BossList[BossId][3])
 
 func _physics_process(delta):
 	if $RayCast3D.is_colliding():
@@ -69,10 +72,13 @@ func _result(success:bool, flavor:bool):
 		# Good
 		Response = "Alright I guess you'll pass"
 		EventBus.Balance += 15
+		SceneManager.BossDone.emit(true)
 	else:
 		Response = "Nice try, you fail this inspection"
 		EventBus.Balance -= 35
 		EventBus.Reputation -= 15
+		SceneManager.BossDone.emit(false)
+	$Body.Used = true
 	
 	Dialogue._talk(Response)
 	EventBus.emit_signal("BalanceChanged")

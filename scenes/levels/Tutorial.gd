@@ -9,12 +9,14 @@ func _ready():
 	EventBus.CurrentLevel = "res://scenes/levels/Tutorial.tscn"
 	EventBus._save()
 	EventBus._update_presence()
-	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), "Bob")
+	$Spawner._start()
+#	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), "Bob")
 
 func _tutorial():
 	Stage += 1
 	match Stage:
 		0:
+			
 			dialogue._talk(str("[font_size=36]Hey Bob! I'm excited to get started.[/font_size]"), "Self")
 		1:
 			dialogue._talk(str("[font_size=36]For legal reasons this is a juice shop and you sell juice, but don't worry about that I'll handle the business side.[/font_size]"), "Bob")

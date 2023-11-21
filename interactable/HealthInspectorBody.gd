@@ -3,12 +3,13 @@ extends Interactable
 
 # Name: array( effects list, flavor list )
 const BossData := {
+	"Tom": [["courage"], ["Orange","Banana"]],
 	"Humphrey" : [[0, 1], ["ww", "aa"]]
 }
 # Use get_parent().BossId to access
 
 var CharName:String
-var color # NEED TO FIX THERE IS CURRENTLY NO COLOR ASSIGNED
+@onready var color := Color(randf(), randf(), randf())
 var Talk:bool = true
 var Used:bool = false
 
