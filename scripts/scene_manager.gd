@@ -77,7 +77,6 @@ func _on_game_scene_mouse_exited():
 	CurrentMouse = Input.get_mouse_mode()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-
 # Start the boss, just needs name and time
 # Time is an amount in seconds
 func _start_boss(Name:String, time:int = 100):
@@ -93,7 +92,7 @@ func _end_boss(success:bool):
 		$Timer.stop()
 		var tween := get_tree().create_tween()
 		tween.tween_property(BossBar, "value", 0, 3)
-		TransitionPlayer.play("boss_out")
+		tween.tween_callback(_end_boss.bind(false))
 	else: # bad ending, just fade transition is called
 		TransitionPlayer.play("boss_out")
 

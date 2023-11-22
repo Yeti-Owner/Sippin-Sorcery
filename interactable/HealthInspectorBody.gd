@@ -27,7 +27,7 @@ func interact():
 		return
 	
 	if EventBus.HeldItem == "Juice":
-		get_parent()._finished(_check_success(), _check_flavor())
+		get_parent()._result(_check_success(), _check_flavor())
 		
 		EventBus.HeldEffect = null
 		EventBus.HeldFlavor = ""

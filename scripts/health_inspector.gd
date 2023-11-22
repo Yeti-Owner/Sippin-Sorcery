@@ -73,6 +73,8 @@ func _result(success:bool, flavor:bool):
 		Response = "Alright I guess you'll pass"
 		EventBus.Balance += 15
 		SceneManager.BossDone.emit(true)
+		EventBus.BossesBeaten += 1
+		
 	else:
 		Response = "Nice try, you fail this inspection"
 		EventBus.Balance -= 35
