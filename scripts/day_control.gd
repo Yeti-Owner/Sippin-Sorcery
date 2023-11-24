@@ -4,13 +4,18 @@ extends Node3D
 
 @onready var WorldSun := $Sun
 @onready var SpawnerAmt:float = get_parent().get_node("Spawner").Num
+@onready var MinistryAmt:float = get_parent().get_node("Spawner").MinistryNum
+@onready var Boss:float = get_parent().get_node("Spawner").BossSpawn
 
 var RotationSteps:float
 var StepAmt:float = 0
 
 func _ready():
 	EventBus.connect("CustomerDone", _next_stage)
-	RotationSteps = -150/SpawnerAmt
+	
+	if Boss != -1:
+		Boss = 1
+	RotationSteps = -150/(SpawnerAmt + MinistryAmt + max(0, Boss))
 
 func _set_rotation(deg):
 	var tween := get_tree().create_tween()

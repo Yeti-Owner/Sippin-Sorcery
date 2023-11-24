@@ -44,6 +44,7 @@ func _physics_process(delta):
 			a.position = self.position
 			get_parent().add_child(a)
 			
+			EventBus.emit_signal("CustomerDone")
 			self.queue_free()
 			return
 		elif colliderName == "Stop" and not talked:

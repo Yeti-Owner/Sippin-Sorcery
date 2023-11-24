@@ -38,6 +38,9 @@ func _on_misc_timer_timeout():
 	_spawn()
 
 func _spawn():
+	# Priority: 1 in 3 chance of spawning ministry if exists otherwise spawning customers
+	# until there are no more spawns then spawns ministry if any left over then 
+	# boss if a boss is selected 
 	if Num == 0:
 		if MinistryNum != 0:
 			_spawn_ministry()

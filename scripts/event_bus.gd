@@ -119,7 +119,8 @@ func _load():
 	SentFeedback = LoadedData.SENTFEEDBACK
 
 func _assign_keys():
-	return
+	return # Doesn't work idk I'll come back to it later but
+	# for now keybinds aren't saved
 	var binds := ["forward", "backward", "left", "right", "jump", "interact", "pause", "id"]
 	for key in binds:
 		print(typeof(Keybinds[key]))
@@ -128,14 +129,11 @@ func _assign_keys():
 
 func _discord_presence():
 	discord_sdk.app_id = 1132705061659758742
-#	print("Discord working: " + str(discord_sdk.get_is_discord_working()))
 	discord_sdk.details = "(For legal reasons not potions)"
 	discord_sdk.state = str("Day #" + str(DayNum))
 	
 	discord_sdk.large_image = "cauldron"
 	discord_sdk.large_image_text = "Free on itch.io!"
-#	discord_sdk.small_image = "cauldron"
-#	discord_sdk.small_image_text = "Free on itch.io!"
 	
 	discord_sdk.start_timestamp = int(Time.get_unix_time_from_system())
 	# discord_sdk.end_timestamp = int(Time.get_unix_time_from_system()) + 3600 # +1 hour in unix time / "01:00 remaining"

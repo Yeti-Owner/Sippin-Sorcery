@@ -7,6 +7,7 @@ extends Node
 
 @onready var BossName := $CanvasLayer/Boss/BossName
 @onready var BossBar := $CanvasLayer/Boss/BossBar
+@onready var BossTimer := $Timer
 signal BossDone(Success:bool)
 var BossTime := 0
 
@@ -89,7 +90,7 @@ func _start_boss(Name:String, time:int = 100):
 func _end_boss(success:bool):
 	if success:
 		# Good ending, tween whatever value is in the healthbar to 0
-		$Timer.stop()
+		BossTimer.stop()
 		var tween := get_tree().create_tween()
 		tween.tween_property(BossBar, "value", 0, 3)
 		tween.tween_callback(_end_boss.bind(false))
@@ -99,7 +100,7 @@ func _end_boss(success:bool):
 func _on_timer_timeout(): # happens every second, just takes from boss hp
 	BossBar.value = max(0, BossBar.value - 1)
 	if BossBar.value > 0:
-		$Timer.start()
+		BossTimer.start()
 	else: 
 		# if value reaches zero emits signal
 		# if signal called some things will happen fs but within SceneManager
@@ -111,4 +112,4 @@ func _on_anim_player_animation_finished(anim_name):
 		# when boss transition ends it sets the
 		# "time" value in _start_boss and then starts timer
 		BossBar.max_value = BossTime
-		$Timer.start()
+#		BossTimer.start()
