@@ -3,29 +3,31 @@ extends Node3D
 @onready var dialogue := get_node("/root/SceneManager/GameScene/HUD/GUI/DialogueLayer/Dialogue")#get_node(EventBus.Dialogue)
 var Stage:int = 0
 
-# This is a boss level, need to add dialogue explaining stuff and then the boss itself.
-
 func _ready():
 	EventBus.connect("DialogueFinished", _level)
 	EventBus.CurrentLevel = "res://scenes/levels/Level5.tscn"
 	EventBus._save()
 	EventBus._update_presence()
-	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", this is the end of the play test.[/font_size]"), "Callum", 1.5)
+	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", remember how I said those ministry people would be the last of our troubles?[/font_size]"), "Bob", 4)
 
 func _level():
 	Stage += 1
 	match Stage:
 		1:
-			dialogue._talk(str("[font_size=36]I really hope you've enjoyed the game so far.[/font_size]"), "Callum", 1.5)
+			dialogue._talk(str("[font_size=36]I lied.[/font_size]"), "Bob", 1.5)
 		2:
-			dialogue._talk(str("[font_size=36]If you ran into any errors, glitches, or problems please let me know I would love to fix them.[/font_size]"), "Callum", 1.5)
+			dialogue._talk(str("[font_size=36]So basically we've been doing a little too well in the business and to continue on we have to pass a health inspection.[/font_size]"), "Bob")
 		3:
-			dialogue._talk(str("[font_size=36]There is more planned for the game and I hope that you have enjoyed what is currently added as well as what will be added.[/font_size]"), "Callum", 1.5)
+			dialogue._talk(str("[font_size=36]Not to worry though! If we pass I'm sure it'll catch the eyes of new customers.[/font_size]"), "Bob")
 		4:
-			dialogue._talk(str("[font_size=36]Have a good day![/font_size]"), "Callum", 3)
+			dialogue._talk(str("[font_size=36]We do need to pass though, that is a slight problem.[/font_size]"), "Bob", 3)
 		5:
-			dialogue._done()
+			dialogue._talk(str("[font_size=36]Remember they don't care about any silly 'regulations' so provide any effects they ask for.[/font_size]"), "Bob")
+		6:
+			dialogue._talk(str("[font_size=36]I'm sure you've got it, good luck![/font_size]"), "Bob")
 			$Spawner._start()
+		7:
+			dialogue._done()
 
 func _on_clock_next_day():
 	EventBus.DayNum += 1

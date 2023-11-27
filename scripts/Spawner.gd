@@ -47,7 +47,7 @@ func _spawn():
 		elif BossSpawn != -1:
 			_spawn_boss()
 	else:
-		var RNG := randi() % 3
+		var RNG := (randi() % 3)
 		if (RNG == 0) and (MinistryNum != 0):
 			_spawn_ministry()
 		else:
