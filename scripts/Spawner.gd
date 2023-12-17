@@ -44,8 +44,12 @@ func _spawn():
 	if Num == 0:
 		if MinistryNum != 0:
 			_spawn_ministry()
-		elif BossSpawn != -1:
+		
+		if (BossSpawn != -1) and (EventBus.ActiveCustomers == 0):
 			_spawn_boss()
+		elif BossSpawn != -1:
+			timer.wait_time = randi_range(10, 20)
+			timer.start()
 	else:
 		var RNG := (randi() % 3)
 		if (RNG == 0) and (MinistryNum != 0):
