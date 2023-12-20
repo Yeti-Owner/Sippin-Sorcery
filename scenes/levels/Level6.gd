@@ -4,11 +4,12 @@ extends Node3D
 var Stage:int = 0
 
 func _ready():
+	EventBus.BossesBeaten = 1
 	EventBus.connect("DialogueFinished", _level)
 	EventBus.CurrentLevel = "res://scenes/levels/Level6.tscn"
 	EventBus._save()
 	EventBus._update_presence()
-	dialogue._talk(str("[font_size=36]Congrats " + EventBus.PlayerName + ", we passed inspection![/font_size]"), "Bob", 4)
+	dialogue._talk(str("[font_size=36]Congrats " + EventBus.PlayerName + ", we passed inspection and it's marked on your ID card![/font_size]"), "Bob", 4)
 
 func _level():
 	Stage += 1
@@ -27,4 +28,4 @@ func _level():
 
 func _on_clock_next_day():
 	EventBus.DayNum += 1
-	print("Go to next level")
+	SceneManager._change_scene("res://scenes/levels/Level7.tscn", "day")

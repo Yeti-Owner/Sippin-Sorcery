@@ -4,7 +4,9 @@ extends Interactable
 # Name: array( effects list, flavor list )
 const BossData := {
 	"Tom": [["courage"], ["Orange","Banana"]],
-	"Humphrey" : [[0, 1], ["ww", "aa"]]
+	"Humphrey": [["resistance","flexibility","courage","badVision","coldRes","swimming","sticky","lessWeight","sleep","petrification","purity","speed","precision","alertness","strength","petrificationRes","charisma","water"], ["Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange"]],
+	"Monkey": [["monkey"], ["Banana"]],
+	"Garfield": [["sleep"], ["Lasagna"]]
 }
 # Use get_parent().BossId to access
 
