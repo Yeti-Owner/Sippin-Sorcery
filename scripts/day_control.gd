@@ -15,12 +15,12 @@ func _ready():
 	
 	if Boss != -1:
 		Boss = 1
-	RotationSteps = -150/(SpawnerAmt + MinistryAmt + max(0, Boss))
+	RotationSteps = -140/(SpawnerAmt + MinistryAmt + max(0, Boss))
 
 func _set_rotation(deg):
 	var tween := get_tree().create_tween()
-	tween.tween_property(WorldSun, "rotation_degrees", Vector3((-15 + deg), -40, 0), 15)
-	if deg == -150:
+	tween.tween_property(WorldSun, "rotation_degrees", Vector3((-15 + deg), -6.3, 0), 15)
+	if deg == -140:
 		tween.tween_callback(fin)
  
 func fin():

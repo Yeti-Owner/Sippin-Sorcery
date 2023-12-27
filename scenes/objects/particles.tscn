@@ -23,9 +23,11 @@ initial_velocity_min = 0.07
 initial_velocity_max = 0.07
 tangential_accel_min = 0.13
 tangential_accel_max = 0.13
+color = Color(0.513726, 0.513726, 0.513726, 1)
 color_ramp = SubResource("GradientTexture1D_xbwqk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2n4j"]
+shading_mode = 0
 vertex_color_use_as_albedo = true
 disable_receive_shadows = true
 
@@ -45,6 +47,7 @@ size = Vector3(59, 10.98, 1)
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.197, 0)
 cast_shadow = 0
+lod_bias = 0.7
 gi_mode = 2
 amount = 1400
 lifetime = 25.0
