@@ -4,8 +4,8 @@ extends Interactable
 # Name: array( effects list, flavor list )
 const BossData := {
 	"Tom": [["courage"], ["Orange","Banana"]],
-	"Humphrey": [["resistance","flexibility","courage","badVision","coldRes","swimming","sticky","lessWeight","sleep","petrification","purity","speed","precision","alertness","strength","petrificationRes","charisma","water"], ["Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange"]],
-	"Monkey": [["monkey"], ["Banana"]],
+	"Humphrey": [["resistance","flexibility","courage","badVision","coldRes","swimming","sticky","lessWeight","sleep","petrification","purity","speed","precision","alertness","strength","petrificationRes","charisma"], ["Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange"]],
+	"Sir Higgins": [["monkey"], ["Banana"]],
 	"Garfield": [["sleep"], ["Lasagna"]]
 }
 # Use get_parent().BossId to access
@@ -71,3 +71,4 @@ func _ask_flavors():
 func _ask_problem():
 	Talk = !Talk
 	get_parent().Dialogue._talk(get_parent().BossProblem)
+	EventBus.emit_signal("BossProblem")

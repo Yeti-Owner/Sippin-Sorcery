@@ -48,3 +48,4 @@ func _on_menu_pressed():
 	get_tree().set_pause(false)
 	SceneManager._swap_hud(null)
 	SceneManager._change_scene("res://scenes/ui/menu.tscn")
+	SceneManager._stop_boss()

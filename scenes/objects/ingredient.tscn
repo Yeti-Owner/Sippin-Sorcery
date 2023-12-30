@@ -25,7 +25,7 @@ script = ExtResource("1_uj3bo")
 mesh = SubResource("BoxMesh_7oqi8")
 surface_material_override/0 = SubResource("StandardMaterial3D_ayj8a")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_vwr22")
 
 [connection signal="property_list_changed" from="." to="." method="_on_property_list_changed"]

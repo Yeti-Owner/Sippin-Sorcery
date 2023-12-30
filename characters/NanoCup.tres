@@ -6,7 +6,7 @@
 script = ExtResource("1_nleyq")
 Name = "Nano Cup"
 FavColor = Color(1, 0.466667, 0.964706, 1)
-Dialog = "I play the piano, give me something for dexterity"
+Dialog = "I play the piano, give me something for dexterity."
 Need = ["dexterity"]
 Bonus = ["flexibility"]
 Budget = 24

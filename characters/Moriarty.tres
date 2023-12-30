@@ -6,7 +6,7 @@
 script = ExtResource("1_rpwle")
 Name = "Moriarty"
 FavColor = Color(0.87451, 0.541176, 1, 1)
-Dialog = "I've been having trouble with my vision recently can you help?"
+Dialog = "I've been having trouble with my vision recently, can you help?"
 Need = ["heightenedSenses"]
 Bonus = ["perception"]
 Budget = 27

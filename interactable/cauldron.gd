@@ -94,3 +94,7 @@ func _particles():
 	particles.position.y = $Juice.position.y
 	particles.draw_pass_1.material.albedo_color = $Juice.mesh.material.albedo_color
 	particles.set_emitting(true)
+
+
+func _on_interact_timer_timeout():
+	_reset()

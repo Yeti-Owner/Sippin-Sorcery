@@ -33,3 +33,4 @@ func interact():
 	elif EventBus.HeldItem == str(Flavor):
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")
+	_reset()

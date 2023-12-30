@@ -7,6 +7,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7drc"]
 resource_local_to_scene = true
 transparency = 1
+shading_mode = 0
 albedo_texture = ExtResource("1_eicfa")
 billboard_mode = 2
 billboard_keep_scale = true
@@ -16,6 +17,7 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_d7drc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_termo"]
+shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 billboard_mode = 2
 

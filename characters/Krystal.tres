@@ -6,7 +6,7 @@
 script = ExtResource("1_4qqkn")
 Name = "Krystal"
 FavColor = Color(0, 0.270588, 0, 1)
-Dialog = "I've been having trouble sleeping recently can you help?"
+Dialog = "I've been having trouble sleeping recently, can you help?"
 Need = ["sleep"]
 Bonus = ["resistance", "health"]
 Budget = 22

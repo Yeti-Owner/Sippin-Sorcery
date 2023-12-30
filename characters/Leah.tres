@@ -6,7 +6,7 @@
 script = ExtResource("1_j3b1r")
 Name = "Leah"
 FavColor = Color(0.796078, 0.415686, 1, 1)
-Dialog = "I'm scared of drowning can you help?"
+Dialog = "I'm scared of drowning, can you help?"
 Need = ["swimming", "underwaterBreathing"]
 Bonus = ["courage", "fishTalk"]
 Budget = 50

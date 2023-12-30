@@ -6,7 +6,7 @@
 script = ExtResource("1_qpjrd")
 Name = "45Glockz"
 FavColor = Color(0.807843, 0, 0, 1)
-Dialog = "I need more speed to help me in basketball"
+Dialog = "I need more speed to help me in basketball."
 Need = ["speed"]
 Bonus = ["stamina", "jumping"]
 Budget = 23

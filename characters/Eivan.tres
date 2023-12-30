@@ -6,7 +6,7 @@
 script = ExtResource("1_cs161")
 Name = "Eivan"
 FavColor = Color(0.909804, 0, 0, 1)
-Dialog = "Give me the strength required to save the Orangutans."
+Dialog = "Give me strength so I can save the Orangutans."
 Need = ["strength"]
 Bonus = ["courage"]
 Budget = 20

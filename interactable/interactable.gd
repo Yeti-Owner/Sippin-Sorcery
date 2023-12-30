@@ -10,3 +10,9 @@ func get_interaction_icon():
 
 func interact():
 	print("Interacted with me")
+
+func _reset():
+	$CollisionShape3D.disabled = true
+	await get_tree().create_timer(0.01, true).timeout
+	$CollisionShape3D.disabled = false
+

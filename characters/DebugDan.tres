@@ -6,7 +6,7 @@
 script = ExtResource("1_woij3")
 Name = "Debug Dan"
 FavColor = Color(0.14902, 0.14902, 0.14902, 1)
-Dialog = "Hello"
+Dialog = "Hello, Speed?"
 Need = ["speed"]
 Bonus = []
 Budget = 100

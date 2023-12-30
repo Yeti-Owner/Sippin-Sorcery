@@ -6,8 +6,8 @@
 script = ExtResource("1_v55j7")
 Name = "Skup the Cup"
 FavColor = Color(0.396078, 0, 0, 1)
-Dialog = "I want to have intercourse with sooo many women"
-Need = ["charisma", "stamina"]
+Dialog = "Women fear me, fish want me, make me charismatic."
+Need = ["charisma"]
 Bonus = ["luck", "strength"]
 Budget = 46
 House = 3

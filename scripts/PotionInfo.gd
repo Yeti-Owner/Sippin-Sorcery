@@ -40,7 +40,8 @@ const CauldronPotions:Dictionary = {
 	"ChimeraFlame": ["strength", "explosionRes", "smokeImmunity"],
 	"GorgonBlood": ["petrificationRes", "poison", "betterSmell"],
 	"DryadSap": ["charisma", "health", "plantControl"],
-	"Water": ["water","water","water"]
+	"Water": ["water","water","water"],
+	"NepalOrb": ["monkey","monkey","monkey"]
 }
 
 # Ingredient : [ Name, color, Collision Position, Collision Size ]
@@ -60,8 +61,8 @@ const IngredientPotions:Dictionary = {
 	"HippogriffTalon": ["Hippogriff Talon", Color(0.07058823853731, 0.07058823853731, 0.07450980693102), Vector3(0, 0.4, 0), Vector3(0.8, 0.8, 0.2)],
 	"GriffinFeather": ["Griffin Feather", Color(0.35294118523598, 0.31764706969261, 0.32941177487373), Vector3(0, 0.3, 0), Vector3(0.2, 0.6, 0.7)],
 	"ChimeraFlame": ["Chimera Flame Essence", Color(0.90980392694473, 0, 0.0627451017499), Vector3(0, 0.35, 0), Vector3(0.4, 0.7, 0.4)],
-	"GorgonBlood": ["GorgonBlood", Color(0.5799999833107, 0.27724000811577, 0.24359999597073), Vector3(0, 0.35, 0), Vector3(0.4, 0.7, 0.4)],
-	"DryadSap": ["DryadSap", Color(0.48238503932953, 0.65542727708817, 0.40115711092949), Vector3(0, 0.35, 0), Vector3(0.4, 0.7, 0.4)]
+	"GorgonBlood": ["Gorgon Blood", Color(0.5799999833107, 0.27724000811577, 0.24359999597073), Vector3(0, 0.35, 0), Vector3(0.4, 0.7, 0.4)],
+	"DryadSap": ["Dryad Sap", Color(0.48238503932953, 0.65542727708817, 0.40115711092949), Vector3(0, 0.35, 0), Vector3(0.4, 0.7, 0.4)]
 }
 
 # Journal ingredient entries

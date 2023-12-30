@@ -65,6 +65,7 @@ unit_size = 5.03
 bus = &"Sfx"
 
 [node name="JuiceParticles" type="GPUParticles3D" parent="."]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.697395, 0)
 cast_shadow = 0
 emitting = false
@@ -74,3 +75,5 @@ explosiveness = 0.51
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_03csn")
 draw_pass_1 = SubResource("BoxMesh_28wcw")
+
+[connection signal="timeout" from="InteractTimer" to="." method="_on_interact_timer_timeout"]

@@ -17,13 +17,13 @@ func _level():
 		1:
 			dialogue._talk(str("[font_size=36]Just the same today but I wanted to explain one last thing to you.[/font_size]"))
 		2:
-			dialogue._talk(str("[font_size=36]If you check your ID card you'll see your reputation go ahead and check it.[/font_size]"), "Bob", 2)
+			dialogue._talk(str("[font_size=36]If you check your ID card you'll see your reputation. Go ahead and check it now.[/font_size]"), "Bob", 2)
 		3:
 			dialogue._talk(str("[font_size=36]It's " + str(EventBus.Reputation) + ".[/font_size]"), "Self")
 		4:
 			dialogue._talk(str("[font_size=36]Interesting, well to increase your reputation you just need to help more customers.[/font_size]"), "Bob")
 		5:
-			dialogue._talk(str("[font_size=36]Remember that while a customer may only require a few effects they might still benefit from additional ones and they'll be grateful.[/font_size]"), "Bob")
+			dialogue._talk(str("[font_size=36]Remember, while a customer may only require a few effects they may benefit from additional unasked ones, and they'll be grateful if you do it right.[/font_size]"), "Bob")
 		6:
 			dialogue._talk(str("[font_size=36]Got it.[/font_size]"), "Self", 1)
 		7:

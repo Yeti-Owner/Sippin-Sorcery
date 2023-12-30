@@ -6,7 +6,7 @@
 script = ExtResource("1_ab6uf")
 Name = "Formag"
 FavColor = Color(0.764706, 0.4, 0, 1)
-Dialog = "I've had some health struggles can you help?"
+Dialog = "I've had some health struggles, can you help?"
 Need = ["health"]
 Bonus = ["resistance"]
 Budget = 27

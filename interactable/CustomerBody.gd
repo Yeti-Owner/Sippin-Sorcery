@@ -29,11 +29,13 @@ func interact():
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")
 		Used = true
+#		_reset()
 	else:
 		if Talk:
 			_ask_flavors()
 		else:
 			_ask_problem()
+	
 
 func _check_success() -> int:
 	var success = 0
@@ -137,7 +139,7 @@ func _ask_flavors():
 			if FlavorList.size() > 1:
 				FlavorPreference += str(FlavorList.pop_front() + ", ")
 			else:
-				FlavorPreference += str(" and " + FlavorList.pop_front())
+				FlavorPreference += str("and " + FlavorList.pop_front())
 	
 	get_parent().Dialogue._talk(FlavorPreference)
 

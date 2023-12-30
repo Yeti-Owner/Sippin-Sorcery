@@ -6,7 +6,7 @@
 script = ExtResource("1_3h7xi")
 Name = "Artemis"
 FavColor = Color(0.270588, 0.0823529, 0.941176, 1)
-Dialog = "Help me poison the yellow twerp"
+Dialog = "Help me poison the yellow fuck."
 Need = ["poison"]
 Bonus = ["petrification"]
 Budget = 18

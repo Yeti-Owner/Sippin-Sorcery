@@ -6,7 +6,7 @@
 script = ExtResource("1_7yx6m")
 Name = "Flueve"
 FavColor = Color(0.27451, 0, 0.862745, 1)
-Dialog = "I plan to blow up New Jersey but I'm scared I'll get caught in the explosion."
+Dialog = "I'm gonna blow up New Jersey but I don't want the explosion to hurt me."
 Need = ["explosionRes"]
 Bonus = ["speed", "agility"]
 Budget = 26

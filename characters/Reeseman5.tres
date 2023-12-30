@@ -6,7 +6,7 @@
 script = ExtResource("1_bbfou")
 Name = "Reeseman5"
 FavColor = Color(0.47451, 0, 0, 1)
-Dialog = "I hurt my hand doing electrical work please help"
+Dialog = "I hurt my hand doing electrical work please help."
 Need = ["health"]
 Bonus = ["lessPain", "electricalRes"]
 Budget = 35

@@ -8,7 +8,7 @@ extends Path3D
 @export var MinistryNum:int = 0
 
 @export_category("Boss Spawning")
-@export_enum("None:-1","Tom:0", "Humphrey:1", "Monkey:2","Garfield:3") var BossSpawn:int = -1
+@export_enum("None:-1","Tom:0", "Humphrey:1", "Sir Higgins:2","Garfield:3") var BossSpawn:int = -1
 
 @onready var timer := $MiscTimer
 const Customer := preload("res://scenes/customer.tscn")
@@ -22,8 +22,8 @@ const CustomerLists := {
 	3: HardCustomers
 }
 const TutorialCustomers := ["Ben", "Mary", "Emma", "Charles", "Krystal", "Jokez", "Hunter", "Dalidoah"]
-const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Artemis", "Emma", "Mary", "Krystal", "Krystal2", "Jokez", "Imoorzy", "Noto", "Hunter", "Formag", "Kuspy", "45Glockz", "Deathrow", "Carlito", "Sly", "sselemoh", "Nevaa", "Dalidoah", "Vrile", "Yurei", "Eivan", "Keta", "Flueve", "soap", "CptLegend", "Reibean", "Teethbat", "KSS", "Whatmaster", "Proccessing", "Blackout","Bruhgby"]
-const MediumCustomers := ["Jokez", "High", "Kaze", "Imoorzy", "Noto", "NanoCup", "Formag", "Kuspy", "45Glockz", "Moriarty", "Moriarty2", "Carlito2", "Ufrz", "Nevaa", "Reeseman5", "MrInfernal", "Kangaroo_Knight", "Iconography", "BurgerkingCandycrush", "BaronDipitous", "Eivan2", "CptLegend", "April", "Benzeenee10", "Jammi", "Kyubi", "JinBoi"]
+const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Artemis", "Emma", "Mary", "Krystal", "Krystal2", "Jokez", "Imoorzy", "Noto", "Hunter", "Formag", "Kuspy", "45Glockz", "Deathrow", "Carlito", "Sly", "sselemoh", "Nevaa", "Dalidoah", "Vrile", "Eivan", "Keta", "Flueve", "soap", "CptLegend", "Reibean", "Teethbat", "KSS", "Whatmaster", "Proccessing", "Blackout","Bruhgby"]
+const MediumCustomers := ["Jokez", "High", "Kaze", "Imoorzy", "Noto", "NanoCup", "Formag", "Kuspy", "45Glockz", "Moriarty", "Moriarty2", "Carlito2", "Ufrz", "Nevaa", "Reeseman5", "MrInfernal", "Kangaroo_Knight", "Iconography", "BurgerkingCandycrush", "Yurei", "BaronDipitous", "Eivan2", "CptLegend", "April", "Benzeenee10", "Jammi", "Kyubi", "JinBoi"]
 const HardCustomers := ["Slight", "Breo", "Skup", "Snipes", "Orion", "TCArk", "Leah", "Iconography", "Eidolonic", "BedHeadNinja", "Strabster"]
 var Spawned := []
 
@@ -104,6 +104,7 @@ func _spawn_boss():
 	# Spawn boss
 	var b = HealthInspector.instantiate()
 	add_child(b)
+	print("Spawned boss")
 	
 	return
 #	BossSpawn = -1

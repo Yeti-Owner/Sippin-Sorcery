@@ -26,6 +26,7 @@ script = ExtResource("1_fvsw5")
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.993961, 0.0441075, -0.10048, 0, 0.915663, 0.401948, 0.109734, -0.39952, 0.910133, 0, 0, -14)
 shadow_enabled = true
+shadow_opacity = 0.5
 directional_shadow_mode = 0
 
 [node name="Environment" type="WorldEnvironment" parent="."]

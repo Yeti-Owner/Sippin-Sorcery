@@ -14,8 +14,8 @@ func  _ready():
 	mat = StandardMaterial3D.new()
 	mat.albedo_texture = load(str(Location) + ".png")
 	$Mesh.set_surface_override_material(0, mat)
-	$Collision.position = PotionInfo.IngredientPotions[Ingredient][2]
-	$Collision.shape.size = PotionInfo.IngredientPotions[Ingredient][3]
+	$CollisionShape3D.position = PotionInfo.IngredientPotions[Ingredient][2]
+	$CollisionShape3D.shape.size = PotionInfo.IngredientPotions[Ingredient][3]
 
 func get_interaction_text():
 	if EventBus.HeldItem == null:
@@ -35,7 +35,7 @@ func interact():
 	elif EventBus.HeldItem == str(Ingredient):
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")
-	
+	_reset()
 
 func _on_property_list_changed():
 	_ready()

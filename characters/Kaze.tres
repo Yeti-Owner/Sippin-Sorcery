@@ -6,7 +6,7 @@
 script = ExtResource("1_i1mhl")
 Name = "Kaze"
 FavColor = Color(0.709804, 0.666667, 0.607843, 1)
-Dialog = "My hands are killing me please help!"
+Dialog = "My hands are hurting please help!"
 Need = ["health"]
 Bonus = ["flexibility"]
 Budget = 25

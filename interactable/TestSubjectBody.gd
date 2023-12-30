@@ -2,8 +2,6 @@ extends Interactable
 
 @onready var color := Color(randf(), randf(), randf())
 @onready var SpeechBubble := $SpeechBubble
-#var CharName := ["Jack", "Emily", "Thomas", "Jessica", "James", "Charlotte", "Daniel", "Sophie", "Joshua", "Olivia", "Matthew", "Emma", "William", "Hannah", "Joseph", "Amy", "Benjamin", "Lucy", "Samuel", "Rebecca", "David", "Megan", "Oliver", "Lauren", "Christopher", "Katie", "Alexander", "Ellie", "Ryan", "Grace"]
-#@onready var Char:String = get_parent().CharName
 
 const EffectsList := {
 	"sleep": "I feel really sleepy now, I'm gonna go lie down",
@@ -21,7 +19,7 @@ const EffectsList := {
 	"poison": "Ugh, I don't feel so good. My stomach's churning, and I've got this weird taste in my mouth. Something's definitely not right.",
 	"coldRes": "I'm not shivering anymore, even though it's freezing outside. It's like I've got my own personal heater keeping me warm!",
 	"fireRes": "Whoa, did someone just turn up the heat? I'm not sweating or feeling uncomfortable at all. I'm like fireproof or something!",
-	"lessPain": "I stubbed my toe earlier, but it doesn't even hurt now. It's like the pain just vanished into thin air. Weird, but cool!",
+	"lessPain": "I stubbed my toe earlier, but it doesn't even hurt now. It's like the pain was numbed. Weird, but useful!",
 	"swimming": "I feel an urge to go swimming. I could swim laps over anyone! I know I can glide through the water so effortlessly, awesome!",
 	"underwaterBreathing": "My neck feels weird, it's like I've got gills or something.",
 	"fishTalk": "Something is off, I feel a strange urge to go swimming, I swear I can hear the fish from here. And they're talking?!",
@@ -45,9 +43,10 @@ const EffectsList := {
 	"explosionRes": "I feel off, I can't explain it but I know I could survive a bomb being dropped on me, mark it down as explosion resistance dude.",
 	"smokeImmunity": "My lungs feel stronger, I couldn't breathe underwater or anything but you get the idea.",
 	"petrificationRes": "Yeah this one is a dud, nothing has changed except I feel like I'm protected from petrification. I don't want to test it though.",
-	"betterSmell": "I can smell the school from here! I am picking up scents of quills from miles away.",
+	"betterSmell": "I can smell the school from here but we must be miles away?!",
 	"charisma": "I've got charm oozing out of me. I can tell you can't resist my words, I'm gonna convince the teachers to not assign homework!",
 	"plantControl": "Is it just me or is the grass looking at me? I can control them it's like I'm the king of the greenery!",
+	"monkey": "Yeah, I'm not drinking this."
 }
 var AdditionalList1 := ["hovering", "invisibility", "agility", "speed","strength"]
 var AdditionalList2 := ["petrification"]
@@ -111,6 +110,9 @@ func _test_juice(effects:Array):
 	$Timer.start(4)
 
 func _record_journal(result, effect):
+	if effect == "monkey":
+		return
+	
 	var NewEntry:String = str(result + " ([color=" + str(color.to_html()) + "]" + get_parent().CharName + "[/color]" + ")")
 	PotionInfo.JournalIngredients[EventBus.InsertedItems] = PotionInfo.JournalIngredients[EventBus.InsertedItems].format({effect: str(NewEntry)})
 

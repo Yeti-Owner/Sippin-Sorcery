@@ -6,7 +6,7 @@
 script = ExtResource("1_vbb85")
 Name = "TCArk"
 FavColor = Color(0.705882, 0, 0, 1)
-Dialog = "My girlfriend lives far away, can you give me something to help get to her?"
+Dialog = "My girlfriend lives far away, can you give me something to help run to her?"
 Need = ["agility", "speed"]
 Bonus = ["stamina"]
 Budget = 45

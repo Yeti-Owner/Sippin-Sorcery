@@ -6,9 +6,9 @@
 script = ExtResource("1_1iena")
 Name = "Breo"
 FavColor = Color(0.215686, 0, 0.419608, 1)
-Dialog = "You have something to help me with my art? Like my hands maybe?"
-Need = ["dexterity"]
-Bonus = ["perception"]
+Dialog = "I have to stay up all night to work on some graphics, help?"
+Need = ["alertness"]
+Bonus = ["perception","dexterity"]
 Budget = 44
 House = 1
 Gender = "Male"

@@ -6,7 +6,7 @@
 script = ExtResource("1_rpek7")
 Name = "Carlito"
 FavColor = Color(0, 0, 0, 1)
-Dialog = "Help me poison an IRS agent, I'm not paying any taxes."
+Dialog = "Help me poison an IRS agent, I'm not paying no taxes."
 Need = ["poison"]
 Bonus = ["petrification", "confusion"]
 Budget = 40

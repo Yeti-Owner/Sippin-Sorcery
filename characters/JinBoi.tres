@@ -6,7 +6,7 @@
 script = ExtResource("1_lhq5c")
 Name = "Jin boi"
 FavColor = Color(0, 0.501961, 0.501961, 1)
-Dialog = "I hurt myself at the gym mind helping?"
+Dialog = "I hurt myself at the gym, mind helping?"
 Need = ["health"]
 Bonus = ["strength", "dexterity"]
 Budget = 33

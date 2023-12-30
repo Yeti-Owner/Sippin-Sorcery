@@ -67,7 +67,7 @@ func _tutorial():
 			EventBus.Balance = 25
 			EventBus.emit_signal("BalanceChanged")
 		23:
-			dialogue._talk(str("[font_size=36]Wait[/font_size]"), "Self", 0.4)
+			dialogue._talk(str("[font_size=36]Wait[/font_size]"), "Self", 0.7)
 		24:
 			dialogue._talk(str("[font_size=36]See ya![/font_size]"), "Duane", 1)
 		25:
@@ -78,8 +78,10 @@ func _tutorial():
 		30:
 			dialogue._talk(str("[font_size=36]Looks like that will be all the customers today. I recommend you research some ingredients then close shop whenever you're done.[/font_size]"))
 		31:
-			dialogue._talk(str("[font_size=36]You did good " + EventBus.PlayerName + ", I'm proud of you.[/font_size]"))
+			dialogue._talk(str("[font_size=36]I recommend you research quanity over quality.[/font_size]"))
 		32:
+			dialogue._talk(str("[font_size=36]You did good " + EventBus.PlayerName + ", I'm proud of you.[/font_size]"))
+		33:
 			dialogue._done()
 
 func _on_temp_timer_timeout():

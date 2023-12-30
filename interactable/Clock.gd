@@ -24,3 +24,4 @@ func interact():
 
 func _day_done():
 	Night = true
+	_reset()

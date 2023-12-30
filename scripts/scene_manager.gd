@@ -112,4 +112,10 @@ func _on_anim_player_animation_finished(anim_name):
 		# when boss transition ends it sets the
 		# "time" value in _start_boss and then starts timer
 		BossBar.max_value = BossTime
+		BossBar.value = BossTime 
 #		BossTimer.start()
+
+func _stop_boss():
+	BossTimer.stop()
+	BossBar.visible = false
+	BossName.visible = false

@@ -8,6 +8,7 @@ signal DialogueFinished
 signal JournalToggle(toggle:bool)
 signal DayDone
 signal CustomerDone
+signal BossProblem
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"
@@ -52,6 +53,7 @@ var Keybinds:Dictionary = {
 	"pause" : InputMap.action_get_events("pause")[0],
 	"id" : InputMap.action_get_events("id")[0]
 }
+var RadioSong:int = 1
 
 func _ready():
 	randomize()
@@ -69,10 +71,6 @@ func _player_headshot():
 	var image = Image.load_from_file("user://PlayerHeadshot.png")
 	var texture = ImageTexture.create_from_image(image)
 	PlayerHeadshot = texture
-
-func _check_rep(_rep):
-	var MaxRep := (BossesBeaten + 1) * 25
-	Reputation = clamp(_rep, 0, MaxRep)
 
 func _save():
 	var file := FileAccess.open(PlayerData, FileAccess.WRITE)
@@ -93,7 +91,8 @@ func _save():
 		"MOUSESENS" : MouseSens,
 		"JOURNALINGREDIENTS" : PotionInfo.JournalIngredients,
 		"KEYBINDS" : Keybinds,
-		"SENTFEEDBACK" : SentFeedback
+		"SENTFEEDBACK" : SentFeedback,
+		"RADIOSONG" : RadioSong
 	}
 	file.store_var(SavedData)
 
@@ -104,7 +103,6 @@ func _load():
 	PlayerOutfit = LoadedData.PLAYEROUTFIT
 	Balance = LoadedData.BALANCE
 	PlayerHeadshot = LoadedData.PLAYERHEADSHOT
-	Reputation = LoadedData.REPUTATION
 	IdNum = LoadedData.IDNUM
 	BossesBeaten = LoadedData.BOSSESBEATEN
 	StartDate = LoadedData.STARTDATE
@@ -117,6 +115,12 @@ func _load():
 	PotionInfo.JournalIngredients = LoadedData.JOURNALINGREDIENTS
 	Keybinds = LoadedData.KEYBINDS
 	SentFeedback = LoadedData.SENTFEEDBACK
+	RadioSong = LoadedData.RADIOSONG
+	Reputation = LoadedData.REPUTATION
+
+func _check_rep(_rep):
+	var MaxRep := (BossesBeaten + 1) * 25
+	Reputation = clamp(_rep, 0, MaxRep)
 
 func _assign_keys():
 	return # Doesn't work idk I'll come back to it later but
@@ -136,6 +140,8 @@ func _discord_presence():
 	discord_sdk.large_image_text = "Free on itch.io!"
 	
 	discord_sdk.start_timestamp = int(Time.get_unix_time_from_system())
+	
+	# Saving this in case it's relevant later idk
 	# discord_sdk.end_timestamp = int(Time.get_unix_time_from_system()) + 3600 # +1 hour in unix time / "01:00 remaining"
 	
 	discord_sdk.refresh()

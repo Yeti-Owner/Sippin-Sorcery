@@ -64,19 +64,27 @@ func _result(success:bool, flavor:bool):
 	var Response:String
 	if success:
 		# Good
-		Response = "Oh it's just juice"
+		var Responses = ["Oh it's just juice","Oh, juice","Hmm I still don't believe you","You got lucky I bet","You pass this time","Nice one","Surprising"]
+		Response = Responses[randi() % Responses.size()]
 		EventBus.Balance += 10
 	else:
-		Response = "I knew you were selling illegal potions"
+		var Responses = ["I knew you were selling illegal potions","Nice try","Almost had us","So close yet so far","Better luck next time"]
+		Response = Responses[randi() % Responses.size()]
 		EventBus.Balance -= 25
-		EventBus.Reputation -= 10
+		EventBus.Reputation -= 2
 	
 	if flavor:
 		Response += ", tastes good."
 		EventBus.Balance += 10
 	else:
 		Response += ", don't like that flavor."
-		EventBus.Balance -= 10
+	
+	if success and flavor:
+		$ResponseSound.stream = load("res://assets/audio/good.ogg")
+		$ResponseSound.play()
+	else:
+		$ResponseSound.stream = load("res://assets/audio/bad.ogg")
+		$ResponseSound.play()
 	
 	Dialogue._talk(Response)
 	EventBus.emit_signal("BalanceChanged")
