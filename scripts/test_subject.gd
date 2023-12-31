@@ -3,7 +3,7 @@ extends PathFollow3D
 @onready var AnimPlayer := $BodyMeshes/AnimationPlayer
 @onready var Apparation := preload("res://scenes/apparation.tscn")
 
-const MaleNames := ["Jack","Thomas","James","Daniel", "Joshua","Matthew","William","David","Joseph","Benjamin","Oliver","Ryan","Alexander","Christopher","Samuel","Michael","Smith","Larry","Drew"]
+const MaleNames := ["Jack","Thomas","James","Daniel", "Joshua","Matthew","William","David","Joseph","Benjamin","Oliver","Ryan","Alexander","Christopher","Samuel","Michael Jackson","Smith","Larry","Drew"]
 const FemaleNames := ["Emily","Jessica", "Charlotte","Sophie", "Olivia", "Emma", "Hannah", "Amy", "Lucy", "Rebecca", "Megan", "Lauren", "Katie", "Ellie", "Grace","Bianca","Maggie","Taylor"]
 var CharName:String
 var Gender:String

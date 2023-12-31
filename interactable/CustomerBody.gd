@@ -29,7 +29,6 @@ func interact():
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")
 		Used = true
-#		_reset()
 	else:
 		if Talk:
 			_ask_flavors()
@@ -107,6 +106,9 @@ func _check_flavor():
 	var success := false
 	if FlavorList.has(EventBus.HeldFlavor):
 		success = true
+		# Player is rewarded a lil for getting at least flavor right
+		EventBus.Balance += (randi() % 4 + 1)
+		EventBus.emit_signal("BalanceChanged")
 	
 	return success
 

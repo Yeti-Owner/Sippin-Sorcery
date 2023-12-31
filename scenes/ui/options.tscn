@@ -188,8 +188,8 @@ theme_override_icons/tick = SubResource("MeshTexture_4qhqq")
 theme_override_styles/slider = SubResource("StyleBoxFlat_o3om1")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vc47o")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vc47o")
-min_value = 0.05
-max_value = 0.8
+min_value = 0.02
+max_value = 0.77
 step = 0.01
 value = 0.4
 

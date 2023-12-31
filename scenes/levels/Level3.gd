@@ -29,9 +29,9 @@ func _level():
 		7:
 			dialogue._talk(str("[font_size=36]But, under NO CIRCUSTANCES can you sell them working potions.[/font_size]"))
 		8:
-			dialogue._talk(str("[font_size=36]I've added some water below the counter and if they come actually give them juice.[/font_size]"))
+			dialogue._talk(str("[font_size=36]I've added some water below the counter and if they come actually give them juice.[/font_size]"), "Bob", 4)
 		9:
-			dialogue._talk(str("[font_size=36]I'll say it again, if any official types come around give them actual juice not potions or we may be in serious trouble.[/font_size]"))
+			dialogue._talk(str("[font_size=36]You can probably tell it's an agent by the way they look and talk.[/font_size]"))
 		10:
 			dialogue._talk(str("[font_size=36]Got it.[/font_size]"), "Self")
 		11:

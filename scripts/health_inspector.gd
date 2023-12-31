@@ -8,7 +8,7 @@ extends PathFollow3D
 const BossList := {
 	"Tom": ["Male", "Give me Courage", "Orange or Banana please", 30],
 	"Humphrey": ["Male", "Give me 1 of everything, and quickly or I'll fail you.", "Any flavor just make it snappy.", 120],
-	"Sir Higgins": ["Male", "I want to turn people into monkeys, make a potion or you fail.", "Take a wild fucking guess what flavor I want.", 120],
+	"Sir Higgins": ["Male", "I want to turn people into monkeys, make a potion or you fail.", "I'm monkey obsessed, take a wild fucking guess what flavor I want.", 120],
 	"Garfield": ["Male", "Something to help me sleep would be great, you know the drill.", "Lasagna, make it happen.", 120]
 }
 @onready var BossId:String = (BossList.keys()[get_parent().BossSpawn]) # like "Humphrey"

@@ -9,7 +9,7 @@ const EffectsList := {
 	"confusion": "Whoa, everything's kinda spinning in my head. Like, I can't even remember what I had for breakfast this morning.",
 	"health": "Man, I was feeling a bit ill earlier, but it's totally cleared up thank you!",
 	"flexibility": "I swear, my body feels all loose and limber, like I could bend in crazy ways.",
-	"agility": "You won't believe it, but I'm moving so fast right now! I feel like I could outrun a Quidditch player.",
+	"creativity": "My brainfog cleared up, I have so many new ideas right now!",
 	"speed": "I feel like I've been zapped with a dose of lightning! My legs are moving quicker than I thought possible.",
 	"courage": "I don't know what came over me, but suddenly I'm braver than a lion. Nothing scares me anymore! Let's do this!",
 	"stamina": "I could run laps around the castle and not even lose my breath! It's like I've got an endless supply of energy.",
@@ -48,7 +48,7 @@ const EffectsList := {
 	"plantControl": "Is it just me or is the grass looking at me? I can control them it's like I'm the king of the greenery!",
 	"monkey": "Yeah, I'm not drinking this."
 }
-var AdditionalList1 := ["hovering", "invisibility", "agility", "speed","strength"]
+var AdditionalList1 := ["hovering", "invisibility", "speed","strength"]
 var AdditionalList2 := ["petrification"]
 
 var cost := 25
@@ -59,7 +59,7 @@ func _ready():
 	await  get_tree().process_frame
 	await  get_tree().process_frame
 	await  get_tree().process_frame
-	if get_parent().CharName == "Michael":
+	if get_parent().CharName == "Michael Jackson":
 		get_parent().get_node("BodyMeshes").rotation_degrees.y += 180
 
 func get_interaction_text():
@@ -127,9 +127,6 @@ func _effect(effect:String, _results:String):
 		"invisibility":
 			get_parent().get_node("BodyMeshes").visible = false
 			SpeechBubble._talk("I don't feel any different, you sure you mixed it right?")
-		"agility":
-			get_parent().speed = 0.3
-			SpeechBubble._talk(_results)
 		"speed":
 			get_parent().speed = 0.3
 			SpeechBubble._talk(_results)

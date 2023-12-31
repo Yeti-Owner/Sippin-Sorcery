@@ -12,7 +12,7 @@ const BossData := {
 
 var CharName:String
 @onready var color := Color(randf(), randf(), randf())
-var Talk:bool = true
+var Talk:bool = false
 var Used:bool = false
 
 func get_interaction_text():

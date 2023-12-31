@@ -24,7 +24,7 @@ const JournalPotions:Dictionary = {
 # Ingredient : [ effect 1, 2, 3 ]
 const CauldronPotions:Dictionary = {
 	"MandrakeRoot": ["resistance", "confusion", "health"],
-	"FairyWing": ["flexibility", "agility", "speed"],
+	"FairyWing": ["flexibility", "creativity", "speed"],
 	"TrollBlood": ["courage", "stamina", "strength"],
 	"KrakenInk": ["badVision", "badSmell", "poison"],
 	"SalamanderTail": ["coldRes", "fireRes", "lessPain"],
@@ -68,7 +68,7 @@ const IngredientPotions:Dictionary = {
 # Journal ingredient entries
 var JournalIngredients := {
 	"MandrakeRoot": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {resistance} \n\n[color=BLACK]Effect 2: \n- {confusion} \n\n[color=BLACK]Effect 3:\n- {health}",
-	"FairyWing": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {flexibility} \n\n[color=BLACK]Effect 2: \n- {agility} \n\n[color=BLACK]Effect 3:\n- {speed}",
+	"FairyWing": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {flexibility} \n\n[color=BLACK]Effect 2: \n- {creativity} \n\n[color=BLACK]Effect 3:\n- {speed}",
 	"TrollBlood": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {courage} \n\n[color=BLACK]Effect 2: \n- {stamina} \n\n[color=BLACK]Effect 3:\n- {strength}",
 	"KrakenInk": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {badVision} \n\n[color=BLACK]Effect 2: \n- {badSmell} \n\n[color=BLACK]Effect 3:\n- {poison}",
 	"SalamanderTail": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {coldRes} \n\n[color=BLACK]Effect 2: \n- {fireRes} \n\n[color=BLACK]Effect 3:\n- {lessPain}",
@@ -88,7 +88,7 @@ var JournalIngredients := {
 
 
 # Just every effect in the game
-const EffectsList := ["resistance", "confusion", "health","flexibility", "agility", "speed","courage", "stamina", "strength","badVision", "badSmell", "poison","coldRes", "fireRes", "lessPain","swimming", "underwaterBreathing", "fishTalk","sticky", "nightVision", "invisibility","lessWeight", "hearing", "hovering","health", "luck", "fireRes","petrification", "poison", "strength","purity", "health", "heightenedSenses","speed", "stability", "jumping","precision", "lessPain", "dexterity","alertness", "perception", "electricalRes","strength", "explosionRes", "smokeImmunity","petrificationRes", "poison", "betterSmell","charisma", "health", "plantControl", "sleep"]
+const EffectsList := ["resistance", "confusion", "health","flexibility", "creativity", "speed","courage", "stamina", "strength","badVision", "badSmell", "poison","coldRes", "fireRes", "lessPain","swimming", "underwaterBreathing", "fishTalk","sticky", "nightVision", "invisibility","lessWeight", "hearing", "hovering","health", "luck", "fireRes","petrification", "poison", "strength","purity", "health", "heightenedSenses","speed", "stability", "jumping","precision", "lessPain", "dexterity","alertness", "perception", "electricalRes","strength", "explosionRes", "smokeImmunity","petrificationRes", "poison", "betterSmell","charisma", "health", "plantControl", "sleep"]
 
 
 # Used by Customer and test subject for clothing

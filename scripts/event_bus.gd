@@ -42,7 +42,7 @@ var SentFeedback:bool = false
 var MasterVolume:float = 0
 var MusicVolume:float = 0
 var SfxVolume:float = 0
-var MouseSens:float = 0.4
+var MouseSens:float = 0.2
 var Keybinds:Dictionary = {
 	"forward" : InputMap.action_get_events("forward")[0],
 	"backward" : InputMap.action_get_events("backward")[0],
