@@ -41,7 +41,7 @@ func _done():
 	Visible = false
 
 func _on_counter_timeout():
-	Text.visible_characters += 1
+	Text.visible_characters += 1.5
 	if Text.visible_ratio >= 1:
 		$DelayTimer.start(delay)
 		delay = 2.0

@@ -10,6 +10,7 @@ sky_material = ExtResource("2_14obj")
 background_mode = 2
 sky = SubResource("Sky_08ayf")
 ambient_light_source = 2
+ambient_light_color = Color(0.560784, 0.560784, 0.560784, 1)
 ambient_light_energy = 0.5
 reflected_light_source = 2
 tonemap_mode = 3
@@ -24,9 +25,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
 script = ExtResource("1_fvsw5")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.993961, 0.0441075, -0.10048, 0, 0.915663, 0.401948, 0.109734, -0.39952, 0.910133, 0, 0, -14)
+transform = Transform3D(0.959805, 0.112813, -0.256996, -5.36886e-11, 0.915663, 0.401947, 0.280666, -0.385791, 0.878858, 0, 0, -14)
 shadow_enabled = true
-shadow_opacity = 0.5
+shadow_opacity = 0.91
 directional_shadow_mode = 0
 
 [node name="Environment" type="WorldEnvironment" parent="."]

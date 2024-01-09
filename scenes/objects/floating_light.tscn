@@ -68,7 +68,7 @@ shape = SubResource("BoxShape3D_x81v1")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0872379, 0)
-light_energy = 0.722
+light_energy = 0.669
 omni_range = 8.681
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

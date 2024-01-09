@@ -90,7 +90,7 @@ func _dress():
 	$BodyMeshes/Leg2.set_mesh(L)
 #	$BodyMeshes/Arm1.set_mesh(load("res://assets/models/characters/arm.obj"))
 #	$BodyMeshes/Arm2.set_mesh(load("res://assets/models/characters/arm.obj"))
-	
+
 
 const DIALOGUE_TEXTS = {
 	-1: "That's not what I wanted%s",
