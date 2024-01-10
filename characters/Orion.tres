@@ -6,12 +6,13 @@
 script = ExtResource("1_4g74m")
 Name = "Orion"
 FavColor = Color(1, 1, 0, 1)
-Dialog = "I'm not strong enough, please help me beat that purple bitch."
-Need = ["strength", "speed"]
-Bonus = ["luck", "dexterity"]
+Dialog = "I'm not strong enough, please help me beat that purple jerk."
+Need = Array[String](["strength", "speed"])
+Bonus = Array[String](["luck", "dexterity"])
 Budget = 45
 House = 2
 Gender = "Male"
+TastePrefix = "I like "
 Strawberry = false
 Banana = false
 Pineapple = true

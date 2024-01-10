@@ -12,6 +12,7 @@ Bonus = ["speed"]
 Budget = 26
 House = 0
 Gender = "Male"
+TastePrefix = "I like "
 Strawberry = false
 Banana = true
 Pineapple = true

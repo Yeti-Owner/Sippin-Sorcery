@@ -6,12 +6,13 @@
 script = ExtResource("1_arwjk")
 Name = "Strabster"
 FavColor = Color(0, 0.615686, 0, 1)
-Dialog = "I have severe back pain from my dumptruck ass, please help"
-Need = ["lessWeight", "lessPain"]
-Bonus = ["health"]
+Dialog = "I have severe back pain from my dumptruck ass, please help."
+Need = Array[String](["lessWeight", "lessPain"])
+Bonus = Array[String](["health"])
 Budget = 56
 House = 0
 Gender = "Male"
+TastePrefix = "I like "
 Strawberry = true
 Banana = false
 Pineapple = true

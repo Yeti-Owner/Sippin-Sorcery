@@ -7,8 +7,8 @@ class_name CharacterSheet
 
 @export_category("Needs")
 @export var Dialog := ""
-@export var Need := [""]
-@export var Bonus := [""]
+@export var Need:Array[String] = [""]
+@export var Bonus:Array[String] = [""]
 @export var Budget := 10
 
 @export_category("Looks")
@@ -16,6 +16,7 @@ class_name CharacterSheet
 @export_enum("Male","Female") var Gender:String
 
 @export_category("Taste")
+@export var TastePrefix:String = "I like "
 @export var Strawberry := false
 @export var Banana := false
 @export var Pineapple := false

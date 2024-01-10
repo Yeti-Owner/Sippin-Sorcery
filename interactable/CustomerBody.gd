@@ -131,17 +131,21 @@ func _ask_flavors():
 	if get_parent().Info.Orange:
 		FlavorList.append("Orange")
 	
+	var FlavorPrefix:String = get_parent().Info.TastePrefix
+	
 	if FlavorList.size() == 1:
-		FlavorPreference = str("I like " + FlavorList[0])
+		FlavorPreference = str(FlavorPrefix + FlavorList[0] + ".")
 	elif FlavorList.size() == 2:
-		FlavorPreference = str("I like " + FlavorList[0] + " and " + FlavorList[1])
+		FlavorPreference = str(FlavorPrefix + FlavorList[0] + " and " + FlavorList[1] + ".")
+	elif FlavorList.size() == 6:
+		FlavorPreference = str(FlavorPrefix + "any flavor.")
 	else:
-		FlavorPreference = "I like "
+		FlavorPreference = FlavorPrefix
 		for taste in FlavorList.size():
 			if FlavorList.size() > 1:
 				FlavorPreference += str(FlavorList.pop_front() + ", ")
 			else:
-				FlavorPreference += str("and " + FlavorList.pop_front())
+				FlavorPreference += str("and " + FlavorList.pop_front() + ".")
 	
 	get_parent().Dialogue._talk(FlavorPreference)
 
