@@ -73,3 +73,6 @@ func _on_anims_animation_finished(anim_name):
 
 func _on_scene_timer_timeout():
 	SceneManager._swap_hud("res://scenes/ui/gui.tscn")
+
+func _on_music_finished():
+	$Music.play()

@@ -25,16 +25,14 @@ func _ready():
 	_dress()
 	
 	match Difficulty:
-		-1:
-			LeaveTime = 90
 		0:
 			LeaveTime = 60
 		1:
-			LeaveTime = 60
+			LeaveTime = 50
 		2:
-			LeaveTime = 80
+			LeaveTime = 40
 		3:
-			LeaveTime = 90
+			LeaveTime = 40
 
 
 func _physics_process(delta):

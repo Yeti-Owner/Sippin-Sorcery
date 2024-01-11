@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://syb05k3lr8yt"]
+[gd_scene load_steps=40 format=3 uid="uid://syb05k3lr8yt"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_n2mbh"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_3qqco"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://cte56ou5xtpk5" path="res://assets/theme/SourceSansPro-Regular.ttf" id="9_s08e2"]
 [ext_resource type="AudioStream" uid="uid://7mrq8j1nle0j" path="res://assets/audio/click_001.ogg" id="10_gy0ny"]
 [ext_resource type="AudioStream" uid="uid://bgos22xkpt5p0" path="res://assets/audio/back_002.ogg" id="11_peyst"]
+[ext_resource type="AudioStream" uid="uid://cmtkeju51wyqe" path="res://assets/audio/music/Snowfall.mp3" id="12_ked1i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d7srl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -431,5 +432,12 @@ bus = &"Sfx"
 [node name="SceneTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ked1i")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
 [connection signal="animation_finished" from="Anims" to="." method="_on_anims_animation_finished"]
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]

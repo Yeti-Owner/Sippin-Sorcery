@@ -75,6 +75,7 @@ func get_interaction_icon():
 
 func interact():
 	if EventBus.HeldItem == "Juice" and EventBus.Balance >= 25:
+		get_parent().get_node("Sfx").play()
 		EventBus.Balance -= 25
 		_test_juice(EventBus.HeldEffect)
 		EventBus.HeldFlavor = ""

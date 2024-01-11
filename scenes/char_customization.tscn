@@ -769,15 +769,16 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("13_l50my")
 theme_override_font_sizes/font_size = 32
-text = "Enter your name"
+text = "What is your name?"
 horizontal_alignment = 1
 
 [node name="Name" type="LineEdit" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(550, 50)
+custom_minimum_size = Vector2(550, 70)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("13_l50my")
 theme_override_font_sizes/font_size = 32
-placeholder_text = "name"
+placeholder_text = "Press Enter to Submit"
+alignment = 1
 max_length = 15
 context_menu_enabled = false
 shortcut_keys_enabled = false
