@@ -50,10 +50,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Bg" type="Panel" parent="CenterContainer"]
 custom_minimum_size = Vector2(600, 300)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_41sma")
 
 [node name="TopBar" type="Panel" parent="CenterContainer/Bg"]
@@ -64,6 +66,7 @@ anchor_bottom = 1.0
 offset_bottom = -249.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uhhf6")
 
 [node name="Label" type="Label" parent="CenterContainer/Bg/TopBar"]
@@ -89,12 +92,14 @@ anchor_bottom = 1.0
 offset_top = 52.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 0
 alignment = 1
 
 [node name="HolderPhoto" type="Panel" parent="CenterContainer/Bg/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ffohs")
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/Bg/HBoxContainer/HolderPhoto"]
@@ -104,10 +109,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="PhotoBorder" type="Panel" parent="CenterContainer/Bg/HBoxContainer/HolderPhoto/CenterContainer"]
 custom_minimum_size = Vector2(185, 185)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_vw4l4")
 
 [node name="Photo" type="TextureRect" parent="CenterContainer/Bg/HBoxContainer/HolderPhoto/CenterContainer/PhotoBorder"]
@@ -123,6 +130,7 @@ offset_right = 87.5
 offset_bottom = 87.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_djxac")
 expand_mode = 1
 
@@ -130,6 +138,7 @@ expand_mode = 1
 custom_minimum_size = Vector2(355, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5aiyq")
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo"]
@@ -139,6 +148,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 30
@@ -146,10 +156,12 @@ theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="Name" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Name"]
 custom_minimum_size = Vector2(110, 0)
@@ -170,6 +182,7 @@ vertical_alignment = 1
 
 [node name="Idnumber" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Idnumber"]
 custom_minimum_size = Vector2(110, 0)
@@ -190,6 +203,7 @@ vertical_alignment = 1
 
 [node name="Issued" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Issued"]
 custom_minimum_size = Vector2(110, 0)
@@ -210,6 +224,7 @@ vertical_alignment = 1
 
 [node name="Reputation" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/Reputation"]
 custom_minimum_size = Vector2(110, 0)
@@ -239,31 +254,37 @@ vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="boss1" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="boss2" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="boss3" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="boss4" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="boss5" type="ColorRect" parent="CenterContainer/Bg/HBoxContainer/HolderInfo/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(59, 20)
 layout_mode = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="UpdateTimer" type="Timer" parent="."]

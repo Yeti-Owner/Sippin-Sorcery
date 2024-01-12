@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwwmettj7nbh3"]
+
+[ext_resource type="ArrayMesh" uid="uid://bbscj17oaedd5" path="res://assets/models/Heart.obj" id="1_e84rf"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_65rqj"]
+lifetime_randomness = 0.34
+direction = Vector3(0, 1, 0)
+spread = 100.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 3.74
+initial_velocity_max = 3.74
+damping_min = 5.16
+damping_max = 5.6
+angle_max = 360.0
+scale_min = 0.5
+scale_max = 0.5
+
+[node name="CharismaHearts" type="GPUParticles3D"]
+process_mode = 3
+emitting = false
+lifetime = 1.5
+one_shot = true
+explosiveness = 0.27
+process_material = SubResource("ParticleProcessMaterial_65rqj")
+draw_pass_1 = ExtResource("1_e84rf")

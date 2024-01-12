@@ -48,7 +48,7 @@ const EffectsList := {
 	"plantControl": "Is it just me or is the grass looking at me? I can control them it's like I'm the king of the greenery!",
 	"monkey": "Yeah, I'm not drinking this."
 }
-var AdditionalList1 := ["hovering", "invisibility", "speed","strength"]
+var AdditionalList1 := ["hovering","invisibility","speed","strength","charisma"]
 var AdditionalList2 := ["petrification"]
 
 var cost := 25
@@ -87,7 +87,7 @@ func interact():
 func _test_juice(effects:Array):
 	var Results := ""
 	if effects.size() > 1:
-		var Responses := ["I feel too many effects to sort them out, sorry I can't help.", "Too much is going on I can't separate them.", "Geez dude I'm feeling a lot, use less ingredients next time.","I'm gonna throw up, move.", "Dude, never do that again, too much."]
+		var Responses := ["I feel too many effects to sort them out, sorry I can't help.", "Too much is going on I can't separate them.", "Geez dude I'm feeling a lot, use less ingredients next time.","I'm gonna throw up, too many effects.", "Dude, never do that again, too many effects."]
 		Results = Responses[randi() % Responses.size()]
 		
 		SpeechBubble._talk(Results)
@@ -134,4 +134,10 @@ func _effect(effect:String, _results:String):
 		"strength":
 			get_parent().get_node("BodyMeshes/Arm1").scale = Vector3(1.5, 1, 1.5)
 			get_parent().get_node("BodyMeshes/Arm2").scale = Vector3(1.5, 1, 1.5)
+			SpeechBubble._talk(_results)
+		"charisma":
+			var CharismaEffects := preload("res://scenes/objects/charisma_hearts.tscn")
+			var CE := CharismaEffects.instantiate()
+			self.add_child(CE)
+			CE.emitting = true
 			SpeechBubble._talk(_results)

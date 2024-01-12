@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://beov0ucl8pycl"]
+[gd_scene load_steps=8 format=3 uid="uid://beov0ucl8pycl"]
 
 [ext_resource type="Texture2D" uid="uid://o8si4u72n2mj" path="res://assets/textures/ui/crosshair.png" id="1_2d1hi"]
 [ext_resource type="Script" path="res://scripts/ui/gui.gd" id="1_n2lwu"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_xrjmy"]
 [ext_resource type="PackedScene" uid="uid://ba1a6cgfrtyrv" path="res://scenes/ui/journal.tscn" id="4_a6ass"]
 [ext_resource type="PackedScene" uid="uid://c3s5j3hlu32e0" path="res://scenes/ui/id.tscn" id="6_0smrf"]
+[ext_resource type="PackedScene" uid="uid://c42ypjsi2ya3y" path="res://scenes/ui/pause_menu.tscn" id="6_jlvep"]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_n2lwu")
@@ -67,11 +68,6 @@ layer = 4
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 4
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
-one_shot = true
-autostart = true
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_jlvep")]
 
 [node name="ID" parent="." instance=ExtResource("6_0smrf")]
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
