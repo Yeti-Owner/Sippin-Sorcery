@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4glay4qb2jn3"]
+[gd_scene load_steps=10 format=3 uid="uid://d4glay4qb2jn3"]
 
 [ext_resource type="Texture2D" uid="uid://duqaotr8gsx1r" path="res://assets/textures/Wizard.png" id="1_lydxd"]
 [ext_resource type="Script" path="res://scripts/ui/dialogue.gd" id="1_rv8is"]
 [ext_resource type="FontFile" uid="uid://bpah2pdawj0a1" path="res://assets/theme/joystix monospace.otf" id="2_gpbfh"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="4_nmypg"]
 
 [sub_resource type="Animation" id="Animation_d0x47"]
 length = 0.001
@@ -13,6 +14,18 @@ tracks/0/path = NodePath("Bg:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bg/ContinueLabel:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -51,9 +64,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_1p7h5"]
+resource_name = "continue"
+length = 2.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bg/ContinueLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ycgax"]
 _data = {
 "RESET": SubResource("Animation_d0x47"),
+"continue": SubResource("Animation_1p7h5"),
 "end": SubResource("Animation_o6vn4"),
 "start": SubResource("Animation_sq8j2")
 }
@@ -117,13 +147,31 @@ text = "Mixing the potions is simple, George. Find the ingredients scattered on 
 visible_characters = 0
 visible_ratio = 0.0
 
+[node name="ContinueLabel" type="Label" parent="Bg"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_top = -53.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_nmypg")
+theme_override_font_sizes/font_size = 12
+text = "Press Enter to continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AnimPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ycgax")
 }
 
 [node name="DelayTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 10.0
 one_shot = true
 
 [node name="Counter" type="Timer" parent="."]

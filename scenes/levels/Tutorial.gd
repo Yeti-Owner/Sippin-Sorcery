@@ -6,7 +6,7 @@ var Stage:int = -1
 
 func _ready():
 	EventBus.connect("DialogueFinished", _tutorial)
-	EventBus.CurrentLevel = "res://scenes/levels/Tutorial.tscn"
+	EventBus.CurrentLevel = self.scene_file_path
 	EventBus._save()
 	EventBus._update_presence()
 #	$Spawner._start()
@@ -37,13 +37,13 @@ func _tutorial():
 		9:
 			dialogue._talk(str("[font_size=36]Hey don't mind me but I heard you're struggling and need a little push.[/font_size]"), "Duane")
 		10:
-			dialogue._talk(str("[font_size=36]Duane do you mind?[/font_size]"), "Bob", 1)
+			dialogue._talk(str("[font_size=36]Duane do you mind?[/font_size]"), "Bob")
 		11:
 			dialogue._talk(str("[font_size=36]Yes I do, now as I was saying if you leave the shop and take a right you'll often find first-year Hogwarts students hiding out. They're always up for a taste of your juice and will report back the effects... for a price, of course.[/font_size]"), "Duane")
 		12:
-			dialogue._talk(str("[font_size=36]Morally questionable sure but why deprive them the chance to earn some pocket money? Just only test 1 ingredient at a time.[/font_size]"), "Duane", 1)
+			dialogue._talk(str("[font_size=36]Morally questionable sure but why deprive them the chance to earn some pocket money? Just only test 1 ingredient at a time-[/font_size]"), "Duane", 1)
 		13:
-			dialogue._talk(str("[font_size=36]That's quite enough Duane.[/font_size]"), "Bob", 3)
+			dialogue._talk(str("[font_size=36]That's quite enough Duane.[/font_size]"), "Bob", 2)
 		14:
 			dialogue._talk(str("[font_size=36]Now " + EventBus.PlayerName + ", as I was saying, the journal is your greatest asset for mixing juice.[/font_size]"))
 		15:
@@ -69,7 +69,7 @@ func _tutorial():
 		23:
 			dialogue._talk(str("[font_size=36]Wait[/font_size]"), "Self", 0.7)
 		24:
-			dialogue._talk(str("[font_size=36]See ya![/font_size]"), "Duane", 1)
+			dialogue._talk(str("[font_size=36]See ya![/font_size]"), "Duane", 2)
 		25:
 			dialogue._done()
 			$TempTimer.start(20)

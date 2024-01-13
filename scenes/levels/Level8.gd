@@ -7,9 +7,7 @@ var BossStage:int = 0
 func _ready():
 	EventBus.connect("DialogueFinished", _level)
 	EventBus.connect("BossProblem", _boss_help)
-	EventBus.CurrentLevel = "res://scenes/levels/Level8.tscn"
-#	print(EventBus.CurrentLevel)
-#	print(self.filename)
+	EventBus.CurrentLevel = self.scene_file_path
 	EventBus._save()
 	EventBus._update_presence()
 	dialogue._talk(str("[font_size=36]We've got another inspection today " + EventBus.PlayerName + ".[/font_size]"), "Bob")
@@ -23,11 +21,11 @@ func _level():
 			dialogue._done()
 			$Spawner._start()
 		3:
-			dialogue._talk(str("[font_size=36]Hey I couldn't help but notice you have a small problem.[/font_size]"), "Duane", 2)
+			dialogue._talk(str("[font_size=36]Hey I couldn't help but notice you have a small problem.[/font_size]"), "Duane")
 		4:
 			dialogue._talk(str("[font_size=36]I'm vaguely familiar with all the ingredients behind you and none could turn someone to a monkey.[/font_size]"))
 		5:
-			dialogue._talk(str("[font_size=36]Of course I'll help you, but you'll owe me. Deal?[/font_size]"), "Duane", 4)
+			dialogue._talk(str("[font_size=36]Of course I'll help you, but you'll owe me. Deal?[/font_size]"))
 		6:
 			dialogue._talk(str("[font_size=36]Fine, what do I do?[/font_size]"), "Self")
 		7:

@@ -76,6 +76,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_t8la0")
@@ -295,6 +296,56 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
 text = "Q"
 
+[node name="sprint" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/sprint"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+text = "Sprint"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/sprint"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
+text = "Shift"
+
+[node name="dialogue" type="VBoxContainer" parent="Bg/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Bg/GridContainer/dialogue"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+text = "Dialogue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/GridContainer/dialogue"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_d1t4a")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifecm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iyvhl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4fjjo")
+text = "Enter"
+
 [connection signal="pressed" from="Bg/GridContainer/forward/Button" to="." method="_on_button_pressed" binds= [0]]
 [connection signal="pressed" from="Bg/GridContainer/backward/Button" to="." method="_on_button_pressed" binds= [1]]
 [connection signal="pressed" from="Bg/GridContainer/left/Button" to="." method="_on_button_pressed" binds= [2]]
@@ -303,3 +354,5 @@ text = "Q"
 [connection signal="pressed" from="Bg/GridContainer/interact/Button" to="." method="_on_button_pressed" binds= [5]]
 [connection signal="pressed" from="Bg/GridContainer/pause/Button" to="." method="_on_button_pressed" binds= [6]]
 [connection signal="pressed" from="Bg/GridContainer/id/Button" to="." method="_on_button_pressed" binds= [7]]
+[connection signal="pressed" from="Bg/GridContainer/sprint/Button" to="." method="_on_button_pressed" binds= [8]]
+[connection signal="pressed" from="Bg/GridContainer/dialogue/Button" to="." method="_on_button_pressed" binds= [9]]

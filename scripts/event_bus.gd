@@ -9,6 +9,7 @@ signal JournalToggle(toggle:bool)
 signal DayDone
 signal CustomerDone
 signal BossProblem
+signal Hint(hint:String)
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"

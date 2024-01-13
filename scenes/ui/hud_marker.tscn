@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3vvpiifb1rdc"]
+
+[ext_resource type="Script" path="res://scripts/ui/hud_marker.gd" id="1_ttld6"]
+[ext_resource type="Texture2D" uid="uid://ngpcft3dd0tf" path="res://assets/textures/ui/Marker1.png" id="2_0md8c"]
+
+[node name="HudMarker" type="Node3D"]
+script = ExtResource("1_ttld6")
+
+[node name="OnScreen" type="TextureRect" parent="."]
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_filter = 2
+texture = ExtResource("2_0md8c")

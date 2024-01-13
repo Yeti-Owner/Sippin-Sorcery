@@ -2,7 +2,7 @@ extends Node3D
 
 func _ready():
 	$Spawner._start()
-	EventBus.CurrentLevel = "res://scenes/levels/Level7.tscn"
+	EventBus.CurrentLevel = self.scene_file_path
 	EventBus._save()
 	EventBus._update_presence()
 

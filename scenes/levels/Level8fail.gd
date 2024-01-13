@@ -2,23 +2,31 @@ extends Node3D
 
 @onready var dialogue := get_node("/root/SceneManager/GameScene/HUD/GUI/DialogueLayer/Dialogue")#get_node(EventBus.Dialogue)
 var Stage:int = 0
+var BossStage:int = 0
 
 func _ready():
 	EventBus.connect("DialogueFinished", _level)
-	EventBus.CurrentLevel = "res://scenes/levels/Level8fail.tscn"
+	EventBus.connect("BossProblem", _boss_help)
+	EventBus.CurrentLevel = self.scene_file_path
 	EventBus._save()
 	EventBus._update_presence()
-	dialogue._talk(str("[font_size=36]Mistakes happen don't worry about it " + EventBus.PlayerName + ".[/font_size]"), "Bob", 2)
+	dialogue._talk(str("[font_size=36]Mistakes happen don't worry about it " + EventBus.PlayerName + ".[/font_size]"), "Bob")
 
 func _level():
 	Stage += 1
 	match Stage:
 		1:
-			dialogue._talk(str("[font_size=36]The same inspector is coming back today you get another chance![/font_size]"), "Bob", 2)
+			dialogue._talk(str("[font_size=36]The same inspector is coming back today you get another chance![/font_size]"), "Bob")
 		2:
-			dialogue._talk(str("[font_size=36]Good luck![/font_size]"), "Bob", 2)
+			dialogue._talk(str("[font_size=36]Good luck![/font_size]"))
 			$Spawner._start()
 		3:
+			dialogue._done()
+		4:
+			dialogue._talk(str("[font_size=36]Remember " + EventBus.PlayerName + ", search the hunter's trash and find a Nepal Orb.[/font_size]"), "Duane")
+		5:
+			dialogue._talk(str("[font_size=36]Just one in the juice should work.[/font_size]"))
+		6:
 			dialogue._done()
 
 func _on_clock_next_day():
@@ -27,3 +35,8 @@ func _on_clock_next_day():
 		SceneManager._change_scene("res://scenes/levels/Level9.tscn", "day")
 	else:
 		SceneManager._change_scene("res://scenes/levels/Level8fail.tscn", "day")
+
+func _boss_help():
+	if BossStage == 0:
+		BossStage += 1
+		$MiscTimer.start()

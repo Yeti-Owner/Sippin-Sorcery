@@ -2,7 +2,7 @@ extends Control
 
 @onready var Click := get_parent().get_node("ClickSound")
 
-const ControlArray := ["forward", "backward", "left", "right", "jump", "interact", "pause", "id"]
+const ControlArray := ["forward", "backward", "left", "right", "jump", "interact", "pause", "id", "sprint", "dialogue"]
 var OldControl:String
 var NewAction
 var values := [Vector2(-890, 405), Vector2(-5, 405)]

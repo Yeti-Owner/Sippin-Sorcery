@@ -6,7 +6,7 @@ var Stage:int = 0
 
 func _ready():
 	EventBus.connect("DialogueFinished", _level)
-	EventBus.CurrentLevel = "res://scenes/levels/Level3.tscn"
+	EventBus.CurrentLevel = self.scene_file_path
 	EventBus._save()
 	EventBus._update_presence()
 	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", so we have a minor problem but don't worry![/font_size]"), "Bob")
@@ -29,7 +29,7 @@ func _level():
 		7:
 			dialogue._talk(str("[font_size=36]But, under NO CIRCUSTANCES can you sell them working potions.[/font_size]"))
 		8:
-			dialogue._talk(str("[font_size=36]I've added some water below the counter and if they come actually give them juice.[/font_size]"), "Bob", 4)
+			dialogue._talk(str("[font_size=36]I've added some water below the counter and if they come actually give them juice.[/font_size]"))
 		9:
 			dialogue._talk(str("[font_size=36]You can probably tell it's an agent by the way they look and talk.[/font_size]"))
 		10:

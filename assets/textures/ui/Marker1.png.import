@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2bmqa1bsc8ul"
-path="res://.godot/imported/action.png-989462af47745954fd7c7553f3fa1bad.ctex"
+uid="uid://ngpcft3dd0tf"
+path="res://.godot/imported/Marker1.png-c8b77516c28ec35060757a4853ea4d73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/action.png"
-dest_files=["res://.godot/imported/action.png-989462af47745954fd7c7553f3fa1bad.ctex"]
+source_file="res://assets/textures/ui/Marker1.png"
+dest_files=["res://.godot/imported/Marker1.png-c8b77516c28ec35060757a4853ea4d73.ctex"]
 
 [params]
 

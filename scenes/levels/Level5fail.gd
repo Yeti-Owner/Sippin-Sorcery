@@ -5,18 +5,18 @@ var Stage:int = 0
 
 func _ready():
 	EventBus.connect("DialogueFinished", _level)
-	EventBus.CurrentLevel = "res://scenes/levels/Level5fail.tscn"
+	EventBus.CurrentLevel = self.scene_file_path
 	EventBus._save()
 	EventBus._update_presence()
-	dialogue._talk(str("[font_size=36]I heard news that the inspector is coming back today " + EventBus.PlayerName + ".[/font_size]"), "Bob", 4)
+	dialogue._talk(str("[font_size=36]I heard news that the inspector is coming back today " + EventBus.PlayerName + ".[/font_size]"), "Bob")
 
 func _level():
 	Stage += 1
 	match Stage:
 		1:
-			dialogue._talk(str("[font_size=36]We need you to pass this so we can advertise to new clients.[/font_size]"), "Bob")
+			dialogue._talk(str("[font_size=36]We need you to pass this so we can advertise to new clients.[/font_size]"))
 		2:
-			dialogue._talk(str("[font_size=36]Good luck![/font_size]"), "Bob")
+			dialogue._talk(str("[font_size=36]Good luck![/font_size]"))
 		3:
 			dialogue._done()
 			$Spawner._start()
