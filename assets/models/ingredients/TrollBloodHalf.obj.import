@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bu2d74gtcg2e6"
+path="res://.godot/imported/TrollBloodHalf.obj-0cad2da5f8ca73ab5d03a83f45b13e73.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TrollBloodHalf.obj-0cad2da5f8ca73ab5d03a83f45b13e73.mesh"]
+
+source_file="res://assets/models/ingredients/TrollBloodHalf.obj"
+dest_files=["res://.godot/imported/TrollBloodHalf.obj-0cad2da5f8ca73ab5d03a83f45b13e73.mesh", "res://.godot/imported/TrollBloodHalf.obj-0cad2da5f8ca73ab5d03a83f45b13e73.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

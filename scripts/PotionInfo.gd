@@ -86,10 +86,36 @@ var JournalIngredients := {
 	"DryadSap": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {charisma} \n\n[color=BLACK]Effect 2: \n- {health} \n\n[color=BLACK]Effect 3:\n- {plantControl}"
 }
 
+# Item : Current, Max
+var StockAmounts := {
+	"MandrakeRoot": [10, 10],
+	"FairyWing": [10, 10],
+	"TrollBlood": [10, 10],
+	"KrakenInk": [10, 10],
+	"SalamanderTail": [10, 10],
+	"MermaidScale": [10, 10],
+	"SpiderSilk": [10, 10],
+	"DragonflyWing": [10, 10],
+	"PhoenixFeather": [10, 10],
+	"BasiliskFang": [10, 10],
+	"UnicornHorn": [10, 10],
+	"CentaurHoof": [10, 10],
+	"HippogriffTalon": [10, 10],
+	"GriffinFeather": [10, 10],
+	"ChimeraFlame": [10, 10],
+	"GorgonBlood": [10, 10],
+	"DryadSap": [10, 10],
+	# Flavors
+	"Strawberry": [15, 15],
+	"Banana": [15, 15],
+	"Pineapple": [15, 15],
+	"Blueberry": [15, 15],
+	"Watermelon": [15, 15],
+	"Orange": [15, 15],
+} # Note: Water is infinite, no need to restock that at all
 
 # Just every effect in the game
 const EffectsList := ["resistance", "confusion", "health","flexibility", "creativity", "speed","courage", "stamina", "strength","badVision", "badSmell", "poison","coldRes", "fireRes", "lessPain","swimming", "underwaterBreathing", "fishTalk","sticky", "nightVision", "invisibility","lessWeight", "hearing", "hovering","health", "luck", "fireRes","petrification", "poison", "strength","purity", "health", "heightenedSenses","speed", "stability", "jumping","precision", "lessPain", "dexterity","alertness", "perception", "electricalRes","strength", "explosionRes", "smokeImmunity","petrificationRes", "poison", "betterSmell","charisma", "health", "plantControl", "sleep"]
-
 
 # Used by Customer and test subject for clothing
 const MaleHatList = ["res://assets/models/characters/hats/Hair1.obj","res://assets/models/characters/hats/Hair2.obj","res://assets/models/characters/hats/Hair5.obj"]

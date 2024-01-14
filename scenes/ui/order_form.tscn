@@ -1,0 +1,232 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyuvf2vbqwp11"]
+
+[ext_resource type="Script" path="res://scripts/ui/order_form.gd" id="1_5q747"]
+[ext_resource type="Texture2D" uid="uid://dhsrco4osgl71" path="res://assets/textures/ingredients/MandrakeRoot.png" id="2_1dp7r"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_1a8ai"]
+[ext_resource type="Texture2D" uid="uid://e1rfgqvmk4g7" path="res://assets/textures/ui/X.png" id="3_3bqhp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xue7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y181d"]
+bg_color = Color(0, 0, 0, 0.172549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pc8po"]
+bg_color = Color(0, 0, 0, 0.32549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4x0x1"]
+bg_color = Color(1, 0.8, 0, 1)
+border_width_top = 90
+border_color = Color(0.8, 0.466667, 0.156863, 1)
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0, 0, 0, 0.27451)
+shadow_size = 5
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxppb"]
+bg_color = Color(0, 0, 0, 0.266667)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="OrderForm" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_5q747")
+
+[node name="OrderForm" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClickOut" type="Button" parent="OrderForm"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5xue7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y181d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pc8po")
+
+[node name="Bg" type="Panel" parent="OrderForm"]
+custom_minimum_size = Vector2(600, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4x0x1")
+
+[node name="Orders" type="VBoxContainer" parent="OrderForm/Bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 100.0
+offset_right = -25.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Item1" type="Control" parent="OrderForm/Bg/Orders"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="OrderForm/Bg/Orders/Item1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxppb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OrderForm/Bg/Orders/Item1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="OrderForm/Bg/Orders/Item1/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture = ExtResource("2_1dp7r")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Text" type="RichTextLabel" parent="OrderForm/Bg/Orders/Item1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("3_1a8ai")
+bbcode_enabled = true
+text = "
+Buy Mandrake Root"
+
+[node name="Purchase" type="HBoxContainer" parent="OrderForm/Bg/Orders/Item1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Amount" type="Label" parent="OrderForm/Bg/Orders/Item1/HBoxContainer/Purchase"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1a8ai")
+text = "10
+"
+
+[node name="Slider" type="HSlider" parent="OrderForm/Bg/Orders/Item1/HBoxContainer/Purchase"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 15.0
+value = 10.0
+
+[node name="Close" type="TextureButton" parent="OrderForm/Bg/Orders/Item1/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_3bqhp")
+
+[node name="Item2" type="Control" parent="OrderForm/Bg/Orders"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="OrderForm/Bg/Orders/Item2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxppb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OrderForm/Bg/Orders/Item2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="OrderForm/Bg/Orders/Item2/HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture = ExtResource("2_1dp7r")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Text" type="RichTextLabel" parent="OrderForm/Bg/Orders/Item2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("3_1a8ai")
+bbcode_enabled = true
+text = "
+Buy Mandrake Root"
+
+[node name="Purchase" type="HBoxContainer" parent="OrderForm/Bg/Orders/Item2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Amount" type="Label" parent="OrderForm/Bg/Orders/Item2/HBoxContainer/Purchase"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1a8ai")
+text = "10
+"
+
+[node name="Slider" type="HSlider" parent="OrderForm/Bg/Orders/Item2/HBoxContainer/Purchase"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 15.0
+value = 10.0
+
+[node name="Close" type="TextureButton" parent="OrderForm/Bg/Orders/Item2/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_3bqhp")
+
+[node name="Options" type="HBoxContainer" parent="OrderForm/Bg"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -80.0
+offset_right = -20.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="OrderForm/Bg/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "New Entry"
+
+[node name="Button2" type="Button" parent="OrderForm/Bg/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Order"
+
+[node name="DelayTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="pressed" from="OrderForm/ClickOut" to="." method="_on_click_out_pressed"]
+[connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]

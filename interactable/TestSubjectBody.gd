@@ -46,7 +46,8 @@ const EffectsList := {
 	"betterSmell": "I can smell the school from here but we must be miles away?!",
 	"charisma": "I've got charm oozing out of me. I can tell you can't resist my words, I'm gonna convince the teachers to not assign homework!",
 	"plantControl": "Is it just me or is the grass looking at me? I can control them it's like I'm the king of the greenery!",
-	"monkey": "Yeah, I'm not drinking this."
+	"monkey": "Yeah, I'm not drinking that.",
+	"water": "I feel nothing."
 }
 var AdditionalList1 := ["hovering","invisibility","speed","strength","charisma"]
 var AdditionalList2 := ["petrification"]
@@ -111,7 +112,7 @@ func _test_juice(effects:Array):
 	$Timer.start(4)
 
 func _record_journal(result, effect):
-	if effect == "monkey":
+	if (effect == "monkey") or (effect == "water"):
 		return
 	
 	var NewEntry:String = str(result + " ([color=" + str(color.to_html()) + "]" + get_parent().CharName + "[/color]" + ")")

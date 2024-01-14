@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://qfdxpa2kslcy"]
+
+[ext_resource type="Script" path="res://interactable/order_form.gd" id="1_40pla"]
+[ext_resource type="ArrayMesh" uid="uid://4rcebe6bjjyr" path="res://assets/models/Notepad.obj" id="1_unpf0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_023iv"]
+size = Vector3(0.5, 0.75, 0.1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_de1qg"]
+height = 1.0
+radius = 2.4
+
+[node name="OrderForm" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_40pla")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = ExtResource("1_unpf0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+shape = SubResource("BoxShape3D_023iv")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_de1qg")
+
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

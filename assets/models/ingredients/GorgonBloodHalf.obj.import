@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c22eoqq1oe3mb"
+path="res://.godot/imported/GorgonBloodHalf.obj-731541d9734b9eba3c85f2779e0f1429.mesh"
+
+[deps]
+
+files=["res://.godot/imported/GorgonBloodHalf.obj-731541d9734b9eba3c85f2779e0f1429.mesh"]
+
+source_file="res://assets/models/ingredients/GorgonBloodHalf.obj"
+dest_files=["res://.godot/imported/GorgonBloodHalf.obj-731541d9734b9eba3c85f2779e0f1429.mesh", "res://.godot/imported/GorgonBloodHalf.obj-731541d9734b9eba3c85f2779e0f1429.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

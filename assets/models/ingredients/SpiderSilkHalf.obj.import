@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcomlve63h27h"
+path="res://.godot/imported/SpiderSilkHalf.obj-f0971546ac15d53841c61f0de228cd21.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SpiderSilkHalf.obj-f0971546ac15d53841c61f0de228cd21.mesh"]
+
+source_file="res://assets/models/ingredients/SpiderSilkHalf.obj"
+dest_files=["res://.godot/imported/SpiderSilkHalf.obj-f0971546ac15d53841c61f0de228cd21.mesh", "res://.godot/imported/SpiderSilkHalf.obj-f0971546ac15d53841c61f0de228cd21.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

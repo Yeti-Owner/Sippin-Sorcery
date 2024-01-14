@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7t46nx3kgwnk"
+path="res://.godot/imported/PhoenixFeatherEmpty.obj-db11b9a9cadbbf94a6f9c99418fc9b18.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PhoenixFeatherEmpty.obj-db11b9a9cadbbf94a6f9c99418fc9b18.mesh"]
+
+source_file="res://assets/models/ingredients/PhoenixFeatherEmpty.obj"
+dest_files=["res://.godot/imported/PhoenixFeatherEmpty.obj-db11b9a9cadbbf94a6f9c99418fc9b18.mesh", "res://.godot/imported/PhoenixFeatherEmpty.obj-db11b9a9cadbbf94a6f9c99418fc9b18.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

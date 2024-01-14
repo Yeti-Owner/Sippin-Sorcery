@@ -6,6 +6,7 @@ signal HeldItemChanged
 signal BalanceChanged
 signal DialogueFinished
 signal JournalToggle(toggle:bool)
+signal OrderFormToggle(toggle:bool)
 signal DayDone
 signal CustomerDone
 signal BossProblem
@@ -52,7 +53,9 @@ var Keybinds:Dictionary = {
 	"jump" : InputMap.action_get_events("jump")[0],
 	"interact" : InputMap.action_get_events("interact")[0],
 	"pause" : InputMap.action_get_events("pause")[0],
-	"id" : InputMap.action_get_events("id")[0]
+	"id" : InputMap.action_get_events("id")[0],
+	"sprint" : InputMap.action_get_events("sprint")[0],
+	"dialogue" : InputMap.action_get_events("dialogue")[0]
 }
 var RadioSong:int = 1
 
@@ -93,7 +96,8 @@ func _save():
 		"JOURNALINGREDIENTS" : PotionInfo.JournalIngredients,
 		"KEYBINDS" : Keybinds,
 		"SENTFEEDBACK" : SentFeedback,
-		"RADIOSONG" : RadioSong
+		"RADIOSONG" : RadioSong,
+		"STOCKAMOUNTS" : PotionInfo.StockAmounts
 	}
 	file.store_var(SavedData)
 
@@ -118,6 +122,7 @@ func _load():
 	SentFeedback = LoadedData.SENTFEEDBACK
 	RadioSong = LoadedData.RADIOSONG
 	Reputation = LoadedData.REPUTATION
+	PotionInfo.StockAmounts = LoadedData.STOCKAMOUNTS
 
 func _check_rep(_rep):
 	var MaxRep := (BossesBeaten + 1) * 25
@@ -137,7 +142,7 @@ func _discord_presence():
 	discord_sdk.details = "(For legal reasons not potions)"
 	discord_sdk.state = str("Day #" + str(DayNum))
 	
-	discord_sdk.large_image = "cauldron"
+	discord_sdk.large_image = "discordlogo"
 	discord_sdk.large_image_text = "Free on itch.io!"
 	
 	discord_sdk.start_timestamp = int(Time.get_unix_time_from_system())

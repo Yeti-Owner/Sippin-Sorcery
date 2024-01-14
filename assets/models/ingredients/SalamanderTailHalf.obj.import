@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1b0vtww3f0ua"
+path="res://.godot/imported/SalamanderTailHalf.obj-061060c7b81805c77ad758a4c113038d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SalamanderTailHalf.obj-061060c7b81805c77ad758a4c113038d.mesh"]
+
+source_file="res://assets/models/ingredients/SalamanderTailHalf.obj"
+dest_files=["res://.godot/imported/SalamanderTailHalf.obj-061060c7b81805c77ad758a4c113038d.mesh", "res://.godot/imported/SalamanderTailHalf.obj-061060c7b81805c77ad758a4c113038d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

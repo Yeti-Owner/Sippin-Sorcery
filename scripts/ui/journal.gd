@@ -56,10 +56,11 @@ func _on_click_out_pressed():
 	_hide()
 
 func _hide():
-	if enabled == true:
+	if (enabled == true) and (self.visible == true):
 		OpenClose.play()
 	self.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$delay.stop()
 	enabled = false
 
 func _toggle(value):

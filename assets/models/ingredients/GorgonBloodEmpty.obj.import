@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blfbk02c376e2"
+path="res://.godot/imported/GorgonBloodEmpty.obj-30793ed908d865e3726b962ef975f38f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/GorgonBloodEmpty.obj-30793ed908d865e3726b962ef975f38f.mesh"]
+
+source_file="res://assets/models/ingredients/GorgonBloodEmpty.obj"
+dest_files=["res://.godot/imported/GorgonBloodEmpty.obj-30793ed908d865e3726b962ef975f38f.mesh", "res://.godot/imported/GorgonBloodEmpty.obj-30793ed908d865e3726b962ef975f38f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

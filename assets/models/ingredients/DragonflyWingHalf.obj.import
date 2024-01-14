@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqschmnle7rsm"
+path="res://.godot/imported/DragonflyWingHalf.obj-f0ccee0bcfde7f739b3c117495be2b41.mesh"
+
+[deps]
+
+files=["res://.godot/imported/DragonflyWingHalf.obj-f0ccee0bcfde7f739b3c117495be2b41.mesh"]
+
+source_file="res://assets/models/ingredients/DragonflyWingHalf.obj"
+dest_files=["res://.godot/imported/DragonflyWingHalf.obj-f0ccee0bcfde7f739b3c117495be2b41.mesh", "res://.godot/imported/DragonflyWingHalf.obj-f0ccee0bcfde7f739b3c117495be2b41.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

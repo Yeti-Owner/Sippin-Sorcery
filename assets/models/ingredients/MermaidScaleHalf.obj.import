@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhxd58igolaw6"
+path="res://.godot/imported/MermaidScaleHalf.obj-a953e2e90ec14708adf6eb422c5a7517.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MermaidScaleHalf.obj-a953e2e90ec14708adf6eb422c5a7517.mesh"]
+
+source_file="res://assets/models/ingredients/MermaidScaleHalf.obj"
+dest_files=["res://.godot/imported/MermaidScaleHalf.obj-a953e2e90ec14708adf6eb422c5a7517.mesh", "res://.godot/imported/MermaidScaleHalf.obj-a953e2e90ec14708adf6eb422c5a7517.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

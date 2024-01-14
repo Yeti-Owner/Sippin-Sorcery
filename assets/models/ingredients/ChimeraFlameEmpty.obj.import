@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctyi4hhun748x"
+path="res://.godot/imported/ChimeraFlameEmpty.obj-298bb00e3073d27e55e4ab0830d7af15.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ChimeraFlameEmpty.obj-298bb00e3073d27e55e4ab0830d7af15.mesh"]
+
+source_file="res://assets/models/ingredients/ChimeraFlameEmpty.obj"
+dest_files=["res://.godot/imported/ChimeraFlameEmpty.obj-298bb00e3073d27e55e4ab0830d7af15.mesh", "res://.godot/imported/ChimeraFlameEmpty.obj-298bb00e3073d27e55e4ab0830d7af15.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

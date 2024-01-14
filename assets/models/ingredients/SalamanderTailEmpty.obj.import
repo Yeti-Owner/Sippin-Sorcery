@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://5a6yukb6xp7k"
+path="res://.godot/imported/SalamanderTailEmpty.obj-52f111c71c57153298cab9b702cd16a8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SalamanderTailEmpty.obj-52f111c71c57153298cab9b702cd16a8.mesh"]
+
+source_file="res://assets/models/ingredients/SalamanderTailEmpty.obj"
+dest_files=["res://.godot/imported/SalamanderTailEmpty.obj-52f111c71c57153298cab9b702cd16a8.mesh", "res://.godot/imported/SalamanderTailEmpty.obj-52f111c71c57153298cab9b702cd16a8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

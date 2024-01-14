@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bk01ug2k6rjb0"
+path="res://.godot/imported/MandrakeRootEmpty.obj-2b5a82dab90a9086e3e29cd7d638b869.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MandrakeRootEmpty.obj-2b5a82dab90a9086e3e29cd7d638b869.mesh"]
+
+source_file="res://assets/models/ingredients/MandrakeRootEmpty.obj"
+dest_files=["res://.godot/imported/MandrakeRootEmpty.obj-2b5a82dab90a9086e3e29cd7d638b869.mesh", "res://.godot/imported/MandrakeRootEmpty.obj-2b5a82dab90a9086e3e29cd7d638b869.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

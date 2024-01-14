@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ca4j03jf2xjxf"
+path="res://.godot/imported/UnicornHornHalf.obj-f8be2ae31e993f4f8a4002fbd12df64d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/UnicornHornHalf.obj-f8be2ae31e993f4f8a4002fbd12df64d.mesh"]
+
+source_file="res://assets/models/ingredients/UnicornHornHalf.obj"
+dest_files=["res://.godot/imported/UnicornHornHalf.obj-f8be2ae31e993f4f8a4002fbd12df64d.mesh", "res://.godot/imported/UnicornHornHalf.obj-f8be2ae31e993f4f8a4002fbd12df64d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://db7ntb3mi2yi0"
+path="res://.godot/imported/HippogriffTalonHalf.obj-c3716d79f408adae653c7d89db1a395f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/HippogriffTalonHalf.obj-c3716d79f408adae653c7d89db1a395f.mesh"]
+
+source_file="res://assets/models/ingredients/HippogriffTalonHalf.obj"
+dest_files=["res://.godot/imported/HippogriffTalonHalf.obj-c3716d79f408adae653c7d89db1a395f.mesh", "res://.godot/imported/HippogriffTalonHalf.obj-c3716d79f408adae653c7d89db1a395f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

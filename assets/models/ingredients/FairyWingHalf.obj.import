@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6b4c4i3rw0jq"
+path="res://.godot/imported/FairyWingHalf.obj-6d978c0a64868f8d8369ace471bc12f7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/FairyWingHalf.obj-6d978c0a64868f8d8369ace471bc12f7.mesh"]
+
+source_file="res://assets/models/ingredients/FairyWingHalf.obj"
+dest_files=["res://.godot/imported/FairyWingHalf.obj-6d978c0a64868f8d8369ace471bc12f7.mesh", "res://.godot/imported/FairyWingHalf.obj-6d978c0a64868f8d8369ace471bc12f7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

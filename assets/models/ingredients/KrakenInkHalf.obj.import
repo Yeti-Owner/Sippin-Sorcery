@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bbfn18y7s75fx"
+path="res://.godot/imported/KrakenInkHalf.obj-242e130b9d7a39693901778e36c624ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/KrakenInkHalf.obj-242e130b9d7a39693901778e36c624ef.mesh"]
+
+source_file="res://assets/models/ingredients/KrakenInkHalf.obj"
+dest_files=["res://.godot/imported/KrakenInkHalf.obj-242e130b9d7a39693901778e36c624ef.mesh", "res://.godot/imported/KrakenInkHalf.obj-242e130b9d7a39693901778e36c624ef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

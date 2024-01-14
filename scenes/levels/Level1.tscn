@@ -70,7 +70,7 @@ point_count = 7
 resource_name = "palette"
 albedo_texture = ExtResource("15_cjq0b")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_hcj7g"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_sm0gl"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -88,7 +88,7 @@ _surfaces = [{
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tekha"]
 albedo_texture = ExtResource("16_wmmvk")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7k7ra"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_y2saj"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -107,7 +107,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("17_k45io")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_p6slo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_65kmx"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -132,7 +132,7 @@ albedo_texture = ExtResource("21_yaanr")
 resource_name = "palette"
 albedo_texture = ExtResource("15_cjq0b")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3jmo0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ol71k"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -154,7 +154,7 @@ albedo_texture = ExtResource("22_spx66")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnn3r"]
 albedo_texture = ExtResource("23_qra0a")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_256ov"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0beu6"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -172,7 +172,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("17_k45io")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1gog6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5cbxh"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -190,7 +190,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("16_wmmvk")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rd4a2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_7m611"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -212,7 +212,7 @@ albedo_texture = ExtResource("24_0ux6m")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5fkq"]
 albedo_texture = ExtResource("19_sqgos")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_nujxh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qxu1s"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -230,7 +230,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("21_yaanr")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_yd1j7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_y4aty"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -249,7 +249,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("23_qra0a")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_khn6b"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_w7888"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -267,7 +267,7 @@ _surfaces = [{
 resource_local_to_scene = true
 albedo_texture = ExtResource("24_0ux6m")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vcpps"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ie4im"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -289,7 +289,7 @@ albedo_texture = ExtResource("16_wmmvk")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u46li"]
 albedo_texture = ExtResource("19_sqgos")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0d4p5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ygo5b"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -374,11 +374,37 @@ shape = SubResource("BoxShape3D_ikn2f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, 0.45, 0.95)
 shape = SubResource("BoxShape3D_rc85i")
 
+[node name="Misc" type="Node3D" parent="."]
+
+[node name="TrashCan" parent="Misc" instance=ExtResource("8_twcct")]
+transform = Transform3D(0.492404, 0, -0.0868241, 0, 0.5, 0, 0.0868241, 0, 0.492404, -3.1, 0, -2.4)
+
+[node name="Journal" parent="Misc" instance=ExtResource("9_h48fe")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.1, 0.9, 0.9)
+
+[node name="Cauldron" parent="Misc" instance=ExtResource("10_caffk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.9, 0.9)
+
+[node name="FloatingLight" parent="Misc" instance=ExtResource("11_0ick7")]
+transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, -2.2, 3.4, -2.2)
+
+[node name="FloatingLight2" parent="Misc" instance=ExtResource("11_0ick7")]
+transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 2.9, 3, 3.5)
+
+[node name="FloatingLight3" parent="Misc" instance=ExtResource("11_0ick7")]
+transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 3.4, 3.8, -3.2)
+
+[node name="Clock" parent="Misc" instance=ExtResource("12_6b0tu")]
+transform = Transform3D(-0.779, 0, -1.17626e-07, 0, 0.779, 0, 1.17626e-07, 0, -0.779, -2.5, 1.4, 4.2)
+
+[node name="Radio" parent="Misc" instance=ExtResource("11_4ij6o")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 3.683, 0, 3.39)
+
 [node name="JuiceStuff" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
 
 [node name="MandrakeRoot" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
-transform = Transform3D(0.993859, 0, -0.110654, 0, 1, 0, 0.110654, 0, 0.993859, 3.46125, 0.8, 0.9)
+transform = Transform3D(0.853978, 0, -0.52031, 0, 1, 0, 0.52031, 0, 0.853978, 3.16125, 0.8, 1)
 Ingredient = "MandrakeRoot"
 
 [node name="FairyWing" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
@@ -394,7 +420,7 @@ transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 
 Ingredient = "KrakenInk"
 
 [node name="SalamanderTail" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.9, 1.405, -1.656)
+transform = Transform3D(-4.37114e-08, 0, -1, -0.0871557, 0.996195, 3.8097e-09, 0.996195, 0.0871557, -4.35451e-08, 3.6, 1.605, -0.556)
 Ingredient = "SalamanderTail"
 
 [node name="MermaidScale" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
@@ -402,11 +428,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0.9, -3.7)
 Ingredient = "MermaidScale"
 
 [node name="SpiderSilk" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0.9, -3.7)
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 2.1, 0.9, -3.7)
 Ingredient = "SpiderSilk"
 
 [node name="DragonflyWing" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 1.3, -2.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6, 1.7, -2.7)
 Ingredient = "DragonflyWing"
 
 [node name="PhoenixFeather" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
@@ -418,19 +444,19 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0
 Ingredient = "BasiliskFang"
 
 [node name="UnicornHorn" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.9, -3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.9, -3.5)
 Ingredient = "UnicornHorn"
 
 [node name="CentaurHoof" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
-transform = Transform3D(-0.997053, -0.076719, 0, 0.076719, -0.997053, 0, 0, 0, 1, 0.3, 1.9, -4.001)
+transform = Transform3D(-0.997053, -0.076719, 0, 0.076719, -0.997053, 0, 0, 0, 1, 1.1, 1.9, -3.801)
 Ingredient = "CentaurHoof"
 
 [node name="HippogriffTalon" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 1.3, -4.156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.5, -3.856)
 Ingredient = "HippogriffTalon"
 
 [node name="GriffinFeather" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
-transform = Transform3D(-4.37114e-08, -0.0226873, 0.999743, 0, 0.999743, 0.0226873, -1, 9.91695e-10, -4.37001e-08, -1.8, 1.2, -4.156)
+transform = Transform3D(-4.37114e-08, -0.0226873, 0.999743, 0, 0.999743, 0.0226873, -1, 9.91695e-10, -4.37001e-08, -1.8, 1.4, -3.856)
 Ingredient = "GriffinFeather"
 
 [node name="ChimeraFlame" parent="JuiceStuff" instance=ExtResource("6_nwqxq")]
@@ -469,32 +495,6 @@ Flavor = "Watermelon"
 transform = Transform3D(0.608, 0, 0, 0, 0.608, 0, 0, 0, 0.608, 1.7, 0, 0.9)
 Flavor = "Orange"
 
-[node name="Misc" type="Node3D" parent="."]
-
-[node name="TrashCan" parent="Misc" instance=ExtResource("8_twcct")]
-transform = Transform3D(0.492404, 0, -0.0868241, 0, 0.5, 0, 0.0868241, 0, 0.492404, -3.1, 0, -2.4)
-
-[node name="Journal" parent="Misc" instance=ExtResource("9_h48fe")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.1, 0.9, 0.9)
-
-[node name="Cauldron" parent="Misc" instance=ExtResource("10_caffk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.9, 0.9)
-
-[node name="FloatingLight" parent="Misc" instance=ExtResource("11_0ick7")]
-transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, -2.2, 3.4, -2.2)
-
-[node name="FloatingLight2" parent="Misc" instance=ExtResource("11_0ick7")]
-transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 2.9, 3, 3.5)
-
-[node name="FloatingLight3" parent="Misc" instance=ExtResource("11_0ick7")]
-transform = Transform3D(0.335, 0, 0, 0, 0.335, 0, 0, 0, 0.335, 3.4, 3.8, -3.2)
-
-[node name="Clock" parent="Misc" instance=ExtResource("12_6b0tu")]
-transform = Transform3D(-0.779, 0, -1.17626e-07, 0, 0.779, 0, 1.17626e-07, 0, -0.779, -2.5, 1.4, 4.2)
-
-[node name="Radio" parent="Misc" instance=ExtResource("11_4ij6o")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 3.683, 0, 3.39)
-
 [node name="DayControl" parent="." instance=ExtResource("12_0bxkt")]
 
 [node name="Spawner" parent="." instance=ExtResource("13_hajmj")]
@@ -523,17 +523,17 @@ shape = SubResource("BoxShape3D_3av3a")
 
 [node name="House1" parent="Houses" instance=ExtResource("14_c5mv6")]
 transform = Transform3D(7.86805e-07, 0, -6, 0, 6, 0, 6, 0, 7.86805e-07, 26, 0, 4.75)
-mesh = SubResource("ArrayMesh_hcj7g")
+mesh = SubResource("ArrayMesh_sm0gl")
 surface_material_override/0 = SubResource("StandardMaterial3D_tekha")
 
 [node name="House2" parent="Houses" instance=ExtResource("14_c5mv6")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 12.85, 0, -5.3)
-mesh = SubResource("ArrayMesh_7k7ra")
+mesh = SubResource("ArrayMesh_y2saj")
 surface_material_override/0 = SubResource("StandardMaterial3D_p32tx")
 
 [node name="House3" parent="Houses" instance=ExtResource("18_n5srp")]
 transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, 9.8, 0, 22.8)
-mesh = SubResource("ArrayMesh_p6slo")
+mesh = SubResource("ArrayMesh_65kmx")
 surface_material_override/0 = SubResource("StandardMaterial3D_elqgm")
 
 [node name="House4" parent="Houses" instance=ExtResource("20_g2jbo")]
@@ -542,7 +542,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_e7ftn")
 
 [node name="House5" parent="Houses" instance=ExtResource("14_c5mv6")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 9.75, 0, 33.9)
-mesh = SubResource("ArrayMesh_3jmo0")
+mesh = SubResource("ArrayMesh_ol71k")
 surface_material_override/0 = SubResource("StandardMaterial3D_yoacd")
 
 [node name="House6" parent="Houses" instance=ExtResource("20_g2jbo")]
@@ -551,17 +551,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lnn3r")
 
 [node name="House7" parent="Houses" instance=ExtResource("18_n5srp")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, 27, 0, 30.4)
-mesh = SubResource("ArrayMesh_256ov")
+mesh = SubResource("ArrayMesh_0beu6")
 surface_material_override/0 = SubResource("StandardMaterial3D_ugakb")
 
 [node name="House8" parent="Houses" instance=ExtResource("18_n5srp")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, -16, 0, -1.6)
-mesh = SubResource("ArrayMesh_1gog6")
+mesh = SubResource("ArrayMesh_5cbxh")
 surface_material_override/0 = SubResource("StandardMaterial3D_gjgak")
 
 [node name="House9" parent="Houses" instance=ExtResource("14_c5mv6")]
 transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, -29, 0, -4.7)
-mesh = SubResource("ArrayMesh_rd4a2")
+mesh = SubResource("ArrayMesh_7m611")
 surface_material_override/0 = SubResource("StandardMaterial3D_my8bf")
 
 [node name="House10" parent="Houses" instance=ExtResource("20_g2jbo")]
@@ -570,22 +570,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_t5fkq")
 
 [node name="House11" parent="Houses" instance=ExtResource("18_n5srp")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, -10.3, 0, 43.2)
-mesh = SubResource("ArrayMesh_nujxh")
+mesh = SubResource("ArrayMesh_qxu1s")
 surface_material_override/0 = SubResource("StandardMaterial3D_ermew")
 
 [node name="House12" parent="Houses" instance=ExtResource("14_c5mv6")]
 transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, -25.4, 0, 49)
-mesh = SubResource("ArrayMesh_yd1j7")
+mesh = SubResource("ArrayMesh_y4aty")
 surface_material_override/0 = SubResource("StandardMaterial3D_3rxsj")
 
 [node name="House13" parent="Houses" instance=ExtResource("18_n5srp")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -28.7, 0, 33.2)
-mesh = SubResource("ArrayMesh_khn6b")
+mesh = SubResource("ArrayMesh_w7888")
 surface_material_override/0 = SubResource("StandardMaterial3D_5k5o1")
 
 [node name="House14" parent="Houses" instance=ExtResource("14_c5mv6")]
 transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, -28, 0, 20.8)
-mesh = SubResource("ArrayMesh_vcpps")
+mesh = SubResource("ArrayMesh_ie4im")
 surface_material_override/0 = SubResource("StandardMaterial3D_ohqtj")
 
 [node name="House15" parent="Houses" instance=ExtResource("20_g2jbo")]
@@ -594,7 +594,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u46li")
 
 [node name="House16" parent="Houses" instance=ExtResource("14_c5mv6")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, 29.1, 0, 43.2)
-mesh = SubResource("ArrayMesh_0d4p5")
+mesh = SubResource("ArrayMesh_ygo5b")
 surface_material_override/0 = SubResource("StandardMaterial3D_fwpag")
 
 [node name="GridMap" type="GridMap" parent="."]

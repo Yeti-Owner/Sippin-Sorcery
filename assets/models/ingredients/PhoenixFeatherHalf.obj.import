@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b72de1qi1cjgk"
+path="res://.godot/imported/PhoenixFeatherHalf.obj-103a8e3e568e540fe8338402873d904b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PhoenixFeatherHalf.obj-103a8e3e568e540fe8338402873d904b.mesh"]
+
+source_file="res://assets/models/ingredients/PhoenixFeatherHalf.obj"
+dest_files=["res://.godot/imported/PhoenixFeatherHalf.obj-103a8e3e568e540fe8338402873d904b.mesh", "res://.godot/imported/PhoenixFeatherHalf.obj-103a8e3e568e540fe8338402873d904b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

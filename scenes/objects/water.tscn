@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://cchjywont45ly"]
+
+[ext_resource type="Script" path="res://interactable/water.gd" id="1_f7lhi"]
+[ext_resource type="ArrayMesh" uid="uid://d1gvjw6s83k0p" path="res://assets/models/flavors/FlavorBottle.obj" id="2_mcfbi"]
+[ext_resource type="Texture2D" uid="uid://bugnhowj4c5pd" path="res://assets/models/flavors/FlavorBottle.png" id="3_vy28t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_npuih"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4c51"]
+albedo_color = Color(0.639216, 0.458824, 0.223529, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjtwj"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0.57, 0.76, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_umyfj"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_rjtwj")
+size = Vector3(0.2, 0.7, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmusq"]
+transparency = 1
+albedo_texture = ExtResource("3_vy28t")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jck34"]
+size = Vector3(0.4, 1.1, 0.4)
+
+[node name="Flavor" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_f7lhi")
+
+[node name="Cork" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_npuih")
+surface_material_override/0 = SubResource("StandardMaterial3D_r4c51")
+
+[node name="Flavor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+mesh = SubResource("BoxMesh_umyfj")
+
+[node name="Bottle" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_mcfbi")
+surface_material_override/0 = SubResource("StandardMaterial3D_tmusq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+shape = SubResource("BoxShape3D_jck34")
