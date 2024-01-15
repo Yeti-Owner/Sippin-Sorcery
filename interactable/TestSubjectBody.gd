@@ -64,10 +64,10 @@ func _ready():
 		get_parent().get_node("BodyMeshes").rotation_degrees.y += 180
 
 func get_interaction_text():
-	if EventBus.HeldItem == "Juice" and EventBus.Balance >= 25:
-		return str("[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to test juice with [color=" + str(color.to_html()) + "] " + get_parent().CharName + "[/color] (Costs 25ʛ)[/center]")
-	elif EventBus.HeldItem == "Juice" and EventBus.Balance < 25:
-		return str("[center]Not enough money, [color=GOLD]25ʛ required[/color][/center]")
+	if EventBus.HeldItem == "Juice" and EventBus.Balance >= cost:
+		return str("[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to test juice with [color=" + str(color.to_html()) + "] " + get_parent().CharName + "[/color] (Costs $" + str(cost) + ")[/center]")
+	elif EventBus.HeldItem == "Juice" and EventBus.Balance < cost:
+		return str("[center]Not enough money, [color=GOLD]$" + str(cost) + " required[/color][/center]")
 	else:
 		return str("[center][color=" + str(color.to_html()) + "] " + get_parent().CharName + "[/color][/center]")
 
@@ -75,9 +75,9 @@ func get_interaction_icon():
 	return EventBus.ActionTex
 
 func interact():
-	if EventBus.HeldItem == "Juice" and EventBus.Balance >= 25:
+	if EventBus.HeldItem == "Juice" and EventBus.Balance >= cost:
 		get_parent().get_node("Sfx").play()
-		EventBus.Balance -= 25
+		EventBus.Balance -= cost
 		_test_juice(EventBus.HeldEffect)
 		EventBus.HeldFlavor = ""
 		EventBus.HeldEffect = null

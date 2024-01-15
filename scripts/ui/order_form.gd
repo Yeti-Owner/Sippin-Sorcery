@@ -16,7 +16,6 @@ func _pop_up():
 	# play sound
 	$DelayTimer.start()
 
-
 func _on_click_out_pressed():
 	_hide()
 
@@ -27,6 +26,7 @@ func _hide():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$DelayTimer.stop()
 	enabled = false
+	$NewOrderPopup.hide()
 
 func _toggle(value):
 	if value:

@@ -19,11 +19,11 @@ func _set_interaction(icon, text):
 		InteractionLabel.set_text("")
 		InteractionLabel.set_visible(false)
 	else:
-		InteractionLabel.set_text(text)
+		InteractionLabel.set_text(str("\n" + text))
 		InteractionLabel.set_visible(true)
 
-func _balance(): # "ʛ"
-	BalanceLabel.text = str(" ʛ " + str(EventBus.Balance))
+func _balance():
+	BalanceLabel.text = str(" $" + str(EventBus.Balance))
 
 func _fade(type:String):
 	match type:
