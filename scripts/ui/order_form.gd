@@ -1,6 +1,12 @@
 extends CanvasLayer
 
+@onready var Orders := $OrderForm/Bg/Orders
+const NewItem := "res://scenes/ui/OrderItem.tscn"
+
 var enabled:bool = false
+
+# add final check at the end making sure the player can afford it all
+
 
 func _ready():
 	EventBus.OrderFormToggle.connect(_toggle)
@@ -9,6 +15,12 @@ func _ready():
 func _physics_process(_delta) -> void:
 	if ((Input.is_action_just_pressed("interact")) or (Input.is_action_just_pressed("pause"))) and (self.visible == true) and (enabled == true):
 		self._hide()
+
+func _new_entry(item:String, amount:int, cost:int):
+	var entry := load(NewItem)
+	var _entry = entry.instantiate()
+	Orders.add_child(_entry, true)
+	_entry._create_entry(item, amount, cost)
 
 func _pop_up():
 	self.show()

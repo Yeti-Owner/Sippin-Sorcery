@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://j3pkq237yeeg"]
+
+[ext_resource type="Texture2D" uid="uid://bh5v26spbckln" path="res://assets/textures/ingredients/BasiliskFang.png" id="1_i5xuu"]
+[ext_resource type="Script" path="res://scripts/ui/OrderItem.gd" id="1_jypd6"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="2_s4m3k"]
+[ext_resource type="Texture2D" uid="uid://e1rfgqvmk4g7" path="res://assets/textures/ui/X.png" id="3_jh1is"]
+
+[node name="Item1" type="Control"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jypd6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(425, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(72, 50)
+layout_mode = 2
+texture = ExtResource("1_i5xuu")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Text" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_s4m3k")
+bbcode_enabled = true
+text = "
+1x Y"
+
+[node name="Cost" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_s4m3k")
+bbcode_enabled = true
+text = "
+[right]$x[/right]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Delete" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_jh1is")
+
+[connection signal="pressed" from="HBoxContainer/Delete" to="." method="_on_delete_pressed"]

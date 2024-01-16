@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyuvf2vbqwp11"]
+[gd_scene load_steps=11 format=3 uid="uid://cyuvf2vbqwp11"]
 
 [ext_resource type="Script" path="res://scripts/ui/order_form.gd" id="1_5q747"]
-[ext_resource type="Texture2D" uid="uid://dhsrco4osgl71" path="res://assets/textures/ingredients/MandrakeRoot.png" id="2_1dp7r"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_1a8ai"]
-[ext_resource type="Texture2D" uid="uid://e1rfgqvmk4g7" path="res://assets/textures/ui/X.png" id="3_3bqhp"]
+[ext_resource type="Texture2D" uid="uid://5m4741pcv03y" path="res://assets/textures/ui/OrderForm.png" id="4_7iaaa"]
+[ext_resource type="Texture2D" uid="uid://d2nuj41qjeyu5" path="res://assets/textures/ui/Notepad.png" id="5_fsunb"]
 [ext_resource type="Script" path="res://scripts/ui/NewOrderPopup.gd" id="5_tf81t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xue7"]
@@ -14,31 +14,17 @@ bg_color = Color(0, 0, 0, 0.172549)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pc8po"]
 bg_color = Color(0, 0, 0, 0.32549)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4x0x1"]
-bg_color = Color(1, 0.8, 0, 1)
-border_width_top = 60
-border_color = Color(0.8, 0.466667, 0.156863, 1)
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-shadow_color = Color(0, 0, 0, 0.27451)
-shadow_size = 5
-shadow_offset = Vector2(0, 10)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5n7iq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.168627)
+shadow_size = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxppb"]
-bg_color = Color(0, 0, 0, 0.266667)
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t66gp"]
-bg_color = Color(1, 0.8, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-shadow_color = Color(0, 0, 0, 0.266667)
-shadow_size = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51an3"]
+bg_color = Color(0.470588, 0.364706, 0.0941176, 1)
 
 [node name="OrderForm" type="CanvasLayer"]
 layer = 2
@@ -61,7 +47,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_5xue7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_y181d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pc8po")
 
-[node name="Bg" type="Panel" parent="OrderForm"]
+[node name="Shadow" type="Panel" parent="OrderForm"]
 custom_minimum_size = Vector2(500, 900)
 layout_mode = 1
 anchors_preset = 8
@@ -69,140 +55,41 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -250.0
+offset_top = -450.0
+offset_right = 250.0
+offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4x0x1")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5n7iq")
+
+[node name="Bg" type="TextureRect" parent="OrderForm"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -450.0
+offset_right = 250.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_fsunb")
 
 [node name="Orders" type="VBoxContainer" parent="OrderForm/Bg"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = 76.0
-offset_right = -25.0
+offset_left = 3.0
+offset_top = 78.0
+offset_right = -5.0
 offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 15
-
-[node name="Item1" type="Control" parent="OrderForm/Bg/Orders"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="OrderForm/Bg/Orders/Item1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yxppb")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="OrderForm/Bg/Orders/Item1"]
-custom_minimum_size = Vector2(425, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -212.5
-offset_top = -25.0
-offset_right = 212.5
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Icon" type="TextureRect" parent="OrderForm/Bg/Orders/Item1/HBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-texture = ExtResource("2_1dp7r")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Text" type="RichTextLabel" parent="OrderForm/Bg/Orders/Item1/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/normal_font = ExtResource("3_1a8ai")
-bbcode_enabled = true
-text = "
-[center]Buy X Mandrake Root[/center]"
-
-[node name="Close" type="TextureButton" parent="OrderForm/Bg/Orders/Item1/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_3bqhp")
-
-[node name="Item2" type="Control" parent="OrderForm/Bg/Orders"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="OrderForm/Bg/Orders/Item2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yxppb")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="OrderForm/Bg/Orders/Item2"]
-custom_minimum_size = Vector2(425, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -212.5
-offset_top = -25.0
-offset_right = 212.5
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Quantity" type="RichTextLabel" parent="OrderForm/Bg/Orders/Item2/HBoxContainer"]
-custom_minimum_size = Vector2(35, 0)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_1a8ai")
-bbcode_enabled = true
-text = "
-[center]3x[/center]"
-
-[node name="Icon" type="TextureRect" parent="OrderForm/Bg/Orders/Item2/HBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-texture = ExtResource("2_1dp7r")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Name" type="RichTextLabel" parent="OrderForm/Bg/Orders/Item2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/normal_font = ExtResource("3_1a8ai")
-bbcode_enabled = true
-text = "
-[center]Mandrake Root[/center]"
-
-[node name="Cost" type="RichTextLabel" parent="OrderForm/Bg/Orders/Item2/HBoxContainer"]
-custom_minimum_size = Vector2(65, 0)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_1a8ai")
-bbcode_enabled = true
-text = "
-[center]$10[/center]"
-
-[node name="Close" type="TextureButton" parent="OrderForm/Bg/Orders/Item2/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_3bqhp")
+theme_override_constants/separation = 19
 
 [node name="Options" type="HBoxContainer" parent="OrderForm/Bg"]
 layout_mode = 1
@@ -210,25 +97,27 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = -80.0
-offset_right = -20.0
-offset_bottom = -16.0
+offset_left = 79.0
+offset_top = -58.0
+offset_right = -5.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = 10
 
 [node name="NewEntry" type="Button" parent="OrderForm/Bg/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_1a8ai")
 text = "New Entry"
 
 [node name="FinishOrder" type="Button" parent="OrderForm/Bg/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_1a8ai")
 text = "Finish Order"
 
 [node name="NewOrderPopup" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -246,7 +135,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_5xue7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_y181d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pc8po")
 
-[node name="Bg" type="Panel" parent="NewOrderPopup"]
+[node name="Shadow" type="Panel" parent="NewOrderPopup"]
 custom_minimum_size = Vector2(800, 400)
 layout_mode = 1
 anchors_preset = 8
@@ -254,13 +143,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_t66gp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5n7iq")
+
+[node name="Bg" type="TextureRect" parent="NewOrderPopup"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7iaaa")
 
 [node name="Title" type="Label" parent="NewOrderPopup/Bg"]
 layout_mode = 1
@@ -268,7 +173,6 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 83.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1a8ai")
 theme_override_font_sizes/font_size = 24
 text = "Order Form"
@@ -296,6 +200,8 @@ theme_override_constants/separation = 20
 [node name="RestockItem" type="ItemList" parent="NewOrderPopup/Bg/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_1a8ai")
+theme_override_styles/panel = SubResource("StyleBoxFlat_51an3")
 item_count = 23
 item_0/text = "Basilisk Fang"
 item_1/text = "Centaur Hoof"
@@ -328,7 +234,6 @@ size_flags_horizontal = 3
 [node name="OrderLabel" type="Label" parent="NewOrderPopup/Bg/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1a8ai")
 theme_override_font_sizes/font_size = 32
 text = "1x Mandrake Root"
@@ -342,7 +247,6 @@ size_flags_vertical = 3
 [node name="Min" type="Label" parent="NewOrderPopup/Bg/MarginContainer/HBoxContainer/VBoxContainer/Slider"]
 custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1a8ai")
 text = "1"
 horizontal_alignment = 1
@@ -359,16 +263,10 @@ value = 5.0
 [node name="Max" type="Label" parent="NewOrderPopup/Bg/MarginContainer/HBoxContainer/VBoxContainer/Slider"]
 custom_minimum_size = Vector2(45, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1a8ai")
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="GrayOut" type="Panel" parent="NewOrderPopup/Bg/MarginContainer"]
-custom_minimum_size = Vector2(550, 247)
-layout_mode = 2
-size_flags_horizontal = 8
 
 [node name="SubmitOrder" type="Button" parent="NewOrderPopup/Bg"]
 layout_mode = 1
@@ -377,11 +275,12 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
-offset_top = -55.0
+offset_top = -50.0
 offset_right = -20.0
-offset_bottom = -15.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_1a8ai")
 text = "Submit (20g)"
 
 [node name="DelayTimer" type="Timer" parent="."]
