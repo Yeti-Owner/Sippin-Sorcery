@@ -1,10 +1,7 @@
-extends Node3D
+extends Level
 
-func _ready():
+func _start():
 	$Spawner._start()
-	EventBus.CurrentLevel = self.scene_file_path
-	EventBus._save()
-	EventBus._update_presence()
 
 func _on_clock_next_day():
 	EventBus.DayNum += 1

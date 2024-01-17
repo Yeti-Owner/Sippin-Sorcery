@@ -1,6 +1,5 @@
 extends Interactable
 
-signal NextDay
 var Night:bool = false
 
 func _ready():
@@ -20,7 +19,7 @@ func get_interaction_icon():
 
 func interact():
 	if Night == true:
-		emit_signal("NextDay")
+		EventBus.emit_signal("NextDay")
 
 func _day_done():
 	Night = true

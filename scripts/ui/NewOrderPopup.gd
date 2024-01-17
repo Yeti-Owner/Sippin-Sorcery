@@ -6,15 +6,23 @@ extends Control
 @onready var OrderMax := $Bg/MarginContainer/HBoxContainer/VBoxContainer/Slider/Max
 @onready var Amount := $Bg/MarginContainer/HBoxContainer/VBoxContainer/Slider/AmountSlider
 @onready var SubmitBtn := $Bg/SubmitOrder
+var OrderedItems:Dictionary = {}
 var SelectedItem:String = ""
+var SelectedItemIndex:int
 
 func _ready():
+	RestockItem.allow_reselect = false
 	_hide()
 
 # Need way to disable the items that an order already exists for
 # for now, everything is a flat rate of $5
 
 func _on_item_list_item_selected(index):
+	for entry in OrderedItems:
+		if OrderedItems[entry] == index:
+			_erase()
+			return
+	SelectedItemIndex = index
 	SelectedItem = RestockItem.get_item_text(index)
 	Amount.editable = true
 	_set_up_order()
@@ -39,12 +47,20 @@ func _set_up_order():
 	Amount.value = min(1, Amount.max_value)
 	OrderLabel.text = str(Amount.value) + "x " + SelectedItem
 
+func _hide_orders():
+	for entry in OrderedItems:
+		RestockItem.set_item_disabled(OrderedItems[entry], true)
+
 func _pop_up():
+	_hide_orders()
 	self.show()
 	Amount.editable = false
 
 func _hide():
 	self.hide()
+	_erase()
+
+func _erase():
 	Amount.min_value = 0
 	Amount.max_value = 10
 	Amount.set_value_no_signal(5)
@@ -69,4 +85,5 @@ func _on_amount_slider_value_changed(value):
 func _on_submit_order_pressed():
 	if (Amount.value > 0) and (SelectedItem != ""):
 		get_parent()._new_entry(SelectedItem, Amount.value, int(Amount.value * 5))
+		OrderedItems[SelectedItem] = SelectedItemIndex
 	_hide()

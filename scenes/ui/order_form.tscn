@@ -287,10 +287,16 @@ text = "Submit (20g)"
 wait_time = 0.05
 one_shot = true
 
+[node name="MiscTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
 [connection signal="pressed" from="OrderForm/OrderFormClickOut" to="." method="_on_click_out_pressed"]
 [connection signal="pressed" from="OrderForm/Bg/Options/NewEntry" to="NewOrderPopup" method="_on_new_entry_pressed"]
+[connection signal="pressed" from="OrderForm/Bg/Options/FinishOrder" to="." method="_on_finish_order_pressed"]
 [connection signal="pressed" from="NewOrderPopup/NewOrderClickOut" to="NewOrderPopup" method="_on_new_order_click_out_pressed"]
 [connection signal="item_selected" from="NewOrderPopup/Bg/MarginContainer/HBoxContainer/RestockItem" to="NewOrderPopup" method="_on_item_list_item_selected"]
 [connection signal="value_changed" from="NewOrderPopup/Bg/MarginContainer/HBoxContainer/VBoxContainer/Slider/AmountSlider" to="NewOrderPopup" method="_on_amount_slider_value_changed"]
 [connection signal="pressed" from="NewOrderPopup/Bg/SubmitOrder" to="NewOrderPopup" method="_on_submit_order_pressed"]
 [connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]
+[connection signal="timeout" from="MiscTimer" to="." method="_on_misc_timer_timeout"]

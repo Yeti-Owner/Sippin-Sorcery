@@ -1,15 +1,10 @@
-extends Node3D
+extends Level
 
-@onready var dialogue := get_node("/root/SceneManager/GameScene/HUD/GUI/DialogueLayer/Dialogue")#get_node(EventBus.Dialogue)
 var Stage:int = 0
 var BossStage:int = 0
 
-func _ready():
-	EventBus.connect("DialogueFinished", _level)
+func _start():
 	EventBus.connect("BossProblem", _boss_help)
-	EventBus.CurrentLevel = self.scene_file_path
-	EventBus._save()
-	EventBus._update_presence()
 	dialogue._talk(str("[font_size=36]We've got another inspection today " + EventBus.PlayerName + ".[/font_size]"), "Bob")
 
 func _level():

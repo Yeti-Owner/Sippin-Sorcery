@@ -1,14 +1,8 @@
-extends Node3D
-
-@onready var dialogue := get_node("/root/SceneManager/GameScene/HUD/GUI/DialogueLayer/Dialogue")#get_node(EventBus.Dialogue)
+extends Level
 
 var Stage:int = -1
 
-func _ready():
-	EventBus.connect("DialogueFinished", _tutorial)
-	EventBus.CurrentLevel = self.scene_file_path
-	EventBus._save()
-	EventBus._update_presence()
+func _start():
 #	$Spawner._start()
 	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), "Bob")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x5cpn4kd8bhl"
-path="res://.godot/imported/GriffinFeatherHalf.png-d398d60515edc92ec78274fec9088afd.ctex"
+uid="uid://dnjxnwhhbj6l5"
+path="res://.godot/imported/Pineapple.png-6ac57c949b570a78fa507049006ff649.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/ingredients/GriffinFeatherHalf.png"
-dest_files=["res://.godot/imported/GriffinFeatherHalf.png-d398d60515edc92ec78274fec9088afd.ctex"]
+source_file="res://assets/textures/ingredients/Pineapple.png"
+dest_files=["res://.godot/imported/Pineapple.png-6ac57c949b570a78fa507049006ff649.ctex"]
 
 [params]
 

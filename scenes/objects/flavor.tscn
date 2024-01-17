@@ -12,7 +12,7 @@ albedo_color = Color(0.639216, 0.458824, 0.223529, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct77u"]
 resource_local_to_scene = true
-albedo_color = Color(0.73, 0.413667, 0, 1)
+albedo_color = Color(0.25098, 0.819608, 0.0196078, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g6dw2"]
 resource_local_to_scene = true

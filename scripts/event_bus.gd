@@ -7,6 +7,7 @@ signal BalanceChanged
 signal DialogueFinished
 signal JournalToggle(toggle:bool)
 signal OrderFormToggle(toggle:bool)
+signal NextDay
 signal DayDone
 signal CustomerDone
 signal BossProblem
@@ -39,6 +40,7 @@ var ActiveCustomers:int = 0
 var CurrentLevel:String = "res://scenes/char_customization.tscn"
 var DayNum:int = 1
 var SentFeedback:bool = false
+var Order:Dictionary
 
 # Settings
 var MasterVolume:float = 0
@@ -155,3 +157,8 @@ func _discord_presence():
 func _update_presence():
 	discord_sdk.state = str("Day #" + str(DayNum))
 	discord_sdk.refresh()
+
+func _order():
+	for entry in Order:
+		PotionInfo.StockAmounts[entry][0] += Order[entry]
+	Order = {}

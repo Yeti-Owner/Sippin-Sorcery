@@ -3,8 +3,10 @@ extends CanvasLayer
 @onready var Orders := $OrderForm/Bg/Orders
 const NewItem := "res://scenes/ui/OrderItem.tscn"
 
+var CompleteOrder:Dictionary
+var HasOrdered:bool = false
 var enabled:bool = false
-
+var HideTimer:bool = false
 # add final check at the end making sure the player can afford it all
 
 
@@ -48,3 +50,52 @@ func _toggle(value):
 
 func _on_delay_timer_timeout():
 	enabled = true
+
+func _disable():
+	HasOrdered = !HasOrdered
+	$OrderForm/Bg/Options/NewEntry.disabled = HasOrdered
+	$OrderForm/Bg/Options/FinishOrder.disabled = HasOrdered
+
+func _on_finish_order_pressed():
+	if Orders.get_child_count() < 1:
+		print("No Orders")
+		return
+	
+	# Check player can afford the order
+	var TotalCost:int = 0
+	for order in Orders.get_children():
+		TotalCost += order.Cost
+	
+	if TotalCost > EventBus.Balance:
+		$OrderForm/Bg/Options/FinishOrder.text = "Not enough $$$"
+		# play some bad sound
+		$MiscTimer.start()
+		return
+	else:
+		EventBus.Balance -= TotalCost
+		EventBus.emit_signal("BalanceChanged")
+	
+	# Collect orders together
+	for entry in Orders.get_children():
+		var ReformatedName:String = entry.Item.replace(" ", "")
+		CompleteOrder[ReformatedName] = entry.Amount
+		entry._disable()
+	
+	# Give feedback
+	$OrderForm/Bg/Options/FinishOrder.text = "Complete!"
+	# Play some money sound
+	
+	# Actually order it
+	EventBus.Order = CompleteOrder
+#	EventBus._order()
+	
+	# Disable so you can only order once per day
+	_disable()
+	HideTimer = true
+	$MiscTimer.start()
+
+func _on_misc_timer_timeout():
+	$OrderForm/Bg/Options/FinishOrder.text = "Finish Order"
+	if HideTimer:
+		_hide()
+	HideTimer = false
