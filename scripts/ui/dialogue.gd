@@ -30,7 +30,8 @@ func _process(_delta):
 			else:
 				Text.visible_ratio = 1
 			await get_tree().create_timer(0.1).timeout
-			Counter.start()
+			if Counter.is_stopped():
+				Counter.start()
 		elif (Active == false) and (Visible == true):
 			$DelayTimer.start(0.05)
 

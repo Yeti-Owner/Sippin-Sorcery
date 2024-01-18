@@ -137,7 +137,7 @@ func _effect(effect:String, _results:String):
 			get_parent().get_node("BodyMeshes/Arm2").scale = Vector3(1.5, 1, 1.5)
 			SpeechBubble._talk(_results)
 		"charisma":
-			var CharismaEffects := load("res://scenes/objects/charisma_hearts.tscn")
+			var CharismaEffects = load("res://scenes/objects/charisma_hearts.tscn")
 			var CE = CharismaEffects.instantiate()
 			self.add_child(CE)
 			CE.emitting = true

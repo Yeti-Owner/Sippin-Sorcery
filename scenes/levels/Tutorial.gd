@@ -6,7 +6,7 @@ func _start():
 #	$Spawner._start()
 	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture. " + EventBus.PlayerName + ", you'll be in charge of the juice mixing.[/font_size]"), "Bob")
 
-func _tutorial():
+func _level():
 	Stage += 1
 	match Stage:
 		0:
@@ -81,10 +81,10 @@ func _tutorial():
 func _on_temp_timer_timeout():
 	if Stage == 18:
 		Stage = 19
-		_tutorial()
+		_level()
 	elif Stage == 25 and EventBus.ActiveCustomers == 0:
 		Stage = 28
-		_tutorial()
+		_level()
 	elif Stage == 25 and EventBus.ActiveCustomers != 0:
 		$TempTimer.start(5)
 

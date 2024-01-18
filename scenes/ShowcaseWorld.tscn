@@ -121,10 +121,11 @@ HasWater = false
 [node name="Misc" parent="." instance=ExtResource("5_nh521")]
 
 [node name="DayControl" parent="." instance=ExtResource("6_my861")]
+Showcase = true
 
 [node name="Spawner" parent="." instance=ExtResource("7_8hbcj")]
 curve = SubResource("Curve3D_a1qbb")
-Num = 5
+Num = 0
 
 [node name="Stop" type="StaticBody3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974, 2)
@@ -161,9 +162,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 11.094, 21.6)
 curve = SubResource("Curve3D_or1gi")
 
 [node name="Lights" parent="." instance=ExtResource("12_e0wvo")]
-
-[node name="TempTimer" type="Timer" parent="."]
-wait_time = 7.0
-one_shot = true
-
-[connection signal="timeout" from="TempTimer" to="." method="_on_temp_timer_timeout"]
