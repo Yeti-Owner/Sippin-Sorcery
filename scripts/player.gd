@@ -61,3 +61,4 @@ func _head_bob(time) -> Vector3:
 	pos.y = sin(time * freq) * amp
 	pos.x = cos(time * freq / 2.5) * amp
 	return pos
+

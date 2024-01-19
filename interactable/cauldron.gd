@@ -34,6 +34,9 @@ const DefaultGreen := Color(0.2392156869173, 0.67058825492859, 0.10588235408068)
 
 var content := ""
 
+func _ready():
+	randomize()
+
 func get_interaction_text():
 	if InteractTimer.is_stopped():
 		if EventBus.HeldItem == null and ItemsAdded.size() == 0:
@@ -51,6 +54,8 @@ func interact():
 		if EventBus.HeldItem == null and ItemsAdded.size() > 0:
 			_mix()
 		elif EventBus.HeldItem != null:
+			$AddItem.pitch_scale = randf_range(0.7, 1.2)
+			$AddItem.play()
 			if FlavorList.has(EventBus.HeldItem):
 				_juice(true)
 			else:

@@ -28,9 +28,6 @@ func _ready():
 	if Showcase:
 		_showcase()
 		return
-#	print(bright_top.to_html())
-#	print(bright_top.to_html())
-#	print(bright_top.to_html())
 	
 	# Emitted every time a customer/minister/boss reaches the end of the path
 	EventBus.connect("CustomerDone", _next_stage)
@@ -49,14 +46,43 @@ func _showcase():
 			tween.tween_property(WorldSun, "rotation_degrees", Vector3(-90, -16.3, 0), 10)
 			tween.tween_callback(_showcase)
 			
+			EnvironmentSky.set_shader_parameter("top_color", dark_top)
+			var tween2 := get_tree().create_tween()
+			tween2.tween_method(func(it): EnvironmentSky.set_shader_parameter("top_color", it), dark_top, bright_top, 10)
+			
+			EnvironmentSky.set_shader_parameter("bottom_color", dark_bottom)
+			var tween3 := get_tree().create_tween()
+			tween3.tween_method(func(it): EnvironmentSky.set_shader_parameter("bottom_color", it), dark_bottom, bright_bottom, 10)
+			
+			EnvironmentSky.set_shader_parameter("sun_scatter", dark_scatter)
+			var tween4 := get_tree().create_tween()
+			tween4.tween_method(func(it): EnvironmentSky.set_shader_parameter("sun_scatter", it), dark_scatter, bright_scatter, 10)
 			
 		2:
 			var tween := get_tree().create_tween()
 			tween.tween_property(WorldSun, "rotation_degrees", Vector3(-170, -16.3, 0), 10)
 			tween.tween_callback(_showcase)
+			
+			EnvironmentSky.set_shader_parameter("top_color", bright_top)
+			var tween2 := get_tree().create_tween()
+			tween2.tween_method(func(it): EnvironmentSky.set_shader_parameter("top_color", it), bright_top, dark_top, 10)
+			
+			EnvironmentSky.set_shader_parameter("bottom_color", bright_bottom)
+			var tween3 := get_tree().create_tween()
+			tween3.tween_method(func(it): EnvironmentSky.set_shader_parameter("bottom_color", it), bright_bottom, dark_bottom, 10)
+			
+			EnvironmentSky.set_shader_parameter("sun_scatter", bright_scatter)
+			var tween4 := get_tree().create_tween()
+			tween4.tween_method(func(it): EnvironmentSky.set_shader_parameter("sun_scatter", it), bright_scatter, dark_scatter, 10)
+			
 		3:
 			WorldSun.rotation_degrees = Vector3(0, -16.3, 0)
 			var tween := get_tree().create_tween()
+			
+			EnvironmentSky.set_shader_parameter("top_color", dark_top)
+			EnvironmentSky.set_shader_parameter("bottom_color", dark_bottom)
+			EnvironmentSky.set_shader_parameter("sun_scatter", dark_scatter)
+			
 			tween.tween_property(WorldSun, "rotation_degrees", Vector3(-10, -16.3, 0), 5)
 			tween.tween_callback(_showcase)
 	

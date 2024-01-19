@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3doo5trm8sgg"]
+[gd_scene load_steps=11 format=3 uid="uid://d3doo5trm8sgg"]
 
 [ext_resource type="Script" path="res://interactable/cauldron.gd" id="1_32e5k"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_a2ww8"]
 [ext_resource type="AudioStream" uid="uid://wwcwi4c7p2lc" path="res://assets/audio/bubbling.wav" id="3_7fq6x"]
+[ext_resource type="AudioStream" uid="uid://die1t83sunn80" path="res://assets/audio/WaterPlop.ogg" id="4_hq1nw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vobn0"]
 size = Vector3(0.8, 0.6, 0.8)
@@ -75,5 +76,11 @@ explosiveness = 0.51
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_03csn")
 draw_pass_1 = SubResource("BoxMesh_28wcw")
+
+[node name="AddItem" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.530955, 0)
+stream = ExtResource("4_hq1nw")
+unit_size = 5.03
+bus = &"Sfx"
 
 [connection signal="timeout" from="InteractTimer" to="." method="_on_interact_timer_timeout"]
