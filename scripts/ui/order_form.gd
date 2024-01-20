@@ -2,15 +2,17 @@ extends CanvasLayer
 
 @onready var Orders := $OrderForm/Bg/Orders
 const NewItem := "res://scenes/ui/OrderItem.tscn"
+const GoodSound := "res://assets/audio/good.ogg"
+const BadSound := "res://assets/audio/back_002.ogg"
+
 
 var CompleteOrder:Dictionary
 var HasOrdered:bool = false
 var enabled:bool = false
 var HideTimer:bool = false
-# add final check at the end making sure the player can afford it all
-
 
 func _ready():
+	randomize()
 	EventBus.OrderFormToggle.connect(_toggle)
 	_hide()
 
@@ -27,7 +29,8 @@ func _new_entry(item:String, amount:int, cost:int):
 func _pop_up():
 	self.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	# play sound
+	$OpenCloseSound.pitch_scale = randf_range(0.8, 1.2)
+	$OpenCloseSound.play()
 	$DelayTimer.start()
 
 func _on_click_out_pressed():
@@ -35,7 +38,8 @@ func _on_click_out_pressed():
 
 func _hide():
 	if (enabled == true) and (self.visible == true):
-		pass # play sound
+		$OpenCloseSound.pitch_scale = randf_range(0.8, 1.2)
+		$OpenCloseSound.play()
 	self.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$DelayTimer.stop()
@@ -68,7 +72,9 @@ func _on_finish_order_pressed():
 	
 	if TotalCost > EventBus.Balance:
 		$OrderForm/Bg/Options/FinishOrder.text = "Not enough $$$"
-		# play some bad sound
+		$GoodBadSound.pitch_scale = randf_range(0.8, 1.2)
+		$GoodBadSound.stream = load(BadSound)
+		$GoodBadSound.play()
 		$MiscTimer.start()
 		return
 	else:
@@ -83,11 +89,12 @@ func _on_finish_order_pressed():
 	
 	# Give feedback
 	$OrderForm/Bg/Options/FinishOrder.text = "Complete!"
-	# Play some money sound
+	$GoodBadSound.pitch_scale = randf_range(0.8, 1.2)
+	$GoodBadSound.stream = load(GoodSound)
+	$GoodBadSound.play()
 	
 	# Actually order it
 	EventBus.Order = CompleteOrder
-#	EventBus._order()
 	
 	# Disable so you can only order once per day
 	_disable()

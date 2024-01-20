@@ -1,14 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8v65hrtcpabn"]
+[gd_scene load_steps=4 format=3 uid="uid://c8v65hrtcpabn"]
 
 [ext_resource type="Script" path="res://scripts/day_control.gd" id="1_fvsw5"]
-[ext_resource type="Material" uid="uid://cd2l3llk14n2y" path="res://assets/sky/day_sky.tres" id="2_14obj"]
-
-[sub_resource type="Sky" id="Sky_08ayf"]
-sky_material = ExtResource("2_14obj")
+[ext_resource type="Sky" uid="uid://cuy8rxnou2xey" path="res://resources/WorldEnvSky.tres" id="2_bryka"]
 
 [sub_resource type="Environment" id="Environment_huoxf"]
 background_mode = 2
-sky = SubResource("Sky_08ayf")
+sky = ExtResource("2_bryka")
 ambient_light_source = 2
 ambient_light_color = Color(0.560784, 0.560784, 0.560784, 1)
 ambient_light_energy = 0.5

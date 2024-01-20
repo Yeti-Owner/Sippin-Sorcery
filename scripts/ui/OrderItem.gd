@@ -8,6 +8,9 @@ var Cost:int
 var Amount:int
 var Item:String
 
+func _ready():
+	randomize()
+
 func _create_entry(item:String, amount:int, cost:int):
 	Item = item
 	Amount = amount
@@ -20,6 +23,8 @@ func _create_entry(item:String, amount:int, cost:int):
 	CostLabel.text = "\n[right]$" + str(cost) + "[/right]"
 
 func _on_delete_pressed():
+	$DeleteSound.pitch_scale = randf_range(0.8, 1.2)
+	$DeleteSound.play()
 	get_parent().get_parent().get_parent().get_parent().get_node("NewOrderPopup").OrderedItems.erase(Item)
 	self.queue_free()
 

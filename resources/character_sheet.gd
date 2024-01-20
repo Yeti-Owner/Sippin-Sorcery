@@ -7,6 +7,7 @@ class_name CharacterSheet
 
 @export_category("Needs")
 @export var Dialog := ""
+
 @export var Need:Array[String] = [""]
 @export var Bonus:Array[String] = [""]
 @export var Budget := 10

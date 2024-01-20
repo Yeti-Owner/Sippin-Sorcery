@@ -49,7 +49,7 @@ const EffectsList := {
 	"monkey": "Yeah, I'm not drinking that.",
 	"water": "I feel nothing."
 }
-var AdditionalList1 := ["hovering","invisibility","speed","strength","charisma"]
+var AdditionalList1 := ["hovering","invisibility","speed","strength"]
 var AdditionalList2 := ["petrification"]
 
 var cost := 25
@@ -135,10 +135,4 @@ func _effect(effect:String, _results:String):
 		"strength":
 			get_parent().get_node("BodyMeshes/Arm1").scale = Vector3(1.5, 1, 1.5)
 			get_parent().get_node("BodyMeshes/Arm2").scale = Vector3(1.5, 1, 1.5)
-			SpeechBubble._talk(_results)
-		"charisma":
-			var CharismaEffects = load("res://scenes/objects/charisma_hearts.tscn")
-			var CE = CharismaEffects.instantiate()
-			self.add_child(CE)
-			CE.emitting = true
 			SpeechBubble._talk(_results)

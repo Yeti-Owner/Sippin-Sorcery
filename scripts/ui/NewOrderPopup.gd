@@ -6,11 +6,13 @@ extends Control
 @onready var OrderMax := $Bg/MarginContainer/HBoxContainer/VBoxContainer/Slider/Max
 @onready var Amount := $Bg/MarginContainer/HBoxContainer/VBoxContainer/Slider/AmountSlider
 @onready var SubmitBtn := $Bg/SubmitOrder
+@onready var OpenCloseSound := get_parent().get_node("OpenCloseSound")
 var OrderedItems:Dictionary = {}
 var SelectedItem:String = ""
 var SelectedItemIndex:int
 
 func _ready():
+	randomize()
 	RestockItem.allow_reselect = false
 	_hide()
 
@@ -28,6 +30,8 @@ func _on_item_list_item_selected(index):
 	_set_up_order()
 
 func _set_up_order():
+	# Need like a tick sound here
+	
 	# Basic set-up
 	var Item:String = SelectedItem.replace(" ", "")
 	Amount.min_value = 0
@@ -52,11 +56,16 @@ func _hide_orders():
 		RestockItem.set_item_disabled(OrderedItems[entry], true)
 
 func _pop_up():
+	OpenCloseSound.pitch_scale = randf_range(0.8, 1.2)
+	OpenCloseSound.play()
 	_hide_orders()
 	self.show()
 	Amount.editable = false
 
-func _hide():
+func _hide(PlaySound:bool = false):
+	if PlaySound:
+		OpenCloseSound.pitch_scale = randf_range(0.8, 1.2)
+		OpenCloseSound.play()
 	self.hide()
 	_erase()
 
@@ -73,7 +82,7 @@ func _erase():
 	OrderMax.text = "x"
 
 func _on_new_order_click_out_pressed():
-	_hide()
+	_hide(true)
 
 func _on_new_entry_pressed():
 	_pop_up()
@@ -83,6 +92,9 @@ func _on_amount_slider_value_changed(value):
 	SubmitBtn.text = "Submit $" + str(value * 5)
 
 func _on_submit_order_pressed():
+	$WriteSound.pitch_scale = randf_range(0.8, 1.2)
+	$WriteSound.play()
+	
 	if (Amount.value > 0) and (SelectedItem != ""):
 		get_parent()._new_entry(SelectedItem, Amount.value, int(Amount.value * 5))
 		OrderedItems[SelectedItem] = SelectedItemIndex

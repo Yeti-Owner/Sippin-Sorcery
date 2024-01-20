@@ -41,6 +41,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_nsbgi")
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_f3j3y")
 shader_parameter/astro_tint = Color(1, 1, 1, 1)
 shader_parameter/astro_scale = 9.0

@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyuvf2vbqwp11"]
+[gd_scene load_steps=13 format=3 uid="uid://cyuvf2vbqwp11"]
 
 [ext_resource type="Script" path="res://scripts/ui/order_form.gd" id="1_5q747"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_1a8ai"]
 [ext_resource type="Texture2D" uid="uid://5m4741pcv03y" path="res://assets/textures/ui/OrderForm.png" id="4_7iaaa"]
 [ext_resource type="Texture2D" uid="uid://d2nuj41qjeyu5" path="res://assets/textures/ui/Notepad.png" id="5_fsunb"]
 [ext_resource type="Script" path="res://scripts/ui/NewOrderPopup.gd" id="5_tf81t"]
+[ext_resource type="AudioStream" uid="uid://d1rhkt070yqmu" path="res://assets/audio/PencilWrite.ogg" id="6_cyasd"]
+[ext_resource type="AudioStream" uid="uid://m3yc8jvhkeqv" path="res://assets/audio/Paper.ogg" id="6_i5ego"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xue7"]
 
@@ -283,6 +285,10 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_1a8ai")
 text = "Submit (20g)"
 
+[node name="WriteSound" type="AudioStreamPlayer" parent="NewOrderPopup"]
+stream = ExtResource("6_cyasd")
+bus = &"Sfx"
+
 [node name="DelayTimer" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
@@ -290,6 +296,13 @@ one_shot = true
 [node name="MiscTimer" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
+
+[node name="OpenCloseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_i5ego")
+bus = &"Sfx"
+
+[node name="GoodBadSound" type="AudioStreamPlayer" parent="."]
+bus = &"Sfx"
 
 [connection signal="pressed" from="OrderForm/OrderFormClickOut" to="." method="_on_click_out_pressed"]
 [connection signal="pressed" from="OrderForm/Bg/Options/NewEntry" to="NewOrderPopup" method="_on_new_entry_pressed"]

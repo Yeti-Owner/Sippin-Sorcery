@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://j3pkq237yeeg"]
+[gd_scene load_steps=6 format=3 uid="uid://j3pkq237yeeg"]
 
 [ext_resource type="Texture2D" uid="uid://bh5v26spbckln" path="res://assets/textures/ingredients/BasiliskFang.png" id="1_i5xuu"]
 [ext_resource type="Script" path="res://scripts/ui/OrderItem.gd" id="1_jypd6"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="2_s4m3k"]
 [ext_resource type="Texture2D" uid="uid://e1rfgqvmk4g7" path="res://assets/textures/ui/X.png" id="3_jh1is"]
+[ext_resource type="AudioStream" uid="uid://bgos22xkpt5p0" path="res://assets/audio/back_002.ogg" id="5_84tjq"]
 
 [node name="Item1" type="Control"]
 custom_minimum_size = Vector2(0, 50)
@@ -49,5 +50,9 @@ autowrap_mode = 0
 [node name="Delete" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_jh1is")
+
+[node name="DeleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_84tjq")
+bus = &"Sfx"
 
 [connection signal="pressed" from="HBoxContainer/Delete" to="." method="_on_delete_pressed"]
