@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://b6844lmbv8sg0"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_qpjrd"]
+
+[resource]
+script = ExtResource("1_qpjrd")
+Name = "45Glockz"
+FavColor = Color(0.807843, 0, 0, 1)
+Dialog = "I need more speed to help me in basketball."
+Budget = 23
+resistance = "Okay"
+confusion = "Bad"
+health = "Okay"
+flexibility = "Bonus"
+creativity = "Bad"
+speed = "NeedAnd"
+courage = "Okay"
+stamina = "Bonus"
+strength = "Bonus"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "Okay"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Okay"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Bad"
+luck = "Bonus"
+petrification = "Bad"
+purity = "Okay"
+heightenedSenses = "Bonus"
+stability = "Bonus"
+jumping = "Bonus"
+precision = "NeedOr"
+dexterity = "Bonus"
+alertness = "Bonus"
+perception = "Bonus"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "Okay"
+sleep = "Bad"
+House = 0
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = true

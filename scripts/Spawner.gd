@@ -76,7 +76,7 @@ func _spawn_customer():
 	else:
 		level = List
 	
-	CustomerRes = str("res://characters/" + str(CustomerLists[level][randi() % CustomerLists[List].size()]) + ".tres")
+	CustomerRes = str("res://customers/" + str(CustomerLists[level][randi() % CustomerLists[List].size()]) + ".tres")
 	
 	if Spawned.has(CustomerRes):
 		_spawn_customer()
