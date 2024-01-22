@@ -7,6 +7,8 @@ class_name CharacterSheet
 @export var Dialog := ""
 @export var Budget := 10
 
+# Yes I know this is kind of a poor way to do it but 
+# Any other system I can think of would be more annoying down the line
 @export_category("Judement")
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var resistance = "Bad"
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var confusion = "Bad"
@@ -17,6 +19,7 @@ class_name CharacterSheet
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var courage = "Bad"
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var stamina = "Bad"
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var strength = "Bad"
+@export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var badVision = "Bad"
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var badSmell = "Bad"
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var poison = "Bad"
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var coldRes = "Bad"
