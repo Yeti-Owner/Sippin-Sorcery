@@ -12,6 +12,11 @@ func _ready():
 	EventBus._save()
 	EventBus._update_presence()
 	_start()
+	
+	# Debug to check for memory leaks
+#	print("---\n")
+#	print_orphan_nodes()
+#	print("\n---")
 
 func _start():
 	pass

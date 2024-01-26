@@ -29,6 +29,11 @@ var Spawned := []
 
 func _ready():
 	randomize()
+	
+	# Use this to make new system
+	var NewTutorialCustomers:Array = DirAccess.get_files_at("res://scenes/characters/Tutorial/")
+	print("Selecting random tutorial customer")
+	print(NewTutorialCustomers.pick_random())
 
 func _start():
 	timer.wait_time = randi_range(5, 8)

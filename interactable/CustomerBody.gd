@@ -37,100 +37,81 @@ func interact():
 	
 
 func _check_success() -> int:
-	var success = 0
-	var need = get_parent().Info.Need
-	var bonus = get_parent().Info.Bonus
-	var held_effects = EventBus.HeldEffect
+	# return 0, 1, 2 for bad, okay, good
+	# return 0 if needs not met, 1 if they are, 2 if met + some bonus
 	
-	# Check if all strings in "need" are present in "held_effects"
-	var all_need_present = true
-	for string in need:
-		if not held_effects.has(string):
-			all_need_present = false
-			break
+	var Success:int = 1
+	var Budget:int = get_parent().Info.Budget
+	var Reward:int = 0 # Used to calculate Reward value
+	var HeldEffects:Array = EventBus.HeldEffect # Effects given to customer
 	
-	if all_need_present == true:
-		success = 1
+	# Get from CustomerSheet then sort, resource script does heavy lifting
+	var Judgement:Array = get_parent().Info._get_judgement()
+	var Bad:Array = Judgement[0]
+	var Bonus:Array = Judgement[1]
+	var NeedOr:Array = Judgement[2]
+	var NeedAnd:Array = Judgement[3]
 	
-	# Check each held effect for bonus/penalty
-	for string in held_effects:
-		if bonus.has(string):
-			success += 1
-		elif need.has(string):
-			success = success
+	while (NeedAnd.size() > 0):
+		if HeldEffects.has(NeedAnd[0]):
+			Reward += 1
 		else:
-			success -= 1
+			Success = 0
+		NeedAnd.pop_front()
 	
-	# Make sure success is at most 0 if needed strings are missing
-	if success > 0 and all_need_present == false:
-		success = 0
+	var Count:int = 0
+	for i in NeedOr:
+		if HeldEffects.has(i):
+			Count += 1
+	if (Count == 0) and (NeedOr.size() > 0):
+		Success = 0
+	elif (Count > 0):
+		Reward += Count
 	
-	# Determine Reward
-	@warning_ignore("unused_variable")
-	var Budget = get_parent().Info.Budget
-	var Bonus = Budget
-	if success > 1:
-		var Reward:int = success - 1
+	# Check all HeldEffects for Bonus/Bad then apply to BonusReward
+	var Rating:int = 0
+	for i in HeldEffects:
+		if Bonus.has(i):
+			Rating += 1
+		elif Bad.has(i):
+			Rating -= 1
+	
+	# Success = 2 if rating > 0, if success 0 it is unchanged
+	Success *= (clampi(Rating, 0, 1) + 1)
+	
+	# Add to Bonus reward if good
+	Reward += clampi(Rating, 0, 10)
+	
+	# give money based off Reward and Budget
+	if (Success > 0):
+		var Payment:float = float(Reward) / 1.5
+		Payment *= Budget
+		Payment += (float(Budget) / 1.5)
 		
-		while Reward > 0:
-			Bonus += (Budget*0.35)
-			Reward -= 1
+		# Seems like a lot but it's fair since you pay to restock items
+		@warning_ignore("narrowing_conversion")
+		EventBus.Balance += ceilf(Payment) # just in case
 	
-	
-	# Apply Bonus
-	if all_need_present == false:
-		Bonus = 0
-	EventBus.Balance += Bonus
 	EventBus.emit_signal("BalanceChanged")
-	
-	success = max(success, -1)
-	return success
+	return Success
+
 
 func _check_flavor():
-	# There must be a better way but idfk
-	@warning_ignore("unassigned_variable")
-	var FlavorList:Array
-	if get_parent().Info.Strawberry:
-		FlavorList.append("Strawberry")
-	if get_parent().Info.Banana:
-		FlavorList.append("Banana")
-	if get_parent().Info.Pineapple:
-		FlavorList.append("Pineapple")
-	if get_parent().Info.Blueberry:
-		FlavorList.append("Blueberry")
-	if get_parent().Info.Watermelon:
-		FlavorList.append("Watermelon")
-	if get_parent().Info.Orange:
-		FlavorList.append("Orange")
+	var FlavorList:Array = get_parent().Info._get_flavors()
 	
 	var success := false
 	if FlavorList.has(EventBus.HeldFlavor):
 		success = true
-		# Player is rewarded a lil for getting at least flavor right
-		EventBus.Balance += (randi() % 4 + 1)
+		# Player is rewarded between 4 and 7 just for flavor
+		EventBus.Balance += (randi() % 3 + 4)
 		EventBus.emit_signal("BalanceChanged")
 	
 	return success
 
 func _ask_flavors():
 	Talk = !Talk
-	var FlavorPreference:String
-	
-	@warning_ignore("unassigned_variable")
-	var FlavorList:Array
-	if get_parent().Info.Strawberry:
-		FlavorList.append("Strawberry")
-	if get_parent().Info.Banana:
-		FlavorList.append("Banana")
-	if get_parent().Info.Pineapple:
-		FlavorList.append("Pineapple")
-	if get_parent().Info.Blueberry:
-		FlavorList.append("Blueberry")
-	if get_parent().Info.Watermelon:
-		FlavorList.append("Watermelon")
-	if get_parent().Info.Orange:
-		FlavorList.append("Orange")
-	
+	var FlavorPreference:String = ""
+	var FlavorList:Array = get_parent().Info._get_flavors()
 	var FlavorPrefix:String = get_parent().Info.TastePrefix
 	
 	if FlavorList.size() == 1:

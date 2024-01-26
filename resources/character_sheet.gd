@@ -9,7 +9,7 @@ class_name CharacterSheet
 
 # Yes I know this is kind of a poor way to do it but 
 # Any other system I can think of would be more annoying down the line
-@export_category("Judement")
+@export_category("Judgement")
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var resistance = "Bad"
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var confusion = "Bad"
 @export_enum("Bad","Okay","Bonus","NeedOr","NeedAnd") var health = "Bad"
@@ -75,3 +75,75 @@ class_name CharacterSheet
 #@export var Pants:Mesh = load("res://assets/models/characters/pants/pants1.obj")
 #@export var Leg:Mesh = load("res://assets/models/characters/legs/leg1.obj")
 
+func _get_flavors() -> Array:
+	var FlavorList:Array = []
+	if (Strawberry): FlavorList.append("Strawberry")
+	if (Banana): FlavorList.append("Banana")
+	if (Pineapple): FlavorList.append("Pineapple")
+	if (Blueberry): FlavorList.append("Blueberry")
+	if (Watermelon): FlavorList.append("Watermelon")
+	if (Orange): FlavorList.append("Orange")
+	
+	return FlavorList
+
+func _get_judgement() -> Array:
+	# Converts it all into a dictionary, not the prettiest solution
+	# but it does it cleanly
+	var Judgement := {
+		"resistance" : resistance,
+		"confusion" : confusion,
+		"health" : health,
+		"flexibility" : flexibility,
+		"creativity" : creativity,
+		"speed" : speed,
+		"courage" : courage,
+		"stamina" : stamina,
+		"strength" : strength,
+		"badVision" : badVision,
+		"badSmell" : badSmell,
+		"poison" : poison,
+		"coldRes" : coldRes,
+		"fireRes" : fireRes,
+		"lessPain" : lessPain,
+		"swimming" : swimming,
+		"underwaterBreathing" : underwaterBreathing,
+		"fishTalk" : fishTalk,
+		"sticky" : sticky,
+		"nightVision" : nightVision,
+		"invisibility" : invisibility,
+		"lessWeight" : lessWeight,
+		"hearing" : hearing,
+		"hovering" : hovering,
+		"luck" : luck,
+		"petrification" : petrification,
+		"purity" : purity,
+		"heightenedSenses" : heightenedSenses,
+		"stability" : stability,
+		"jumping" : jumping,
+		"precision" : precision,
+		"dexterity" : dexterity,
+		"alertness" : alertness,
+		"perception" : perception,
+		"electricalRes" : electricalRes,
+		"explosionRes" : explosionRes,
+		"smokeImmunity" : smokeImmunity,
+		"petrificationRes" : petrificationRes,
+		"betterSmell" : betterSmell,
+		"charisma" : charisma,
+		"plantControl" : plantControl,
+		"sleep" : sleep
+	}
+	
+	# Simple match/switch case to quickly sort it into arrays (ignores Okay values)
+	var Bad := []
+	var Bonus := []
+	var NeedOr := []
+	var NeedAnd := []
+	for entry in Judgement:
+		match Judgement[entry]:
+			"Bad": Bad.append(entry)
+			"Bonus": Bonus.append(entry)
+			"NeedOr": NeedOr.append(entry)
+			"NeedAnd": NeedAnd.append(entry)
+	
+	return [Bad, Bonus, NeedOr, NeedAnd]

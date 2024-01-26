@@ -1,22 +1,22 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://ljqrf8uyku0g"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://dnb3jgkyijawi"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_4g74m"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_paivw"]
 
 [resource]
-script = ExtResource("1_4g74m")
-Name = "Orion"
-FavColor = Color(1, 1, 0, 1)
-Dialog = "I'm not strong enough, please help me beat that purple jerk."
-Budget = 24
+script = ExtResource("1_paivw")
+Name = "Dalidoah"
+FavColor = Color(0.231373, 0, 0.317647, 1)
+Dialog = "I'm scared of my mom please help?"
+Budget = 20
 resistance = "Okay"
 confusion = "Bad"
-health = "Bonus"
+health = "Okay"
 flexibility = "Okay"
 creativity = "Okay"
-speed = "Bonus"
-courage = "Okay"
-stamina = "Bonus"
-strength = "NeedAnd"
+speed = "Okay"
+courage = "NeedAnd"
+stamina = "Okay"
+strength = "Bonus"
 badVision = "Bad"
 badSmell = "Bad"
 poison = "Bad"
@@ -24,12 +24,12 @@ coldRes = "Okay"
 fireRes = "Okay"
 lessPain = "Okay"
 swimming = "Okay"
-underwaterBreathing = "Bad"
+underwaterBreathing = "Okay"
 fishTalk = "Okay"
 sticky = "Bad"
-nightVision = "Bonus"
-invisibility = "Bonus"
-lessWeight = "Bad"
+nightVision = "Okay"
+invisibility = "Bad"
+lessWeight = "Okay"
 hearing = "Okay"
 hovering = "Bad"
 luck = "Bonus"
@@ -37,7 +37,7 @@ petrification = "Bad"
 purity = "Okay"
 heightenedSenses = "Okay"
 stability = "Okay"
-jumping = "Bonus"
+jumping = "Okay"
 precision = "Okay"
 dexterity = "Okay"
 alertness = "Okay"
@@ -53,9 +53,9 @@ sleep = "Bad"
 House = 2
 Gender = "Male"
 TastePrefix = "I like "
-Strawberry = false
-Banana = false
-Pineapple = true
-Blueberry = false
-Watermelon = false
-Orange = false
+Strawberry = true
+Banana = true
+Pineapple = false
+Blueberry = true
+Watermelon = true
+Orange = true

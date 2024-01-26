@@ -91,18 +91,15 @@ func _dress():
 
 
 const DIALOGUE_TEXTS = {
-	-1: "That's not what I wanted%s",
-	0: "okay then%s",
+	0: "That's not what I wanted%s",
 	1: "Thanks%s",
-	2: "Thank you!!%s",
-	3: "Thank you so much!!%s",
-	4: "Awesome!! Thank you so much!!%s",
+	2: "Perfect!%s"
 }
 const SuccessSounds := ["res://assets/audio/bad.ogg", "res://assets/audio/medium.ogg", "res://assets/audio/good.ogg"]
 
 func _finished(success: int, flavor: bool):
 	var correctFlavor: String = "" if flavor else " and I don't like that flavor"
-	var dialogueText: String = DIALOGUE_TEXTS.get(success, "PERFECT!!!%s")
+	var dialogueText: String = DIALOGUE_TEXTS.get(success, "Thanks%s")
 	
 	EventBus.Reputation += clamp(success, 0, 4)
 	$ResponseSound.stream = load(SuccessSounds[clamp(success, 0, 3)])

@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://dsa6cws5i1bl5"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_4qqkn"]
+
+[resource]
+script = ExtResource("1_4qqkn")
+Name = "Krystal"
+FavColor = Color(0, 0.270588, 0, 1)
+Dialog = "I've been having trouble sleeping recently, can you help?"
+Budget = 22
+resistance = "Okay"
+confusion = "Bad"
+health = "Bonus"
+flexibility = "Okay"
+creativity = "Okay"
+speed = "Bad"
+courage = "Okay"
+stamina = "Bad"
+strength = "Bad"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Bonus"
+swimming = "Okay"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Bad"
+hearing = "Bad"
+hovering = "Bad"
+luck = "Okay"
+petrification = "Bad"
+purity = "Bonus"
+heightenedSenses = "Bad"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Bad"
+perception = "Bad"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "Bad"
+sleep = "NeedAnd"
+House = 3
+Gender = "Female"
+TastePrefix = "I like "
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = false
+Orange = true

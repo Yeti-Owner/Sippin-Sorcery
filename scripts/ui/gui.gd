@@ -5,7 +5,6 @@ extends CanvasLayer
 @onready var BalanceLabel := $Control/Balance
 
 func _ready():
-	Engine.set_max_fps(60)
 	EventBus.interaction.connect(_set_interaction)
 	EventBus.connect("BalanceChanged", _balance)
 	_balance()
@@ -23,7 +22,7 @@ func _set_interaction(icon, text):
 		InteractionLabel.set_visible(true)
 
 func _balance():
-	BalanceLabel.text = str(" $" + str(EventBus.Balance))
+	BalanceLabel.text = str("$" + str(EventBus.Balance))
 
 func _fade(type:String):
 	match type:

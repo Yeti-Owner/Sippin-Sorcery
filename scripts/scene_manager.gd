@@ -19,7 +19,7 @@ var CurrentMouse := Input.MOUSE_MODE_VISIBLE
 
 func _ready():
 	Game.use_occlusion_culling = true
-	Engine.set_max_fps(120)
+	Engine.set_max_fps(60)
 	BossDone.connect(_end_boss)
 
 func _change_scene(scene:String, type:String = "normal"):
@@ -65,18 +65,6 @@ func _swap_hud(hud = null):
 	if hud != null:
 		var scene = load(hud).instantiate()
 		HUD.add_child(scene)
-
-
-# To be fixed or removed, supposed to make mouse come back in when
-# alt-tabbing out but just bugs stuff
-func _on_game_scene_mouse_entered():
-	return
-	Input.set_mouse_mode(CurrentMouse)
-
-func _on_game_scene_mouse_exited():
-	return
-	CurrentMouse = Input.get_mouse_mode()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 # Start the boss, just needs name and time
 # Time is an amount in seconds

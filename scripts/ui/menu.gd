@@ -7,6 +7,7 @@ var colliding:bool = false
 var Hovered := ""
 
 func _ready():
+	_audio_settings()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	set_physics_process(false)
 	$Anims.play("Start")
@@ -60,6 +61,25 @@ func _physics_process(_delta):
 	Hovered = Ray.get_collider().name
 	
 	colliding = true
+
+func _audio_settings():
+	if EventBus.MasterVolume == -15:
+		AudioServer.set_bus_mute(0, true)
+	else:
+		AudioServer.set_bus_mute(0, false)
+	AudioServer.set_bus_volume_db(0, EventBus.MasterVolume)
+	
+	if EventBus.MusicVolume == -15:
+		AudioServer.set_bus_mute(1, true)
+	else:
+		AudioServer.set_bus_mute(1, false)
+	AudioServer.set_bus_volume_db(1, EventBus.MusicVolume)
+	
+	if EventBus.SfxVolume == -15:
+		AudioServer.set_bus_mute(2, true)
+	else:
+		AudioServer.set_bus_mute(2, false)
+	AudioServer.set_bus_volume_db(2, EventBus.SfxVolume)
 
 func _on_anims_animation_finished(anim_name):
 	if anim_name == "Start":

@@ -44,7 +44,7 @@ func get_interaction_text():
 		elif EventBus.HeldItem == null and ItemsAdded.size() >= 0:
 			return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to mix some [color=orange]juice[/color][/center]"
 		elif EventBus.HeldItem != null:
-			return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=cyan]add ingredient[/color][/center]"
+			return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=orange]add ingredient[/color][/center]"
 
 func get_interaction_icon():
 	return "res://assets/textures/ui/cauldron.png"

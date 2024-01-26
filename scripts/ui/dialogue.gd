@@ -15,7 +15,7 @@ var CharacterList := {
 var LastUsed:String
 
 var Visible:bool = false
-var delay:float = 10.0
+var delay:float = 5.0
 var Active:bool = false
 
 func _ready():
@@ -42,7 +42,7 @@ func _on_anim_player_animation_finished(anim_name):
 		$Bg/ContinueLabel.text = str("Press " + OS.get_keycode_string(InputMap.action_get_events("dialogue")[0].keycode) + " to continue")
 		Anims.play("continue")
 
-func _talk(_words:String, _char := LastUsed, _delay := 10.0):
+func _talk(_words:String, _char := LastUsed, _delay := 5.0):
 	LastUsed = _char
 	delay = _delay
 	Text.visible_ratio = 0
