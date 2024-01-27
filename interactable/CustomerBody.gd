@@ -102,8 +102,8 @@ func _check_flavor():
 	var success := false
 	if FlavorList.has(EventBus.HeldFlavor):
 		success = true
-		# Player is rewarded between 4 and 7 just for flavor
-		EventBus.Balance += (randi() % 3 + 4)
+		# Player is rewarded between 5 and 8 just for flavor
+		EventBus.Balance += (randi() % 3 + 5)
 		EventBus.emit_signal("BalanceChanged")
 	
 	return success

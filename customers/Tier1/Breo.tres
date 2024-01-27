@@ -1,21 +1,21 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://86atavoooi4a"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://dxc33fayh8bdt"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_qgxt4"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_ndsn0"]
 
 [resource]
-script = ExtResource("1_qgxt4")
-Name = "Hunter"
-FavColor = Color(0.282353, 0.784314, 0, 1)
-Dialog = "I'm scared of death, any help?"
-Budget = 25
+script = ExtResource("1_ndsn0")
+Name = "Breo"
+FavColor = Color(0.215686, 0, 0.419608, 1)
+Dialog = "I have to stay up all night to work on some graphics, help?"
+Budget = 19
 resistance = "Okay"
 confusion = "Bad"
-health = "Bonus"
+health = "Okay"
 flexibility = "Okay"
-creativity = "Okay"
+creativity = "Bonus"
 speed = "Okay"
-courage = "NeedAnd"
-stamina = "Okay"
+courage = "Okay"
+stamina = "Bonus"
 strength = "Okay"
 badVision = "Bad"
 badSmell = "Bad"
@@ -24,24 +24,24 @@ coldRes = "Okay"
 fireRes = "Okay"
 lessPain = "Okay"
 swimming = "Okay"
-underwaterBreathing = "Okay"
+underwaterBreathing = "Bad"
 fishTalk = "Okay"
 sticky = "Bad"
-nightVision = "Okay"
+nightVision = "Bonus"
 invisibility = "Bad"
 lessWeight = "Okay"
 hearing = "Okay"
 hovering = "Bad"
-luck = "Bonus"
+luck = "Okay"
 petrification = "Bad"
 purity = "Okay"
 heightenedSenses = "Okay"
 stability = "Okay"
 jumping = "Okay"
-precision = "Okay"
-dexterity = "Okay"
-alertness = "Okay"
-perception = "Okay"
+precision = "Bonus"
+dexterity = "Bonus"
+alertness = "NeedAnd"
+perception = "Bonus"
 electricalRes = "Okay"
 explosionRes = "Okay"
 smokeImmunity = "Okay"
@@ -50,12 +50,12 @@ betterSmell = "Okay"
 charisma = "Okay"
 plantControl = "Okay"
 sleep = "Bad"
-House = 3
+House = 1
 Gender = "Male"
 TastePrefix = "I like "
 Strawberry = true
 Banana = true
 Pineapple = true
 Blueberry = true
-Watermelon = true
+Watermelon = false
 Orange = true

@@ -13,6 +13,8 @@ func _ready():
 	MaxViewport = ViewportCenter - ViewportPadding
 
 func _process(delta):
+	MarkerTex.visible = get_parent().visible
+	
 	if Camera.is_position_in_frustum(global_position):
 		var MarkerPosition = Camera.unproject_position(global_position)
 		MarkerTex.set_global_position(MarkerPosition - MarkerOffset)

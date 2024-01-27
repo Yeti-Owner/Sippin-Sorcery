@@ -2,7 +2,7 @@ extends Path3D
 
 @export_category("Customer Spawning")
 @export var Num:int = 1
-@export_enum("Tutorial:0","Basic:1","Medium:2","Hard:3") var List:int
+@export_enum("Tutorial:0","Tier 1:1","Tier 2:2","Tier 3:3","Tier 4:4") var List:int
 
 @export_category("Ministry Spawning")
 @export var MinistryNum:int = 0
@@ -15,25 +15,24 @@ const Customer := preload("res://scenes/customer.tscn")
 const MinistryAgent := preload("res://scenes/ministry_agent.tscn")
 const HealthInspector := preload("res://scenes/health_inspector.tscn") # Boss
 
-const CustomerLists := {
-	0: TutorialCustomers,
-	1: BasicCustomers,
-	2: MediumCustomers,
-	3: HardCustomers
+@onready var TutorialCustomers:Array = DirAccess.get_files_at("res://customers/Tutorial/")
+@onready var Tier1:Array = DirAccess.get_files_at("res://customers/Tier1/")
+@onready var Tier2:Array = DirAccess.get_files_at("res://customers/Tier2/")
+@onready var Tier3:Array = DirAccess.get_files_at("res://customers/Tier3/")
+@onready var Tier4:Array = DirAccess.get_files_at("res://customers/Tier4/")
+# Increment : [Customers, Path]
+@onready var CustomerLists := {
+	0: [TutorialCustomers, "res://customers/Tutorial/"],
+	1: [Tier1, "res://customers/Tier1/"],
+	2: [Tier2, "res://customers/Tier2/"],
+	3: [Tier3, "res://customers/Tier3/"],
+	4: [Tier4, "res://customers/Tier4/"]
 }
-const TutorialCustomers := ["Ben", "Mary", "Emma", "Charles", "Krystal", "Jokez", "Hunter", "Dalidoah"]
-const BasicCustomers := ["Ben", "Charles", "Reeseman5", "Artemis", "Emma", "Mary", "Krystal", "Krystal2", "Jokez", "Imoorzy", "Noto", "Hunter", "Formag", "Kuspy", "45Glockz", "Deathrow", "Carlito", "Sly", "sselemoh", "Nevaa", "Dalidoah", "Vrile", "Eivan", "Keta", "Flueve", "soap", "CptLegend", "Reibean", "Teethbat", "KSS", "Whatmaster", "Proccessing", "Blackout","Bruhgby"]
-const MediumCustomers := ["Jokez", "High", "Kaze", "Imoorzy", "Noto", "NanoCup", "Formag", "Kuspy", "45Glockz", "Moriarty", "Moriarty2", "Carlito2", "Ufrz", "Nevaa", "Reeseman5", "MrInfernal", "Kangaroo_Knight", "Iconography", "BurgerkingCandycrush", "Yurei", "BaronDipitous", "Eivan2", "CptLegend", "April", "Benzeenee10", "Jammi", "Kyubi", "JinBoi"]
-const HardCustomers := ["Slight", "Breo", "Skup", "Snipes", "Orion", "TCArk", "Leah", "Iconography", "Eidolonic", "BedHeadNinja", "Strabster"]
-var Spawned := []
+
+var Spawned:Array
 
 func _ready():
 	randomize()
-	
-	# Use this to make new system
-	var NewTutorialCustomers:Array = DirAccess.get_files_at("res://scenes/characters/Tutorial/")
-	print("Selecting random tutorial customer")
-	print(NewTutorialCustomers.pick_random())
 
 func _start():
 	timer.wait_time = randi_range(5, 8)
@@ -43,9 +42,8 @@ func _on_misc_timer_timeout():
 	_spawn()
 
 func _spawn():
-	# Priority: 1 in 3 chance of spawning ministry if exists otherwise spawning customers
-	# until there are no more spawns then spawns ministry if any left over then 
-	# boss if a boss is selected 
+	# 1 in 3 chance to spawn ministry if exists otherwise spawn customer
+	# When no more ministry/customers spawn boss if exists
 	if Num == 0:
 		if MinistryNum != 0:
 			_spawn_ministry()
@@ -63,39 +61,43 @@ func _spawn():
 			_spawn_customer()
 
 func _spawn_customer():
-	# 1 in 3 chance to select from different (lower) difficulty
 	var CustomerRes:String
 	var level:int
 	
+	# 1 in 3 chance to (possibly) draw from a lower pool of customers
 	var RNG := randi() % 3
 	if RNG == 0:
 		match List:
 			0:
-				level = List
+				level = List # tutorial will only draw from tutorial
 			1:
-				level = List
+				level = List # Tier1 will only draw from Tier1
 			2:
-				level = (randi() % 2 + 1)
+				level = (randi() % 2 + 1) # Draw from Tier1 or Tier2
 			3:
-				level = (randi() % 3 + 1)
+				level = (randi() % 3 + 1) # Draw from Tier1, Tier2, or Tier3
+			4:
+				level = (randi() % 4 + 1)
 	else:
 		level = List
 	
-	CustomerRes = str("res://customers/" + str(CustomerLists[level][randi() % CustomerLists[List].size()]) + ".tres")
-	
+	CustomerRes = CustomerLists[level][0].pick_random()
+
+	# Check if they've spawned yet, re-run if they have
 	if Spawned.has(CustomerRes):
 		_spawn_customer()
 		return
 	else:
 		Spawned.append(CustomerRes)
-	
-	var c = Customer.instantiate()
-	c.Info = load(CustomerRes)
-	add_child(c)
-	
-	Num -= 1
-	timer.wait_time = randi_range(10, 20)
-	timer.start()
+		
+		CustomerRes = str(CustomerLists[level][1] + CustomerRes)
+		var c = Customer.instantiate()
+		c.Info = load(CustomerRes)
+		add_child(c)
+		
+		Num -= 1
+		timer.wait_time = randi_range(10, 20)
+		timer.start()
 
 func _spawn_ministry():
 	MinistryNum -= 1
@@ -109,10 +111,3 @@ func _spawn_boss():
 	# Spawn boss
 	var b = HealthInspector.instantiate()
 	add_child(b)
-	print("Spawned boss")
-	
-	return
-#	BossSpawn = -1
-#	# technically last thing spawned so can prolly remove this code?
-#	timer.wait_time = randi_range(10, 20)
-#	timer.start()

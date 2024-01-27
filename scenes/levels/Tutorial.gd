@@ -94,6 +94,7 @@ func _duane_journal():
 	PotionInfo.JournalIngredients["MandrakeRoot"] = PotionInfo.JournalIngredients["MandrakeRoot"].format({"resistance": str("Overall resistance to common illnesses ([color=DARK_GRAY]Duane[/color]" + ")")})
 	PotionInfo.JournalIngredients["TrollBlood"] = PotionInfo.JournalIngredients["TrollBlood"].format({"courage": str("Courage ([color=DARK_GRAY]Duane[/color]" + ")")})
 	PotionInfo.JournalIngredients["PhoenixFeather"] = PotionInfo.JournalIngredients["PhoenixFeather"].format({"sleep": str("Potent sleep effect ([color=DARK_GRAY]Duane[/color]" + ")")})
+	PotionInfo.JournalIngredients["CentaurHoof"] = PotionInfo.JournalIngredients["CentaurHoof"].format({"speed": str("Speed boost ([color=DARK_GRAY]Duane[/color]" + ")")})
 
 func _on_clock_next_day():
 	SceneManager._change_scene("res://scenes/levels/Level1.tscn", "day")

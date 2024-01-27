@@ -5,7 +5,6 @@ const NewItem := "res://scenes/ui/OrderItem.tscn"
 const GoodSound := "res://assets/audio/good.ogg"
 const BadSound := "res://assets/audio/back_002.ogg"
 
-
 var CompleteOrder:Dictionary
 var HasOrdered:bool = false
 var enabled:bool = false
@@ -62,7 +61,6 @@ func _disable():
 
 func _on_finish_order_pressed():
 	if Orders.get_child_count() < 1:
-		print("No Orders")
 		return
 	
 	# Check player can afford the order

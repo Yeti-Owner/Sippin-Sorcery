@@ -69,7 +69,7 @@ func _on_counter_timeout():
 		delay = 10.0
 	else:
 		Active = true
-		Text.visible_characters += 1.68
+		Text.visible_characters += 2
 		Counter.start()
 
 func _on_delay_timer_timeout():

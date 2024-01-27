@@ -30,6 +30,7 @@ bg_color = Color(0.470588, 0.364706, 0.0941176, 1)
 
 [node name="OrderForm" type="CanvasLayer"]
 layer = 2
+visible = false
 script = ExtResource("1_5q747")
 
 [node name="OrderForm" type="Control" parent="."]

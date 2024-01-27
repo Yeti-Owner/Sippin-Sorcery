@@ -1,46 +1,46 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://d0ipomf5jrmat"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://wirl2a1pl1ir"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_s0s3x"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_uub6s"]
 
 [resource]
-script = ExtResource("1_s0s3x")
-Name = "Ben"
-FavColor = Color(0.435294, 0, 0, 1)
-Dialog = "I have a swim meet tomorrow and I need to win!"
-Budget = 16
+script = ExtResource("1_uub6s")
+Name = "Slight"
+FavColor = Color(0.00392157, 0.00392157, 0.00392157, 1)
+Dialog = "I need a little boost for the gym."
+Budget = 36
 resistance = "Okay"
 confusion = "Bad"
-health = "Okay"
+health = "Bonus"
 flexibility = "Okay"
-creativity = "Bad"
-speed = "Bonus"
+creativity = "Okay"
+speed = "Okay"
 courage = "Okay"
-stamina = "Bonus"
-strength = "Okay"
+stamina = "NeedOr"
+strength = "NeedOr"
 badVision = "Bad"
 badSmell = "Bad"
 poison = "Bad"
 coldRes = "Okay"
 fireRes = "Okay"
-lessPain = "Okay"
-swimming = "NeedAnd"
-underwaterBreathing = "Bonus"
+lessPain = "Bad"
+swimming = "Okay"
+underwaterBreathing = "Bad"
 fishTalk = "Okay"
-sticky = "Bad"
-nightVision = "Bad"
+sticky = "Bonus"
+nightVision = "Okay"
 invisibility = "Bad"
-lessWeight = "Okay"
+lessWeight = "Bad"
 hearing = "Okay"
 hovering = "Bad"
 luck = "Okay"
 petrification = "Bad"
 purity = "Okay"
 heightenedSenses = "Okay"
-stability = "Okay"
+stability = "Bonus"
 jumping = "Okay"
-precision = "Okay"
+precision = "Bonus"
 dexterity = "Okay"
-alertness = "Okay"
+alertness = "NeedOr"
 perception = "Okay"
 electricalRes = "Okay"
 explosionRes = "Okay"
@@ -50,12 +50,12 @@ betterSmell = "Okay"
 charisma = "Okay"
 plantControl = "Okay"
 sleep = "Bad"
-House = 2
+House = 0
 Gender = "Male"
 TastePrefix = "I like "
 Strawberry = false
 Banana = false
 Pineapple = false
 Blueberry = false
-Watermelon = true
+Watermelon = false
 Orange = true

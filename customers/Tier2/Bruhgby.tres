@@ -1,22 +1,23 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://e3dwqo836j05"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://f3cvdbmqoa3d"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_k0dh7"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_ndtu4"]
 
 [resource]
-script = ExtResource("1_k0dh7")
-Name = "Benzeenee10"
+script = ExtResource("1_ndtu4")
+Name = "Bruhgby"
 FavColor = Color(0, 0, 0, 1)
-Dialog = "I get swarmed with women all the time, help me escape them."
-Budget = 26
+Dialog = "My crush don't want me, do you have something that will make her like me?"
+Budget = 18
 resistance = "Okay"
 confusion = "Bad"
 health = "Okay"
 flexibility = "Okay"
 creativity = "Bonus"
-speed = "NeedOr"
-courage = "Okay"
+speed = "Okay"
+courage = "Bonus"
 stamina = "Bonus"
 strength = "Okay"
+badVision = "Bad"
 badSmell = "Bad"
 poison = "Bad"
 coldRes = "Okay"
@@ -27,34 +28,34 @@ underwaterBreathing = "Okay"
 fishTalk = "Okay"
 sticky = "Bad"
 nightVision = "Okay"
-invisibility = "NeedOr"
+invisibility = "Bad"
 lessWeight = "Okay"
 hearing = "Okay"
-hovering = "NeedOr"
+hovering = "Bad"
 luck = "Bonus"
 petrification = "Bad"
 purity = "Okay"
-heightenedSenses = "Bonus"
+heightenedSenses = "Okay"
 stability = "Okay"
 jumping = "Okay"
 precision = "Okay"
 dexterity = "Okay"
-alertness = "Bonus"
+alertness = "Okay"
 perception = "Okay"
 electricalRes = "Okay"
 explosionRes = "Okay"
 smokeImmunity = "Okay"
 petrificationRes = "Okay"
 betterSmell = "Okay"
-charisma = "Bad"
+charisma = "NeedAnd"
 plantControl = "Okay"
 sleep = "Bad"
-House = 0
+House = 3
 Gender = "Male"
 TastePrefix = "I like "
-Strawberry = false
-Banana = true
-Pineapple = true
-Blueberry = true
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = false
 Watermelon = false
 Orange = false

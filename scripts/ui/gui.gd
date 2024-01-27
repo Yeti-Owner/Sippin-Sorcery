@@ -4,7 +4,10 @@ extends CanvasLayer
 @onready var InteractIcon := $Center/crosshair
 @onready var BalanceLabel := $Control/Balance
 
+const OrderFormPath := "res://scenes/ui/order_form.tscn"
+
 func _ready():
+	# Need a way to queue free then reinstantiate OrderForm on new Level
 	EventBus.interaction.connect(_set_interaction)
 	EventBus.connect("BalanceChanged", _balance)
 	_balance()
@@ -32,3 +35,6 @@ func _fade(type:String):
 			$Fader/AnimationPlayer.play("fade_out")
 		"day":
 			$Fader/AnimationPlayer.play("day_in")
+
+func _reset_orderform():
+	pass

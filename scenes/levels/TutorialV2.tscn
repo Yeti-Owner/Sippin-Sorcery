@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://de4e5166xl0em"]
+[gd_scene load_steps=27 format=3 uid="uid://de4e5166xl0em"]
 
 [ext_resource type="Script" path="res://scenes/levels/TutorialV2.gd" id="1_8o7qc"]
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/player.tscn" id="2_8cp8f"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="10_cgvcb"]
 [ext_resource type="PackedScene" uid="uid://bc2meq0p8ncp" path="res://scenes/test_subject_spawner.tscn" id="11_m3xjc"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="12_ntpib"]
+[ext_resource type="PackedScene" uid="uid://b3vvpiifb1rdc" path="res://scenes/ui/hud_marker.tscn" id="13_olt78"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jac8i"]
 size = Vector3(9.6, 0.3, 10.2)
@@ -165,5 +166,112 @@ curve = SubResource("Curve3D_or1gi")
 [node name="Lights" parent="." instance=ExtResource("12_ntpib")]
 
 [node name="Pause" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 2.0
 one_shot = true
+
+[node name="IngredientMarkers" type="Node3D" parent="."]
+visible = false
+
+[node name="HudMarker" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.2, -3.3)
+
+[node name="HudMarker2" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, 1.2, -3.8)
+
+[node name="HudMarker3" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.2, -3.9)
+
+[node name="HudMarker4" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.846, 1.8, -4.3)
+
+[node name="HudMarker5" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1.2, -3.9)
+
+[node name="HudMarker6" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.9, -4.3)
+
+[node name="HudMarker7" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.2, -3.7)
+
+[node name="HudMarker8" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 1.5, -4.2)
+
+[node name="HudMarker9" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 1.3, -3.9)
+
+[node name="HudMarker10" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 1.3, -3.9)
+
+[node name="HudMarker11" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.1, -2.9)
+
+[node name="HudMarker12" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 2.1, -2.9)
+
+[node name="HudMarker13" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 1.1, -2)
+
+[node name="HudMarker14" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 1.1, -1.1)
+
+[node name="HudMarker15" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 2, -0.7)
+
+[node name="HudMarker16" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.1, -0.1)
+
+[node name="HudMarker17" parent="IngredientMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 1.2, 0.8)
+
+[node name="CauldronMarkers" type="Node3D" parent="."]
+visible = false
+
+[node name="HudMarker" parent="CauldronMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.3, 0.9)
+
+[node name="FlavorMarkers" type="Node3D" parent="."]
+visible = false
+
+[node name="HudMarker" parent="FlavorMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.3, 0.8)
+
+[node name="HudMarker2" parent="FlavorMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.3, 0.7)
+
+[node name="HudMarker3" parent="FlavorMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.3, 0.9)
+
+[node name="HudMarker4" parent="FlavorMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.3, 0.8)
+
+[node name="HudMarker5" parent="FlavorMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.3, 0.8)
+
+[node name="HudMarker6" parent="FlavorMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0.3, 0.7)
+
+[node name="TrashcanMarkers" type="Node3D" parent="."]
+visible = false
+
+[node name="HudMarker" parent="TrashcanMarkers" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.4, -2.4)
+
+[node name="JournalMarker" type="Node3D" parent="."]
+visible = false
+
+[node name="HudMarker" parent="JournalMarker" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 1, 0.9)
+
+[node name="OrderformMarker" type="Node3D" parent="."]
+visible = false
+
+[node name="HudMarker" parent="OrderformMarker" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 1.7, 4.221)
+
+[node name="ClockMarker" type="Node3D" parent="."]
+visible = false
+
+[node name="HudMarker" parent="ClockMarker" instance=ExtResource("13_olt78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.945, 1.841, 4.115)
+
+[connection signal="timeout" from="Pause" to="." method="_on_pause_timeout"]

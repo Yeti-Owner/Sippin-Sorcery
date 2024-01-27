@@ -1,19 +1,19 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cpi70xn4dh1mq"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://tyy42a1l26ig"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_ht442"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_svnp8"]
 
 [resource]
-script = ExtResource("1_ht442")
-Name = "Emma"
-FavColor = Color(0.780392, 0.596078, 0.443137, 1)
-Dialog = "I have a test tomorrow and need to stay up all night please help."
-Budget = 16
-resistance = "Bonus"
+script = ExtResource("1_svnp8")
+Name = "Baron Dipitous"
+FavColor = Color(0.00392157, 0.113725, 0.552941, 1)
+Dialog = "Give me something to help me sneak up on misinformers."
+Budget = 32
+resistance = "Okay"
 confusion = "Bad"
-health = "Bonus"
+health = "Okay"
 flexibility = "Okay"
 creativity = "Bonus"
-speed = "Okay"
+speed = "Bonus"
 courage = "Okay"
 stamina = "Bonus"
 strength = "Okay"
@@ -25,37 +25,37 @@ fireRes = "Okay"
 lessPain = "Okay"
 swimming = "Okay"
 underwaterBreathing = "Okay"
-fishTalk = "Okay"
+fishTalk = "Bad"
 sticky = "Bad"
 nightVision = "Bonus"
-invisibility = "Bad"
+invisibility = "NeedAnd"
 lessWeight = "Okay"
 hearing = "Okay"
-hovering = "Bad"
-luck = "Okay"
+hovering = "Okay"
+luck = "Bonus"
 petrification = "Bad"
 purity = "Okay"
-heightenedSenses = "Bonus"
+heightenedSenses = "Okay"
 stability = "Okay"
 jumping = "Okay"
 precision = "Okay"
-dexterity = "Bonus"
-alertness = "NeedAnd"
+dexterity = "Okay"
+alertness = "Okay"
 perception = "Bonus"
 electricalRes = "Okay"
 explosionRes = "Okay"
 smokeImmunity = "Okay"
 petrificationRes = "Okay"
-betterSmell = "Okay"
+betterSmell = "Bonus"
 charisma = "Okay"
 plantControl = "Okay"
 sleep = "Bad"
 House = 2
-Gender = "Female"
+Gender = "Male"
 TastePrefix = "I like "
 Strawberry = false
 Banana = true
 Pineapple = false
 Blueberry = false
-Watermelon = false
+Watermelon = true
 Orange = true

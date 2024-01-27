@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://do2ct2lrvfdri"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_j5k7l"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_5n3di"]
 
 [resource]
-script = ExtResource("1_j5k7l")
+script = ExtResource("1_5n3di")
 Name = "Carlito"
 FavColor = Color(0, 0, 0, 1)
 Dialog = "Don't ask but I'm buying an island, give me something to confuse someone."

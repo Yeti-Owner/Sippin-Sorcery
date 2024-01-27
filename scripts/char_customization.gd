@@ -137,7 +137,7 @@ func _on_anim_player_animation_finished(anim_name):
 		$CenterContainer/VBoxContainer/Name.queue_free()
 	elif anim_name == "NewEnd":
 		$SceneTimer.start()
-		SceneManager._change_scene("res://scenes/levels/Tutorial.tscn", "day")
+		SceneManager._change_scene("res://scenes/levels/TutorialV2.tscn", "day")
 
 func _on():
 	set_physics_process(true)
