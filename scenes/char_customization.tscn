@@ -225,8 +225,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0, 5.8, 7.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["Get ready for your photo!", "Almost ready!", "Done, you look great!
-Remember, use Q to view your ID!"]
+"values": ["Get ready for your photo!", "Almost ready!", "Done, you look great!"]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -796,7 +795,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -68.0
+offset_top = -55.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("13_l50my")

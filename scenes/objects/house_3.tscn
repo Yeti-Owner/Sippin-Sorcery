@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw4wuhf4m6c28"]
+[gd_scene load_steps=11 format=3 uid="uid://bw4wuhf4m6c28"]
 
 [ext_resource type="Texture2D" uid="uid://bixaxp5iw7q17" path="res://assets/models/houses/House3.png" id="1_p8hag"]
 [ext_resource type="Texture2D" uid="uid://c8brc08eiq61r" path="res://assets/models/houses/House1.png" id="2_ihtvx"]
 [ext_resource type="ArrayMesh" uid="uid://dudyhgieqpyiq" path="res://assets/models/houses/Door.obj" id="3_vp314"]
+[ext_resource type="Texture2D" uid="uid://cjlchrh0xuk14" path="res://assets/models/houses/Door.png" id="4_4e312"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2d51g"]
 resource_name = "palette"
@@ -33,6 +34,11 @@ size = Vector3(8.4, 9, 8.4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_h32vk"]
 size = Vector3(9.6, 1, 9.6)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tl08"]
+resource_name = "palette"
+albedo_texture = ExtResource("4_4e312")
+metallic_specular = 0.15
+
 [node name="House3" type="MeshInstance3D"]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 mesh = SubResource("ArrayMesh_mudon")
@@ -52,3 +58,4 @@ shape = SubResource("BoxShape3D_h32vk")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 3.99202)
 mesh = ExtResource("3_vp314")
+surface_material_override/0 = SubResource("StandardMaterial3D_0tl08")

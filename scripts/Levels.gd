@@ -5,7 +5,7 @@ class_name Level
 @onready var dialogue := get_node("/root/SceneManager/GameScene/HUD/GUI/DialogueLayer/Dialogue")#get_node(EventBus.Dialogue)
 
 func _ready():
-	EventBus._order()
+	EventBus.emit_signal("Restock")
 	EventBus.connect("DialogueFinished", _level)
 	EventBus.connect("NextDay", _on_clock_next_day)
 	EventBus.CurrentLevel = self.scene_file_path

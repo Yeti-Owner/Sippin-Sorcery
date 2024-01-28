@@ -7,9 +7,9 @@ extends CanvasLayer
 const OrderFormPath := "res://scenes/ui/order_form.tscn"
 
 func _ready():
-	# Need a way to queue free then reinstantiate OrderForm on new Level
 	EventBus.interaction.connect(_set_interaction)
 	EventBus.connect("BalanceChanged", _balance)
+	EventBus.connect("Restock", _reset_orderform)
 	_balance()
 
 func _set_interaction(icon, text):
@@ -37,4 +37,10 @@ func _fade(type:String):
 			$Fader/AnimationPlayer.play("day_in")
 
 func _reset_orderform():
-	pass
+	get_node("OrderForm").queue_free()
+	
+	await get_tree().create_timer(0.05).timeout
+	
+	var OrderForm = load(OrderFormPath)
+	var O = OrderForm.instantiate()
+	add_child(O)

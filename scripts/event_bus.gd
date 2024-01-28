@@ -12,6 +12,7 @@ signal DayDone
 signal CustomerDone
 signal BossProblem
 signal Hint(hint:String)
+signal Restock
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"
@@ -41,6 +42,7 @@ var CurrentLevel:String = "res://scenes/char_customization.tscn"
 var DayNum:int = 1
 var SentFeedback:bool = false
 var Order:Dictionary
+var UnlockedHelp:int = 2
 
 # Settings
 var MasterVolume:float = 0
@@ -72,6 +74,7 @@ func _ready():
 		_save()
 	
 	_discord_presence()
+	Restock.connect(_order)
 
 func _player_headshot():
 	var image = Image.load_from_file("user://PlayerHeadshot.png")
@@ -99,7 +102,8 @@ func _save():
 		"KEYBINDS" : Keybinds,
 		"SENTFEEDBACK" : SentFeedback,
 		"RADIOSONG" : RadioSong,
-		"STOCKAMOUNTS" : PotionInfo.StockAmounts
+		"STOCKAMOUNTS" : PotionInfo.StockAmounts,
+		"UNLOCKEDHELP" : UnlockedHelp
 	}
 	file.store_var(SavedData)
 
@@ -125,6 +129,7 @@ func _load():
 	RadioSong = LoadedData.RADIOSONG
 	Reputation = LoadedData.REPUTATION
 	PotionInfo.StockAmounts = LoadedData.STOCKAMOUNTS
+	UnlockedHelp = LoadedData.UNLOCKEDHELP
 
 func _check_rep(_rep):
 	var MaxRep := (BossesBeaten + 1) * 25
