@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://blt46kdv7r0d0"]
+[gd_scene load_steps=26 format=3]
 
 [ext_resource type="Script" path="res://scenes/levels/Level2.gd" id="1_p6d8o"]
-[ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/player.tscn" id="3_mtyfc"]
+[ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="3_mtyfc"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="5_wvxyj"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="9_xrnvd"]
 [ext_resource type="PackedScene" uid="uid://drbavtfivkwrv" path="res://scenes/level_parts/misc_items.tscn" id="10_o7fry"]

@@ -3,19 +3,21 @@ extends Level
 var Stage:int = 0
 
 func _start():
-	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", so we have a minor problem but don't worry![/font_size]"), "Bob")
+	dialogue._talk(str("[font_size=36]Hey " + EventBus.PlayerName + ", so we have a minor problem.[/font_size]"), "Bob")
 
 func _level():
 	Stage += 1
 	match Stage:
 		1:
-			dialogue._talk(str("[font_size=36]That sounds bad.[/font_size]"), "Self")
+			dialogue._talk(str("[font_size=36]?[/font_size]"), "Self", 1.5)
 		2:
-			dialogue._talk(str("[font_size=36]Nonsense just remember those Ministry of Magic agents I mentioned earlier? The legal fellows?[/font_size]"), "Bob")
-		3:
-			dialogue._talk(str("[font_size=36]Yeah.[/font_size]"), "Self")
-		4:
-			dialogue._talk(str("[font_size=36]Do you also remember how I jokingly said for legal reasons we sell juice not potions?[/font_size]"), "Bob")
+			dialogue._talk(str("[font_size=36]You remember how I jokingly said for legal reasons we sell juice not potions?[/font_size]"), "Bob")
+		
+		
+		
+		
+		
+		
 		5:
 			dialogue._talk(str("[font_size=36]Yup.[/font_size]"), "Self")
 		6:

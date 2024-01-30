@@ -1,7 +1,7 @@
 extends Path3D
 
 @onready var SpawnTimer := $SpawnTimer
-const TestSubject := preload("res://scenes/test_subject.tscn")
+const TestSubject := preload("res://scenes/characters/test_subject.tscn")
 
 func _ready():
 	randomize()

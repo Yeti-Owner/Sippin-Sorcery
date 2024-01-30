@@ -11,9 +11,9 @@ extends Path3D
 @export_enum("None:-1","Tom:0", "Humphrey:1", "Sir Higgins:2","Garfield:3") var BossSpawn:int = -1
 
 @onready var timer := $MiscTimer
-const Customer := preload("res://scenes/customer.tscn")
-const MinistryAgent := preload("res://scenes/ministry_agent.tscn")
-const HealthInspector := preload("res://scenes/health_inspector.tscn") # Boss
+const Customer := preload("res://scenes/characters/customer.tscn")
+const MinistryAgent := preload("res://scenes/characters/ministry_agent.tscn")
+const HealthInspector := preload("res://scenes/characters/health_inspector.tscn") # Boss
 
 @onready var TutorialCustomers:Array = DirAccess.get_files_at("res://customers/Tutorial/")
 @onready var Tier1:Array = DirAccess.get_files_at("res://customers/Tier1/")

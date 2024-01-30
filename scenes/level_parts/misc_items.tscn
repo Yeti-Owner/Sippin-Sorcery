@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://drbavtfivkwrv"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cpifxwarrec0n" path="res://scenes/trash_can.tscn" id="1_4v6ey"]
+[ext_resource type="PackedScene" uid="uid://cpifxwarrec0n" path="res://scenes/objects/trash_can.tscn" id="1_4v6ey"]
 [ext_resource type="PackedScene" uid="uid://cykgoo5c4uxuc" path="res://scenes/objects/journal.tscn" id="2_6pl7l"]
 [ext_resource type="PackedScene" uid="uid://d3doo5trm8sgg" path="res://scenes/objects/cauldron.tscn" id="3_xl46k"]
 [ext_resource type="PackedScene" uid="uid://blm83hhh0wl4j" path="res://scenes/objects/floating_light.tscn" id="4_dhr6i"]
