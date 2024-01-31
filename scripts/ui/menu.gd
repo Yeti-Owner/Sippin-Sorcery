@@ -7,6 +7,8 @@ var colliding:bool = false
 var Hovered := ""
 
 func _ready():
+	if has_node("/root/FirstScene"): get_node("/root/FirstScene").queue_free()
+	
 	_audio_settings()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	set_physics_process(false)

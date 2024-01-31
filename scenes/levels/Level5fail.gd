@@ -3,7 +3,7 @@ extends Level
 var Stage:int = 0
 
 func _start():
-	dialogue._talk(str("[font_size=36]I heard news that the inspector is coming back today " + EventBus.PlayerName + ".[/font_size]"), "Bob")
+	dialogue._talk(str("[font_size=36]I heard the inspector is coming back today.[/font_size]"), "Bob")
 
 func _level():
 	Stage += 1
@@ -11,10 +11,10 @@ func _level():
 		1:
 			dialogue._talk(str("[font_size=36]We need you to pass this so we can advertise to new clients.[/font_size]"))
 		2:
+			$Spawner._start()
 			dialogue._talk(str("[font_size=36]Good luck![/font_size]"))
 		3:
 			dialogue._done()
-			$Spawner._start()
 
 func _on_clock_next_day():
 	EventBus.DayNum += 1

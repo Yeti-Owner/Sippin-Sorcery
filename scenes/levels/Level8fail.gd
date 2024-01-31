@@ -13,9 +13,9 @@ func _level():
 	match Stage:
 		1:
 			dialogue._talk(str("[font_size=36]The same inspector is coming back today you get another chance![/font_size]"), "Bob")
+			$Spawner._start()
 		2:
 			dialogue._talk(str("[font_size=36]Good luck![/font_size]"))
-			$Spawner._start()
 		3:
 			dialogue._done()
 		4:

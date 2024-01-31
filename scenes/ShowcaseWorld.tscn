@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://cctlielihojf3"]
+[gd_scene load_steps=27 format=3 uid="uid://cctlielihojf3"]
 
+[ext_resource type="Script" path="res://scripts/ShowcaseWorld.gd" id="1_ju4bx"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="3_jtxqv"]
 [ext_resource type="PackedScene" uid="uid://ds2fpmlchv68d" path="res://scenes/level_parts/juice_items.tscn" id="4_onlmq"]
-[ext_resource type="PackedScene" uid="uid://drbavtfivkwrv" path="res://scenes/level_parts/misc_items.tscn" id="5_nh521"]
+[ext_resource type="PackedScene" path="res://scenes/level_parts/misc_items.tscn" id="5_nh521"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="6_my861"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="7_8hbcj"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="8_hpe0t"]
@@ -56,7 +57,16 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Animation" id="Animation_01ull"]
+resource_name = "Showcase"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s8ahr"]
+_data = {
+"Showcase": SubResource("Animation_01ull")
+}
+
 [node name="world" type="Node3D"]
+script = ExtResource("1_ju4bx")
 
 [node name="Shop" type="StaticBody3D" parent="."]
 collision_layer = 7
@@ -111,7 +121,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, 0.45, 0.95)
 shape = SubResource("BoxShape3D_rc85i")
 
 [node name="JuiceStuff" parent="." instance=ExtResource("4_onlmq")]
-HasWater = false
 
 [node name="Misc" parent="." instance=ExtResource("5_nh521")]
 
@@ -159,7 +168,11 @@ curve = SubResource("Curve3D_or1gi")
 [node name="Lights" parent="." instance=ExtResource("12_e0wvo")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 8.74228e-08, 1, -3.34075e-22, -3.82137e-15, 0, -1, -2.505, 1.666, 1.9)
-projection = 1
+transform = Transform3D(0.642788, -0.185323, 0.74329, 0, 0.970296, 0.241922, -0.766044, -0.155504, 0.623694, -20.249, 4.171, 12.738)
 current = true
 size = 1.936
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s8ahr")
+}

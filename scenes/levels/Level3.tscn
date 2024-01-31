@@ -1,12 +1,13 @@
-[gd_scene load_steps=26 format=3]
+[gd_scene load_steps=27 format=3 uid="uid://c7rslit06m1j1"]
 
 [ext_resource type="Script" path="res://scenes/levels/Level3.gd" id="1_4hlic"]
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="3_o1ir3"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="5_fjqh4"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="9_qsqi3"]
-[ext_resource type="PackedScene" uid="uid://drbavtfivkwrv" path="res://scenes/level_parts/misc_items.tscn" id="10_i35uw"]
+[ext_resource type="PackedScene" path="res://scenes/level_parts/misc_items.tscn" id="10_i35uw"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="11_86tn1"]
 [ext_resource type="PackedScene" uid="uid://ds2fpmlchv68d" path="res://scenes/level_parts/juice_items.tscn" id="12_pf3fe"]
+[ext_resource type="PackedScene" uid="uid://b3vvpiifb1rdc" path="res://scenes/ui/hud_marker.tscn" id="13_7obh2"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="13_lxx1i"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="14_nwqsg"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="26_b8kvm"]
@@ -164,3 +165,9 @@ curve = SubResource("Curve3D_or1gi")
 [node name="Lights" parent="." instance=ExtResource("11_86tn1")]
 
 [node name="JuiceStuff" parent="." instance=ExtResource("12_pf3fe")]
+
+[node name="WaterMarker" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0.3, 0.8)
+visible = false
+
+[node name="HudMarker" parent="WaterMarker" instance=ExtResource("13_7obh2")]

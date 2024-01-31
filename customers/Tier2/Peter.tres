@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://drpkfsb117i77"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_0um57"]
+
+[resource]
+script = ExtResource("1_0um57")
+Name = "Peter"
+FavColor = Color(0.823529, 0, 0, 1)
+Dialog = "I need to climb up some walls... for reasons."
+Budget = 19
+resistance = "Okay"
+confusion = "Bad"
+health = "Okay"
+flexibility = "Bonus"
+creativity = "Okay"
+speed = "Bonus"
+courage = "Okay"
+stamina = "Bonus"
+strength = "Bonus"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "Okay"
+underwaterBreathing = "Bad"
+fishTalk = "Okay"
+sticky = "NeedAnd"
+nightVision = "Okay"
+invisibility = "Bad"
+lessWeight = "Bonus"
+hearing = "Okay"
+hovering = "Okay"
+luck = "Okay"
+petrification = "Bad"
+purity = "Okay"
+heightenedSenses = "Bonus"
+stability = "Bonus"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Bonus"
+alertness = "Bonus"
+perception = "Okay"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "Okay"
+sleep = "Bad"
+House = 0
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = false
+Pineapple = true
+Blueberry = false
+Watermelon = true
+Orange = true

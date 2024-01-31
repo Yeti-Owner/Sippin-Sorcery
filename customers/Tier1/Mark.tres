@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cw6wwstpxxdhm"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_4uk5o"]
+
+[resource]
+script = ExtResource("1_4uk5o")
+Name = "Mark"
+FavColor = Color(0.309804, 0.309804, 0.309804, 1)
+Dialog = "I'm an IRS agent and people keep trying to petrify me."
+Budget = 26
+resistance = "Bonus"
+confusion = "Bad"
+health = "Bonus"
+flexibility = "Okay"
+creativity = "Okay"
+speed = "Okay"
+courage = "Okay"
+stamina = "Okay"
+strength = "Okay"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Bad"
+swimming = "Okay"
+underwaterBreathing = "Bad"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Okay"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Bad"
+luck = "Okay"
+petrification = "Bad"
+purity = "Bonus"
+heightenedSenses = "Okay"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Okay"
+perception = "Okay"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "NeedAnd"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "Okay"
+sleep = "Bad"
+House = 0
+Gender = ""
+TastePrefix = "I like "
+Strawberry = false
+Banana = false
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = false

@@ -16,9 +16,9 @@ func _level():
 			dialogue._done()
 			$Spawner._start()
 		3:
-			dialogue._talk(str("[font_size=36]Hey I couldn't help but notice you have a small problem.[/font_size]"), "Duane")
+			dialogue._talk(str("[font_size=36]Seems like you have a small problem.[/font_size]"), "Duane")
 		4:
-			dialogue._talk(str("[font_size=36]I'm vaguely familiar with all the ingredients behind you and none could turn someone to a monkey.[/font_size]"))
+			dialogue._talk(str("[font_size=36]Doesn't look like you have any monkey-transformation ingredients.[/font_size]"))
 		5:
 			dialogue._talk(str("[font_size=36]Of course I'll help you, but you'll owe me. Deal?[/font_size]"))
 		6:
@@ -26,7 +26,7 @@ func _level():
 		7:
 			dialogue._talk(str("[font_size=36]Somewhere in this town is a hunter, search his trash and find a Nepal Orb.[/font_size]"), "Duane")
 		8:
-			dialogue._talk(str("[font_size=36]One orb should do the job, better hurry![/font_size]"))
+			dialogue._talk(str("[font_size=36]You only need one orb, better hurry![/font_size]"))
 		9:
 			dialogue._done()
 

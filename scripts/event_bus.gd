@@ -61,7 +61,7 @@ var Keybinds:Dictionary = {
 	"sprint" : InputMap.action_get_events("sprint")[0],
 	"dialogue" : InputMap.action_get_events("dialogue")[0]
 }
-var RadioSong:int = 1
+var RadioSong:int = 3
 
 func _ready():
 	randomize()

@@ -93,6 +93,7 @@ func _test_juice(effects:Array):
 		
 		SpeechBubble._talk(Results)
 		$Timer.start(4)
+		EventBus.Hint.emit(str("You can only test 1 effect at a time, review help section for more info."))
 		return
 	else:
 		Results = EffectsList[effects[0]]

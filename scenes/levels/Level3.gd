@@ -12,28 +12,27 @@ func _level():
 			dialogue._talk(str("[font_size=36]?[/font_size]"), "Self", 1.5)
 		2:
 			dialogue._talk(str("[font_size=36]You remember how I jokingly said for legal reasons we sell juice not potions?[/font_size]"), "Bob")
-		
-		
-		
-		
-		
-		
+		3:
+			dialogue._talk(str("[font_size=36]Well it wasn't a joke we are being sued.[/font_size]"))
+		4:
+			dialogue._talk(str("[font_size=36]It's not a big deal though! We just have to make sure we don't give them any evidence.[/font_size]"))
 		5:
-			dialogue._talk(str("[font_size=36]Yup.[/font_size]"), "Self")
+			dialogue._talk(str("[font_size=36]Some Ministry of Magic agents might show up and ask for a potion, under NO CIRCUMSTANCES do you give them one.[/font_size]"))
 		6:
-			dialogue._talk(str("[font_size=36]Well it wasn't really a joke, some Ministry of Magic agents might drop by and ask for some samples.[/font_size]"), "Bob")
+			dialogue._talk(str("[font_size=36]Instead give them actual juice.[/font_size]"))
 		7:
-			dialogue._talk(str("[font_size=36]But, under NO CIRCUSTANCES can you sell them working potions.[/font_size]"))
+			dialogue._talk(str("[font_size=36]I added water to the shop, just mix that with a flavor and you're set.[/font_size]"))
+			$WaterMarker.visible = true
 		8:
-			dialogue._talk(str("[font_size=36]I've added some water below the counter and if they come actually give them juice.[/font_size]"))
-		9:
+			$WaterMarker.queue_free()
 			dialogue._talk(str("[font_size=36]You can probably tell it's an agent by the way they look and talk.[/font_size]"))
-		10:
+			EventBus.UnlockedHelp = 5
+		9:
 			dialogue._talk(str("[font_size=36]Got it.[/font_size]"), "Self")
-		11:
-			dialogue._talk(str("[font_size=36]Good luck![/font_size]"), "Bob")
 			$Spawner._start()
-		12:
+		10:
+			dialogue._talk(str("[font_size=36]Good luck![/font_size]"), "Bob")
+		11:
 			dialogue._done()
 
 func _on_clock_next_day():

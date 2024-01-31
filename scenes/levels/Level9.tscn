@@ -1,10 +1,10 @@
-[gd_scene load_steps=26 format=3]
+[gd_scene load_steps=26 format=3 uid="uid://dkrq0wcrs1xud"]
 
 [ext_resource type="Script" path="res://scenes/levels/Level9.gd" id="1_11dnu"]
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="2_f7abd"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="3_d5nig"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="9_63dma"]
-[ext_resource type="PackedScene" uid="uid://drbavtfivkwrv" path="res://scenes/level_parts/misc_items.tscn" id="10_kslv2"]
+[ext_resource type="PackedScene" path="res://scenes/level_parts/misc_items.tscn" id="10_kslv2"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="11_0bgym"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="12_fa3w6"]
 [ext_resource type="PackedScene" uid="uid://ds2fpmlchv68d" path="res://scenes/level_parts/juice_items.tscn" id="12_ubsft"]
@@ -121,8 +121,8 @@ shape = SubResource("BoxShape3D_rc85i")
 
 [node name="Spawner" parent="." instance=ExtResource("13_duuvk")]
 curve = SubResource("Curve3D_a1qbb")
-Num = 15
-List = 3
+Num = 20
+List = 4
 
 [node name="Stop" type="StaticBody3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974, 2)

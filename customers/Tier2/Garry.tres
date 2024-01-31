@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://d0lncs7dp77pv"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_5t861"]
+
+[resource]
+script = ExtResource("1_5t861")
+Name = "Garry"
+FavColor = Color(0.756863, 0.756863, 0.756863, 1)
+Dialog = "Give me poison."
+Budget = 20
+resistance = "Bad"
+confusion = "Bad"
+health = "Bad"
+flexibility = "Bad"
+creativity = "Bad"
+speed = "Bad"
+courage = "Bad"
+stamina = "Bad"
+strength = "Bad"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "NeedAnd"
+coldRes = "Bad"
+fireRes = "Bad"
+lessPain = "Bonus"
+swimming = "Bad"
+underwaterBreathing = "Bad"
+fishTalk = "Bad"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Bad"
+hearing = "Bad"
+hovering = "Bad"
+luck = "Bad"
+petrification = "Bad"
+purity = "Bad"
+heightenedSenses = "Bad"
+stability = "Bad"
+jumping = "Bad"
+precision = "Bad"
+dexterity = "Bad"
+alertness = "Bad"
+perception = "Bad"
+electricalRes = "Bad"
+explosionRes = "Bad"
+smokeImmunity = "Bad"
+petrificationRes = "Bad"
+betterSmell = "Bad"
+charisma = "Bad"
+plantControl = "Bad"
+sleep = "Bad"
+House = 0
+Gender = ""
+TastePrefix = "I like "
+Strawberry = false
+Banana = false
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = false
