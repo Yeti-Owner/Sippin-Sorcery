@@ -184,3 +184,63 @@ mesh = SubResource("CapsuleMesh_rm5y7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monk"]
 shape = SubResource("CapsuleShape3D_vgffe")
+
+[node name="MonkShenanigans" type="CanvasLayer" parent="Monk"]
+layer = 4
+
+[node name="Control" type="Control" parent="Monk/MonkShenanigans"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="Panel" parent="Monk/MonkShenanigans/Control"]
+custom_minimum_size = Vector2(900, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Monk/MonkShenanigans/Control/Bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Monk/MonkShenanigans/Control/Bg/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="Monk/MonkShenanigans/Control/Bg/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Press me"
+
+[node name="Button2" type="Button" parent="Monk/MonkShenanigans/Control/Bg/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Press me"
+
+[node name="DelayTimer" type="Timer" parent="Monk"]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="pressed" from="Monk/MonkShenanigans/Control/Bg/MarginContainer/HBoxContainer/Button" to="Monk" method="_on_button_pressed"]
+[connection signal="pressed" from="Monk/MonkShenanigans/Control/Bg/MarginContainer/HBoxContainer/Button2" to="Monk" method="_on_button_2_pressed"]
+[connection signal="timeout" from="Monk/DelayTimer" to="Monk" method="_on_delay_timer_timeout"]

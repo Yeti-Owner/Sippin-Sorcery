@@ -11,9 +11,9 @@ func _level():
 		1:
 			dialogue._talk(str("[font_size=36]Just the same today but I wanted to explain one last thing to you.[/font_size]"))
 		2:
-			dialogue._talk(str("[font_size=36]If you check your ID card you'll see your reputation. Go ahead and check it now.[/font_size]"), "Bob")
+			dialogue._talk(str("[font_size=36]If you check your ID card you'll see your reputation. Go ahead and check it now.[/font_size]"))
 		3:
-			dialogue._talk(str("[font_size=36]...[/font_size]"), "self", 10)
+			dialogue._talk(str("[font_size=36]...[/font_size]"), "Self", 10)
 			EventBus.Hint.emit(str("Press " + OS.get_keycode_string(InputMap.action_get_events("id")[0].keycode) + " to view your ID."))
 		4:
 			dialogue._talk(str("[font_size=36]It's " + str(EventBus.Reputation) + ".[/font_size]"))
