@@ -1,10 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://pi72u2eg4hto"]
+[gd_scene load_steps=36 format=3 uid="uid://pi72u2eg4hto"]
 
 [ext_resource type="ArrayMesh" uid="uid://cbrcdwu373312" path="res://assets/models/houses/House2.obj" id="1_igogy"]
 [ext_resource type="Texture2D" uid="uid://c8brc08eiq61r" path="res://assets/models/houses/House1.png" id="2_ado7s"]
 [ext_resource type="ArrayMesh" uid="uid://dudyhgieqpyiq" path="res://assets/models/houses/Door.obj" id="3_rcyda"]
 [ext_resource type="Texture2D" uid="uid://cjlchrh0xuk14" path="res://assets/models/houses/Door.png" id="4_w663t"]
 [ext_resource type="Script" path="res://interactable/Monk.gd" id="5_kwgql"]
+[ext_resource type="Texture2D" uid="uid://mbtqkybqb2ng" path="res://assets/textures/ui/JournalUI.png" id="6_oqa6v"]
+[ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="7_tusdu"]
+[ext_resource type="Texture2D" uid="uid://ba4003lmovkj3" path="res://assets/textures/ui/arrow.png" id="8_cjfky"]
+[ext_resource type="AudioStream" uid="uid://ndoupxvd5dtl" path="res://assets/audio/bookFlip2.ogg" id="9_n6ydv"]
+[ext_resource type="AudioStream" uid="uid://1fljpibg26ve" path="res://assets/audio/bookOpen.ogg" id="10_fbs6u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ph3ep"]
 albedo_texture = ExtResource("2_ado7s")
@@ -55,6 +60,35 @@ size = Vector3(0.5, 0.5, 0.5)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rm5y7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vgffe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2s2dr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07e2c"]
+bg_color = Color(0, 0, 0, 0.172549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbx7h"]
+bg_color = Color(0, 0, 0, 0.32549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skw37"]
+bg_color = Color(0.913725, 0.913725, 0.913725, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edwtu"]
+bg_color = Color(0.741176, 0.741176, 0.741176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpwq0"]
+bg_color = Color(0.592157, 0.592157, 0.592157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7enp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7v8n"]
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7i58d"]
+bg_color = Color(0.431373, 0.431373, 0.431373, 1)
+corner_detail = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ad0ny"]
+size = Vector3(7.2, 0.4, 6.7)
 
 [node name="MonkHouse" type="Node3D"]
 
@@ -188,7 +222,7 @@ shape = SubResource("CapsuleShape3D_vgffe")
 [node name="MonkShenanigans" type="CanvasLayer" parent="Monk"]
 layer = 4
 
-[node name="Control" type="Control" parent="Monk/MonkShenanigans"]
+[node name="Journal" type="Control" parent="Monk/MonkShenanigans"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -196,51 +230,257 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Bg" type="Panel" parent="Monk/MonkShenanigans/Control"]
-custom_minimum_size = Vector2(900, 450)
+[node name="ClickOut" type="Button" parent="Monk/MonkShenanigans/Journal"]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2s2dr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_07e2c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rbx7h")
+
+[node name="TextureRect" type="TextureRect" parent="Monk/MonkShenanigans/Journal"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -532.0
+offset_top = -398.5
+offset_right = 532.0
+offset_bottom = 398.5
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("6_oqa6v")
 
-[node name="MarginContainer" type="MarginContainer" parent="Monk/MonkShenanigans/Control/Bg"]
+[node name="MarginContainer" type="MarginContainer" parent="Monk/MonkShenanigans/Journal/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_right = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 55
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 55
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="LeftPage" type="Control" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/LeftPage"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Monk/MonkShenanigans/Control/Bg/MarginContainer"]
-layout_mode = 2
+theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Button" type="Button" parent="Monk/MonkShenanigans/Control/Bg/MarginContainer/HBoxContainer"]
+[node name="Name" type="Label" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Press me"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_tusdu")
+theme_override_font_sizes/font_size = 12
+text = "Potion Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="Button2" type="Button" parent="Monk/MonkShenanigans/Control/Bg/MarginContainer/HBoxContainer"]
+[node name="PotionTex" type="TextureRect" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer"]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="Description" type="Label" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_tusdu")
+theme_override_font_sizes/font_size = 12
+text = "Brief description of ingredient and how it is collected"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="RightPage" type="Control" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Press me"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_tusdu")
+text = "Current known effects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Effect1" type="Button" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_tusdu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_skw37")
+theme_override_styles/hover = SubResource("StyleBoxFlat_edwtu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fpwq0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_skw37")
+alignment = 0
+
+[node name="Text" type="RichTextLabel" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_tusdu")
+bbcode_enabled = true
+text = "
+- Effect"
+
+[node name="Effect2" type="Button" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_tusdu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_skw37")
+theme_override_styles/hover = SubResource("StyleBoxFlat_edwtu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fpwq0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_skw37")
+alignment = 0
+
+[node name="Text" type="RichTextLabel" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_tusdu")
+bbcode_enabled = true
+text = "
+- Effect"
+
+[node name="Effect3" type="Button" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_tusdu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_skw37")
+theme_override_styles/hover = SubResource("StyleBoxFlat_edwtu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fpwq0")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_skw37")
+alignment = 0
+
+[node name="Text" type="RichTextLabel" parent="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_tusdu")
+bbcode_enabled = true
+text = "
+- Effect"
+
+[node name="Left" type="Button" parent="Monk/MonkShenanigans/Journal/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -487.0
+offset_top = -354.5
+offset_right = -399.0
+offset_bottom = 351.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g7enp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j7v8n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7i58d")
+
+[node name="Arrow" type="TextureRect" parent="Monk/MonkShenanigans/Journal/TextureRect/Left"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 663.0
+offset_right = 110.0
+offset_bottom = 727.0
+scale = Vector2(-0.681, 0.681)
+mouse_filter = 2
+texture = ExtResource("8_cjfky")
+
+[node name="Right" type="Button" parent="Monk/MonkShenanigans/Journal/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 399.0
+offset_top = -354.5
+offset_right = 487.0
+offset_bottom = 354.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g7enp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j7v8n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7i58d")
+
+[node name="Arrow" type="TextureRect" parent="Monk/MonkShenanigans/Journal/TextureRect/Right"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 706.0
+offset_right = 106.0
+offset_bottom = 770.0
+scale = Vector2(0.681, -0.681)
+mouse_filter = 2
+texture = ExtResource("8_cjfky")
 
 [node name="DelayTimer" type="Timer" parent="Monk"]
 wait_time = 0.05
 one_shot = true
 
-[connection signal="pressed" from="Monk/MonkShenanigans/Control/Bg/MarginContainer/HBoxContainer/Button" to="Monk" method="_on_button_pressed"]
-[connection signal="pressed" from="Monk/MonkShenanigans/Control/Bg/MarginContainer/HBoxContainer/Button2" to="Monk" method="_on_button_2_pressed"]
+[node name="FlipPageSound" type="AudioStreamPlayer" parent="Monk"]
+stream = ExtResource("9_n6ydv")
+
+[node name="OpenCloseSound" type="AudioStreamPlayer" parent="Monk"]
+stream = ExtResource("10_fbs6u")
+
+[node name="LeaveArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 1, -2.6)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeaveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 0, 2.4)
+shape = SubResource("BoxShape3D_ad0ny")
+
+[connection signal="pressed" from="Monk/MonkShenanigans/Journal/ClickOut" to="Monk" method="_on_click_out_pressed"]
+[connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/Left" to="Monk" method="_on_left_pressed"]
+[connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/Right" to="Monk" method="_on_right_pressed"]
 [connection signal="timeout" from="Monk/DelayTimer" to="Monk" method="_on_delay_timer_timeout"]
+[connection signal="body_exited" from="LeaveArea" to="Monk" method="_on_leave_area_body_exited"]

@@ -2,17 +2,17 @@ extends Node
 
 # increasing number : [ Name, Icon, Description ]
 const JournalPotions:Dictionary = {
-	0 : ["Basilisk Fangs", "res://assets/textures/ingredients/BasiliskFang.png", "Sharp, venomous fangs obtained from a basilisk, a mythical serpent-like creature known for its deadly gaze."],
-	1 : ["Centaur Hoof Shavings", "res://assets/textures/ingredients/CentaurHoof.png","Small shavings collected from the hooves of centaurs, half-human and half-horse beings from ancient legends."],
-	2 : ["Chimera Flame Essence", "res://assets/textures/ingredients/ChimeraFlame.png","Highly concentrated essence extracted from the flames of a chimera, a fearsome creature with the body parts of different animals, typically a lion, goat, and serpent."],
-	3 : ["Dragonfly Wings", "res://assets/textures/ingredients/DragonflyWing.png", "Delicate wings harvested from dragonflies, ethereal insects known for their agile flight and vibrant colors."],
-	4 : ["Dryad Sap", "res://assets/textures/ingredients/DryadSap.png","Sticky sap collected from the trunks of trees inhabited by dryads, enchanting tree spirits known by their Greek mythology."],
-	5 : ["Fairy Wings", "res://assets/textures/ingredients/FairyWing.png","Exquisite and delicate wings gently obtained from fairies, mystical beings associated with enchantment and nature."],
-	6 : ["Gorgon Blood", "res://assets/textures/ingredients/GorgonBlood.png","Dark and potent blood acquired from a gorgon, a terrifying creature with serpents for hair and a petrifying gaze."],
-	7 : ["Griffin Feathers", "res://assets/textures/ingredients/GriffinFeather.png","Majestic feathers gathered from griffins, legendary creatures with the body of a lion and the head and wings of an eagle."],
-	8 : ["Hippogriff Talons", "res://assets/textures/ingredients/HippogriffTalon.png","Sharp talons acquired from a hippogriff, a creature with the front half of an eagle and the hind half of a horse."],
-	9 : ["Kraken Ink", "res://assets/textures/ingredients/KrakenInk.png","Inky substance harvested from the ink sac of a kraken, a gigantic sea monster typically dwelling in the depths of the ocean."],
-	10 : ["Mandrake Roots", "res://assets/textures/ingredients/MandrakeRoot.png","Twisted and powerful roots extracted from mandrakes, plants with mystical properties and resembling humanoids."],
+	0 : ["Mandrake Roots", "res://assets/textures/ingredients/MandrakeRoot.png","Twisted and powerful roots extracted from mandrakes, plants with mystical properties and resembling humanoids."],
+	1 : ["Basilisk Fangs", "res://assets/textures/ingredients/BasiliskFang.png", "Sharp, venomous fangs obtained from a basilisk, a mythical serpent-like creature known for its deadly gaze."],
+	2 : ["Centaur Hoof Shavings", "res://assets/textures/ingredients/CentaurHoof.png","Small shavings collected from the hooves of centaurs, half-human and half-horse beings from ancient legends."],
+	3 : ["Chimera Flame Essence", "res://assets/textures/ingredients/ChimeraFlame.png","Highly concentrated essence extracted from the flames of a chimera, a fearsome creature with the body parts of different animals, typically a lion, goat, and serpent."],
+	4 : ["Dragonfly Wings", "res://assets/textures/ingredients/DragonflyWing.png", "Delicate wings harvested from dragonflies, ethereal insects known for their agile flight and vibrant colors."],
+	5 : ["Dryad Sap", "res://assets/textures/ingredients/DryadSap.png","Sticky sap collected from the trunks of trees inhabited by dryads, enchanting tree spirits known by their Greek mythology."],
+	6 : ["Fairy Wings", "res://assets/textures/ingredients/FairyWing.png","Exquisite and delicate wings gently obtained from fairies, mystical beings associated with enchantment and nature."],
+	7 : ["Gorgon Blood", "res://assets/textures/ingredients/GorgonBlood.png","Dark and potent blood acquired from a gorgon, a terrifying creature with serpents for hair and a petrifying gaze."],
+	8 : ["Griffin Feathers", "res://assets/textures/ingredients/GriffinFeather.png","Majestic feathers gathered from griffins, legendary creatures with the body of a lion and the head and wings of an eagle."],
+	9 : ["Hippogriff Talons", "res://assets/textures/ingredients/HippogriffTalon.png","Sharp talons acquired from a hippogriff, a creature with the front half of an eagle and the hind half of a horse."],
+	10 : ["Kraken Ink", "res://assets/textures/ingredients/KrakenInk.png","Inky substance harvested from the ink sac of a kraken, a gigantic sea monster typically dwelling in the depths of the ocean."],
 	11 : ["Mermaid Scales", "res://assets/textures/ingredients/MermaidScale.png","Shimmering scales collected from mermaids, beautiful aquatic beings with the upper body of a human and the tail of a fish."],
 	12 : ["Phoenix Feathers", "res://assets/textures/ingredients/PhoenixFeather.png","Brilliant and fiery feathers gathered from a phoenix, a mythical bird known for its ability to rise from its ashes and be reborn."],
 	13 : ["Salamander Tails", "res://assets/textures/ingredients/SalamanderTail.png","Energetic and resilient tails obtained from salamanders, mythical creatures associated with fire and transformation."],
@@ -84,6 +84,26 @@ var JournalIngredients := {
 	"ChimeraFlame": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {strength} \n\n[color=BLACK]Effect 2: \n- {explosionRes} \n\n[color=BLACK]Effect 3:\n- {smokeImmunity}",
 	"GorgonBlood": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {petrificationRes} \n\n[color=BLACK]Effect 2: \n- {poison} \n\n[color=BLACK]Effect 3:\n- {betterSmell}",
 	"DryadSap": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {charisma} \n\n[color=BLACK]Effect 2: \n- {health} \n\n[color=BLACK]Effect 3:\n- {plantControl}"
+}
+
+var JournalIngredients2 := {
+	"MandrakeRoot": ["\n[color=BLACK]Effect 1:\n- {resistance}", "\n[color=BLACK]Effect 2: \n- {confusion}","\n[color=BLACK]Effect 3:\n- {health}"],
+	"FairyWing": ["\n[color=BLACK]Effect 1:\n- {flexibility}", "\n[color=BLACK]Effect 2: \n- {creativity}","\n[color=BLACK]Effect 3:\n- {speed}"],
+	"TrollBlood": ["\n[color=BLACK]Effect 1:\n- {courage}", "\n[color=BLACK]Effect 2: \n- {stamina}", "\n[color=BLACK]Effect 3:\n- {strength}"],
+	"KrakenInk": ["\n[color=BLACK]Effect 1:\n- {badVision}", "\n[color=BLACK]Effect 2: \n- {badSmell}", "\n[color=BLACK]Effect 3:\n- {poison}"],
+	"SalamanderTail": ["\n[color=BLACK]Effect 1:\n- {coldRes}", "\n[color=BLACK]Effect 2: \n- {fireRes}", "\n[color=BLACK]Effect 3:\n- {lessPain}"],
+	"MermaidScale": ["\n[color=BLACK]Effect 1:\n- {swimming}", "\n[color=BLACK]Effect 2: \n- {underwaterBreathing}", "\n[color=BLACK]Effect 3:\n- {fishTalk}"],
+	"SpiderSilk": ["\n[color=BLACK]Effect 1:\n- {sticky}", "\n[color=BLACK]Effect 2: \n- {nightVision}", "\n[color=BLACK]Effect 3:\n- {invisibility}"],
+	"DragonflyWing": ["\n[color=BLACK]Effect 1:\n- {lessWeight}", "\n[color=BLACK]Effect 2: \n- {hearing}", "\n[color=BLACK]Effect 3:\n- {hovering}"],
+	"PhoenixFeather": ["\n[color=BLACK]Effect 1:\n- {sleep}", "\n[color=BLACK]Effect 2: \n- {luck}", "\n[color=BLACK]Effect 3:\n- {fireRes}"],
+	"BasiliskFang": ["\n[color=BLACK]Effect 1:\n- {petrification}", "\n[color=BLACK]Effect 2: \n- {poison}", "\n[color=BLACK]Effect 3:\n- {strength}"],
+	"UnicornHorn": ["\n[color=BLACK]Effect 1:\n- {purity}", "\n[color=BLACK]Effect 2: \n- {health}", "\n[color=BLACK]Effect 3:\n- {heightenedSenses}"],
+	"CentaurHoof": ["\n[color=BLACK]Effect 1:\n- {speed}", "\n[color=BLACK]Effect 2: \n- {stability}", "\n[color=BLACK]Effect 3:\n- {jumping}"],
+	"HippogriffTalon": ["\n[color=BLACK]Effect 1:\n- {precision}", "\n[color=BLACK]Effect 2: \n- {lessPain}", "\n[color=BLACK]Effect 3:\n- {dexterity}"],
+	"GriffinFeather": ["\n[color=BLACK]Effect 1:\n- {alertness}", "\n[color=BLACK]Effect 2: \n- {perception}", "\n[color=BLACK]Effect 3:\n- {electricalRes}"],
+	"ChimeraFlame": ["\n[color=BLACK]Effect 1:\n- {strength}", "\n[color=BLACK]Effect 2: \n- {explosionRes}", "\n[color=BLACK]Effect 3:\n- {smokeImmunity}"],
+	"GorgonBlood": ["\n[color=BLACK]Effect 1:\n- {petrificationRes}", "\n[color=BLACK]Effect 2: \n- {poison}", "\n[color=BLACK]Effect 3:\n- {betterSmell}"],
+	"DryadSap": ["\n[color=BLACK]Effect 1:\n- {charisma}", "\n[color=BLACK]Effect 2: \n- {health}", "\n[color=BLACK]Effect 3:\n- {plantControl}"]
 }
 
 # Item : Current, Max
