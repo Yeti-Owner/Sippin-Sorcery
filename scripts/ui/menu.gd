@@ -13,8 +13,9 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	set_physics_process(false)
 	$Anims.play("Start")
+	_sib()
 
-func _physics_process(_delta):
+func _process(_delta):
 	Ray.target_position = $Camera3D.project_local_ray_normal(get_global_mouse_position())
 	if not Ray.is_colliding():
 		if Hovered != "":
@@ -50,9 +51,11 @@ func _physics_process(_delta):
 				"Back":
 					Back.play()
 					$Anims.play("Back")
+				"SiB":
+					OS.shell_open("https://www.esportssib.com/")
 		return
 	
-	var PossibleButtons := ["Start","Quit","Credits", "Feedback", "Back"]
+	var PossibleButtons := ["Start","Quit","Credits", "Feedback", "Back", "SiB"]
 	
 	if PossibleButtons.has(Ray.get_collider().name):
 		Ray.get_collider().get_node("Outline").visible = true
@@ -98,3 +101,9 @@ func _on_scene_timer_timeout():
 
 func _on_music_finished():
 	$Music.play()
+
+func _sib():
+	await get_tree().create_timer(1, true).timeout
+	var tween := get_tree().create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.tween_property($SiB, "position", Vector3(0, 0.695, 0), 1)

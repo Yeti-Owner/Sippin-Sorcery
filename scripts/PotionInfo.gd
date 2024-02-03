@@ -65,28 +65,8 @@ const IngredientPotions:Dictionary = {
 	"DryadSap": ["Dryad Sap", Color(0.48238503932953, 0.65542727708817, 0.40115711092949), Vector3(0, 0.35, 0), Vector3(0.4, 0.7, 0.4)]
 }
 
-# Journal ingredient entries
+# Journal ingredient entries, Ingredient : [Effect1, Effect2, Effect3]
 var JournalIngredients := {
-	"MandrakeRoot": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {resistance} \n\n[color=BLACK]Effect 2: \n- {confusion} \n\n[color=BLACK]Effect 3:\n- {health}",
-	"FairyWing": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {flexibility} \n\n[color=BLACK]Effect 2: \n- {creativity} \n\n[color=BLACK]Effect 3:\n- {speed}",
-	"TrollBlood": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {courage} \n\n[color=BLACK]Effect 2: \n- {stamina} \n\n[color=BLACK]Effect 3:\n- {strength}",
-	"KrakenInk": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {badVision} \n\n[color=BLACK]Effect 2: \n- {badSmell} \n\n[color=BLACK]Effect 3:\n- {poison}",
-	"SalamanderTail": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {coldRes} \n\n[color=BLACK]Effect 2: \n- {fireRes} \n\n[color=BLACK]Effect 3:\n- {lessPain}",
-	"MermaidScale": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {swimming} \n\n[color=BLACK]Effect 2: \n- {underwaterBreathing} \n\n[color=BLACK]Effect 3:\n- {fishTalk}",
-	"SpiderSilk": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {sticky} \n\n[color=BLACK]Effect 2: \n- {nightVision} \n\n[color=BLACK]Effect 3:\n- {invisibility}",
-	"DragonflyWing":"[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {lessWeight} \n\n[color=BLACK]Effect 2: \n- {hearing} \n\n[color=BLACK]Effect 3:\n- {hovering}",
-	"PhoenixFeather": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {sleep} \n\n[color=BLACK]Effect 2: \n- {luck} \n\n[color=BLACK]Effect 3:\n- {fireRes}",
-	"BasiliskFang": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {petrification} \n\n[color=BLACK]Effect 2: \n- {poison} \n\n[color=BLACK]Effect 3:\n- {strength}",
-	"UnicornHorn": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {purity} \n\n[color=BLACK]Effect 2: \n- {health} \n\n[color=BLACK]Effect 3:\n- {heightenedSenses}",
-	"CentaurHoof": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {speed} \n\n[color=BLACK]Effect 2: \n- {stability} \n\n[color=BLACK]Effect 3:\n- {jumping}",
-	"HippogriffTalon": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {precision} \n\n[color=BLACK]Effect 2: \n- {lessPain} \n\n[color=BLACK]Effect 3:\n- {dexterity}",
-	"GriffinFeather": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {alertness} \n\n[color=BLACK]Effect 2: \n- {perception} \n\n[color=BLACK]Effect 3:\n- {electricalRes}",
-	"ChimeraFlame": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {strength} \n\n[color=BLACK]Effect 2: \n- {explosionRes} \n\n[color=BLACK]Effect 3:\n- {smokeImmunity}",
-	"GorgonBlood": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {petrificationRes} \n\n[color=BLACK]Effect 2: \n- {poison} \n\n[color=BLACK]Effect 3:\n- {betterSmell}",
-	"DryadSap": "[color=BLACK][center]Current known effects[/center]\n\n\nEffect 1:\n- {charisma} \n\n[color=BLACK]Effect 2: \n- {health} \n\n[color=BLACK]Effect 3:\n- {plantControl}"
-}
-
-var JournalIngredients2 := {
 	"MandrakeRoot": ["\n[color=BLACK]Effect 1:\n- {resistance}", "\n[color=BLACK]Effect 2: \n- {confusion}","\n[color=BLACK]Effect 3:\n- {health}"],
 	"FairyWing": ["\n[color=BLACK]Effect 1:\n- {flexibility}", "\n[color=BLACK]Effect 2: \n- {creativity}","\n[color=BLACK]Effect 3:\n- {speed}"],
 	"TrollBlood": ["\n[color=BLACK]Effect 1:\n- {courage}", "\n[color=BLACK]Effect 2: \n- {stamina}", "\n[color=BLACK]Effect 3:\n- {strength}"],

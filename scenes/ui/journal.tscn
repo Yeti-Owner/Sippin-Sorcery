@@ -115,20 +115,53 @@ autowrap_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Notes" type="RichTextLabel" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qp538")
+text = "Current known effects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Effect1" type="RichTextLabel" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_qp538")
 bbcode_enabled = true
-text = "[color=BLACK][center]Hello everybody my name is markiplier[/center]
+text = "
+- Effect"
 
-- S
-- S
-- S"
+[node name="Effect2" type="RichTextLabel" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qp538")
+bbcode_enabled = true
+text = "
+- Effect"
+
+[node name="Effect3" type="RichTextLabel" parent="Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qp538")
+bbcode_enabled = true
+text = "
+- Effect"
 
 [node name="Left" type="Button" parent="Journal/CenterContainer/TextureRect"]
 layout_mode = 1

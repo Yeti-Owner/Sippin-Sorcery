@@ -110,12 +110,12 @@ func _customers_done():
 
 func _duane_journal():
 	# Maybe play a scribbling/writing sound
-	PotionInfo.JournalIngredients["MermaidScale"] = PotionInfo.JournalIngredients["MermaidScale"].format({"swimming": str("Enhanced swimming ([color=DARK_GRAY]Duane[/color]" + ")")})
-	PotionInfo.JournalIngredients["GriffinFeather"] = PotionInfo.JournalIngredients["GriffinFeather"].format({"alertness": str("Increased alertness ([color=DARK_GRAY]Duane[/color]" + ")")})
-	PotionInfo.JournalIngredients["MandrakeRoot"] = PotionInfo.JournalIngredients["MandrakeRoot"].format({"resistance": str("Overall resistance to common illnesses ([color=DARK_GRAY]Duane[/color]" + ")")})
-	PotionInfo.JournalIngredients["TrollBlood"] = PotionInfo.JournalIngredients["TrollBlood"].format({"courage": str("Courage ([color=DARK_GRAY]Duane[/color]" + ")")})
-	PotionInfo.JournalIngredients["PhoenixFeather"] = PotionInfo.JournalIngredients["PhoenixFeather"].format({"sleep": str("Potent sleep effect ([color=DARK_GRAY]Duane[/color]" + ")")})
-	PotionInfo.JournalIngredients["CentaurHoof"] = PotionInfo.JournalIngredients["CentaurHoof"].format({"speed": str("Speed boost ([color=DARK_GRAY]Duane[/color]" + ")")})
+	PotionInfo.JournalIngredients["MermaidScale"][0] = PotionInfo.JournalIngredients["MermaidScale"][0].format({"swimming": str("Enhanced swimming ([color=DARK_GRAY]Duane[/color]" + ")")})
+	PotionInfo.JournalIngredients["GriffinFeather"][0] = PotionInfo.JournalIngredients["GriffinFeather"][0].format({"alertness": str("Increased alertness ([color=DARK_GRAY]Duane[/color]" + ")")})
+	PotionInfo.JournalIngredients["MandrakeRoot"][0] = PotionInfo.JournalIngredients["MandrakeRoot"][0].format({"resistance": str("Overall resistance to common illnesses ([color=DARK_GRAY]Duane[/color]" + ")")})
+	PotionInfo.JournalIngredients["TrollBlood"][0] = PotionInfo.JournalIngredients["TrollBlood"][0].format({"courage": str("Courage ([color=DARK_GRAY]Duane[/color]" + ")")})
+	PotionInfo.JournalIngredients["PhoenixFeather"][0] = PotionInfo.JournalIngredients["PhoenixFeather"][0].format({"sleep": str("Potent sleep effect ([color=DARK_GRAY]Duane[/color]" + ")")})
+	PotionInfo.JournalIngredients["CentaurHoof"][0] = PotionInfo.JournalIngredients["CentaurHoof"][0].format({"speed": str("Speed boost ([color=DARK_GRAY]Duane[/color]" + ")")})
 
 func _on_clock_next_day():
 	EventBus.DayNum += 1

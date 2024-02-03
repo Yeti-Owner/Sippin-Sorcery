@@ -6,8 +6,11 @@ extends CanvasLayer
 @onready var PotionName := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer/Name
 @onready var PotionIcon := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer/PotionTex
 @onready var PotionDesc := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer/Description
-@onready var PotionNotes := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/Notes
+@onready var Effect1Text := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect1
+@onready var Effect2Text := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect2
+@onready var Effect3Text := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect3
 
+var LengthLimit:int = 49
 var enabled:bool = false
 
 # Name, Icon, Desc
@@ -38,10 +41,21 @@ func _set_page(_page):
 	
 	
 	# Notes shenanigans
-	var NewText:String = PotionInfo.JournalIngredients[PageOrder[CurrentPage]] # Get PotionInfo.JournalIngredients entry
-	for effect in PotionInfo.EffectsList:
-		NewText = NewText.format({effect: ""})
-	PotionNotes.text = NewText
+	var Ref = PotionInfo.JournalIngredients[PageOrder[CurrentPage]]
+	if Ref[0].length() < LengthLimit:
+		Effect1Text.text = "\n[color=BLACK]Effect 1:\n- "
+	else:
+		Effect1Text.text = Ref[0]
+	
+	if Ref[1].length() < LengthLimit:
+		Effect2Text.text = "\n[color=BLACK]Effect 2:\n- "
+	else:
+		Effect2Text.text = Ref[1]
+	
+	if Ref[2].length() < LengthLimit:
+		Effect3Text.text = "\n[color=BLACK]Effect 3:\n- "
+	else:
+		Effect3Text.text = Ref[2]
 
 func _on_left_pressed():
 	FlipPage.play()

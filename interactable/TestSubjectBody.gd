@@ -8,10 +8,10 @@ const EffectsList := {
 	"resistance": "I don't know why, but suddenly it's like I'm tougher than usual. Like nothing can touch me, you know?",
 	"confusion": "Whoa, everything's kinda spinning in my head. Like, I can't even remember what I had for breakfast this morning.",
 	"health": "Man, I was feeling a bit ill earlier, but it's totally cleared up thank you!",
-	"flexibility": "I swear, my body feels all loose and limber, like I could bend in crazy ways.",
+	"flexibility": "I swear my body feels all loose, I could toes my toes right now.",
 	"creativity": "My brainfog cleared up, I have so many new ideas right now!",
 	"speed": "I feel like I've been zapped with a dose of lightning! My legs are moving quicker than I thought possible.",
-	"courage": "I don't know what came over me, but suddenly I'm braver than a lion. Nothing scares me anymore! Let's do this!",
+	"courage": "I feel like nothing scares me anymore, I wanna fight someone!",
 	"stamina": "I could run laps around the castle and not even lose my breath! It's like I've got an endless supply of energy.",
 	"strength": "I could lift a heavy cauldron like it's a feather! I'm seriously strong right now.",
 	"badVision": "Uh-oh, everything's a bit blurry. Is this supposed to happen? I can't see straight!",
@@ -23,7 +23,7 @@ const EffectsList := {
 	"swimming": "I feel an urge to go swimming. I could swim laps over anyone! I know I can glide through the water so effortlessly, awesome!",
 	"underwaterBreathing": "My neck feels weird, it's like I've got gills or something.",
 	"fishTalk": "Something is off, I feel a strange urge to go swimming, I swear I can hear the fish from here. And they're talking?!",
-	"sticky": "My hands are all tacky and clingy. Everything I touch just sticks to me. It's like I've got super glue on my fingers.",
+	"sticky": "My hands are all gross and clingy, everything is sticking to me. It's like I've got super glue on my fingers.",
 	"nightVision": "It's dark out here, but I can see through the shadows crystal clear. It's like I've got these cool night vision goggles or something.",
 	"invisibility": "Subject turned invisible?",
 	"lessWeight": "I feel so light on my feet, like I could float away if I'm not careful. It's like gravity has forgotten about me!",
@@ -52,7 +52,7 @@ const EffectsList := {
 var AdditionalList1 := ["hovering","invisibility","speed","strength"]
 var AdditionalList2 := ["petrification"]
 
-var cost := 25
+var cost := 35
 
 func _ready():
 	randomize()
@@ -96,6 +96,7 @@ func _test_juice(effects:Array):
 		EventBus.Hint.emit(str("You can only test 1 effect at a time, review help section for more info."))
 		return
 	else:
+		# EffectsList[Effect] gives the descriptor to be recorded (+ probably spoken)
 		Results = EffectsList[effects[0]]
 		_record_journal(Results, effects[0])
 	
@@ -113,11 +114,20 @@ func _test_juice(effects:Array):
 	$Timer.start(4)
 
 func _record_journal(result, effect):
+	# No journal entry for these, but they are considered "effects"
 	if (effect == "monkey") or (effect == "water"):
 		return
 	
+	# Maybe a note taking sound
+	
+	# What should be entered in place of the effect
 	var NewEntry:String = str(result + " ([color=" + str(color.to_html()) + "]" + get_parent().CharName + "[/color]" + ")")
-	PotionInfo.JournalIngredients[EventBus.InsertedItems] = PotionInfo.JournalIngredients[EventBus.InsertedItems].format({effect: str(NewEntry)})
+	
+	for num in PotionInfo.JournalIngredients[EventBus.InsertedItems].size():
+		# Formats out the {effect} for NewEntry if it finds it
+		# This works because it supposes that there will not be more than 1 of {effect} per ingredient
+		PotionInfo.JournalIngredients[EventBus.InsertedItems][num] = PotionInfo.JournalIngredients[EventBus.InsertedItems][num].format({effect: str(NewEntry)})
+	
 
 func _effect(effect:String, _results:String):
 	match effect:

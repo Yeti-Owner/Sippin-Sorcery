@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://syb05k3lr8yt"]
+[gd_scene load_steps=47 format=3 uid="uid://syb05k3lr8yt"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_n2mbh"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_3qqco"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://7mrq8j1nle0j" path="res://assets/audio/click_001.ogg" id="10_gy0ny"]
 [ext_resource type="AudioStream" uid="uid://bgos22xkpt5p0" path="res://assets/audio/back_002.ogg" id="11_peyst"]
 [ext_resource type="AudioStream" uid="uid://cmtkeju51wyqe" path="res://assets/audio/music/Snowfall.mp3" id="12_ked1i"]
+[ext_resource type="Texture2D" uid="uid://yaenmrypl1os" path="res://assets/textures/SiB.jpg" id="13_3c4cp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d7srl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -197,6 +198,27 @@ size = Vector3(0.25, 0.891, 1.5)
 [sub_resource type="BoxMesh" id="BoxMesh_7fjpu"]
 material = SubResource("StandardMaterial3D_gtc2c")
 size = Vector3(0.082, 1.139, 0.21)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvw2w"]
+albedo_color = Color(0.2, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3j3sd"]
+material = SubResource("StandardMaterial3D_dvw2w")
+size = Vector3(0.204, 3.835, 0.349)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x07yd"]
+albedo_texture = ExtResource("13_3c4cp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_6ag67"]
+material = SubResource("StandardMaterial3D_x07yd")
+size = Vector2(1.126, 0.841)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxibp"]
+size = Vector3(0.258, 0.223, 0.054)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3qkwa"]
+material = SubResource("ShaderMaterial_7qtyy")
+size = Vector3(0.289, 0.241, 0.095)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -437,6 +459,34 @@ stream = ExtResource("12_ked1i")
 volume_db = -5.0
 autoplay = true
 bus = &"Music"
+
+[node name="SiB" type="StaticBody3D" parent="."]
+
+[node name="Grouper" type="Node3D" parent="SiB"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.613, -0.843, -1.522)
+
+[node name="Sign" type="MeshInstance3D" parent="SiB/Grouper"]
+transform = Transform3D(-0.222842, -0.010516, 0.0282071, 0.0174034, -0.309764, 0.0189805, 0.0542093, 0.0562182, 0.109859, -0.692, 0.541, -4.9)
+mesh = ExtResource("7_0rp7b")
+skeleton = NodePath("../../..")
+
+[node name="Pole" type="MeshInstance3D" parent="SiB/Grouper/Sign"]
+transform = Transform3D(1, 4.09782e-08, 7.45058e-09, -1.30385e-08, 1, -1.49012e-08, 8.9407e-08, 4.76837e-07, 1, -0.002, 3.415, 0.01)
+mesh = SubResource("BoxMesh_3j3sd")
+
+[node name="Logo" type="MeshInstance3D" parent="SiB/Grouper/Sign"]
+transform = Transform3D(-1, -1.30385e-08, -8.94069e-08, 1.30385e-08, -1, -4.76837e-07, -8.94069e-08, -4.76837e-07, 1, 0.00699997, 0.485, 0.209)
+mesh = SubResource("QuadMesh_6ag67")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SiB"]
+transform = Transform3D(-0.968877, -0.0333839, 0.245279, 0.0756667, -0.983379, 0.165048, 0.235692, 0.17847, 0.9553, -1.14, -0.55, -5.173)
+shape = SubResource("BoxShape3D_oxibp")
+
+[node name="Outline" type="MeshInstance3D" parent="SiB"]
+transform = Transform3D(0.968583, 0, 0.24869, 0, 1, 0, -0.24869, 0, 0.968583, -1.136, -0.544, -5.177)
+visible = false
+mesh = SubResource("BoxMesh_3qkwa")
+skeleton = NodePath("../..")
 
 [connection signal="animation_finished" from="Anims" to="." method="_on_anims_animation_finished"]
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
