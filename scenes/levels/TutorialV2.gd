@@ -84,7 +84,8 @@ func _level():
 			dialogue._talk(str("[font_size=36]That's all, cya![/font_size]"))
 		28:
 			dialogue._done()
-			EventBus.UnlockedHelp = 3
+			if not (EventBus.UnlockedHelp.has("res://assets/textures/help/HelpPage3.png")):
+				EventBus.UnlockedHelp.append("res://assets/textures/help/HelpPage3.png")
 			EventBus.Hint.emit(str("You'll have time to research ingredients at the end of the day."))
 		29:
 			dialogue._talk(str("[font_size=36]Well done " + EventBus.PlayerName + "![/font_size]"), "Bob")
@@ -92,7 +93,8 @@ func _level():
 			dialogue._talk(str("[font_size=36]It's too late for any more customers to arrive now.[/font_size]"))
 		31:
 			dialogue._talk(str("[font_size=36]Go ahead and fill out the order form over there and I'll restock whatever you used in the morning.[/font_size]"))
-			EventBus.UnlockedHelp = 4
+			if not (EventBus.UnlockedHelp.has("res://assets/textures/help/HelpPage4.png")):
+				EventBus.UnlockedHelp.append("res://assets/textures/help/HelpPage4.png")
 			$OrderformMarker.visible = true
 		32:
 			$OrderformMarker.queue_free()

@@ -26,7 +26,8 @@ func _level():
 		8:
 			$WaterMarker.queue_free()
 			dialogue._talk(str("[font_size=36]You can probably tell it's an agent by the way they look and talk.[/font_size]"))
-			EventBus.UnlockedHelp = 5
+			if not (EventBus.UnlockedHelp.has("res://assets/textures/help/HelpPage5.png")):
+				EventBus.UnlockedHelp.append("res://assets/textures/help/HelpPage5.png")
 		9:
 			dialogue._talk(str("[font_size=36]Got it.[/font_size]"), "Self")
 			$Spawner._start()

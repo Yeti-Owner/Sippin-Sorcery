@@ -225,9 +225,11 @@ one_shot = true
 
 [node name="FlipPageSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_fymyx")
+bus = &"Sfx"
 
 [node name="OpenCloseSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_x50el")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Journal/CenterContainer/ClickOut" to="." method="_on_click_out_pressed"]
 [connection signal="pressed" from="Journal/CenterContainer/TextureRect/Left" to="." method="_on_left_pressed"]

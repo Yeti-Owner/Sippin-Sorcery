@@ -1,5 +1,7 @@
 extends Node
 
+const GameVersion:float = 0.9
+
 # Signals
 signal interaction(icon, text)
 signal HeldItemChanged
@@ -42,7 +44,7 @@ var CurrentLevel:String = "res://scenes/char_customization.tscn"
 var DayNum:int = 1
 var SentFeedback:bool = false
 var Order:Dictionary
-var UnlockedHelp:int = 2
+var UnlockedHelp:Array = ["res://assets/textures/help/HelpPage1.png","res://assets/textures/help/HelpPage2.png"]
 
 # Settings
 var MasterVolume:float = 0

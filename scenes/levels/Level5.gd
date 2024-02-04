@@ -16,7 +16,8 @@ func _level():
 			dialogue._talk(str("[font_size=36]We absolutely NEED to pass though, that is a slight problem.[/font_size]"))
 		5:
 			dialogue._talk(str("[font_size=36]Remember, they don't care about any silly 'regulations' so provide any effects they ask for.[/font_size]"))
-			EventBus.UnlockedHelp = 6
+			if not (EventBus.UnlockedHelp.has("res://assets/textures/help/HelpPage6.png")):
+				EventBus.UnlockedHelp.append("res://assets/textures/help/HelpPage6.png")
 		6:
 			dialogue._talk(str("[font_size=36]I'm sure you've got it, good luck![/font_size]"))
 			$Spawner._start()
