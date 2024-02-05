@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var FlipPage := $FlipPageSound
 @onready var OpenClose := $OpenCloseSound
+@onready var DelayTimer := get_parent().get_node("DelayTimer")
 
 @onready var PotionName := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer/Name
 @onready var PotionIcon := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/LeftPage/VBoxContainer/PotionTex
@@ -11,27 +12,31 @@ extends CanvasLayer
 @onready var Effect3Text := $Journal/CenterContainer/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect3
 
 var LengthLimit:int = 49
-var enabled:bool = false
 
 # Name, Icon, Desc
 var CurrentPage:int = 0
 var PageOrder:Array = ["MandrakeRoot","BasiliskFang","CentaurHoof","ChimeraFlame","DragonflyWing","DryadSap","FairyWing","GorgonBlood","GriffinFeather","HippogriffTalon","KrakenInk","MermaidScale","PhoenixFeather","SalamanderTail","SpiderSilk","TrollBlood","UnicornHorn"]
 
 func _ready():
-	EventBus.JournalToggle.connect(_toggle)
-	_hide()
+	randomize()
+	self.visible = false
 	_set_page(CurrentPage)
-
-func _physics_process(_delta) -> void:
-	if ((Input.is_action_just_pressed("interact")) or (Input.is_action_just_pressed("pause"))) and (self.visible == true) and (enabled == true):
-		self._hide()
 
 func _pop_up():
+	OpenClose.pitch_scale = randf_range(0.8, 1.2)
 	OpenClose.play()
-	self.show()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	_set_page(CurrentPage)
-	$delay.start()
+	self.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	DelayTimer.start()
+
+func _hide():
+	OpenClose.pitch_scale = randf_range(0.8, 1.2)
+	OpenClose.play()
+	self.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	DelayTimer.stop()
+	get_parent().Active = false
 
 func _set_page(_page):
 	CurrentPage = clamp(_page, 0, 16)
@@ -58,29 +63,14 @@ func _set_page(_page):
 		Effect3Text.text = Ref[2]
 
 func _on_left_pressed():
+	FlipPage.pitch_scale = randf_range(0.9, 1.1)
 	FlipPage.play()
 	_set_page(CurrentPage - 1)
 
 func _on_right_pressed():
+	FlipPage.pitch_scale = randf_range(0.9, 1.1)
 	FlipPage.play()
 	_set_page(CurrentPage + 1)
 
 func _on_click_out_pressed():
 	_hide()
-
-func _hide():
-	if (enabled == true) and (self.visible == true):
-		OpenClose.play()
-	self.hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	$delay.stop()
-	enabled = false
-
-func _toggle(value):
-	if value:
-		_pop_up()
-	else:
-		_hide()
-
-func _on_delay_timeout():
-	enabled = true

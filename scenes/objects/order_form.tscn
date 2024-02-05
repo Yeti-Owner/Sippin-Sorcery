@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qfdxpa2kslcy"]
+[gd_scene load_steps=6 format=3 uid="uid://qfdxpa2kslcy"]
 
 [ext_resource type="Script" path="res://interactable/order_form.gd" id="1_40pla"]
 [ext_resource type="ArrayMesh" uid="uid://4rcebe6bjjyr" path="res://assets/models/Notepad.obj" id="1_unpf0"]
+[ext_resource type="PackedScene" uid="uid://cyuvf2vbqwp11" path="res://scenes/ui/order_form.tscn" id="3_qvnip"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_023iv"]
 size = Vector3(0.5, 0.75, 0.1)
@@ -29,4 +30,12 @@ shape = SubResource("BoxShape3D_023iv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_de1qg")
 
+[node name="OrderForm" parent="." instance=ExtResource("3_qvnip")]
+
+[node name="DelayTimer" type="Timer" parent="."]
+process_mode = 3
+wait_time = 0.05
+one_shot = true
+
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]

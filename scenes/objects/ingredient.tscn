@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://t5tfeeu3rfwu"]
+[gd_scene load_steps=7 format=3 uid="uid://t5tfeeu3rfwu"]
 
 [ext_resource type="Script" path="res://interactable/ingredient.gd" id="1_uj3bo"]
+[ext_resource type="AudioStream" uid="uid://bbbqamcpysc0b" path="res://assets/audio/Grab.ogg" id="2_pb5jb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nohle"]
 resource_local_to_scene = true
@@ -27,5 +28,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ayj8a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_vwr22")
+
+[node name="GrabSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_pb5jb")
+bus = &"Sfx"
 
 [connection signal="property_list_changed" from="." to="." method="_on_property_list_changed"]

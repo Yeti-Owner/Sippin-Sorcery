@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://5po6mejw7fgv"]
+[gd_scene load_steps=11 format=3 uid="uid://5po6mejw7fgv"]
 
 [ext_resource type="Script" path="res://interactable/flavor.gd" id="1_0rqj6"]
 [ext_resource type="ArrayMesh" uid="uid://d1gvjw6s83k0p" path="res://assets/models/flavors/FlavorBottle.obj" id="1_k5jtd"]
 [ext_resource type="Texture2D" uid="uid://bugnhowj4c5pd" path="res://assets/models/flavors/FlavorBottle.png" id="2_vcv8j"]
+[ext_resource type="AudioStream" uid="uid://d0jr60ihepi0b" path="res://assets/audio/Glass.ogg" id="4_ecm1i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_npuih"]
 size = Vector3(0.2, 0.2, 0.2)
@@ -47,3 +48,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tmusq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 shape = SubResource("BoxShape3D_jck34")
+
+[node name="GlassSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_ecm1i")
+bus = &"Sfx"

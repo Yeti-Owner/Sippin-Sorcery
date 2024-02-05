@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://pi72u2eg4hto"]
+[gd_scene load_steps=38 format=3 uid="uid://pi72u2eg4hto"]
 
 [ext_resource type="ArrayMesh" uid="uid://cbrcdwu373312" path="res://assets/models/houses/House2.obj" id="1_igogy"]
 [ext_resource type="Texture2D" uid="uid://c8brc08eiq61r" path="res://assets/models/houses/House1.png" id="2_ado7s"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://ba4003lmovkj3" path="res://assets/textures/ui/arrow.png" id="8_cjfky"]
 [ext_resource type="AudioStream" uid="uid://ndoupxvd5dtl" path="res://assets/audio/bookFlip2.ogg" id="9_n6ydv"]
 [ext_resource type="AudioStream" uid="uid://1fljpibg26ve" path="res://assets/audio/bookOpen.ogg" id="10_fbs6u"]
+[ext_resource type="ArrayMesh" uid="uid://bw6l1kvhfybax" path="res://assets/models/characters/heads/Head3.obj" id="11_ffenx"]
+[ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="12_4hpeh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ph3ep"]
 albedo_texture = ExtResource("2_ado7s")
@@ -190,13 +192,14 @@ collision_mask = 3
 script = ExtResource("5_kwgql")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Monk"]
+visible = false
 mesh = SubResource("CapsuleMesh_rm5y7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monk"]
 shape = SubResource("CapsuleShape3D_vgffe")
 
 [node name="MonkShenanigans" type="CanvasLayer" parent="Monk"]
-layer = 4
+layer = 2
 
 [node name="Journal" type="Control" parent="Monk/MonkShenanigans"]
 layout_mode = 3
@@ -450,6 +453,27 @@ bus = &"Sfx"
 [node name="OpenCloseSound" type="AudioStreamPlayer" parent="Monk"]
 stream = ExtResource("10_fbs6u")
 bus = &"Sfx"
+
+[node name="MonkMesh" type="Node3D" parent="Monk"]
+
+[node name="Head" type="MeshInstance3D" parent="Monk/MonkMesh"]
+transform = Transform3D(-0.663, 0, -5.79613e-08, 0, 0.663, 0, 5.79613e-08, 0, -0.663, 0, 0.3248, -0.03315)
+mesh = ExtResource("11_ffenx")
+skeleton = NodePath("")
+
+[node name="Torso" type="MeshInstance3D" parent="Monk/MonkMesh"]
+transform = Transform3D(-0.663, 0, -5.79613e-08, 0, 0.663, 0, 5.79613e-08, 0, -0.663, 0, -0.2056, -0.03315)
+skeleton = NodePath("")
+
+[node name="Arm1" type="MeshInstance3D" parent="Monk/MonkMesh"]
+transform = Transform3D(-0.65637, -1.68083e-06, -5.73817e-08, 1.66402e-06, -0.663, -5.73817e-08, -5.73816e-08, -5.79615e-08, 0.65637, 0.3315, 0.0662299, -0.03315)
+mesh = ExtResource("12_4hpeh")
+skeleton = NodePath("")
+
+[node name="Arm2" type="MeshInstance3D" parent="Monk/MonkMesh"]
+transform = Transform3D(-0.65637, -1.68083e-06, -5.73817e-08, 1.66402e-06, -0.663, -5.73817e-08, -5.73816e-08, -5.79615e-08, 0.65637, -0.3315, 0.0596, -0.03315)
+mesh = ExtResource("12_4hpeh")
+skeleton = NodePath("")
 
 [node name="LeaveArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 1, -2.6)

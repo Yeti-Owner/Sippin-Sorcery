@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+@onready var OpenClose := $OpenCloseSound
+@onready var DelayTimer := get_parent().get_node("DelayTimer")
 @onready var Orders := $OrderForm/Bg/Orders
 const NewItem := "res://scenes/ui/OrderItem.tscn"
 const GoodSound := "res://assets/audio/good.ogg"
@@ -7,17 +9,11 @@ const BadSound := "res://assets/audio/back_002.ogg"
 
 var CompleteOrder:Dictionary
 var HasOrdered:bool = false
-var enabled:bool = false
 var HideTimer:bool = false
 
 func _ready():
 	randomize()
-	EventBus.OrderFormToggle.connect(_toggle)
-	_hide()
-
-func _physics_process(_delta) -> void:
-	if ((Input.is_action_just_pressed("interact")) or (Input.is_action_just_pressed("pause"))) and (self.visible == true) and (enabled == true):
-		self._hide()
+	self.visible = false
 
 func _new_entry(item:String, amount:int, cost:int):
 	var entry := load(NewItem)
@@ -26,33 +22,23 @@ func _new_entry(item:String, amount:int, cost:int):
 	_entry._create_entry(item, amount, cost)
 
 func _pop_up():
-	self.show()
+	OpenClose.pitch_scale = randf_range(0.8, 1.2)
+	OpenClose.play()
+	self.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	$OpenCloseSound.pitch_scale = randf_range(0.8, 1.2)
-	$OpenCloseSound.play()
-	$DelayTimer.start()
+	DelayTimer.start()
+
+func _hide():
+	OpenClose.pitch_scale = randf_range(0.8, 1.2)
+	OpenClose.play()
+	self.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	DelayTimer.stop()
+	get_parent().Active = false
+	$NewOrderPopup.hide()
 
 func _on_click_out_pressed():
 	_hide()
-
-func _hide():
-	if (enabled == true) and (self.visible == true):
-		$OpenCloseSound.pitch_scale = randf_range(0.8, 1.2)
-		$OpenCloseSound.play()
-	self.hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	$DelayTimer.stop()
-	enabled = false
-	$NewOrderPopup.hide()
-
-func _toggle(value):
-	if value:
-		_pop_up()
-	else:
-		_hide()
-
-func _on_delay_timer_timeout():
-	enabled = true
 
 func _disable():
 	HasOrdered = !HasOrdered

@@ -26,10 +26,14 @@ func get_interaction_icon():
 
 func interact():
 	if (EventBus.HeldItem == null) and not (PotionInfo.StockAmounts[Ingredient][0] <= 0):
+		$GrabSound.pitch_scale = randf_range(1.01, 1.2)
+		$GrabSound.play()
 		PotionInfo.StockAmounts[Ingredient][0] -= 1
 		EventBus.HeldItem = str(Ingredient)
 		EventBus.emit_signal("HeldItemChanged")
 	elif EventBus.HeldItem == str(Ingredient):
+		$GrabSound.pitch_scale = randf_range(0.8, 0.99)
+		$GrabSound.play()
 		PotionInfo.StockAmounts[Ingredient][0] += 1
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")

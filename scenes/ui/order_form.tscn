@@ -30,7 +30,6 @@ bg_color = Color(0.470588, 0.364706, 0.0941176, 1)
 
 [node name="OrderForm" type="CanvasLayer"]
 layer = 2
-visible = false
 script = ExtResource("1_5q747")
 
 [node name="OrderForm" type="Control" parent="."]
@@ -312,5 +311,4 @@ bus = &"Sfx"
 [connection signal="item_selected" from="NewOrderPopup/Bg/MarginContainer/HBoxContainer/RestockItem" to="NewOrderPopup" method="_on_item_list_item_selected"]
 [connection signal="value_changed" from="NewOrderPopup/Bg/MarginContainer/HBoxContainer/VBoxContainer/Slider/AmountSlider" to="NewOrderPopup" method="_on_amount_slider_value_changed"]
 [connection signal="pressed" from="NewOrderPopup/Bg/SubmitOrder" to="NewOrderPopup" method="_on_submit_order_pressed"]
-[connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]
 [connection signal="timeout" from="MiscTimer" to="." method="_on_misc_timer_timeout"]

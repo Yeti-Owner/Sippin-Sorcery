@@ -7,14 +7,11 @@ signal interaction(icon, text)
 signal HeldItemChanged
 signal BalanceChanged
 signal DialogueFinished
-signal JournalToggle(toggle:bool)
-signal OrderFormToggle(toggle:bool)
 signal NextDay
 signal DayDone
 signal CustomerDone
 signal BossProblem
 signal Hint(hint:String)
-signal Restock
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"
@@ -76,7 +73,6 @@ func _ready():
 		_save()
 	
 	_discord_presence()
-	Restock.connect(_order)
 
 func _player_headshot():
 	var image = Image.load_from_file("user://PlayerHeadshot.png")

@@ -219,10 +219,6 @@ scale = Vector2(0.681, -0.681)
 mouse_filter = 2
 texture = ExtResource("4_3jxwb")
 
-[node name="delay" type="Timer" parent="."]
-wait_time = 0.05
-one_shot = true
-
 [node name="FlipPageSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_fymyx")
 bus = &"Sfx"
@@ -234,4 +230,3 @@ bus = &"Sfx"
 [connection signal="pressed" from="Journal/CenterContainer/ClickOut" to="." method="_on_click_out_pressed"]
 [connection signal="pressed" from="Journal/CenterContainer/TextureRect/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Journal/CenterContainer/TextureRect/Right" to="." method="_on_right_pressed"]
-[connection signal="timeout" from="delay" to="." method="_on_delay_timeout"]

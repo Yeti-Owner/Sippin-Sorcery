@@ -48,17 +48,20 @@ func get_interaction_text():
 		return ""
 
 func get_interaction_icon():
-	return EventBus.ActionTex
+	if Active == false:
+		return EventBus.ActionTex
+	else:
+		return null
 
 func interact():
 	if Active == false:
-		_popup()
+		_pop_up()
 
 func _physics_process(_delta) -> void:
 	if ((Input.is_action_just_pressed("interact")) or (Input.is_action_just_pressed("pause"))) and (Active == true):
 		self._hide()
 
-func _popup():
+func _pop_up():
 	OpenClose.pitch_scale = randf_range(0.8, 1.2)
 	OpenClose.play()
 	_set_page(CurrentPage)
@@ -71,6 +74,7 @@ func _hide():
 	OpenClose.play()
 	$MonkShenanigans.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$DelayTimer.stop()
 	Active = false
 
 func _on_delay_timer_timeout():

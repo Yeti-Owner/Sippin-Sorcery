@@ -13,7 +13,7 @@ var Stage: int = 6
 
 @onready var OutfitParts := {
 	6: {
-		"list": ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png","res://assets/models/characters/hats/HairColor5.png","res://assets/models/characters/hats/HairColor6.png"],
+		"list": ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png","res://assets/models/characters/hats/HairColor5.png","res://assets/models/characters/hats/HairColor6.png","res://assets/models/characters/hats/HairColor7.png"],
 		"node": $Character/HatColor
 	},
 	5: {
