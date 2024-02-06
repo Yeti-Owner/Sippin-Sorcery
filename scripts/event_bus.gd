@@ -33,6 +33,8 @@ var Reputation := 0 : set = _check_rep
 var IdNum:int
 var BossesBeaten:int = 0
 var StartDate:String = Time.get_date_string_from_system()
+var MetAlton:bool = false
+#var PlayerPath:String = ""
 
 # Misc
 const PlayerData := "user://save.dat"

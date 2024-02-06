@@ -10,7 +10,8 @@ var CharacterList := {
 	"Bob" : ["[font_size=26]Bob[/font_size]", load("res://assets/textures/Wizard.png")],
 	"Duane" : ["[font_size=26]Duane[/font_size]", load("res://assets/textures/Duane.png")],
 	"Self" : [str("[font_size=26]" + EventBus.PlayerName + "[/font_size]"), EventBus.PlayerHeadshot],
-	"Callum" : [str("[font_size=26]Callum[/font_size]"), load("res://assets/textures/Callum.png")]
+	"Callum" : [str("[font_size=26]Callum[/font_size]"), load("res://assets/textures/Callum.png")],
+	"Alton" : [str("[font_size=26]Monk Alton[/font_size]"), load("res://assets/textures/Alton.png")]
 }
 var LastUsed:String
 

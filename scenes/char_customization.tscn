@@ -629,7 +629,7 @@ mesh = ExtResource("5_hprss")
 skeleton = NodePath("")
 
 [node name="Arm2" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(0.99, 2.53518e-06, 2.13163e-14, 2.50983e-06, -1, -8.65486e-08, -1.98952e-13, 8.74228e-08, -0.99, 0.5, 0.7, 0.0166666)
+transform = Transform3D(0.99, 2.53518e-06, 2.13163e-14, 2.50983e-06, -1, -8.65486e-08, -1.98952e-13, 8.74228e-08, -0.99, 0.5, 0.71, 0.0166666)
 layers = 3
 mesh = ExtResource("5_hprss")
 skeleton = NodePath("")

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3ggu6a0qvtky"
+path="res://.godot/imported/AltonTorso.obj-9f3e13e9478dbc253ab498f3313e5f87.mesh"
+
+[deps]
+
+files=["res://.godot/imported/AltonTorso.obj-9f3e13e9478dbc253ab498f3313e5f87.mesh"]
+
+source_file="res://assets/models/characters/torsos/AltonTorso.obj"
+dest_files=["res://.godot/imported/AltonTorso.obj-9f3e13e9478dbc253ab498f3313e5f87.mesh", "res://.godot/imported/AltonTorso.obj-9f3e13e9478dbc253ab498f3313e5f87.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

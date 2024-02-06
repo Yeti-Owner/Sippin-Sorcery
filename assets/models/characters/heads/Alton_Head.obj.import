@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7jurkkwtt7sh"
+path="res://.godot/imported/Alton_Head.obj-0f968d45a63922d3e9f3538331085243.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Alton_Head.obj-0f968d45a63922d3e9f3538331085243.mesh"]
+
+source_file="res://assets/models/characters/heads/Alton_Head.obj"
+dest_files=["res://.godot/imported/Alton_Head.obj-0f968d45a63922d3e9f3538331085243.mesh", "res://.godot/imported/Alton_Head.obj-0f968d45a63922d3e9f3538331085243.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

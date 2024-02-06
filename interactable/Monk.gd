@@ -1,9 +1,11 @@
 extends Interactable
 
+@onready var Player := get_node("%Player")
 @onready var FlipPage := $FlipPageSound
 @onready var OpenClose := $OpenCloseSound
+@onready var Locked:bool = true
 var Active:bool = false
-var Cost:int = 15
+var Cost:int = 20
 
 const EffectsDescription := {
 	"MandrakeRoot": ["Resistance to common illnesses", "Confusion","Straightforward health boost"],
@@ -38,12 +40,17 @@ const PageOrder:Array = ["MandrakeRoot","BasiliskFang","CentaurHoof","ChimeraFla
 var LengthLimit:int = 49
 
 func _ready():
+	if Locked == false:
+		$"../Door".queue_free()
+	
+	$MonkShenanigans/CostLabel.text = "$" + str(Cost) + " Per Effect\nNo Refunds"
 	randomize()
+	$MonkMesh/AnimationPlayer.play("idle")
 	$MonkShenanigans.visible = false
 
 func get_interaction_text():
 	if Active == false:
-		return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=BLACK]talk[/color] to Alton[/center]"
+		return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=DARK_BLUE]talk[/color] to Monk Alton[/center]"
 	else:
 		return ""
 
@@ -156,3 +163,7 @@ func _on_effect_2_pressed():
 
 func _on_effect_3_pressed():
 	_clarify(2)
+
+func _on_look_timer_timeout():
+	return
+#	$MonkMesh/Head.look_at(Vector3($MonkMesh/Head.position.x, Player.position.y, $MonkMesh/Head.position.z), Vector3.UP)
