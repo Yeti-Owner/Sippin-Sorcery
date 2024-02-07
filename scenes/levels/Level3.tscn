@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c7rslit06m1j1"]
+[gd_scene load_steps=28 format=3 uid="uid://c7rslit06m1j1"]
 
 [ext_resource type="Script" path="res://scenes/levels/Level3.gd" id="1_4hlic"]
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="3_o1ir3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ds2fpmlchv68d" path="res://scenes/level_parts/juice_items.tscn" id="12_pf3fe"]
 [ext_resource type="PackedScene" uid="uid://b3vvpiifb1rdc" path="res://scenes/ui/hud_marker.tscn" id="13_7obh2"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="13_lxx1i"]
+[ext_resource type="PackedScene" uid="uid://crp1cdkilpq0o" path="res://scenes/level_parts/grass_scatter.tscn" id="14_bet1k"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="14_nwqsg"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="26_b8kvm"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="27_wfams"]
@@ -171,3 +172,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0.3, 0.8)
 visible = false
 
 [node name="HudMarker" parent="WaterMarker" instance=ExtResource("13_7obh2")]
+
+[node name="MultiScatter" parent="." instance=ExtResource("14_bet1k")]

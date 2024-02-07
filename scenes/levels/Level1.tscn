@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dt5goxqmso0dy"]
+[gd_scene load_steps=27 format=3 uid="uid://dt5goxqmso0dy"]
 
 [ext_resource type="Script" path="res://scenes/levels/Level1.gd" id="1_docto"]
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="3_vwcdx"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://scenes/level_parts/misc_items.tscn" id="12_kfd4e"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="13_hajmj"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="13_vs152"]
+[ext_resource type="PackedScene" uid="uid://crp1cdkilpq0o" path="res://scenes/level_parts/grass_scatter.tscn" id="13_ybe3n"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="14_7ft7g"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="25_o81im"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="26_xcuh2"]
@@ -164,3 +165,5 @@ curve = SubResource("Curve3D_or1gi")
 
 [node name="JuiceStuff" parent="." instance=ExtResource("12_5ft6j")]
 HasWater = false
+
+[node name="MultiScatter" parent="." instance=ExtResource("13_ybe3n")]

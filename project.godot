@@ -42,7 +42,7 @@ movie_writer/movie_file="D:/Godot/Sippin-Sorcery/export/GameMovie.avi"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/discord-sdk-gd/plugin.cfg")
+enabled=PackedStringArray("res://addons/discord-sdk-gd/plugin.cfg", "res://addons/yamms/plugin.cfg")
 
 [input]
 

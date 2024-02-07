@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://pi72u2eg4hto"]
+[gd_scene load_steps=49 format=3 uid="uid://pi72u2eg4hto"]
 
 [ext_resource type="ArrayMesh" uid="uid://cbrcdwu373312" path="res://assets/models/houses/House2.obj" id="1_igogy"]
 [ext_resource type="Texture2D" uid="uid://c8brc08eiq61r" path="res://assets/models/houses/House1.png" id="2_ado7s"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://1fljpibg26ve" path="res://assets/audio/bookOpen.ogg" id="10_fbs6u"]
 [ext_resource type="ArrayMesh" uid="uid://c7jurkkwtt7sh" path="res://assets/models/characters/heads/Alton_Head.obj" id="11_y68w3"]
 [ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="12_4hpeh"]
+[ext_resource type="AudioStream" uid="uid://d1rhkt070yqmu" path="res://assets/audio/PencilWrite.ogg" id="12_nm0an"]
 [ext_resource type="ArrayMesh" uid="uid://b3ggu6a0qvtky" path="res://assets/models/characters/torsos/AltonTorso.obj" id="12_x13qt"]
 [ext_resource type="ArrayMesh" uid="uid://f1ljrxx0op83" path="res://assets/models/Lock.obj" id="14_iydah"]
 
@@ -119,6 +120,21 @@ albedo_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
 material = SubResource("StandardMaterial3D_6p866")
 size = Vector3(0.1, 0.1, 0.1)
 
+[sub_resource type="Animation" id="Animation_8632n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_ibyae"]
 resource_name = "idle"
 length = 3.0
@@ -134,21 +150,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.055, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_8632n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lb3ph"]
@@ -201,21 +202,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68575e-08, 4.5, 4.17233e-07
 shape = SubResource("BoxShape3D_isamp")
 
 [node name="Door" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, 3.992)
 collision_layer = 3
 collision_mask = 3
 
 [node name="DoorMesh" type="MeshInstance3D" parent="Door"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 3.99202)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.2, 0, 0)
 mesh = ExtResource("3_rcyda")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_mwit2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 3.99202)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.2, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_8of40")
 
 [node name="Lock" type="MeshInstance3D" parent="Door"]
-transform = Transform3D(0.277905, 0.00727719, 0, -0.00723733, 0.276382, 0.0290589, 0.000760674, -0.029049, 0.276477, 0.733, 0.941, 4.067)
+transform = Transform3D(0.277905, 0.00727719, 0, -0.00723733, 0.276382, 0.0290589, 0.000760674, -0.029049, 0.276477, 1.933, 0.941, 0.075)
 mesh = ExtResource("14_iydah")
 skeleton = NodePath("../..")
 
@@ -246,7 +248,6 @@ light_energy = 1.8
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 1.6, 0.2, -2.8)
 
 [node name="Mesh" type="MeshInstance3D" parent="Orb2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.473205, 0, 0.419616)
 mesh = SubResource("BoxMesh_1awd8")
 skeleton = NodePath("../..")
 
@@ -546,6 +547,11 @@ bus = &"Sfx"
 
 [node name="OpenCloseSound" type="AudioStreamPlayer" parent="Monk"]
 stream = ExtResource("10_fbs6u")
+bus = &"Sfx"
+
+[node name="WriteSound" type="AudioStreamPlayer3D" parent="Monk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+stream = ExtResource("12_nm0an")
 bus = &"Sfx"
 
 [node name="MonkMesh" type="Node3D" parent="Monk"]

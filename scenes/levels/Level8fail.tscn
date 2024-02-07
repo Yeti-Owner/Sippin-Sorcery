@@ -1,14 +1,15 @@
-[gd_scene load_steps=27 format=3]
+[gd_scene load_steps=28 format=3 uid="uid://b45gu88d3kl17"]
 
 [ext_resource type="Script" path="res://scenes/levels/Level8fail.gd" id="1_aksgw"]
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="2_ai7gl"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="3_53kh6"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="10_pvkp2"]
-[ext_resource type="PackedScene" uid="uid://drbavtfivkwrv" path="res://scenes/level_parts/misc_items.tscn" id="11_ixtpa"]
+[ext_resource type="PackedScene" path="res://scenes/level_parts/misc_items.tscn" id="11_ixtpa"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="12_3by1e"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="12_ll3sw"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="13_gjnrk"]
 [ext_resource type="PackedScene" uid="uid://ds2fpmlchv68d" path="res://scenes/level_parts/juice_items.tscn" id="13_uk5qt"]
+[ext_resource type="PackedScene" uid="uid://crp1cdkilpq0o" path="res://scenes/level_parts/grass_scatter.tscn" id="14_jvuut"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="25_ilkro"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="26_kog01"]
 [ext_resource type="PackedScene" uid="uid://bc2meq0p8ncp" path="res://scenes/test_subject_spawner.tscn" id="27_ymt0c"]
@@ -193,5 +194,7 @@ one_shot = true
 [node name="Lights" parent="." instance=ExtResource("12_3by1e")]
 
 [node name="JuiceStuff" parent="." instance=ExtResource("13_uk5qt")]
+
+[node name="MultiScatter" parent="." instance=ExtResource("14_jvuut")]
 
 [connection signal="timeout" from="MiscTimer" to="." method="_on_misc_timer_timeout"]

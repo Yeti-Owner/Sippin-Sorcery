@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dkrq0wcrs1xud"]
+[gd_scene load_steps=27 format=3 uid="uid://dkrq0wcrs1xud"]
 
 [ext_resource type="Script" path="res://scenes/levels/Level9.gd" id="1_11dnu"]
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="2_f7abd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="12_fa3w6"]
 [ext_resource type="PackedScene" uid="uid://ds2fpmlchv68d" path="res://scenes/level_parts/juice_items.tscn" id="12_ubsft"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="13_duuvk"]
+[ext_resource type="PackedScene" uid="uid://crp1cdkilpq0o" path="res://scenes/level_parts/grass_scatter.tscn" id="13_s3c8w"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="25_uw4ak"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="26_0ax76"]
 [ext_resource type="PackedScene" uid="uid://bc2meq0p8ncp" path="res://scenes/test_subject_spawner.tscn" id="27_mekep"]
@@ -163,3 +164,5 @@ curve = SubResource("Curve3D_or1gi")
 [node name="Lights" parent="." instance=ExtResource("11_0bgym")]
 
 [node name="JuiceStuff" parent="." instance=ExtResource("12_ubsft")]
+
+[node name="MultiScatter" parent="." instance=ExtResource("13_s3c8w")]

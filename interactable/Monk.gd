@@ -1,9 +1,8 @@
 extends Interactable
 
-@onready var Player := get_node("%Player")
+#@onready var Player := get_node("%Player")
 @onready var FlipPage := $FlipPageSound
 @onready var OpenClose := $OpenCloseSound
-@onready var Locked:bool = true
 var Active:bool = false
 var Cost:int = 20
 
@@ -40,8 +39,9 @@ const PageOrder:Array = ["MandrakeRoot","BasiliskFang","CentaurHoof","ChimeraFla
 var LengthLimit:int = 49
 
 func _ready():
-	if Locked == false:
-		$"../Door".queue_free()
+	if EventBus.MetAlton == true:
+		$"../Door/Lock".queue_free()
+		$"../Door".rotation_degrees = Vector3(0, -90, 0)
 	
 	$MonkShenanigans/CostLabel.text = "$" + str(Cost) + " Per Effect\nNo Refunds"
 	randomize()
@@ -157,12 +157,18 @@ func _clarify(EffectNum:int):
 
 func _on_effect_1_pressed():
 	_clarify(0)
+	$WriteSound.pitch_scale = randf_range(0.8, 1.2)
+	$WriteSound.play()
 
 func _on_effect_2_pressed():
 	_clarify(1)
+	$WriteSound.pitch_scale = randf_range(0.8, 1.2)
+	$WriteSound.play()
 
 func _on_effect_3_pressed():
 	_clarify(2)
+	$WriteSound.pitch_scale = randf_range(0.8, 1.2)
+	$WriteSound.play()
 
 func _on_look_timer_timeout():
 	return
