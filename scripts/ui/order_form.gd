@@ -2,14 +2,13 @@ extends CanvasLayer
 
 @onready var OpenClose := $OpenCloseSound
 @onready var DelayTimer := get_parent().get_node("DelayTimer")
-@onready var Orders := $OrderForm/Bg/Orders
+@onready var Orders := $OrderForm/Bg/Scroll/Orders
 const NewItem := "res://scenes/ui/OrderItem.tscn"
 const GoodSound := "res://assets/audio/good.ogg"
 const BadSound := "res://assets/audio/back_002.ogg"
 
 var CompleteOrder:Dictionary
 var HasOrdered:bool = false
-var HideTimer:bool = false
 
 func _ready():
 	randomize()
@@ -82,11 +81,7 @@ func _on_finish_order_pressed():
 	
 	# Disable so you can only order once per day
 	_disable()
-	HideTimer = true
 	$MiscTimer.start()
 
 func _on_misc_timer_timeout():
 	$OrderForm/Bg/Options/FinishOrder.text = "Finish Order"
-	if HideTimer:
-		_hide()
-	HideTimer = false

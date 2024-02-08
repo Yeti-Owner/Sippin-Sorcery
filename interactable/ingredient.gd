@@ -59,3 +59,5 @@ func _check_contents():
 func _on_property_list_changed():
 	_ready()
 
+func _on_stock_timer_timeout():
+	_check_contents()

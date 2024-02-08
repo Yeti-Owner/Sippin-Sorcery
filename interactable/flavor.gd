@@ -59,3 +59,6 @@ func _check_contents():
 	else:
 		$Flavor.position.y = FlavorConfigs["Normal"][0]
 		$Flavor.mesh.size.y = FlavorConfigs["Normal"][1]
+
+func _on_timer_timeout():
+	_check_contents()

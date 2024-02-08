@@ -25,7 +25,7 @@ func _create_entry(item:String, amount:int, cost:int):
 func _on_delete_pressed():
 	$DeleteSound.pitch_scale = randf_range(0.8, 1.2)
 	$DeleteSound.play()
-	get_parent().get_parent().get_parent().get_parent().get_node("NewOrderPopup").OrderedItems.erase(Item)
+	get_parent().get_parent().get_parent().get_parent().get_parent().get_node("NewOrderPopup").OrderedItems.erase(Item)
 	self.queue_free()
 
 func _disable():

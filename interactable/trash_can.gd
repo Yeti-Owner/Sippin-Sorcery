@@ -1,5 +1,8 @@
 extends Interactable
 
+func _ready():
+	randomize()
+
 func get_interaction_text():
 	if EventBus.HeldItem == null:
 		return "[center][color=BLACK]Trash[/color][/center]"
@@ -10,7 +13,10 @@ func get_interaction_icon():
 	return EventBus.ActionTex
 
 func interact():
-	EventBus.HeldItem = null
-	EventBus.emit_signal("HeldItemChanged")
-	_reset()
+	if EventBus.HeldItem != null:
+		$TrashSound.pitch_scale = randf_range(0.8, 1)
+		$TrashSound.play()
+		EventBus.HeldItem = null
+		EventBus.emit_signal("HeldItemChanged")
+		_reset()
  

@@ -34,6 +34,7 @@ func _process(_delta):
 			if Counter.is_stopped():
 				Counter.start()
 		elif (Active == false) and (Visible == true):
+			Counter.stop()
 			$DelayTimer.start(0.05)
 
 func _on_anim_player_animation_finished(anim_name):

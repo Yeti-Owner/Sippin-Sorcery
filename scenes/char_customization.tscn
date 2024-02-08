@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dulbac7qmtmo6"]
+[gd_scene load_steps=32 format=3 uid="uid://dulbac7qmtmo6"]
 
 [ext_resource type="Script" path="res://scripts/char_customization.gd" id="1_y2itm"]
 [ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="2_sqjmt"]
@@ -12,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b2yfoawgcbu4o" path="res://assets/models/Arrow.obj" id="12_un70k"]
 [ext_resource type="AudioStream" uid="uid://7mrq8j1nle0j" path="res://assets/audio/click_001.ogg" id="13_b6cfs"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="13_l50my"]
+[ext_resource type="AudioStream" uid="uid://btgslfplhrxr7" path="res://assets/audio/CameraFlash.ogg" id="14_at24q"]
 [ext_resource type="ArrayMesh" uid="uid://bmpupgh3l0muy" path="res://assets/models/sign.obj" id="14_ojmya"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4o605"]
@@ -250,6 +251,18 @@ tracks/16/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("FlashSound:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(7.4, 7.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_smlr2"]
@@ -509,6 +522,18 @@ tracks/16/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 9, 0.7)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("FlashSound:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_mara5"]
@@ -907,6 +932,10 @@ bus = &"Sfx"
 
 [node name="SceneTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="FlashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_at24q")
+bus = &"Sfx"
 
 [connection signal="text_submitted" from="CenterContainer/VBoxContainer/Name" to="." method="_on_name_text_submitted"]
 [connection signal="animation_finished" from="AnimPlayer" to="." method="_on_anim_player_animation_finished"]

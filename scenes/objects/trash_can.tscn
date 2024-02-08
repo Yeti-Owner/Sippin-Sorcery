@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpifxwarrec0n"]
+[gd_scene load_steps=5 format=3 uid="uid://cpifxwarrec0n"]
 
 [ext_resource type="ArrayMesh" uid="uid://dy27f2xfxh0e4" path="res://assets/models/TrashCan.obj" id="1_flxy2"]
 [ext_resource type="Script" path="res://interactable/trash_can.gd" id="1_wa2bc"]
+[ext_resource type="AudioStream" uid="uid://dvssppfoihsyv" path="res://assets/audio/TrashCan.ogg" id="3_tnprt"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_myicv"]
 points = PackedVector3Array(0.0999217, 3.4, -1.6, 0.0999217, 2, -1.50008, 0, 3.4, -1.50008, 0.0999217, 3.49992, -1.6, 0.299922, 2, -1.6, 0, 2, -1.30008, 0, 3.49992, -1.50008, 0.299922, 3.59984, -1.4, 1.49992, 3.49992, -1.6, 1.29992, 2, -1.6, 0, 2, -0.300078, 0, 3.49992, -0.100078, 0.2, 3.59984, -1.30008, 1.29992, 3.59984, -1.4, 1.6, 3.49992, -1.50008, 1.49992, 3.4, -1.6, 1.49992, 2, -1.50008, 0, 3.4, -0.100078, 0.0999217, 2, -0.100078, 0.0999217, 3.49992, 0, 0.2, 3.59984, -0.300078, 1.4, 3.59984, -1.30008, 1.6, 3.49992, -0.100078, 1.6, 3.4, -1.50008, 1.6, 2, -1.30008, 0.0999217, 3.4, 0, 0.299922, 2, 0, 0.299922, 3.59984, -0.2, 1.49992, 3.49992, 0, 1.4, 3.59984, -0.300078, 1.6, 3.4, -0.100078, 1.6, 2, -0.300078, 1.29992, 2, 0, 1.29992, 3.59984, -0.2, 1.49992, 3.4, 0, 1.49992, 2, -0.100078)
@@ -18,3 +19,9 @@ mesh = ExtResource("1_flxy2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, -2, 0.8)
 shape = SubResource("ConvexPolygonShape3D_myicv")
+
+[node name="TrashSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+stream = ExtResource("3_tnprt")
+volume_db = -12.003
+bus = &"Sfx"

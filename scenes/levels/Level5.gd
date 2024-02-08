@@ -9,19 +9,19 @@ func _level():
 	Stage += 1
 	match Stage:
 		1:
-			dialogue._talk(str("[font_size=36]So basically, we've been doing a little too well in the business and to continue on we have to pass a health inspection.[/font_size]"))
-		3:
+			dialogue._talk(str("[font_size=36]So basically, we've been doing a little too well in the business and to continue we need to pass a health inspection.[/font_size]"))
+		2:
 			dialogue._talk(str("[font_size=36]Not to worry though! If we pass I'm sure it'll catch the eyes of new customers.[/font_size]"), "Bob")
-		4:
+		3:
 			dialogue._talk(str("[font_size=36]We absolutely NEED to pass though, that is a slight problem.[/font_size]"))
-		5:
+		4:
 			dialogue._talk(str("[font_size=36]Remember, they don't care about any silly 'regulations' so provide any effects they ask for.[/font_size]"))
 			if not (EventBus.UnlockedHelp.has("res://assets/textures/help/HelpPage6.png")):
 				EventBus.UnlockedHelp.append("res://assets/textures/help/HelpPage6.png")
-		6:
+		5:
 			dialogue._talk(str("[font_size=36]I'm sure you've got it, good luck![/font_size]"))
 			$Spawner._start()
-		7:
+		6:
 			dialogue._done()
 
 func _on_clock_next_day():

@@ -40,7 +40,7 @@ func _level():
 			dialogue._talk(str("[font_size=36]Every ingredient has 3 effects and it changes as you add more. Adding just 1 gives effect 1, 2 gives the 2nd, and so on.[/font_size]"))
 			$TrashcanMarkers.queue_free()
 		10:
-			dialogue._talk(str("[font_size=36]There isn't a trick to know what effect(s) a customer needs, just talk to them and give them what fits their needs.[/font_size]"))
+			dialogue._talk(str("[font_size=36]There isn't a trick to know what effect(s) a customer needs, just talk to them and give what fits.[/font_size]"))
 		11:
 			dialogue._talk(str("[font_size=36]Flavors are another matter though, every customer has unique tastes so make sure to ask![/font_size]"))
 		12:
@@ -98,7 +98,7 @@ func _level():
 			$OrderformMarker.visible = true
 		32:
 			$OrderformMarker.queue_free()
-			dialogue._talk(str("[font_size=36]A last friendly tip for you, I recommend you research some ingredients too, go for quanitity over quality.[/font_size]"))
+			dialogue._talk(str("[font_size=36]A last friendly tip for you, I recommend you research some ingredients too, go for quantity over quality.[/font_size]"))
 		33:
 			dialogue._talk(str("[font_size=36]You did good " + EventBus.PlayerName + ", close shop whenever you're done.[/font_size]"), "Bob", 7)
 			$ClockMarker.visible = true

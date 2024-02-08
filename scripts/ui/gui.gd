@@ -14,6 +14,7 @@ func _set_interaction(icon, text):
 		InteractIcon.set_visible(false)
 	else:
 		InteractIcon.texture = load(icon)
+		InteractIcon.set_visible(true)
 	if text == null:
 		InteractionLabel.set_text("")
 		InteractionLabel.set_visible(false)
