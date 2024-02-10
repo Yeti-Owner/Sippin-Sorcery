@@ -22,7 +22,7 @@ const EffectsDescription := {
 	"HippogriffTalon": ["Precision", "Numbing", "Better dexterity"],
 	"GriffinFeather": ["Alertness", "Better perception", "Improved electrical resistance"],
 	"ChimeraFlame": ["Improved strength", "Improved explosion resistance?", "Immunity to smoke inhalation"],
-	"GorgonBlood": ["Become resistent to petrification", "Poison", "Better sense of smell"],
+	"GorgonBlood": ["Become resistant to petrification", "Poison", "Better sense of smell"],
 	"DryadSap": ["Charisma", "Health", "Ability to control plants temporarily"]
 }
 

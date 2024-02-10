@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://hqwc6xhk3ick"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_fmmej"]
+
+[resource]
+script = ExtResource("1_fmmej")
+Name = "Bruce"
+FavColor = Color(0.184314, 0.741176, 0.729412, 1)
+Dialog = "I'm an electrician and I keep getting shocked..."
+Budget = 24
+resistance = "Bonus"
+confusion = "Bad"
+health = "Bonus"
+flexibility = "Okay"
+creativity = "Bad"
+speed = "Okay"
+courage = "Okay"
+stamina = "Okay"
+strength = "Okay"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "Okay"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Okay"
+luck = "Okay"
+petrification = "Bad"
+purity = "Bonus"
+heightenedSenses = "Okay"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Okay"
+perception = "Okay"
+electricalRes = "NeedAnd"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "Okay"
+sleep = "Bad"
+House = 3
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = false
+Banana = true
+Pineapple = false
+Blueberry = true
+Watermelon = true
+Orange = false

@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://clb5vm7e2leed"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_krsby"]
+
+[resource]
+script = ExtResource("1_krsby")
+Name = "Phoenix"
+FavColor = Color(0.890196, 0, 0, 1)
+Dialog = "I'm a Private Investigator and people keep catching me watching them."
+Budget = 20
+resistance = "Okay"
+confusion = "Bad"
+health = "Okay"
+flexibility = "Okay"
+creativity = "Okay"
+speed = "Okay"
+courage = "Okay"
+stamina = "Okay"
+strength = "Okay"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "Okay"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "NeedAnd"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Bad"
+luck = "Okay"
+petrification = "Bad"
+purity = "Okay"
+heightenedSenses = "Bonus"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Bonus"
+perception = "Bonus"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "Okay"
+sleep = "Bad"
+House = 3
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = true

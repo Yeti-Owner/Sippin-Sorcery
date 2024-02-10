@@ -6,7 +6,7 @@ extends Interactable
 const EffectsList := {
 	"sleep": "I feel really sleepy now, I'm going to lie down",
 	"resistance": "I feel a little bit better.",
-	"confusion": "Whoa, everything's kind of spinning in my head. Like, I can't even remember what I had for breakfast this morning.",
+	"confusion": "Whoa, everything's kind of spinning in my head. I don't feel well.",
 	"health": "Man, I was feeling a bit ill earlier, but it's totally cleared up thank you!",
 	"flexibility": "I feel super loose, I could touch my toes right now.",
 	"creativity": "My brain fog cleared up, I have so many new ideas right now!",

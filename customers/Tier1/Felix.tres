@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://hq60rf7p4l8w"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_6mqpj"]
+
+[resource]
+script = ExtResource("1_6mqpj")
+Name = "Felix"
+FavColor = Color(0.196078, 0.803922, 0.196078, 1)
+Dialog = "I'm visiting Antarctica next week but it's too cold."
+Budget = 19
+resistance = "Bonus"
+confusion = "Bad"
+health = "Bonus"
+flexibility = "Okay"
+creativity = "Bad"
+speed = "Okay"
+courage = "Okay"
+stamina = "Okay"
+strength = "Okay"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "NeedAnd"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "Okay"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Bad"
+luck = "Okay"
+petrification = "Bad"
+purity = "Bonus"
+heightenedSenses = "Okay"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Okay"
+perception = "Okay"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "Okay"
+sleep = "Bad"
+House = 3
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = false

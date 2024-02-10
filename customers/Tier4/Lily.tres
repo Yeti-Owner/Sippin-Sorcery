@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://13sdcrwe3e60"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_roq15"]
+
+[resource]
+script = ExtResource("1_roq15")
+Name = "Lily"
+FavColor = Color(1, 0.0784314, 0.576471, 1)
+Dialog = "My garden is dying!"
+Budget = 19
+resistance = "Okay"
+confusion = "Bad"
+health = "Okay"
+flexibility = "Okay"
+creativity = "Okay"
+speed = "Okay"
+courage = "Okay"
+stamina = "Okay"
+strength = "Okay"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "NeedAnd"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Bad"
+luck = "Okay"
+petrification = "Bad"
+purity = "Okay"
+heightenedSenses = "Okay"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Okay"
+perception = "Okay"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "NeedAnd"
+sleep = "Bad"
+House = 2
+Gender = "Female"
+TastePrefix = "I like "
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = true
+Watermelon = false
+Orange = true
