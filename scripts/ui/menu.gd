@@ -41,8 +41,8 @@ func _process(_delta):
 					get_tree().quit()
 				"Feedback":
 					Click.play()
-					$CreditsSection/FeedbackText.text = str("WIP, dm me")
-					return
+#					$CreditsSection/FeedbackText.text = str("WIP, dm me")
+#					return
 					if EventBus.SentFeedback == false:
 						SceneManager._change_scene("", "none")
 						SceneManager._swap_hud("res://scenes/ui/feedback.tscn")

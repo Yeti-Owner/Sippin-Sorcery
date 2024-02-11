@@ -1,7 +1,8 @@
 extends Control
 
 @onready var Http := $HTTP
-const URL:String = "https://eoktuawmkbntzuy.m.pipedream.net"
+const URL:String = "https://api.jsonbin.io/v3/b"
+const X_Master_Key := ""
 
 var Data:Dictionary = {
 	"Rate" : null,
@@ -44,7 +45,7 @@ func _on_submit_btn_pressed():
 func _send_data():
 	# Convert data to json string:
 	var query := JSON.stringify(Data)
-	var headers := ["Content-Type: application/json"]
+	var headers := ["Content-Type: application/json", str("X-Master-Key: " + X_Master_Key), str("X-Bin-Name: " + EventBus.PlayerName + " feedback")]
 	Http.request(URL, headers, HTTPClient.METHOD_POST, query)
 
 func _on_animation_player_animation_finished(anim_name):

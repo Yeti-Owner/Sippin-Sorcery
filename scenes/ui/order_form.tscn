@@ -118,6 +118,13 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3_1a8ai")
 text = "New Entry"
 
+[node name="OrderAll" type="Button" parent="OrderForm/Bg/Options"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_1a8ai")
+text = "Order All"
+
 [node name="FinishOrder" type="Button" parent="OrderForm/Bg/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -311,6 +318,7 @@ bus = &"Sfx"
 
 [connection signal="pressed" from="OrderForm/OrderFormClickOut" to="." method="_on_click_out_pressed"]
 [connection signal="pressed" from="OrderForm/Bg/Options/NewEntry" to="NewOrderPopup" method="_on_new_entry_pressed"]
+[connection signal="pressed" from="OrderForm/Bg/Options/OrderAll" to="." method="_on_order_all_pressed"]
 [connection signal="pressed" from="OrderForm/Bg/Options/FinishOrder" to="." method="_on_finish_order_pressed"]
 [connection signal="pressed" from="NewOrderPopup/NewOrderClickOut" to="NewOrderPopup" method="_on_new_order_click_out_pressed"]
 [connection signal="item_selected" from="NewOrderPopup/Bg/MarginContainer/HBoxContainer/RestockItem" to="NewOrderPopup" method="_on_item_list_item_selected"]

@@ -85,3 +85,14 @@ func _on_finish_order_pressed():
 
 func _on_misc_timer_timeout():
 	$OrderForm/Bg/Options/FinishOrder.text = "Finish Order"
+
+func _on_order_all_pressed():
+	for entry in PotionInfo.StockAmounts:
+		if EventBus.Balance < 5:
+			break
+#		print(entry) # print ingredient name
+	# Iterate through stock amounts until all full or balance runs out
+	# for each item call _new_entry()
+	# disable new entry button
+	# call _on_finish_order_pressed()
+	pass
