@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3vcsss2euw4q"]
+
+[ext_resource type="Script" path="res://scripts/version_checker.gd" id="1_ph6qm"]
+
+[node name="VersionChecker" type="Node"]
+script = ExtResource("1_ph6qm")

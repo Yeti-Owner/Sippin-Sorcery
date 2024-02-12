@@ -1,6 +1,6 @@
 extends Node
 
-const GameVersion:float = 0.9
+const GameVersion:int = 1
 
 # Signals
 signal interaction(icon, text)

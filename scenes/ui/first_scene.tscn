@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bleb70q5fd16e"]
+[gd_scene load_steps=4 format=3 uid="uid://bleb70q5fd16e"]
 
 [ext_resource type="Script" path="res://scripts/ui/first_scene.gd" id="1_w3s2u"]
 [ext_resource type="Texture2D" uid="uid://b13pp4u8xavfu" path="res://assets/textures/ui/NiceYetiPic.png" id="2_qbb5r"]
+[ext_resource type="PackedScene" uid="uid://b3vcsss2euw4q" path="res://scenes/version_checker.tscn" id="3_ecnaf"]
 
 [node name="FirstScene" type="Control"]
 layout_mode = 3
@@ -31,3 +32,5 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qbb5r")
+
+[node name="VersionChecker" parent="." instance=ExtResource("3_ecnaf")]
