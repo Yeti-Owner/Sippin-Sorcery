@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://syb05k3lr8yt"]
+[gd_scene load_steps=51 format=3 uid="uid://syb05k3lr8yt"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_n2mbh"]
 [ext_resource type="ArrayMesh" uid="uid://paeabkaehigl" path="res://assets/models/Cauldron.obj" id="2_3qqco"]
@@ -13,6 +13,58 @@
 [ext_resource type="AudioStream" uid="uid://bgos22xkpt5p0" path="res://assets/audio/back_002.ogg" id="11_peyst"]
 [ext_resource type="AudioStream" uid="uid://cmtkeju51wyqe" path="res://assets/audio/music/Snowfall.mp3" id="12_ked1i"]
 [ext_resource type="Texture2D" uid="uid://yaenmrypl1os" path="res://assets/textures/SiB.jpg" id="13_3c4cp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0ohu"]
+bg_color = Color(0.211765, 0.0980392, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5q0f"]
+bg_color = Color(0.305882, 0.152941, 0.156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt3qh"]
+bg_color = Color(0.176471, 0.0784314, 0.0823529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyeuo"]
+bg_color = Color(0.211765, 0.0980392, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 16
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d7srl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -228,6 +280,131 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n2mbh")
+
+[node name="ClearSave" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewSave" type="Button" parent="ClearSave"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -80.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_j0ohu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g5q0f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lt3qh")
+
+[node name="Label" type="Label" parent="ClearSave/NewSave"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_7rmre")
+theme_override_font_sizes/font_size = 26
+text = "New Save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmBox" type="Panel" parent="ClearSave"]
+visible = false
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dyeuo")
+
+[node name="Label" type="Label" parent="ClearSave/ConfirmBox"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_7rmre")
+text = "Are you sure?
+All data will be lost."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ClearSave/ConfirmBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 86.0
+offset_right = 2.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Yes" type="Button" parent="ClearSave/ConfirmBox/HBoxContainer"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_j0ohu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g5q0f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lt3qh")
+
+[node name="Label" type="Label" parent="ClearSave/ConfirmBox/HBoxContainer/Yes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_7rmre")
+theme_override_font_sizes/font_size = 26
+text = "Yes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="No" type="Button" parent="ClearSave/ConfirmBox/HBoxContainer"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_j0ohu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g5q0f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lt3qh")
+
+[node name="Label" type="Label" parent="ClearSave/ConfirmBox/HBoxContainer/No"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_7rmre")
+theme_override_font_sizes/font_size = 26
+text = "No"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ogmrj")
@@ -488,6 +665,9 @@ visible = false
 mesh = SubResource("BoxMesh_3qkwa")
 skeleton = NodePath("../..")
 
+[connection signal="pressed" from="ClearSave/NewSave" to="." method="_on_new_save_pressed"]
+[connection signal="pressed" from="ClearSave/ConfirmBox/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="ClearSave/ConfirmBox/HBoxContainer/No" to="." method="_on_no_pressed"]
 [connection signal="animation_finished" from="Anims" to="." method="_on_anims_animation_finished"]
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]

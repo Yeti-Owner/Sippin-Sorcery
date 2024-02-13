@@ -13,7 +13,8 @@ var Data:Dictionary = {
 	"Thoughts" : null,
 	"Rep" : EventBus.Reputation,
 	"Day" : EventBus.DayNum,
-	"Level" : EventBus.CurrentLevel
+	"Level" : EventBus.CurrentLevel,
+	"Version" : EventBus.GameVersion
 }
 var Order:Array = ["Why","Bugs","Difficulty","Mixing","Thoughts"]
 

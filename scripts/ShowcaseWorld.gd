@@ -1,11 +1,14 @@
 extends Node3D
 var counter:int = 0
 
+func _ready():
+	$Spawner._start()
+
 func _process(delta):
-	if Input.is_action_just_pressed("dialogue"):
-		$AnimationPlayer.play("Showcase")
+#	if Input.is_action_just_pressed("dialogue"):
+#		$AnimationPlayer.play("Showcase")
 	
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("debug"):
 		_take_screenshot()
 
 func _take_screenshot():

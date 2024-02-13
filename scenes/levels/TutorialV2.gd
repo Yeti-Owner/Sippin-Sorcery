@@ -3,7 +3,7 @@ extends Level
 var Stage:int = -1
 
 func _start():
-	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to the juice shop. I'm Bob, your partner in this business venture![/font_size]"), "Bob")
+	dialogue._talk(str("[font_size=36]Hello " + EventBus.PlayerName + "! Welcome to Ravenholme, and your new juice shop. I'm Bob, your partner in this business![/font_size]"), "Bob")
 	EventBus.connect("DayDone", _customers_done)
 
 func _level():
@@ -76,7 +76,7 @@ func _level():
 		24:
 			dialogue._talk(str("[font_size=36]I'll leave you with some free advice though.[/font_size]"))
 		25:
-			dialogue._talk(str("[font_size=36]Right outside by the exit portal you'll find first-year Hogwarts students hiding out.[/font_size]"))
+			dialogue._talk(str("[font_size=36]Right outside by the exit portal you'll find first-year magic students hiding out.[/font_size]"))
 		26:
 			dialogue._talk(str("[font_size=36]They'll be willing to test out juices for you, for a price of course.[/font_size]"))
 			$Spawner._start()

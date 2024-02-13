@@ -107,3 +107,18 @@ func _sib():
 	var tween := get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.tween_property($SiB, "position", Vector3(0, 0.695, 0), 1)
+
+func _on_new_save_pressed():
+	set_process(false)
+	$ClearSave/ConfirmBox.visible = true
+
+func _on_no_pressed():
+	set_process(true)
+	$ClearSave/ConfirmBox.visible = false
+
+func _on_yes_pressed():
+	for file in DirAccess.get_files_at("user://"):
+		DirAccess.remove_absolute(str("user://" + file))
+	get_tree().quit()
+	set_process(true)
+	$ClearSave/ConfirmBox.visible = false
