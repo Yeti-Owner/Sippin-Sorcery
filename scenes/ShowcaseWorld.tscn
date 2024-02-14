@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cctlielihojf3"]
+[gd_scene load_steps=64 format=3 uid="uid://cctlielihojf3"]
 
 [ext_resource type="Script" path="res://scripts/ShowcaseWorld.gd" id="1_ju4bx"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="3_jtxqv"]
@@ -6,11 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://cpvyagx1uuygr" path="res://scenes/level_parts/misc_items.tscn" id="5_nh521"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="6_my861"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="7_8hbcj"]
+[ext_resource type="PackedScene" uid="uid://dq0cttsvnw3ye" path="res://scenes/characters/customer.tscn" id="7_otcxu"]
+[ext_resource type="Resource" uid="uid://l1qjb2n3i44x" path="res://customers/Tier3/Carlito.tres" id="8_485v6"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="8_hpe0t"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="9_n8erl"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="10_abh1w"]
 [ext_resource type="PackedScene" uid="uid://bc2meq0p8ncp" path="res://scenes/test_subject_spawner.tscn" id="11_k32d2"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="12_e0wvo"]
+[ext_resource type="PackedScene" uid="uid://crp1cdkilpq0o" path="res://scenes/level_parts/grass_scatter.tscn" id="12_nanq0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jac8i"]
 size = Vector3(9.6, 0.3, 10.2)
@@ -57,12 +60,99 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="Animation" id="Animation_nlbbm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5, -1)]
+}
+
 [sub_resource type="Animation" id="Animation_01ull"]
 resource_name = "Showcase"
 
+[sub_resource type="Animation" id="Animation_lcnse"]
+resource_name = "aerial1"
+length = 10.0
+
+[sub_resource type="Animation" id="Animation_p7brw"]
+resource_name = "aerial2"
+length = 10.0
+
+[sub_resource type="Animation" id="Animation_wcb3j"]
+resource_name = "aerial3"
+length = 10.0
+
+[sub_resource type="Animation" id="Animation_w0uxo"]
+resource_name = "customer"
+length = 10.0
+
+[sub_resource type="Animation" id="Animation_57sbq"]
+resource_name = "ground1"
+length = 10.0
+
+[sub_resource type="Animation" id="Animation_xblcs"]
+resource_name = "ground2"
+length = 10.0
+
+[sub_resource type="Animation" id="Animation_lbrig"]
+resource_name = "problem"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0, -3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5, -1), Vector3(0, 1.5, -1), Vector3(0.837, 2.474, 0.946)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s8ahr"]
 _data = {
-"Showcase": SubResource("Animation_01ull")
+"RESET": SubResource("Animation_nlbbm"),
+"Showcase": SubResource("Animation_01ull"),
+"aerial1": SubResource("Animation_lcnse"),
+"aerial2": SubResource("Animation_p7brw"),
+"aerial3": SubResource("Animation_wcb3j"),
+"customer": SubResource("Animation_w0uxo"),
+"ground1": SubResource("Animation_57sbq"),
+"ground2": SubResource("Animation_xblcs"),
+"problem": SubResource("Animation_lbrig")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vteeo"]
@@ -174,6 +264,7 @@ size = Vector3(2, 2, 2)
 script = ExtResource("1_ju4bx")
 
 [node name="Shop" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
 collision_layer = 7
 
 [node name="ShopMesh" type="MeshInstance3D" parent="Shop"]
@@ -233,8 +324,7 @@ shape = SubResource("BoxShape3D_rc85i")
 
 [node name="Spawner" parent="." instance=ExtResource("7_8hbcj")]
 curve = SubResource("Curve3D_a1qbb")
-Num = 20
-List = 4
+Num = 0
 
 [node name="Stop" type="StaticBody3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974, 2)
@@ -252,6 +342,11 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner/Kill"]
 shape = SubResource("BoxShape3D_3av3a")
+
+[node name="Customer" parent="Spawner" instance=ExtResource("7_otcxu")]
+transform = Transform3D(-0.999907, 0, 0.0125703, 0, 1, 0, -0.0125703, 0, -0.999907, 0.834108, 1, 17.2112)
+progress = 52.7953
+Info = ExtResource("8_485v6")
 
 [node name="Houses" parent="." instance=ExtResource("8_hpe0t")]
 
@@ -272,9 +367,9 @@ curve = SubResource("Curve3D_or1gi")
 
 [node name="Lights" parent="." instance=ExtResource("12_e0wvo")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="TitleCamera" type="Camera3D" parent="."]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 2.426, 20.887, 45.804)
-current = true
+visible = false
 fov = 29.2
 size = 1.936
 
@@ -1081,6 +1176,8 @@ mesh = SubResource("BoxMesh_mvqbk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039978, 1, 5.7)
 mesh = SubResource("BoxMesh_b8htx")
 
-[node name="Camera3D2" type="Camera3D" parent="."]
-transform = Transform3D(-0.745476, -0.124896, 0.654726, 0, 0.982287, 0.187381, -0.666533, 0.139688, -0.732272, 3.454, 2.184, 64.516)
+[node name="MultiScatter" parent="." instance=ExtResource("12_nanq0")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 1.5, -1)
 current = true

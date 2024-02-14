@@ -2,14 +2,14 @@ extends Node3D
 var counter:int = 0
 
 func _ready():
-	$Spawner._start()
+#	$Spawner._start()
+	get_node("/root/SceneManager/GameScene").visible =  false
+	$AnimationPlayer.play("problem")
 
 func _process(delta):
-#	if Input.is_action_just_pressed("dialogue"):
-#		$AnimationPlayer.play("Showcase")
-	
 	if Input.is_action_just_pressed("debug"):
-		_take_screenshot()
+#		_take_screenshot()
+		$AnimationPlayer.play("ground2")
 
 func _take_screenshot():
 	counter += 1

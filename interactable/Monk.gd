@@ -171,5 +171,5 @@ func _on_effect_3_pressed():
 	$WriteSound.play()
 
 func _on_look_timer_timeout():
-	return
-#	$MonkMesh/Head.look_at(Vector3($MonkMesh/Head.position.x, Player.position.y, $MonkMesh/Head.position.z), Vector3.UP)
+	if get_node_or_null(EventBus.PlayerPath) != null:
+		$MonkMesh/Head.look_at(get_node(EventBus.PlayerPath).position)

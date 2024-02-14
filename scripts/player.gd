@@ -15,6 +15,7 @@ const amp := 0.04
 var tBob := 0.0
 
 func _ready():
+	EventBus.PlayerPath = get_path()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):

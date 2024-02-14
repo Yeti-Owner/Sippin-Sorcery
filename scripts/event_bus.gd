@@ -44,6 +44,7 @@ var DayNum:int = 1
 var SentFeedback:bool = false
 var Order:Dictionary
 var UnlockedHelp:Array = ["res://assets/textures/help/HelpPage1.png","res://assets/textures/help/HelpPage2.png"]
+var PlayerPath:String = ""
 
 # Settings
 var MasterVolume:float = 0

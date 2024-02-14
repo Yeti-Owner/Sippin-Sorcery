@@ -86,11 +86,11 @@ func _check_success() -> int:
 	if (Success > 0):
 		var Payment:float = float(Reward) / 1.5
 		Payment *= Budget
-		Payment += (float(Budget) / 1.5)
+		Payment += (float(Budget) / 1.8)
 		
 		# Seems like a lot but it's fair since you pay to restock items
 		@warning_ignore("narrowing_conversion")
-		EventBus.Balance += ceilf(Payment) # just in case
+		EventBus.Balance += ceil(Payment) # just in case
 	
 	EventBus.emit_signal("BalanceChanged")
 	return Success

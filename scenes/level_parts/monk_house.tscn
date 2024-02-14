@@ -555,10 +555,9 @@ stream = ExtResource("12_nm0an")
 bus = &"Sfx"
 
 [node name="MonkMesh" type="Node3D" parent="Monk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0402279, 0)
 
 [node name="Head" type="MeshInstance3D" parent="Monk/MonkMesh"]
-transform = Transform3D(-0.602, 0, -9.08995e-08, 0, 0.602, 0, 9.08995e-08, 0, -0.602, 0, 0.3248, -0.03315)
+transform = Transform3D(-0.602, 0, -8.9407e-08, 0, 0.602, 0, 8.9407e-08, 0, -0.602, 0, 0.391, -0.033)
 mesh = ExtResource("11_y68w3")
 skeleton = NodePath("")
 

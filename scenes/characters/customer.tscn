@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq0cttsvnw3ye"]
+[gd_scene load_steps=10 format=3 uid="uid://dq0cttsvnw3ye"]
 
 [ext_resource type="Script" path="res://scripts/customer.gd" id="1_fesl2"]
+[ext_resource type="ArrayMesh" uid="uid://bbq726ty5ywra" path="res://assets/models/characters/heads/Head1.obj" id="2_4l086"]
 [ext_resource type="PackedScene" uid="uid://bjc8hh2jur0or" path="res://scenes/speech_bubble.tscn" id="3_cievq"]
 [ext_resource type="Script" path="res://interactable/CustomerBody.gd" id="4_3ec62"]
 [ext_resource type="ArrayMesh" uid="uid://yyheqjoih8rm" path="res://assets/models/characters/arm.obj" id="5_c72wd"]
@@ -131,6 +132,7 @@ skeleton = NodePath("")
 
 [node name="Head" type="MeshInstance3D" parent="BodyMeshes"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.33614e-08, 0.6, -0.05)
+mesh = ExtResource("2_4l086")
 skeleton = NodePath("")
 
 [node name="Torso" type="MeshInstance3D" parent="BodyMeshes"]
