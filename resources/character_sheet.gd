@@ -66,14 +66,10 @@ class_name CharacterSheet
 @export var Watermelon := false
 @export var Orange := false
 
-#
-#@export var Hat:Mesh = load("res://assets/models/characters/hats/Hair1.obj")
-#@export var HatColor:Texture = load("res://assets/models/characters/hats/HairColor1.png")
-#@export var Head:Mesh = load("res://assets/models/characters/heads/Head1.obj")
-#@export var Torso:Mesh = load("res://assets/models/characters/torsos/torso2.obj")
-#var Arm:Mesh = load("res://assets/models/characters/arm.obj")
-#@export var Pants:Mesh = load("res://assets/models/characters/pants/pants1.obj")
-#@export var Leg:Mesh = load("res://assets/models/characters/legs/leg1.obj")
+@export_category("Body")
+@export var Hat:Mesh = null
+@export var HatColor:Texture = null
+@export var Head:Mesh = null
 
 func _get_flavors() -> Array:
 	var FlavorList:Array = []

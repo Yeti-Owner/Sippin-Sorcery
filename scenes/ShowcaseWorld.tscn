@@ -1,13 +1,12 @@
-[gd_scene load_steps=64 format=3 uid="uid://cctlielihojf3"]
+[gd_scene load_steps=65 format=3 uid="uid://cctlielihojf3"]
 
 [ext_resource type="Script" path="res://scripts/ShowcaseWorld.gd" id="1_ju4bx"]
+[ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="2_7wesl"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="3_jtxqv"]
 [ext_resource type="PackedScene" uid="uid://ds2fpmlchv68d" path="res://scenes/level_parts/juice_items.tscn" id="4_onlmq"]
 [ext_resource type="PackedScene" uid="uid://cpvyagx1uuygr" path="res://scenes/level_parts/misc_items.tscn" id="5_nh521"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="6_my861"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="7_8hbcj"]
-[ext_resource type="PackedScene" uid="uid://dq0cttsvnw3ye" path="res://scenes/characters/customer.tscn" id="7_otcxu"]
-[ext_resource type="Resource" uid="uid://l1qjb2n3i44x" path="res://customers/Tier3/Carlito.tres" id="8_485v6"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="8_hpe0t"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="9_n8erl"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="10_abh1w"]
@@ -62,30 +61,6 @@ point_count = 4
 
 [sub_resource type="Animation" id="Animation_nlbbm"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -3.14159, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.5, -1)]
-}
 
 [sub_resource type="Animation" id="Animation_01ull"]
 resource_name = "Showcase"
@@ -117,30 +92,14 @@ length = 10.0
 [sub_resource type="Animation" id="Animation_lbrig"]
 resource_name = "problem"
 length = 4.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, -3.14159, 0), Vector3(0, -3.14159, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 4.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 1.5, -1), Vector3(0, 1.5, -1), Vector3(0.837, 2.474, 0.946)]
-}
+
+[sub_resource type="Animation" id="Animation_jxomg"]
+resource_name = "look_around"
+length = 10.0
+
+[sub_resource type="Animation" id="Animation_bdgue"]
+resource_name = "look_around2"
+length = 5.0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s8ahr"]
 _data = {
@@ -152,6 +111,8 @@ _data = {
 "customer": SubResource("Animation_w0uxo"),
 "ground1": SubResource("Animation_57sbq"),
 "ground2": SubResource("Animation_xblcs"),
+"look_around": SubResource("Animation_jxomg"),
+"look_around2": SubResource("Animation_bdgue"),
 "problem": SubResource("Animation_lbrig")
 }
 
@@ -263,6 +224,10 @@ size = Vector3(2, 2, 2)
 [node name="world" type="Node3D"]
 script = ExtResource("1_ju4bx")
 
+[node name="Player" parent="." instance=ExtResource("2_7wesl")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 1.2, -0.5)
+
 [node name="Shop" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
 collision_layer = 7
@@ -325,6 +290,7 @@ shape = SubResource("BoxShape3D_rc85i")
 [node name="Spawner" parent="." instance=ExtResource("7_8hbcj")]
 curve = SubResource("Curve3D_a1qbb")
 Num = 0
+List = 1
 
 [node name="Stop" type="StaticBody3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974, 2)
@@ -342,11 +308,6 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner/Kill"]
 shape = SubResource("BoxShape3D_3av3a")
-
-[node name="Customer" parent="Spawner" instance=ExtResource("7_otcxu")]
-transform = Transform3D(-0.999907, 0, 0.0125703, 0, 1, 0, -0.0125703, 0, -0.999907, 0.834108, 1, 17.2112)
-progress = 52.7953
-Info = ExtResource("8_485v6")
 
 [node name="Houses" parent="." instance=ExtResource("8_hpe0t")]
 
@@ -379,6 +340,7 @@ libraries = {
 }
 
 [node name="Title" type="Node3D" parent="."]
+visible = false
 
 [node name="Bg" type="MeshInstance3D" parent="Title"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 20.2, 45)
@@ -1177,7 +1139,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039978, 1, 5.7)
 mesh = SubResource("BoxMesh_b8htx")
 
 [node name="MultiScatter" parent="." instance=ExtResource("12_nanq0")]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 1.5, -1)
-current = true

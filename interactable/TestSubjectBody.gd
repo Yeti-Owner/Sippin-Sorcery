@@ -28,7 +28,7 @@ const EffectsList := {
 	"invisibility": "Subject turned invisible?",
 	"lessWeight": "I feel so light on my feet, like I could float away if I'm not careful.",
 	"hearing": "My ears are super sensitive right now, I can hear people in their own homes?",
-	"hovering": "Look, I'm floating! I can hover a few inches off the ground!",
+	"hovering": "Look, I'm floating!",
 	"luck": "I don't know what's happening, but I feel like buying a lottery ticket. I just know I can win!",
 	"petrification": "Subject was petrified.",
 	"purity": "I feel brand new, like I just took the most refreshing shower ever or some health cleanse.",

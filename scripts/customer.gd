@@ -71,18 +71,31 @@ func _dress():
 	
 	match Info.Gender:
 		"Male":
-			$BodyMeshes/Hat.set_mesh(load(PotionInfo.MaleHatList[randi() % PotionInfo.MaleHatList.size()]))
+			if Info.Hat == null:
+				$BodyMeshes/Hat.set_mesh(load(PotionInfo.MaleHatList[randi() % PotionInfo.MaleHatList.size()]))
+			else:
+				$BodyMeshes/Hat.set_mesh(Info.Hat)
 			$BodyMeshes/Pants.set_mesh(load(PotionInfo.MalePantList[randi() % PotionInfo.MalePantList.size()]))
 		"Female":
-			$BodyMeshes/Hat.set_mesh(load(PotionInfo.FemaleHatList[randi() % PotionInfo.FemaleHatList.size()]))
+			if Info.Hat == null:
+				$BodyMeshes/Hat.set_mesh(load(PotionInfo.FemaleHatList[randi() % PotionInfo.FemaleHatList.size()]))
+			else:
+				$BodyMeshes/Hat.set_mesh(Info.Hat)
 			$BodyMeshes/Pants.set_mesh(load(PotionInfo.FemalePantList[randi() % PotionInfo.FemalePantList.size()]))
 	
 	var mat = StandardMaterial3D.new()
-	mat.albedo_texture = load(PotionInfo.HatColorList[randi() % PotionInfo.HatColorList.size()])
+	if Info.HatColor == null:
+		mat.albedo_texture = load(PotionInfo.HatColorList[randi() % PotionInfo.HatColorList.size()])
+	else:
+		mat.albedo_texture = Info.HatColor
+	
 	$BodyMeshes/Hat.set_surface_override_material(0, mat)
 	
+	if Info.Head == null:
+		$BodyMeshes/Head.set_mesh(load(PotionInfo.HeadList[randi() % PotionInfo.HeadList.size()]))
+	else:
+		$BodyMeshes/Head.set_mesh(Info.Head)
 	
-	$BodyMeshes/Head.set_mesh(load(PotionInfo.HeadList[randi() % PotionInfo.HeadList.size()]))
 	var L = load(PotionInfo.LegList[randi() % PotionInfo.LegList.size()])
 	$BodyMeshes/Leg1.set_mesh(L)
 	$BodyMeshes/Leg2.set_mesh(L)

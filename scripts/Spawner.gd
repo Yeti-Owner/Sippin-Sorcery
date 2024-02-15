@@ -42,6 +42,7 @@ func _ready():
 	randomize()
 
 func _start():
+#	timer.wait_time = 0.05
 	timer.wait_time = randi_range(5, 8)
 	timer.start()
 
