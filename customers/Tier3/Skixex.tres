@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=3 format=3 uid="uid://csr334t7aufxy"]
+
+[ext_resource type="Texture2D" uid="uid://b6ouwx173oxpb" path="res://assets/models/characters/hats/HairColor6.png" id="1_0617n"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_ukyc6"]
+
+[resource]
+script = ExtResource("1_ukyc6")
+Name = "Skixex"
+FavColor = Color(0.392157, 0, 0, 1)
+Dialog = "Can you give me brain damage so I can quiet the voices in my head?"
+Budget = 19
+resistance = "Bad"
+confusion = "NeedOr"
+health = "Bad"
+flexibility = "Bad"
+creativity = "Okay"
+speed = "Okay"
+courage = "Okay"
+stamina = "Okay"
+strength = "Okay"
+badVision = "Okay"
+badSmell = "Okay"
+poison = "NeedOr"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Bonus"
+swimming = "Okay"
+underwaterBreathing = "Bad"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Okay"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Okay"
+luck = "Okay"
+petrification = "Bad"
+purity = "Bad"
+heightenedSenses = "Bad"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Okay"
+perception = "Okay"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "Okay"
+sleep = "Okay"
+House = 3
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = false
+Watermelon = true
+Orange = true
+HatColor = ExtResource("1_0617n")

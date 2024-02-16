@@ -1,22 +1,23 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://c5rxj758ounf1"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=3 format=3 uid="uid://c5rxj758ounf1"]
 
+[ext_resource type="Texture2D" uid="uid://cmdo5i86yp0oi" path="res://assets/models/characters/hats/HairColor3.png" id="1_utrt6"]
 [ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_wntsf"]
 
 [resource]
 script = ExtResource("1_wntsf")
 Name = "Nevaa"
 FavColor = Color(0.439216, 0.352941, 0.698039, 1)
-Dialog = "I'm a cheerleader, give me something to help with my flexibility."
+Dialog = "Make me invisible and strong so I can kidnap Rihanna."
 Budget = 24
 resistance = "Okay"
 confusion = "Bad"
 health = "Okay"
-flexibility = "NeedAnd"
-creativity = "Okay"
+flexibility = "Bonus"
+creativity = "Bonus"
 speed = "Bonus"
 courage = "Bonus"
 stamina = "Bonus"
-strength = "Bonus"
+strength = "NeedAnd"
 badVision = "Bad"
 badSmell = "Bad"
 poison = "Bad"
@@ -28,7 +29,7 @@ underwaterBreathing = "Bad"
 fishTalk = "Okay"
 sticky = "Bad"
 nightVision = "Okay"
-invisibility = "Bad"
+invisibility = "NeedAnd"
 lessWeight = "Bonus"
 hearing = "Okay"
 hovering = "Bad"
@@ -59,3 +60,4 @@ Pineapple = true
 Blueberry = false
 Watermelon = false
 Orange = true
+HatColor = ExtResource("1_utrt6")

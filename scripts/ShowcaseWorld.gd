@@ -2,14 +2,15 @@ extends Node3D
 var counter:int = 0
 
 func _ready():
-	$Spawner._start()
-	get_node("/root/SceneManager/GameScene").visible =  false
+#	$Spawner._start()
+#	get_node("/root/SceneManager/GameScene").visible =  false
 #	$AnimatiolookaroundnPlayer.play("look_around2")
+	pass
 
 func _process(delta):
 	if Input.is_action_just_pressed("debug"):
-#		_take_screenshot()
-		$AnimationPlayer.play("ground2")
+		_take_screenshot()
+#		$AnimationPlayer.play("ground2")
 
 func _take_screenshot():
 	counter += 1
@@ -18,3 +19,4 @@ func _take_screenshot():
 	var tex:Texture = vpt.get_texture()
 	var img:Image = tex.get_image()
 	img.save_png(str("user://Screenshot" + str(counter) + ".png"))
+
