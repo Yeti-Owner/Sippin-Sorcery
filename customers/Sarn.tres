@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://8ebhiuuhj2bf"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_f0dwq"]
+
+[resource]
+script = ExtResource("1_f0dwq")
+Name = "Sarn"
+FavColor = Color(0, 0.513726, 0, 1)
+Dialog = "Help me win at gambling so I can afford to flee Canada."
+Budget = 18
+resistance = "Bad"
+confusion = "Bad"
+health = "Bad"
+flexibility = "Bad"
+creativity = "Bad"
+speed = "Bad"
+courage = "Bad"
+stamina = "Bad"
+strength = "Bad"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Bad"
+fireRes = "Bad"
+lessPain = "Bad"
+swimming = "Bad"
+underwaterBreathing = "Bad"
+fishTalk = "Bad"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Bad"
+hearing = "Bad"
+hovering = "Bad"
+luck = "Bad"
+petrification = "Bad"
+purity = "Bad"
+heightenedSenses = "Bad"
+stability = "Bad"
+jumping = "Bad"
+precision = "Bad"
+dexterity = "Bad"
+alertness = "Bad"
+perception = "Bad"
+electricalRes = "Bad"
+explosionRes = "Bad"
+smokeImmunity = "Bad"
+petrificationRes = "Bad"
+betterSmell = "Bad"
+charisma = "Bad"
+plantControl = "Bad"
+sleep = "Bad"
+House = 0
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = false
+Pineapple = false
+Blueberry = false
+Watermelon = false
+Orange = false

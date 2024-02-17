@@ -1,14 +1,15 @@
-[gd_scene load_steps=66 format=3 uid="uid://crt5ujv7a820q"]
+[gd_scene load_steps=67 format=3 uid="uid://crt5ujv7a820q"]
 
 [ext_resource type="Script" path="res://scripts/ShowcaseWorld.gd" id="1_ju4bx"]
+[ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="2_e6y08"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="3_jtxqv"]
 [ext_resource type="PackedScene" uid="uid://ds2fpmlchv68d" path="res://scenes/level_parts/juice_items.tscn" id="4_onlmq"]
 [ext_resource type="PackedScene" uid="uid://cpvyagx1uuygr" path="res://scenes/level_parts/misc_items.tscn" id="5_nh521"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="6_my861"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="7_8hbcj"]
 [ext_resource type="PackedScene" uid="uid://dq0cttsvnw3ye" path="res://scenes/characters/customer.tscn" id="8_2pk6x"]
-[ext_resource type="Resource" uid="uid://csr334t7aufxy" path="res://customers/Tier3/Skixex.tres" id="8_c0lw8"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="8_hpe0t"]
+[ext_resource type="Resource" uid="uid://dybep0qljlmpb" path="res://customers/Tier3/Kangaroo_Knight.tres" id="8_kdtyx"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="9_n8erl"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="10_abh1w"]
 [ext_resource type="PackedScene" uid="uid://bc2meq0p8ncp" path="res://scenes/test_subject_spawner.tscn" id="11_k32d2"]
@@ -225,6 +226,8 @@ size = Vector3(2, 2, 2)
 [node name="world" type="Node3D"]
 script = ExtResource("1_ju4bx")
 
+[node name="Player" parent="." instance=ExtResource("2_e6y08")]
+
 [node name="Shop" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
 collision_layer = 7
@@ -309,7 +312,7 @@ shape = SubResource("BoxShape3D_3av3a")
 [node name="Customer" parent="Spawner" instance=ExtResource("8_2pk6x")]
 transform = Transform3D(-0.999901, 0, 0.0140511, 0, 1, 0, -0.0140511, 0, -0.999901, 0.741599, 1, 24.1256)
 progress = 45.8804
-Info = ExtResource("8_c0lw8")
+Info = ExtResource("8_kdtyx")
 
 [node name="Houses" parent="." instance=ExtResource("8_hpe0t")]
 
@@ -342,7 +345,6 @@ libraries = {
 }
 
 [node name="Title" type="Node3D" parent="."]
-visible = false
 
 [node name="Bg" type="MeshInstance3D" parent="Title"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 20.2, 45)

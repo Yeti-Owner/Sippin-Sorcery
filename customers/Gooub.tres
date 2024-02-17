@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://b0b6qdhmanceg"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_7mqbn"]
+
+[resource]
+script = ExtResource("1_7mqbn")
+Name = "Gooub"
+FavColor = Color(0.188235, 0, 0.372549, 1)
+Dialog = "Women scare me, help me scare women."
+Budget = 20
+resistance = "Bad"
+confusion = "Bad"
+health = "Bad"
+flexibility = "Bad"
+creativity = "Bad"
+speed = "Bad"
+courage = "Bad"
+stamina = "Bad"
+strength = "Bad"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Bad"
+fireRes = "Bad"
+lessPain = "Bad"
+swimming = "Bad"
+underwaterBreathing = "Bad"
+fishTalk = "Bad"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Bad"
+hearing = "Bad"
+hovering = "Bad"
+luck = "Bad"
+petrification = "Bad"
+purity = "Bad"
+heightenedSenses = "Bad"
+stability = "Bad"
+jumping = "Bad"
+precision = "Bad"
+dexterity = "Bad"
+alertness = "Bad"
+perception = "Bad"
+electricalRes = "Bad"
+explosionRes = "Bad"
+smokeImmunity = "Bad"
+petrificationRes = "Bad"
+betterSmell = "Bad"
+charisma = "Bad"
+plantControl = "Bad"
+sleep = "Bad"
+House = 2
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = false
+Blueberry = false
+Watermelon = true
+Orange = false

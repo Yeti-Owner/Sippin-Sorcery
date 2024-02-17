@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=3 format=3 uid="uid://cpnst0pnu6lyj"]
+
+[ext_resource type="Texture2D" uid="uid://bv3txf1axbk3n" path="res://assets/models/characters/hats/HairColor1.png" id="1_4bq74"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_qh72f"]
+
+[resource]
+script = ExtResource("1_qh72f")
+Name = "Cero"
+FavColor = Color(0, 0.933333, 0, 1)
+Dialog = "I need help writing better scripts and waking up early."
+Budget = 27
+resistance = "Bad"
+confusion = "Bad"
+health = "Bad"
+flexibility = "Bad"
+creativity = "Bad"
+speed = "Bad"
+courage = "Bad"
+stamina = "Bad"
+strength = "Bad"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Bad"
+fireRes = "Bad"
+lessPain = "Bad"
+swimming = "Bad"
+underwaterBreathing = "Bad"
+fishTalk = "Bad"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Bad"
+hearing = "Bad"
+hovering = "Bad"
+luck = "Bad"
+petrification = "Bad"
+purity = "Bad"
+heightenedSenses = "Bad"
+stability = "Bad"
+jumping = "Bad"
+precision = "Bad"
+dexterity = "Bad"
+alertness = "Bad"
+perception = "Bad"
+electricalRes = "Bad"
+explosionRes = "Bad"
+smokeImmunity = "Bad"
+petrificationRes = "Bad"
+betterSmell = "Bad"
+charisma = "Bad"
+plantControl = "Bad"
+sleep = "Bad"
+House = 2
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = false
+HatColor = ExtResource("1_4bq74")

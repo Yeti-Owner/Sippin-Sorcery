@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://ch0ctkfqwddod"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_b3f02"]
+
+[resource]
+script = ExtResource("1_b3f02")
+Name = "Speorg"
+FavColor = Color(0.00392157, 0.47451, 0.435294, 1)
+Dialog = "I just don't have enough energy for fun, art, and fashion."
+Budget = 19
+resistance = "Bad"
+confusion = "Bad"
+health = "Bad"
+flexibility = "Bad"
+creativity = "Bad"
+speed = "Bad"
+courage = "Bad"
+stamina = "Bad"
+strength = "Bad"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Bad"
+fireRes = "Bad"
+lessPain = "Bad"
+swimming = "Bad"
+underwaterBreathing = "Bad"
+fishTalk = "Bad"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Bad"
+hearing = "Bad"
+hovering = "Bad"
+luck = "Bad"
+petrification = "Bad"
+purity = "Bad"
+heightenedSenses = "Bad"
+stability = "Bad"
+jumping = "Bad"
+precision = "Bad"
+dexterity = "Bad"
+alertness = "Bad"
+perception = "Bad"
+electricalRes = "Bad"
+explosionRes = "Bad"
+smokeImmunity = "Bad"
+petrificationRes = "Bad"
+betterSmell = "Bad"
+charisma = "Bad"
+plantControl = "Bad"
+sleep = "Bad"
+House = 2
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = false
+Blueberry = false
+Watermelon = true
+Orange = true
