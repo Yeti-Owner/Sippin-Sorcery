@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="7_8hbcj"]
 [ext_resource type="PackedScene" uid="uid://dq0cttsvnw3ye" path="res://scenes/characters/customer.tscn" id="8_2pk6x"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="8_hpe0t"]
-[ext_resource type="Resource" uid="uid://dybep0qljlmpb" path="res://customers/Tier3/Kangaroo_Knight.tres" id="8_kdtyx"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="9_n8erl"]
+[ext_resource type="Resource" uid="uid://ca3ds7yy5oobj" path="res://customers/Tier2/Noto.tres" id="9_v323l"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="10_abh1w"]
 [ext_resource type="PackedScene" uid="uid://bc2meq0p8ncp" path="res://scenes/test_subject_spawner.tscn" id="11_k32d2"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="12_e0wvo"]
@@ -312,7 +312,7 @@ shape = SubResource("BoxShape3D_3av3a")
 [node name="Customer" parent="Spawner" instance=ExtResource("8_2pk6x")]
 transform = Transform3D(-0.999901, 0, 0.0140511, 0, 1, 0, -0.0140511, 0, -0.999901, 0.741599, 1, 24.1256)
 progress = 45.8804
-Info = ExtResource("8_kdtyx")
+Info = ExtResource("9_v323l")
 
 [node name="Houses" parent="." instance=ExtResource("8_hpe0t")]
 
