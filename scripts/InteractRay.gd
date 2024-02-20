@@ -5,6 +5,7 @@ var Interacted:bool = false
 
 func _ready():
 	EventBus.interaction.emit(EventBus.CrosshairTex, null)
+	EventBus.DisableInteract.connect(_toggle)
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action("interact")) and (current_collider != null) and (Interacted == false):
@@ -24,3 +25,6 @@ func _process(_delta) -> void:
 	elif current_collider:
 		current_collider = null
 		EventBus.interaction.emit(EventBus.CrosshairTex, null)
+
+func _toggle(value):
+	self.enabled = !value

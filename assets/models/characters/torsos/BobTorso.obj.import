@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mshdsjj2qdrn"
+path="res://.godot/imported/BobTorso.obj-ad9f68e8a33a7f2378fd47e87436130c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BobTorso.obj-ad9f68e8a33a7f2378fd47e87436130c.mesh"]
+
+source_file="res://assets/models/characters/torsos/BobTorso.obj"
+dest_files=["res://.godot/imported/BobTorso.obj-ad9f68e8a33a7f2378fd47e87436130c.mesh", "res://.godot/imported/BobTorso.obj-ad9f68e8a33a7f2378fd47e87436130c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

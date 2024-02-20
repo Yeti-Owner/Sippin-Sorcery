@@ -21,6 +21,7 @@ func _new_entry(item:String, amount:int, cost:int):
 	_entry._create_entry(item, amount, cost)
 
 func _pop_up():
+	EventBus.DisableInteract.emit(true)
 	OpenClose.pitch_scale = randf_range(0.8, 1.2)
 	OpenClose.play()
 	self.visible = true
@@ -28,6 +29,7 @@ func _pop_up():
 	DelayTimer.start()
 
 func _hide():
+	EventBus.DisableInteract.emit(false)
 	OpenClose.pitch_scale = randf_range(0.8, 1.2)
 	OpenClose.play()
 	self.visible = false

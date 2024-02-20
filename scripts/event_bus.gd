@@ -12,6 +12,7 @@ signal DayDone
 signal CustomerDone
 signal BossProblem
 signal Hint(hint:String)
+signal DisableInteract(value:bool)
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"
@@ -26,7 +27,7 @@ var InsertedItems
 
 # Player Info
 var PlayerName:String = "Callum"
-var PlayerOutfit:Array = ["res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/torsos/torso1.obj", "res://assets/models/characters/pants/pants1.obj", "res://assets/models/characters/legs/leg1.obj", "res://assets/models/characters/hats/HairColor1.png"]
+var PlayerOutfit:Array = ["res://assets/models/characters/legs/leg1.obj", "res://assets/models/characters/pants/pants1.obj", "res://assets/models/characters/torsos/torso1.obj", "res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/hats/HairColor1.png"]
 var Balance := 75
 var PlayerHeadshot
 

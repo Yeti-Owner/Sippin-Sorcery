@@ -17,7 +17,7 @@ var Stage: int = 6
 		"node": $Character/HatColor
 	},
 	5: {
-		"list": ["res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/hats/Hair2.obj", "res://assets/models/characters/hats/Hair3.obj","res://assets/models/characters/hats/Hair4.obj","res://assets/models/characters/hats/Hair5.obj"],
+		"list": ["res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/hats/Hair10.obj", "res://assets/models/characters/hats/Hair2.obj", "res://assets/models/characters/hats/Hair3.obj","res://assets/models/characters/hats/Hair4.obj","res://assets/models/characters/hats/Hair5.obj","res://assets/models/characters/hats/Hair6.obj","res://assets/models/characters/hats/Hair7.obj","res://assets/models/characters/hats/Hair8.obj","res://assets/models/characters/hats/Hair9.obj"],
 		"node": $Character/Hat
 	},
 	4: {
@@ -102,9 +102,14 @@ func _swap_part(direction: int):
 	var partList = outfitPart["list"]
 	var partNode = outfitPart["node"]
 	
+	
 	var b = partList.bsearch(EventBus.PlayerOutfit[Stage - 1])
+#	print("Index of current outfit stage: ", b)
 	direction += b
+#	print("Value before wrap: ", direction)
 	direction = wrap(direction, 0, partList.size())
+#	print("Value after wrap: ", direction)
+#	print("---")
 	EventBus.PlayerOutfit[Stage - 1] = partList[direction]
 	if Stage == 6:
 		var mat = StandardMaterial3D.new()

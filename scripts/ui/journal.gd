@@ -23,6 +23,7 @@ func _ready():
 	_set_page(CurrentPage)
 
 func _pop_up():
+	EventBus.DisableInteract.emit(true)
 	OpenClose.pitch_scale = randf_range(0.8, 1.2)
 	OpenClose.play()
 	_set_page(CurrentPage)
@@ -31,6 +32,7 @@ func _pop_up():
 	DelayTimer.start()
 
 func _hide():
+	EventBus.DisableInteract.emit(false)
 	OpenClose.pitch_scale = randf_range(0.8, 1.2)
 	OpenClose.play()
 	self.visible = false

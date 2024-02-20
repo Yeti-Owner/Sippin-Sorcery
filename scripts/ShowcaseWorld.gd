@@ -7,7 +7,7 @@ func _ready():
 #	$AnimatiolookaroundnPlayer.play("look_around2")
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("debug"):
 		_take_screenshot()
 #		$AnimationPlayer.play("ground2")

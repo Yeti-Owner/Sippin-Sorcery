@@ -627,7 +627,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.345, 0)
 mesh = SubResource("BoxMesh_1yh7g")
 
 [node name="Hat" type="MeshInstance3D" parent="Character"]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.773, 0)
+transform = Transform3D(1.001, 0, 0, 0, 1.001, 0, 0, 0, 1.001, 0, 1.773, 0)
 layers = 3
 cast_shadow = 0
 mesh = ExtResource("2_sqjmt")
