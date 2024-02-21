@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dc8aftf3vq0a0"
+path="res://.godot/imported/Frog.obj-dfaf49e8936e80d45dbb5290f10b4622.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Frog.obj-dfaf49e8936e80d45dbb5290f10b4622.mesh"]
+
+source_file="res://assets/models/Frog.obj"
+dest_files=["res://.godot/imported/Frog.obj-dfaf49e8936e80d45dbb5290f10b4622.mesh", "res://.godot/imported/Frog.obj-dfaf49e8936e80d45dbb5290f10b4622.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

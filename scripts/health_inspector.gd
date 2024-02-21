@@ -11,6 +11,12 @@ const BossList := {
 	"Sir Higgins": ["Male", "I want to turn people into monkeys, make a potion or you fail.", "I'm monkey obsessed, take a wild guess what flavor I want.", 120],
 	"Garfield": ["Male", "Something to help me sleep would be great, you know the drill.", "Lasagna, make it happen.", 120]
 }
+# "Name" : Hat, Head, Torso
+const BossDress := {
+	"Tom": ["res://assets/models/characters/hats/Hair1.obj", null, null],
+	"Humphrey": ["res://assets/models/characters/hats/Hair7.obj", "res://assets/models/characters/bosses/Humphrey_Head.obj", null],
+	"Sir Higgins": ["res://assets/models/characters/bosses/SirHiggins_Hair.obj","res://assets/models/characters/bosses/SirHiggins_Head.obj","res://assets/models/characters/bosses/SirHiggins_Torso.obj"]
+}
 @onready var BossId:String = (BossList.keys()[get_parent().BossSpawn]) # like "Humphrey"
 var BossProblem:String
 var BossTaste:String
@@ -93,26 +99,25 @@ func _result(success:bool, flavor:bool):
 	EventBus.emit_signal("BalanceChanged")
 	$WaitTimer.start()
 
-# In future they have whole weird models or something idk
 func _dress():
-	
-	# Change to some boss exclusive torso instead of ministry
-	$BodyMeshes/Torso.set_mesh(load("res://assets/models/characters/torsos/MinistryTorso.obj"))
+	if BossDress[BossId][2] != null:
+		$BodyMeshes/Torso.set_mesh(load(BossDress[BossId][2]))
+	else:
+		$BodyMeshes/Torso.set_mesh(load("res://assets/models/characters/torsos/MinistryTorso.obj"))
 	
 	match Gender:
 		"Male":
-			$BodyMeshes/Hat.set_mesh(load(PotionInfo.MaleHatList[randi() % PotionInfo.MaleHatList.size()]))
 			$BodyMeshes/Pants.set_mesh(load(PotionInfo.MalePantList[randi() % PotionInfo.MalePantList.size()]))
 		"Female":
-			$BodyMeshes/Hat.set_mesh(load(PotionInfo.FemaleHatList[randi() % PotionInfo.FemaleHatList.size()]))
 			$BodyMeshes/Pants.set_mesh(load(PotionInfo.FemalePantList[randi() % PotionInfo.FemalePantList.size()]))
 	
-	var mat = StandardMaterial3D.new()
-	mat.albedo_texture = load(PotionInfo.HatColorList[randi() % PotionInfo.HatColorList.size()])
-	$BodyMeshes/Hat.set_surface_override_material(0, mat)
+	$BodyMeshes/Hat.set_mesh(load(BossDress[BossId][0]))
 	
+	if BossDress[BossId][1] != null:
+		$BodyMeshes/Head.set_mesh(load(BossDress[BossId][1]))
+	else:
+		$BodyMeshes/Head.set_mesh(load(PotionInfo.HeadList[randi() % PotionInfo.HeadList.size()]))
 	
-	$BodyMeshes/Head.set_mesh(load(PotionInfo.HeadList[randi() % PotionInfo.HeadList.size()]))
 	var L = load(PotionInfo.LegList[randi() % PotionInfo.LegList.size()])
 	$BodyMeshes/Leg1.set_mesh(L)
 	$BodyMeshes/Leg2.set_mesh(L)

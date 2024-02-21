@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7gitf6ojjua1"]
+
+[ext_resource type="ArrayMesh" uid="uid://0n6b4hq7swt0" path="res://assets/models/helditems/Lasagna.obj" id="1_0p7r5"]
+
+[node name="Lasagna" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -0.1, 0)
+layers = 2
+mesh = ExtResource("1_0p7r5")

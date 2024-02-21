@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwsqnwjuo255a"]
+
+[ext_resource type="Script" path="res://interactable/lasagna.gd" id="1_tj8sv"]
+[ext_resource type="ArrayMesh" uid="uid://c01gqab3hd0wj" path="res://assets/models/Lasagna.obj" id="2_a34io"]
+[ext_resource type="ArrayMesh" uid="uid://c8s7ob3bjvyn1" path="res://assets/models/LasagnaTray.obj" id="3_34gs7"]
+[ext_resource type="Texture2D" uid="uid://d0xxvf0y34qfo" path="res://assets/models/LasagnaTray.png" id="4_qqio8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ippl0"]
+size = Vector3(1.5, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuoli"]
+transparency = 1
+albedo_texture = ExtResource("4_qqio8")
+
+[node name="LasagnaTray" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_tj8sv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.25, 0)
+shape = SubResource("BoxShape3D_ippl0")
+
+[node name="Lasagna" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_a34io")
+
+[node name="Tray" type="MeshInstance3D" parent="."]
+mesh = ExtResource("3_34gs7")
+surface_material_override/0 = SubResource("StandardMaterial3D_fuoli")
+
+[node name="GrabSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+bus = &"Sfx"

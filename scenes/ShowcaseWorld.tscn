@@ -7,14 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cpvyagx1uuygr" path="res://scenes/level_parts/misc_items.tscn" id="5_nh521"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="6_my861"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="7_8hbcj"]
-[ext_resource type="PackedScene" uid="uid://dq0cttsvnw3ye" path="res://scenes/characters/customer.tscn" id="8_2pk6x"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="8_hpe0t"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="9_n8erl"]
-[ext_resource type="Resource" uid="uid://ca3ds7yy5oobj" path="res://customers/Tier2/Noto.tres" id="9_v323l"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="10_abh1w"]
 [ext_resource type="PackedScene" uid="uid://bc2meq0p8ncp" path="res://scenes/test_subject_spawner.tscn" id="11_k32d2"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="12_e0wvo"]
 [ext_resource type="PackedScene" uid="uid://crp1cdkilpq0o" path="res://scenes/level_parts/grass_scatter.tscn" id="12_nanq0"]
+[ext_resource type="PackedScene" uid="uid://dwsqnwjuo255a" path="res://scenes/objects/lasagna.tscn" id="14_fu4rr"]
+[ext_resource type="PackedScene" uid="uid://dy6biwiac6uur" path="res://scenes/objects/frog.tscn" id="15_tpof6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jac8i"]
 size = Vector3(9.6, 0.3, 10.2)
@@ -291,6 +291,7 @@ shape = SubResource("BoxShape3D_rc85i")
 curve = SubResource("Curve3D_a1qbb")
 Num = 0
 List = 1
+BossSpawn = 2
 
 [node name="Stop" type="StaticBody3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974, 2)
@@ -308,11 +309,6 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner/Kill"]
 shape = SubResource("BoxShape3D_3av3a")
-
-[node name="Customer" parent="Spawner" instance=ExtResource("8_2pk6x")]
-transform = Transform3D(-0.999901, 0, 0.0140511, 0, 1, 0, -0.0140511, 0, -0.999901, 0.741599, 1, 24.1256)
-progress = 45.8804
-Info = ExtResource("9_v323l")
 
 [node name="Houses" parent="." instance=ExtResource("8_hpe0t")]
 
@@ -1143,3 +1139,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039978, 1, 5.7)
 mesh = SubResource("BoxMesh_b8htx")
 
 [node name="MultiScatter" parent="." instance=ExtResource("12_nanq0")]
+
+[node name="LasagnaTray" parent="." instance=ExtResource("14_fu4rr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 10.3)
+
+[node name="Frog" parent="." instance=ExtResource("15_tpof6")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 4.2, 0, 15.1)

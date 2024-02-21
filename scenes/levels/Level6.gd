@@ -20,7 +20,6 @@ func _level():
 		4:
 			$DelayTimer.start()
 			dialogue._done()
-			$Spawner._start()
 		5:
 			dialogue._talk(str("[font_size=36]Before the day ends I wish to speak to you.[/font_size]"), "Alton")
 		6:

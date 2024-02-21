@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bobyfh88k1p67"
+path="res://.godot/imported/SirHiggins_Hair.obj-2925969f247394c5bd97bd5bbee2d2ba.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SirHiggins_Hair.obj-2925969f247394c5bd97bd5bbee2d2ba.mesh"]
+
+source_file="res://assets/models/characters/bosses/SirHiggins_Hair.obj"
+dest_files=["res://.godot/imported/SirHiggins_Hair.obj-2925969f247394c5bd97bd5bbee2d2ba.mesh", "res://.godot/imported/SirHiggins_Hair.obj-2925969f247394c5bd97bd5bbee2d2ba.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
