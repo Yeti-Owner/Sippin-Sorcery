@@ -99,7 +99,7 @@ corner_detail = 1
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.693023, 0.772727), -1.18457, -1.18457, 0, 0, Vector2(1, 0.0636363), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_ocxsd"]
+[sub_resource type="CurveTexture" id="CurveTexture_yh3ew"]
 curve = SubResource("Curve_3nvnm")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_00kpv"]
@@ -111,13 +111,13 @@ spread = 0.0
 gravity = Vector3(0, -1.5, 0)
 initial_velocity_min = 0.13
 initial_velocity_max = 1.04
-scale_curve = SubResource("CurveTexture_ocxsd")
+scale_curve = SubResource("CurveTexture_yh3ew")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6p866"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ccr7"]
 albedo_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3mblj"]
-material = SubResource("StandardMaterial3D_6p866")
+material = SubResource("StandardMaterial3D_5ccr7")
 size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="Animation" id="Animation_8632n"]
@@ -589,10 +589,6 @@ libraries = {
 "": SubResource("AnimationLibrary_lb3ph")
 }
 
-[node name="LookTimer" type="Timer" parent="Monk/MonkMesh"]
-wait_time = 0.05
-autostart = true
-
 [node name="LeaveArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3, 1, -2.6)
 
@@ -607,5 +603,4 @@ shape = SubResource("BoxShape3D_ad0ny")
 [connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/Left" to="Monk" method="_on_left_pressed"]
 [connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/Right" to="Monk" method="_on_right_pressed"]
 [connection signal="timeout" from="Monk/DelayTimer" to="Monk" method="_on_delay_timer_timeout"]
-[connection signal="timeout" from="Monk/MonkMesh/LookTimer" to="Monk" method="_on_look_timer_timeout"]
 [connection signal="body_exited" from="LeaveArea" to="Monk" method="_on_leave_area_body_exited"]

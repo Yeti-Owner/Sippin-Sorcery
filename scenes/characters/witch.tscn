@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://crer4f834764h"]
+
+[ext_resource type="Script" path="res://interactable/witch.gd" id="1_0hfsp"]
+[ext_resource type="ArrayMesh" uid="uid://bje6lsx1mwb8c" path="res://assets/models/characters/witch/Witch_Hat.obj" id="1_s2yip"]
+[ext_resource type="ArrayMesh" uid="uid://cl46vjenytrcu" path="res://assets/models/characters/witch/Witch_Nose.obj" id="2_c0pci"]
+[ext_resource type="PackedScene" uid="uid://bjc8hh2jur0or" path="res://scenes/speech_bubble.tscn" id="3_5y6n5"]
+[ext_resource type="ArrayMesh" uid="uid://cnus3rbgyqemp" path="res://assets/models/characters/witch/Witch_Head.obj" id="3_7yuvu"]
+[ext_resource type="ArrayMesh" uid="uid://3qeba0ic62t1" path="res://assets/models/characters/witch/Witch_Torso.obj" id="4_mytj7"]
+[ext_resource type="ArrayMesh" uid="uid://dkwdv822uiuvp" path="res://assets/models/characters/witch/Witch_Pants.obj" id="6_3r1nj"]
+[ext_resource type="ArrayMesh" uid="uid://d26b5orn6x285" path="res://assets/models/characters/witch/Witch_Arm.obj" id="6_i7e2o"]
+[ext_resource type="ArrayMesh" uid="uid://b0aqfc8u0rybu" path="res://assets/models/characters/witch/Witch_Leg.obj" id="7_htavu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_chxv5"]
+radius = 0.4
+
+[node name="Witch" type="StaticBody3D"]
+collision_layer = 7
+collision_mask = 3
+script = ExtResource("1_0hfsp")
+
+[node name="BodyMeshes" type="Node3D" parent="."]
+transform = Transform3D(0.663, 0, 0, 0, 0.663, 0, 0, 0, 0.663, 0, -0.073, 0)
+
+[node name="LookMeshes" type="Node3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.95, -0.025)
+
+[node name="Hat" type="MeshInstance3D" parent="BodyMeshes/LookMeshes"]
+transform = Transform3D(-4.41485e-08, 0, -1.01, 0, 1.01, 0, 1.01, 0, -4.41485e-08, 1.11758e-08, 0.35, 0.025)
+mesh = ExtResource("1_s2yip")
+skeleton = NodePath("")
+
+[node name="Nose" type="MeshInstance3D" parent="BodyMeshes/LookMeshes"]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, -0.05, -0.15, -0.477)
+mesh = ExtResource("2_c0pci")
+skeleton = NodePath("../..")
+
+[node name="Head" type="MeshInstance3D" parent="BodyMeshes/LookMeshes"]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 1.11758e-08, -0.35, 0.025)
+mesh = ExtResource("3_7yuvu")
+skeleton = NodePath("")
+
+[node name="Torso" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.33614e-08, -0.2, -0.05)
+mesh = ExtResource("4_mytj7")
+skeleton = NodePath("")
+
+[node name="Arm1" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-0.99, -2.53518e-06, -8.65486e-08, 2.50983e-06, -1, -8.65486e-08, -8.65484e-08, -8.7423e-08, 0.99, 0.5, 0.21, -0.05)
+mesh = ExtResource("6_i7e2o")
+skeleton = NodePath("")
+
+[node name="Arm2" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-0.99, -2.53518e-06, -8.65486e-08, 2.50983e-06, -1, -8.65486e-08, -8.65484e-08, -8.7423e-08, 0.99, -0.5, 0.2, -0.05)
+mesh = ExtResource("6_i7e2o")
+skeleton = NodePath("")
+
+[node name="Pants" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.33614e-08, -0.4, -0.05)
+mesh = ExtResource("6_3r1nj")
+skeleton = NodePath("")
+
+[node name="Leg1" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, -0.2, -0.4, 0.05)
+mesh = ExtResource("7_htavu")
+skeleton = NodePath("")
+
+[node name="Leg2" type="MeshInstance3D" parent="BodyMeshes"]
+transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, 0.2, -0.4, 0.0499999)
+mesh = ExtResource("7_htavu")
+skeleton = NodePath("")
+
+[node name="SpeechBubble" parent="." instance=ExtResource("3_5y6n5")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_chxv5")
+
+[node name="WitchSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+bus = &"Sfx"

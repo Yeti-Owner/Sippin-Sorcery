@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dqmd0rn6hrs4m"
+path="res://.godot/imported/Garfield_Hair.obj-71c0f60fce984cbcdac2d7355ab3ded6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Garfield_Hair.obj-71c0f60fce984cbcdac2d7355ab3ded6.mesh"]
+
+source_file="res://assets/models/characters/bosses/Garf/Garfield_Hair.obj"
+dest_files=["res://.godot/imported/Garfield_Hair.obj-71c0f60fce984cbcdac2d7355ab3ded6.mesh", "res://.godot/imported/Garfield_Hair.obj-71c0f60fce984cbcdac2d7355ab3ded6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

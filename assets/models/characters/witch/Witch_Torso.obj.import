@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://3qeba0ic62t1"
+path="res://.godot/imported/Witch_Torso.obj-2c800dca364794c362bb02a9c1fb80bc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Witch_Torso.obj-2c800dca364794c362bb02a9c1fb80bc.mesh"]
+
+source_file="res://assets/models/characters/witch/Witch_Torso.obj"
+dest_files=["res://.godot/imported/Witch_Torso.obj-2c800dca364794c362bb02a9c1fb80bc.mesh", "res://.godot/imported/Witch_Torso.obj-2c800dca364794c362bb02a9c1fb80bc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -172,6 +172,6 @@ func _on_effect_3_pressed():
 	$WriteSound.pitch_scale = randf_range(0.8, 1.2)
 	$WriteSound.play()
 
-func _on_look_timer_timeout():
+func _process(_delta):
 	if get_node_or_null(EventBus.PlayerPath) != null:
 		$MonkMesh/Head.look_at(get_node(EventBus.PlayerPath).position)

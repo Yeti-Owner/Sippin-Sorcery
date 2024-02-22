@@ -18,7 +18,7 @@ func _download_version():
 	if error != OK:
 		printerr("\n---\nHTTP request Error\n---\n")
 
-func _check_version(result, response_code, headers, body):
+func _check_version(result, _response_code, _headers, body):
 	if result != HTTPRequest.RESULT_SUCCESS:
 		printerr("\n---\nFailed to download\n---\n")
 		return

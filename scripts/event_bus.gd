@@ -13,6 +13,7 @@ signal CustomerDone
 signal BossProblem
 signal Hint(hint:String)
 signal DisableInteract(value:bool)
+signal RemoveBarrier
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d26b5orn6x285"
+path="res://.godot/imported/Witch_Arm.obj-3f58e3209330160c6b3ccf1453d5c985.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Witch_Arm.obj-3f58e3209330160c6b3ccf1453d5c985.mesh"]
+
+source_file="res://assets/models/characters/witch/Witch_Arm.obj"
+dest_files=["res://.godot/imported/Witch_Arm.obj-3f58e3209330160c6b3ccf1453d5c985.mesh", "res://.godot/imported/Witch_Arm.obj-3f58e3209330160c6b3ccf1453d5c985.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

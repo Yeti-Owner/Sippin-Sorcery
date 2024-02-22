@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d20tl5j2mjh0y"
+path="res://.godot/imported/Garfield_Pants.obj-7216b9319334d6a04e06216291d42d41.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Garfield_Pants.obj-7216b9319334d6a04e06216291d42d41.mesh"]
+
+source_file="res://assets/models/characters/bosses/Garf/Garfield_Pants.obj"
+dest_files=["res://.godot/imported/Garfield_Pants.obj-7216b9319334d6a04e06216291d42d41.mesh", "res://.godot/imported/Garfield_Pants.obj-7216b9319334d6a04e06216291d42d41.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -11,11 +11,12 @@ const BossList := {
 	"Sir Higgins": ["Male", "I want to turn people into monkeys, make a potion or you fail.", "I'm monkey obsessed, take a wild guess what flavor I want.", 120],
 	"Garfield": ["Male", "Something to help me sleep would be great, you know the drill.", "Lasagna, make it happen.", 120]
 }
-# "Name" : Hat, Head, Torso
+# "Name" : Hat, Head, Torso, Pants, Legs
 const BossDress := {
-	"Tom": ["res://assets/models/characters/hats/Hair1.obj", null, null],
-	"Humphrey": ["res://assets/models/characters/hats/Hair7.obj", "res://assets/models/characters/bosses/Humphrey_Head.obj", null],
-	"Sir Higgins": ["res://assets/models/characters/bosses/SirHiggins_Hair.obj","res://assets/models/characters/bosses/SirHiggins_Head.obj","res://assets/models/characters/bosses/SirHiggins_Torso.obj"]
+	"Tom": ["res://assets/models/characters/hats/Hair1.obj", null, null, null, null],
+	"Humphrey": ["res://assets/models/characters/hats/Hair7.obj", "res://assets/models/characters/bosses/Humphrey_Head.obj", null, null, null],
+	"Sir Higgins": ["res://assets/models/characters/bosses/SirHiggins_Hair.obj","res://assets/models/characters/bosses/SirHiggins_Head.obj","res://assets/models/characters/bosses/SirHiggins_Torso.obj", null, null],
+	"Garfield": ["res://assets/models/characters/bosses/Garf/Garfield_Hair.obj","res://assets/models/characters/bosses/Garf/Garfield_Head.obj","res://assets/models/characters/bosses/Garf/Garfield_Torso.obj","res://assets/models/characters/bosses/Garf/Garfield_Pants.obj","res://assets/models/characters/bosses/Garf/Garfield_Leg.obj"]
 }
 @onready var BossId:String = (BossList.keys()[get_parent().BossSpawn]) # like "Humphrey"
 var BossProblem:String
@@ -105,24 +106,37 @@ func _dress():
 	else:
 		$BodyMeshes/Torso.set_mesh(load("res://assets/models/characters/torsos/MinistryTorso.obj"))
 	
-	match Gender:
-		"Male":
-			$BodyMeshes/Pants.set_mesh(load(PotionInfo.MalePantList[randi() % PotionInfo.MalePantList.size()]))
-		"Female":
-			$BodyMeshes/Pants.set_mesh(load(PotionInfo.FemalePantList[randi() % PotionInfo.FemalePantList.size()]))
+	if BossDress[BossId][3] == null:
+		match Gender:
+			"Male":
+				$BodyMeshes/Pants.set_mesh(load(PotionInfo.MalePantList[randi() % PotionInfo.MalePantList.size()]))
+			"Female":
+				$BodyMeshes/Pants.set_mesh(load(PotionInfo.FemalePantList[randi() % PotionInfo.FemalePantList.size()]))
+	else:
+		$BodyMeshes/Pants.set_mesh(load(BossDress[BossId][3]))
 	
-	$BodyMeshes/Hat.set_mesh(load(BossDress[BossId][0]))
+	if BossDress[BossId][0] != null:
+		$BodyMeshes/Hat.set_mesh(load(BossDress[BossId][0]))
 	
 	if BossDress[BossId][1] != null:
+		if BossDress[BossId][1] == "res://assets/models/characters/bosses/Garf/Garfield_Head.obj":
+			$BodyMeshes/Head.position = Vector3(0.05, 0.6, -0.05)
+			$BodyMeshes/Hat.position = Vector3(0.05, 1.25, -0.05)
 		$BodyMeshes/Head.set_mesh(load(BossDress[BossId][1]))
 	else:
 		$BodyMeshes/Head.set_mesh(load(PotionInfo.HeadList[randi() % PotionInfo.HeadList.size()]))
 	
-	var L = load(PotionInfo.LegList[randi() % PotionInfo.LegList.size()])
+	var L
+	if BossDress[BossId][4] == null:
+		L = load(PotionInfo.LegList[randi() % PotionInfo.LegList.size()])
+	else:
+		L = load(BossDress[BossId][4])
 	$BodyMeshes/Leg1.set_mesh(L)
 	$BodyMeshes/Leg2.set_mesh(L)
-#	$BodyMeshes/Arm1.set_mesh(load("res://assets/models/characters/arm.obj"))
-#	$BodyMeshes/Arm2.set_mesh(load("res://assets/models/characters/arm.obj"))
+	
+	if BossId == "Garfield":
+		$BodyMeshes/Arm1.set_mesh(load("res://assets/models/characters/bosses/Garf/Garfield_Arm.obj"))
+		$BodyMeshes/Arm2.set_mesh(load("res://assets/models/characters/bosses/Garf/Garfield_Arm.obj"))
 
 func _on_wait_timer_timeout():
 	$RayCast3D.collide_with_bodies = false

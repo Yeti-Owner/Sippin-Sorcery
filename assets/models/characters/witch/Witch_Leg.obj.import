@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0aqfc8u0rybu"
+path="res://.godot/imported/Witch_Leg.obj-633c7ff4574de614e8d0c5248df40a6c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Witch_Leg.obj-633c7ff4574de614e8d0c5248df40a6c.mesh"]
+
+source_file="res://assets/models/characters/witch/Witch_Leg.obj"
+dest_files=["res://.godot/imported/Witch_Leg.obj-633c7ff4574de614e8d0c5248df40a6c.mesh", "res://.godot/imported/Witch_Leg.obj-633c7ff4574de614e8d0c5248df40a6c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

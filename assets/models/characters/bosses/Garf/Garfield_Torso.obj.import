@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csiy08irx16x5"
+path="res://.godot/imported/Garfield_Torso.obj-98100ba35fb6086fbe44f1b177cadbbe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Garfield_Torso.obj-98100ba35fb6086fbe44f1b177cadbbe.mesh"]
+
+source_file="res://assets/models/characters/bosses/Garf/Garfield_Torso.obj"
+dest_files=["res://.godot/imported/Garfield_Torso.obj-98100ba35fb6086fbe44f1b177cadbbe.mesh", "res://.godot/imported/Garfield_Torso.obj-98100ba35fb6086fbe44f1b177cadbbe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

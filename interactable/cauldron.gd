@@ -21,14 +21,16 @@ const stages:Dictionary = {
 	12: 0.572
 }
 
-const FlavorList := ["Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange"]
+const BannedList := ["Juice","Frog"]
+const FlavorList := ["Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange","Lasagna"]
 const FlavorContent := {
 	"Strawberry": Color(1, 0, 0),
 	"Banana": Color(1, 0.92116665840149, 0.56999999284744),
 	"Pineapple": Color(0.89803922176361, 1, 0.09411764889956),
 	"Blueberry": Color(0.25, 0.37499988079071, 1),
 	"Watermelon": Color(0.25098040699959, 0.81960785388947, 0.02352941222489),
-	"Orange": Color(0.73000001907349, 0.41366666555405, 0)
+	"Orange": Color(0.73000001907349, 0.41366666555405, 0),
+	"Lasagna": Color(0.7569, 0.6078, 0.3059)
 }
 const DefaultGreen := Color(0.2392156869173, 0.67058825492859, 0.10588235408068)
 
@@ -53,7 +55,7 @@ func interact():
 	if InteractTimer.is_stopped():
 		if EventBus.HeldItem == null and ItemsAdded.size() > 0:
 			_mix()
-		elif EventBus.HeldItem != null:
+		elif (EventBus.HeldItem != null) and not (BannedList.has(EventBus.HeldItem)):
 			$AddItem.pitch_scale = randf_range(0.7, 1.2)
 			$AddItem.play()
 			if FlavorList.has(EventBus.HeldItem):
@@ -64,6 +66,8 @@ func interact():
 				EventBus.InsertedItems = str(EventBus.HeldItem)
 			EventBus.HeldItem = null
 			EventBus.emit_signal("HeldItemChanged")
+		elif (EventBus.HeldItem == "Frog"):
+			EventBus.Hint.emit("Don't put a Frog in there :(")
 		InteractTimer.start()
 
 func _mix():
@@ -99,7 +103,6 @@ func _particles():
 	particles.position.y = $Juice.position.y
 	particles.draw_pass_1.material.albedo_color = $Juice.mesh.material.albedo_color
 	particles.set_emitting(true)
-
 
 func _on_interact_timer_timeout():
 	_reset()

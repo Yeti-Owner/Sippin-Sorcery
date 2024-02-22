@@ -1,9 +1,11 @@
-[gd_scene load_steps=42 format=3 uid="uid://23lgbqrnmudg"]
+[gd_scene load_steps=47 format=3 uid="uid://23lgbqrnmudg"]
 
 [ext_resource type="PackedScene" uid="uid://bw4wuhf4m6c28" path="res://scenes/objects/house_3.tscn" id="1_ihern"]
 [ext_resource type="Texture2D" uid="uid://bixaxp5iw7q17" path="res://assets/models/houses/House3.png" id="2_eve8a"]
 [ext_resource type="Texture2D" uid="uid://dvhb18f6myeo5" path="res://assets/models/houses/HouseColor6.png" id="3_k0opj"]
 [ext_resource type="Texture2D" uid="uid://d1wccpppmgypa" path="res://assets/models/houses/HouseColor7.png" id="4_2rap1"]
+[ext_resource type="ArrayMesh" uid="uid://chol1xcpe25u1" path="res://assets/models/window.obj" id="4_ceq85"]
+[ext_resource type="Texture2D" uid="uid://b624irbyamx8i" path="res://assets/models/window.png" id="5_5qcta"]
 [ext_resource type="PackedScene" uid="uid://cjl53piuqeps5" path="res://scenes/objects/house_1.tscn" id="5_6pud4"]
 [ext_resource type="Texture2D" uid="uid://c8brc08eiq61r" path="res://assets/models/houses/House1.png" id="6_fifqv"]
 [ext_resource type="PackedScene" uid="uid://f1v04wwererc" path="res://scenes/objects/house_2.tscn" id="7_jn33o"]
@@ -17,7 +19,7 @@
 resource_name = "palette"
 albedo_texture = ExtResource("2_eve8a")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_fvnpp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xfbgc"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -36,7 +38,19 @@ _surfaces = [{
 albedo_texture = ExtResource("3_k0opj")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8pphd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnuk1"]
+albedo_texture = ExtResource("5_5qcta")
+metallic_specular = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_auq8f"]
+albedo_color = Color(0.25098, 0.227451, 0.227451, 1)
+metallic_specular = 0.15
+
+[sub_resource type="BoxMesh" id="BoxMesh_x4b82"]
+material = SubResource("StandardMaterial3D_auq8f")
+size = Vector3(1.2, 0.15, 0.7)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wlr4j"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -56,7 +70,7 @@ resource_local_to_scene = true
 albedo_texture = ExtResource("4_2rap1")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cdrs7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4hyeg"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -83,7 +97,7 @@ metallic_specular = 0.15
 resource_name = "palette"
 albedo_texture = ExtResource("2_eve8a")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_artuq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_03udp"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -107,7 +121,7 @@ metallic_specular = 0.15
 albedo_texture = ExtResource("10_bcu7n")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_81odn"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_r47wm"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -126,7 +140,7 @@ resource_local_to_scene = true
 albedo_texture = ExtResource("4_2rap1")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1uei0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ysqpg"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -145,7 +159,7 @@ resource_local_to_scene = true
 albedo_texture = ExtResource("3_k0opj")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_mmbiv"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6rg76"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -165,7 +179,7 @@ resource_local_to_scene = true
 albedo_texture = ExtResource("11_2m4sq")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_oi7qw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_krwq0"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -184,7 +198,7 @@ resource_local_to_scene = true
 albedo_texture = ExtResource("8_qmnp2")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_l1yl7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_tsw57"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -204,7 +218,7 @@ resource_local_to_scene = true
 albedo_texture = ExtResource("10_bcu7n")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4c6nk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ymk4w"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.2, 1.6),
@@ -223,7 +237,7 @@ resource_local_to_scene = true
 albedo_texture = ExtResource("11_2m4sq")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0qrc1"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_doyku"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -247,7 +261,7 @@ metallic_specular = 0.15
 albedo_texture = ExtResource("6_fifqv")
 metallic_specular = 0.15
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8ctd7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kdo50"]
 resource_local_to_scene = true
 _surfaces = [{
 "aabb": AABB(-0.8, 0, -0.8, 1.6, 1.5, 1.6),
@@ -270,27 +284,38 @@ metallic_specular = 0.15
 [node name="Houses" type="Node3D"]
 
 [node name="House1" parent="." instance=ExtResource("1_ihern")]
-transform = Transform3D(7.86805e-07, 0, -6, 0, 6, 0, 6, 0, 7.86805e-07, 26, 0, 4.75)
-mesh = SubResource("ArrayMesh_fvnpp")
+transform = Transform3D(7.86805e-07, 0, -6, 0, 6, 0, 6, 0, 7.86805e-07, 28, 0, 17.65)
+mesh = SubResource("ArrayMesh_xfbgc")
 surface_material_override/0 = SubResource("StandardMaterial3D_tekha")
+
+[node name="Window" type="MeshInstance3D" parent="House1"]
+transform = Transform3D(-7.28522e-09, 0, -0.166667, 0, 0.166667, 0, 0.166667, 0, -7.28522e-09, -0.702, 0.2, 0.339)
+mesh = ExtResource("4_ceq85")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vnuk1")
+
+[node name="windowsill" type="MeshInstance3D" parent="House1"]
+transform = Transform3D(2.18557e-08, 0, 0.166667, 0, 0.166667, 0, -0.166667, 0, 2.18557e-08, -0.755, 0.187, 0.341)
+mesh = SubResource("BoxMesh_x4b82")
+skeleton = NodePath("../..")
 
 [node name="House2" parent="." instance=ExtResource("1_ihern")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 12.85, 0, -5.3)
-mesh = SubResource("ArrayMesh_8pphd")
+mesh = SubResource("ArrayMesh_wlr4j")
 surface_material_override/0 = SubResource("StandardMaterial3D_p32tx")
 
 [node name="House3" parent="." instance=ExtResource("5_6pud4")]
 transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, 9.8, 0, 22.8)
-mesh = SubResource("ArrayMesh_cdrs7")
+mesh = SubResource("ArrayMesh_4hyeg")
 surface_material_override/0 = SubResource("StandardMaterial3D_elqgm")
 
 [node name="House4" parent="." instance=ExtResource("7_jn33o")]
-transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, 28, 0, 17.65)
+transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, 26, 0, 4.75)
 surface_material_override/0 = SubResource("StandardMaterial3D_e7ftn")
 
 [node name="House5" parent="." instance=ExtResource("1_ihern")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 9.75, 0, 33.9)
-mesh = SubResource("ArrayMesh_artuq")
+mesh = SubResource("ArrayMesh_03udp")
 surface_material_override/0 = SubResource("StandardMaterial3D_yoacd")
 
 [node name="House6" parent="." instance=ExtResource("7_jn33o")]
@@ -299,17 +324,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lnn3r")
 
 [node name="House7" parent="." instance=ExtResource("5_6pud4")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, 27, 0, 30.4)
-mesh = SubResource("ArrayMesh_81odn")
+mesh = SubResource("ArrayMesh_r47wm")
 surface_material_override/0 = SubResource("StandardMaterial3D_ugakb")
 
 [node name="House8" parent="." instance=ExtResource("5_6pud4")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, -16, 0, -1.6)
-mesh = SubResource("ArrayMesh_1uei0")
+mesh = SubResource("ArrayMesh_ysqpg")
 surface_material_override/0 = SubResource("StandardMaterial3D_gjgak")
 
 [node name="House9" parent="." instance=ExtResource("1_ihern")]
 transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, -29, 0, -4.7)
-mesh = SubResource("ArrayMesh_mmbiv")
+mesh = SubResource("ArrayMesh_6rg76")
 surface_material_override/0 = SubResource("StandardMaterial3D_my8bf")
 
 [node name="MonkHouse" parent="." instance=ExtResource("12_yygf0")]
@@ -317,22 +342,22 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.9,
 
 [node name="House11" parent="." instance=ExtResource("5_6pud4")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, -10.3, 0, 43.2)
-mesh = SubResource("ArrayMesh_oi7qw")
+mesh = SubResource("ArrayMesh_krwq0")
 surface_material_override/0 = SubResource("StandardMaterial3D_ermew")
 
 [node name="House12" parent="." instance=ExtResource("1_ihern")]
 transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, -25.4, 0, 49)
-mesh = SubResource("ArrayMesh_l1yl7")
+mesh = SubResource("ArrayMesh_tsw57")
 surface_material_override/0 = SubResource("StandardMaterial3D_3rxsj")
 
 [node name="House13" parent="." instance=ExtResource("5_6pud4")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -28.7, 0, 33.2)
-mesh = SubResource("ArrayMesh_4c6nk")
+mesh = SubResource("ArrayMesh_ymk4w")
 surface_material_override/0 = SubResource("StandardMaterial3D_5k5o1")
 
 [node name="House14" parent="." instance=ExtResource("1_ihern")]
 transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, -28, 0, 20.8)
-mesh = SubResource("ArrayMesh_0qrc1")
+mesh = SubResource("ArrayMesh_doyku")
 surface_material_override/0 = SubResource("StandardMaterial3D_ohqtj")
 
 [node name="House15" parent="." instance=ExtResource("7_jn33o")]
@@ -341,5 +366,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u46li")
 
 [node name="House16" parent="." instance=ExtResource("1_ihern")]
 transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, 29.1, 0, 43.2)
-mesh = SubResource("ArrayMesh_8ctd7")
+mesh = SubResource("ArrayMesh_kdo50")
 surface_material_override/0 = SubResource("StandardMaterial3D_fwpag")

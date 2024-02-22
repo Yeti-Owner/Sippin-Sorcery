@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bd6a0jt1c4emi"
+path="res://.godot/imported/Garfield_Arm.obj-142787142daf207b9c53b2a3dd8c27ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Garfield_Arm.obj-142787142daf207b9c53b2a3dd8c27ed.mesh"]
+
+source_file="res://assets/models/characters/bosses/Garf/Garfield_Arm.obj"
+dest_files=["res://.godot/imported/Garfield_Arm.obj-142787142daf207b9c53b2a3dd8c27ed.mesh", "res://.godot/imported/Garfield_Arm.obj-142787142daf207b9c53b2a3dd8c27ed.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

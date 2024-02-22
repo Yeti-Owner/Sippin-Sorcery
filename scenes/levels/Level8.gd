@@ -32,7 +32,7 @@ func _level():
 
 func _on_clock_next_day():
 	EventBus.DayNum += 1
-	if EventBus.BossesBeaten != 1:
+	if EventBus.BossesBeaten > 1:
 		SceneManager._change_scene("res://scenes/levels/Level9.tscn", "day")
 	else:
 		SceneManager._change_scene("res://scenes/levels/Level8fail.tscn", "day")
