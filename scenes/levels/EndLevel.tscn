@@ -123,7 +123,7 @@ shape = SubResource("BoxShape3D_rc85i")
 [node name="Spawner" parent="." instance=ExtResource("13_duuvk")]
 curve = SubResource("Curve3D_a1qbb")
 Num = 20
-List = 3
+List = 4
 
 [node name="Stop" type="StaticBody3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974, 2)

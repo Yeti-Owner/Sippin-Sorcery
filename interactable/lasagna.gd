@@ -14,8 +14,8 @@ func get_interaction_icon():
 
 func interact():
 	if EventBus.HeldItem == null:
-#		$GrabSound.pitch_scale = randf_range(0.8, 1)
-#		$GrabSound.play()
+		$GrabSound.pitch_scale = randf_range(0.8, 1)
+		$GrabSound.play()
 		EventBus.HeldItem = "Lasagna"
 		EventBus.emit_signal("HeldItemChanged")
 		_reset()

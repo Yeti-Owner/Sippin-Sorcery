@@ -79,8 +79,8 @@ func _result(success:bool, flavor:bool):
 	var Response:String
 	if (success) and (flavor):
 		# Good
-		var Responses = ["Alright I guess you'll pass.","Well, it's not bad.","You pass this time."]
-		Response = Responses[randi() % Responses.size()]
+		var Responses = ["Alright I guess you'll pass.","Well, it's not bad.","You pass this time.","I suppose you did fine.","It's good.","That was passable."]
+		Response = Responses.pick_random()
 		EventBus.Balance += 15
 		SceneManager.BossDone.emit(true)
 		EventBus.BossesBeaten += 1
@@ -88,8 +88,8 @@ func _result(success:bool, flavor:bool):
 		$ResponseSound.play()
 	else:
 		# Bad
-		var Responses = ["Nice try, you fail this inspection.","So close but nah you fail.","Maybe next time?"]
-		Response = Responses[randi() % Responses.size()]
+		var Responses = ["Nice try, you fail this inspection.","So close but nah you fail.","Maybe next time?","Failed!","That was terrible."]
+		Response = Responses.pick_random()
 		EventBus.Balance -= 35
 		SceneManager.BossDone.emit(false)
 		$ResponseSound.stream = load("res://assets/audio/bad.ogg")

@@ -13,7 +13,7 @@ func get_interaction_icon():
 	return EventBus.ActionTex
 
 func interact():
-	if EventBus.HeldItem != null:
+	if (EventBus.HeldItem != null) and (EventBus.HeldItem != "Frog"):
 		$TrashSound.pitch_scale = randf_range(0.8, 1)
 		$TrashSound.play()
 		EventBus.HeldItem = null

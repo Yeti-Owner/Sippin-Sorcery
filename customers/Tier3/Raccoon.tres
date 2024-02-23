@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://n71fif00luuo"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_vvdov"]
+
+[resource]
+script = ExtResource("1_vvdov")
+Name = "Not a Raccoon"
+FavColor = Color(0.294118, 0.294118, 0.294118, 1)
+Dialog = "Help me control the shrubbery to make a raccoon habitat."
+Budget = 24
+resistance = "Bonus"
+confusion = "Bad"
+health = "Bonus"
+flexibility = "Okay"
+creativity = "Bad"
+speed = "Okay"
+courage = "Okay"
+stamina = "Bonus"
+strength = "Bonus"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "Okay"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Bad"
+luck = "Okay"
+petrification = "Bad"
+purity = "Okay"
+heightenedSenses = "Okay"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Okay"
+perception = "Okay"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "NeedAnd"
+sleep = "Bad"
+House = 3
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = true
+Watermelon = true
+Orange = true

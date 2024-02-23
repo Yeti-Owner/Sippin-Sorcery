@@ -1,7 +1,12 @@
 extends Interactable
 
+@onready var Apparation := preload("res://scenes/apparation.tscn")
+
 func _ready():
 	randomize()
+	var a := Apparation.instantiate()
+	add_child(a)
+	_frog_noise()
 
 func get_interaction_text():
 	if EventBus.HeldItem != null:
@@ -14,9 +19,19 @@ func get_interaction_icon():
 
 func interact():
 	if EventBus.HeldItem == null:
-#		$GrabSound.pitch_scale = randf_range(0.8, 1)
-#		$GrabSound.play()
 		EventBus.HeldItem = "Frog"
 		EventBus.emit_signal("HeldItemChanged")
 		_reset()
+		get_parent()._stop()
+		_remove()
  
+func _frog_noise():
+	$FrogSound.pitch_scale = randf_range(0.8, 1)
+	$FrogSound.play()
+
+func _remove():
+	_frog_noise()
+	var a := Apparation.instantiate()
+	get_parent().add_child(a)
+	a.position = self.position
+	self.queue_free()

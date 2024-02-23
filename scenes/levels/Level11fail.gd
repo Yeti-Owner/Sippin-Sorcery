@@ -6,14 +6,14 @@ var BossStage:int = 0
 
 func _start():
 	EventBus.connect("BossProblem", _boss_help)
-	dialogue._talk(str("[font_size=36]Yet another inspection " + EventBus.PlayerName + ".[/font_size]"), "Bob")
+	dialogue._talk(str("[font_size=36]Try again maybe?[/font_size]"), "Bob")
 	$Spawner._start()
 
 func _level():
 	Stage += 1
 	match Stage:
 		1:
-			dialogue._talk(str("[font_size=36]You know the drill, good luck![/font_size]"))
+			dialogue._talk(str("[font_size=36]You've got it this time " + EventBus.PlayerName + "[/font_size]"))
 		2:
 			dialogue._done()
 

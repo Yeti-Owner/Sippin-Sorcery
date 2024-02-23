@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://b41fqhdlpsr3f"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_p5iqp"]
+
+[resource]
+script = ExtResource("1_p5iqp")
+Name = "Angela"
+FavColor = Color(0.670588, 0, 0.705882, 1)
+Dialog = "I'm trying to help animals in my sactuary I need to keep them still."
+Budget = 17
+resistance = "Bonus"
+confusion = "Bad"
+health = "Bonus"
+flexibility = "Okay"
+creativity = "Bad"
+speed = "Okay"
+courage = "Okay"
+stamina = "Okay"
+strength = "Okay"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "Okay"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Bad"
+luck = "Okay"
+petrification = "NeedOr"
+purity = "Bonus"
+heightenedSenses = "Okay"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Okay"
+perception = "Okay"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "Okay"
+plantControl = "Okay"
+sleep = "NeedOr"
+House = 1
+Gender = "Female"
+TastePrefix = "They like "
+Strawberry = true
+Banana = true
+Pineapple = false
+Blueberry = true
+Watermelon = false
+Orange = false
