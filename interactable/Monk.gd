@@ -4,7 +4,7 @@ extends Interactable
 @onready var FlipPage := $FlipPageSound
 @onready var OpenClose := $OpenCloseSound
 var Active:bool = false
-var Cost:int = 20
+var Cost:int = 15
 
 const EffectsDescription := {
 	"MandrakeRoot": ["Resistance to common illnesses", "Confusion","Straightforward health boost"],

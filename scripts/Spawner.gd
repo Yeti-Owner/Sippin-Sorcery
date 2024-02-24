@@ -15,16 +15,15 @@ const Customer := preload("res://scenes/characters/customer.tscn")
 const MinistryAgent := preload("res://scenes/characters/ministry_agent.tscn")
 const HealthInspector := preload("res://scenes/characters/health_inspector.tscn") # Boss
 
-
 @onready var TutorialCustomers:Array = ['Ben.tres', 'Breo.tres', 'Charles.tres', 'Dalidoah.tres', 'Emma.tres', 'Hunter.tres', 'Jokez.tres', 'Krystal.tres']
 #@onready var TutorialCustomers:Array = DirAccess.get_files_at("res://customers/Tutorial/")
-@onready var Tier1:Array = ['45Glockz.tres', 'Ben.tres', 'Blackout.tres', 'Breo.tres', 'Charles.tres', 'CptLegend.tres', 'Dalidoah.tres', 'Eivan.tres', 'Emma.tres', 'Felix.tres', 'Formag.tres', 'Hunter.tres', 'Jokez.tres', 'Krystal.tres', 'KSS.tres', 'Kuspy.tres', 'Kyubi.tres', 'Mark.tres', 'Mary.tres', 'Orion.tres', 'Peter.tres', 'Proccessing.tres', 'Skup.tres', 'soap.tres', 'TCArk.tres', 'Yurei.tres']
+@onready var Tier1:Array = ['45Glockz.tres', 'Acryptic.tres', 'Alejandro.tres', 'Ben.tres', 'Blackout.tres', 'Breo.tres', 'Charles.tres', 'CptLegend.tres', 'Dalidoah.tres', 'Eivan.tres', 'Emma.tres', 'Felix.tres', 'Formag.tres', 'Hunter.tres', 'Jokez.tres', 'Krystal.tres', 'KSS.tres', 'Kuspy.tres', 'Kyubi.tres','Mary.tres', 'MrInfernal.tres', 'Orion.tres', 'Peter.tres', 'Proccessing.tres', 'Reibean.tres', 'Skup.tres', 'soap.tres', 'TCArk.tres', 'Whatmaster.tres', 'Yurei.tres']
 #@onready var Tier1:Array = DirAccess.get_files_at("res://customers/Tier1/")
-@onready var Tier2:Array = ['Artemis.tres', 'Benzeenee10.tres', 'Bruhgby.tres', 'Carlito2.tres', 'Deathrow.tres', 'Eidolonic.tres', 'Eivan2.tres', 'Garry.tres', 'Imoorzy.tres', 'JinBoi.tres', 'Kaze.tres', 'Krystal2.tres', 'Leah.tres', 'Moriarty2.tres', 'MrInfernal.tres', 'Noto.tres', 'Peter.tres', 'Slight.tres', 'Teethbat.tres', 'Ufrz.tres', 'Whatmaster.tres']
+@onready var Tier2:Array = ['Artemis.tres', 'Benzeenee10.tres', 'Blackoutmauro.tres', 'Blitty.tres', 'Bruhgby.tres', 'Carlito2.tres', 'Danta.tres', 'Deathrow.tres', 'Eidolonic.tres', 'Eivan2.tres', 'Garry.tres', 'Gooub.tres', 'Imoorzy.tres', 'JinBoi.tres', 'Jipo.tres', 'Kaze.tres', 'Krystal2.tres', 'Leah.tres', 'Moriarty2.tres', 'MrInfernal.tres', 'Noto.tres', 'Odin.tres', 'Peter.tres', 'Reibean2.tres', 'RevoleX.tres', 'Sarn.tres', 'Slight.tres', 'Sselemoh.tres', 'Supreme.tres', 'Teethbat.tres', 'Ufrz.tres', 'Whatmaster.tres']
 #@onready var Tier2:Array = DirAccess.get_files_at("res://customers/Tier2/")
-@onready var Tier3:Array = ['April.tres', 'BaronDipitous.tres', 'Bruce.tres', 'BurgerkingCandycrush.tres', 'Carlito.tres', 'Flueve.tres', 'High.tres', 'Jammi.tres', 'Kangaroo_Knight.tres', 'Keta.tres', 'Mia.tres', 'Moriarty.tres', 'NanoCup.tres', 'Phoenix.tres', 'Reeseman5.tres', 'Reibean.tres', 'Sly.tres', 'Snipes.tres', 'sselemoh.tres', 'Strabster.tres', 'Vrile.tres']
+@onready var Tier3:Array = ['Angela.tres', 'April.tres', 'BaronDipitous.tres', 'Bruce.tres', 'BurgerkingCandycrush.tres', 'Carlito.tres', 'Cero.tres', 'Flueve.tres', 'Harold.tres', 'High.tres', 'Jammi.tres', 'JessieTravis.tres', 'Kangaroo_Knight.tres', 'Keta.tres', 'Mia.tres', 'Moriarty.tres', 'NanoCup.tres', 'Phoenix.tres', 'Raccoon.tres', 'Reeseman5.tres', 'Reeseman5_2.tres', 'Reibean.tres', 'SaulBH.tres', 'Scythere.tres', 'Skixex.tres', 'Sly.tres', 'Snipes.tres', 'Speorg.tres', 'sselemoh.tres', 'Strabster.tres', 'Toshi.tres', 'Vrile.tres', 'Zen2.tres', 'Mark.tres']
 #@onready var Tier3:Array = DirAccess.get_files_at("res://customers/Tier3/")
-@onready var Tier4:Array = ['BedHeadNinja.tres', 'Iconography.tres', 'Lily.tres', 'Nevaa.tres', 'Oliver.tres']
+@onready var Tier4:Array = ['BedHeadNinja.tres', 'Iconography.tres', 'Leah.tres', 'Lily.tres', 'Nevaa.tres', 'Oliver.tres', 'Zen.tres']
 #@onready var Tier4:Array = DirAccess.get_files_at("res://customers/Tier4/")
 
 # Increment : [Customers, Path]
@@ -104,7 +103,7 @@ func _spawn_customer():
 		add_child(c)
 		
 		Num -= 1
-		timer.wait_time = randi_range(10, 20)
+		timer.wait_time = randi_range(5, 10)
 		timer.start()
 
 func _spawn_ministry():
@@ -112,7 +111,7 @@ func _spawn_ministry():
 	var m = MinistryAgent.instantiate()
 	add_child(m)
 	
-	timer.wait_time = randi_range(10, 20)
+	timer.wait_time = randi_range(5, 10)
 	timer.start()
 
 func _spawn_boss():

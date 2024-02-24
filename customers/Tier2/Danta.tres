@@ -6,7 +6,7 @@
 script = ExtResource("1_48snr")
 Name = "Danta"
 FavColor = Color(0, 0.678431, 0.792157, 1)
-Dialog = "I want to avoid haram activities."
+Dialog = "I want to avoid haram activities, give me purity."
 Budget = 12
 resistance = "Bonus"
 confusion = "Bad"

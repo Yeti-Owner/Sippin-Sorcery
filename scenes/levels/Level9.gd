@@ -3,7 +3,7 @@ extends Level
 var Stage:int = 0
 
 func _start():
-	EventBus.BossesBeaten = 3
+	EventBus.BossesBeaten = 2
 	dialogue._talk(str("[font_size=36]Another completion for the books " + EventBus.PlayerName + "![/font_size]"), "Bob")
 
 func _level():

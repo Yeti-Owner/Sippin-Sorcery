@@ -1,28 +1,28 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bmxg7lvt7xovw"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bb0fm6y2gjlw0"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_5ikqb"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_v1g44"]
 
 [resource]
-script = ExtResource("1_5ikqb")
-Name = "Acryptic"
-FavColor = Color(0.243137, 1, 0.929412, 1)
-Dialog = "The beast inside me is hurt, heal it grrrr."
-Budget = 16
-resistance = "Bonus"
+script = ExtResource("1_v1g44")
+Name = "Supreme"
+FavColor = Color(1, 0.827451, 0.458824, 1)
+Dialog = "I'm an huge writer, what can I use to get more ideas?"
+Budget = 18
+resistance = "Okay"
 confusion = "Bad"
-health = "NeedAnd"
+health = "Okay"
 flexibility = "Okay"
-creativity = "Bad"
+creativity = "NeedAnd"
 speed = "Okay"
 courage = "Okay"
-stamina = "Okay"
+stamina = "Bonus"
 strength = "Okay"
 badVision = "Bad"
 badSmell = "Bad"
 poison = "Bad"
 coldRes = "Okay"
 fireRes = "Okay"
-lessPain = "Bonus"
+lessPain = "Okay"
 swimming = "Okay"
 underwaterBreathing = "Okay"
 fishTalk = "Okay"
@@ -34,14 +34,14 @@ hearing = "Okay"
 hovering = "Bad"
 luck = "Okay"
 petrification = "Bad"
-purity = "Bonus"
+purity = "Okay"
 heightenedSenses = "Okay"
 stability = "Okay"
 jumping = "Okay"
 precision = "Okay"
-dexterity = "Okay"
+dexterity = "Bonus"
 alertness = "Okay"
-perception = "Okay"
+perception = "Bonus"
 electricalRes = "Okay"
 explosionRes = "Okay"
 smokeImmunity = "Okay"
@@ -50,12 +50,12 @@ betterSmell = "Okay"
 charisma = "Okay"
 plantControl = "Okay"
 sleep = "Bad"
-House = 4
+House = 2
 Gender = "Male"
-TastePrefix = "The beast likes "
+TastePrefix = "I like "
 Strawberry = true
-Banana = true
-Pineapple = true
+Banana = false
+Pineapple = false
 Blueberry = true
 Watermelon = true
 Orange = true

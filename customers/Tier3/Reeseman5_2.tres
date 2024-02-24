@@ -1,28 +1,28 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bmxg7lvt7xovw"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://35vgkx0br67d"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_5ikqb"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_giwjv"]
 
 [resource]
-script = ExtResource("1_5ikqb")
-Name = "Acryptic"
-FavColor = Color(0.243137, 1, 0.929412, 1)
-Dialog = "The beast inside me is hurt, heal it grrrr."
-Budget = 16
+script = ExtResource("1_giwjv")
+Name = "Reeseman5"
+FavColor = Color(0.643137, 0, 0, 1)
+Dialog = "The hoes keep using smoke grenades to avoid me. Help?"
+Budget = 19
 resistance = "Bonus"
 confusion = "Bad"
-health = "NeedAnd"
+health = "Bonus"
 flexibility = "Okay"
-creativity = "Bad"
-speed = "Okay"
+creativity = "Okay"
+speed = "Bonus"
 courage = "Okay"
-stamina = "Okay"
-strength = "Okay"
+stamina = "Bonus"
+strength = "Bonus"
 badVision = "Bad"
 badSmell = "Bad"
 poison = "Bad"
 coldRes = "Okay"
 fireRes = "Okay"
-lessPain = "Bonus"
+lessPain = "Okay"
 swimming = "Okay"
 underwaterBreathing = "Okay"
 fishTalk = "Okay"
@@ -32,9 +32,9 @@ invisibility = "Bad"
 lessWeight = "Okay"
 hearing = "Okay"
 hovering = "Bad"
-luck = "Okay"
+luck = "Bonus"
 petrification = "Bad"
-purity = "Bonus"
+purity = "Okay"
 heightenedSenses = "Okay"
 stability = "Okay"
 jumping = "Okay"
@@ -44,18 +44,18 @@ alertness = "Okay"
 perception = "Okay"
 electricalRes = "Okay"
 explosionRes = "Okay"
-smokeImmunity = "Okay"
+smokeImmunity = "NeedAnd"
 petrificationRes = "Okay"
 betterSmell = "Okay"
-charisma = "Okay"
+charisma = "Bonus"
 plantControl = "Okay"
 sleep = "Bad"
-House = 4
+House = 3
 Gender = "Male"
-TastePrefix = "The beast likes "
+TastePrefix = "I like "
 Strawberry = true
-Banana = true
+Banana = false
 Pineapple = true
-Blueberry = true
+Blueberry = false
 Watermelon = true
-Orange = true
+Orange = false

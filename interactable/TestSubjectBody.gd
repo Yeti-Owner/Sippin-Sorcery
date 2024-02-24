@@ -7,7 +7,7 @@ const EffectsList := {
 	"sleep": "I feel really sleepy now, I'm going to lie down",
 	"resistance": "I feel a little bit better.",
 	"confusion": "Whoa, everything's kind of spinning in my head. I don't feel well.",
-	"health": "Man, I was feeling a bit ill earlier, but it's totally cleared up thank you!",
+	"health": "I cut my finger earlier but it's totally gone now, thank you!",
 	"flexibility": "I feel super loose, I could touch my toes right now.",
 	"creativity": "My brain fog cleared up, I have so many new ideas right now!",
 	"speed": "I feel like I downed 20 coffees and can win a marathon!",
@@ -19,14 +19,14 @@ const EffectsList := {
 	"poison": "Ugh, I don't feel so good, and I can taste blood. Something's definitely not right.",
 	"coldRes": "I'm not shivering anymore, even though it's freezing outside.",
 	"fireRes": "I feel colder, the sun isn't as warm now.",
-	"lessPain": "I stubbed my toe earlier, but it doesn't even hurt now. The pain is just a dull ache.",
+	"lessPain": "I stubbed my toe earlier, but the pain is just a dull ache now.",
 	"swimming": "I feel an urge to go swimming.",
 	"underwaterBreathing": "My neck feels weird, it's like I've grown gills or something.",
 	"fishTalk": "I don't feel any different, feel like going swimming though.",
 	"sticky": "My hands are all gross and clingy, everything is sticking to me.",
 	"nightVision": "It's dark out here, but I can see everything crystal clear, neat.",
 	"invisibility": "Subject turned invisible?",
-	"lessWeight": "I feel so light on my feet, like I could float away if I'm not careful.",
+	"lessWeight": "I feel so light on my feet, like I could almost float away.",
 	"hearing": "My ears are super sensitive right now, I can hear people in their own homes?",
 	"hovering": "Look, I'm floating!",
 	"luck": "I don't know what's happening, but I feel like buying a lottery ticket. I just know I can win!",
@@ -45,14 +45,14 @@ const EffectsList := {
 	"petrificationRes": "I don't get it, nothing feels different?",
 	"betterSmell": "I can smell the school from here, but we must be miles away.",
 	"charisma": "I feel magnetic, like I could talk my way out of or into anything!",
-	"plantControl": "Is it just me or is the grass looking at me? I don't feel any different no.",
+	"plantControl": "Is it just me or is the grass looking at me? I don't feel any different though.",
 	"monkey": "Yeah, I'm not drinking that.",
 	"water": "I feel nothing."
 }
 var AdditionalList1 := ["hovering","invisibility","speed","strength"]
 var AdditionalList2 := ["petrification"]
 
-var cost := 50
+var cost := 45
 
 func _ready():
 	randomize()

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://ljqrf8uyku0g"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=3 format=3 uid="uid://ljqrf8uyku0g"]
 
 [ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_4g74m"]
+[ext_resource type="Texture2D" uid="uid://bv3txf1axbk3n" path="res://assets/models/characters/hats/HairColor1.png" id="1_to4ax"]
 
 [resource]
 script = ExtResource("1_4g74m")
@@ -59,3 +60,4 @@ Pineapple = false
 Blueberry = false
 Watermelon = false
 Orange = false
+HatColor = ExtResource("1_to4ax")

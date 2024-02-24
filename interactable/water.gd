@@ -15,9 +15,13 @@ func get_interaction_icon():
 
 func interact():
 	if EventBus.HeldItem == null:
+		$GlassSound.pitch_scale = randf_range(1.01, 1.2)
+		$GlassSound.play()
 		EventBus.HeldItem = "Water"
 		EventBus.emit_signal("HeldItemChanged")
 	elif EventBus.HeldItem == "Water":
+		$GlassSound.pitch_scale = randf_range(0.8, 0.99)
+		$GlassSound.play()
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")
 	_reset()

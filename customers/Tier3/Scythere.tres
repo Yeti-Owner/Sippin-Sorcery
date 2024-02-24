@@ -1,16 +1,16 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://35vgkx0br67d"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://b6j4atqnypj87"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_pve1t"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_51v6o"]
 
 [resource]
-script = ExtResource("1_pve1t")
-Name = "Reeseman5"
-FavColor = Color(0.643137, 0, 0, 1)
-Dialog = "The hoes keep using smoke grenades to avoid me. Help?"
-Budget = 19
-resistance = "Bonus"
+script = ExtResource("1_51v6o")
+Name = "Scythere"
+FavColor = Color(0.894118, 0.894118, 0.894118, 1)
+Dialog = "As a coach and trainer I need to hear my clients clearly you know?"
+Budget = 15
+resistance = "Okay"
 confusion = "Bad"
-health = "Bonus"
+health = "Okay"
 flexibility = "Okay"
 creativity = "Okay"
 speed = "Bonus"
@@ -30,9 +30,9 @@ sticky = "Bad"
 nightVision = "Bad"
 invisibility = "Bad"
 lessWeight = "Okay"
-hearing = "Okay"
+hearing = "NeedAnd"
 hovering = "Bad"
-luck = "Bonus"
+luck = "Okay"
 petrification = "Bad"
 purity = "Okay"
 heightenedSenses = "Okay"
@@ -40,22 +40,22 @@ stability = "Okay"
 jumping = "Okay"
 precision = "Okay"
 dexterity = "Okay"
-alertness = "Okay"
-perception = "Okay"
+alertness = "Bonus"
+perception = "Bonus"
 electricalRes = "Okay"
 explosionRes = "Okay"
-smokeImmunity = "NeedAnd"
+smokeImmunity = "Okay"
 petrificationRes = "Okay"
 betterSmell = "Okay"
 charisma = "Bonus"
 plantControl = "Okay"
 sleep = "Bad"
-House = 3
+House = 2
 Gender = "Male"
 TastePrefix = "I like "
 Strawberry = true
-Banana = false
-Pineapple = true
+Banana = true
+Pineapple = false
 Blueberry = false
 Watermelon = true
 Orange = false

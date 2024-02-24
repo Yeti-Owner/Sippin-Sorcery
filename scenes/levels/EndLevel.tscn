@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://dkrq0wcrs1xud"]
+[gd_scene load_steps=29 format=3 uid="uid://dkrq0wcrs1xud"]
 
 [ext_resource type="Script" path="res://scenes/levels/EndLevel.gd" id="1_oy7h1"]
 [ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="2_f7abd"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="3_d5nig"]
+[ext_resource type="Texture2D" uid="uid://bx3iryfmtfrq4" path="res://assets/models/Shop.png" id="4_m6hc1"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="9_63dma"]
 [ext_resource type="PackedScene" uid="uid://cpvyagx1uuygr" path="res://scenes/level_parts/misc_items.tscn" id="10_kslv2"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="11_0bgym"]
@@ -13,6 +14,10 @@
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="25_uw4ak"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="26_0ax76"]
 [ext_resource type="PackedScene" uid="uid://bc2meq0p8ncp" path="res://scenes/test_subject_spawner.tscn" id="27_mekep"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aa1xe"]
+albedo_texture = ExtResource("4_m6hc1")
+metallic_specular = 0.15
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jac8i"]
 size = Vector3(9.6, 0.3, 10.2)
@@ -73,6 +78,7 @@ collision_layer = 7
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5, -3.3, 5)
 mesh = ExtResource("3_d5nig")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_aa1xe")
 
 [node name="Floor" type="CollisionShape3D" parent="Shop"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.15, -0.25)

@@ -7,7 +7,7 @@ extends PathFollow3D
 # "Name" : Gender, Problem, Flavor, Time
 const BossList := {
 	"Tom": ["Male", "Give me Courage", "Orange or Banana please", 30],
-	"Humphrey": ["Male", "Give me 1 of everything, and quickly or I'll fail you.", "Any flavor just make it snappy.", 120],
+	"Humphrey": ["Male", "Give me 1 of everything, and don't forget the flavor.", "Any flavor just make it snappy.", 120],
 	"Sir Higgins": ["Male", "I want to turn people into monkeys, make a potion or you fail.", "I'm monkey obsessed, take a wild guess what flavor I want.", 120],
 	"Garfield": ["Male", "Something to help me sleep would be great, you know the drill.", "Lasagna, make it happen.", 120]
 }
@@ -81,7 +81,7 @@ func _result(success:bool, flavor:bool):
 		# Good
 		var Responses = ["Alright I guess you'll pass.","Well, it's not bad.","You pass this time.","I suppose you did fine.","It's good.","That was passable."]
 		Response = Responses.pick_random()
-		EventBus.Balance += 15
+		EventBus.Balance += 60
 		SceneManager.BossDone.emit(true)
 		EventBus.BossesBeaten += 1
 		$ResponseSound.stream = load("res://assets/audio/good.ogg")
@@ -90,7 +90,6 @@ func _result(success:bool, flavor:bool):
 		# Bad
 		var Responses = ["Nice try, you fail this inspection.","So close but nah you fail.","Maybe next time?","Failed!","That was terrible."]
 		Response = Responses.pick_random()
-		EventBus.Balance -= 35
 		SceneManager.BossDone.emit(false)
 		$ResponseSound.stream = load("res://assets/audio/bad.ogg")
 		$ResponseSound.play()
