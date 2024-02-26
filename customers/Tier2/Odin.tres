@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_cphno")
 Name = "Odin"
-FavColor = null
+FavColor = Color(0.0705882, 0.0705882, 0.0705882, 1)
 Dialog = "I sometimes read books so late there's no light, help?"
 Budget = 18
 resistance = "Okay"

@@ -2,9 +2,9 @@ extends Node3D
 var counter:int = 0
 
 func _ready():
-	$Spawner._start()
-#	get_node("/root/SceneManager/GameScene").visible =  false
-#	$AnimatiolookaroundnPlayer.play("look_around2")
+#	$Spawner._start()
+	get_node("/root/SceneManager/GameScene").visible =  false
+	$AnimationPlayer.play("Forward")
 	pass
 
 func _process(_delta):

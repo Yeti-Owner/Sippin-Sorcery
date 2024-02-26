@@ -1,7 +1,6 @@
-[gd_scene load_steps=68 format=3 uid="uid://crt5ujv7a820q"]
+[gd_scene load_steps=65 format=3 uid="uid://crt5ujv7a820q"]
 
 [ext_resource type="Script" path="res://scripts/ShowcaseWorld.gd" id="1_ju4bx"]
-[ext_resource type="PackedScene" uid="uid://bc8v80us8av85" path="res://scenes/characters/player.tscn" id="2_e6y08"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="3_jtxqv"]
 [ext_resource type="PackedScene" uid="uid://ds2fpmlchv68d" path="res://scenes/level_parts/juice_items.tscn" id="4_onlmq"]
 [ext_resource type="PackedScene" uid="uid://cpvyagx1uuygr" path="res://scenes/level_parts/misc_items.tscn" id="5_nh521"]
@@ -13,9 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bc2meq0p8ncp" path="res://scenes/test_subject_spawner.tscn" id="11_k32d2"]
 [ext_resource type="PackedScene" uid="uid://cb06nadrhxehg" path="res://scenes/level_parts/level_lights.tscn" id="12_e0wvo"]
 [ext_resource type="PackedScene" uid="uid://crp1cdkilpq0o" path="res://scenes/level_parts/grass_scatter.tscn" id="12_nanq0"]
-[ext_resource type="PackedScene" uid="uid://dwsqnwjuo255a" path="res://scenes/objects/lasagna.tscn" id="14_fu4rr"]
-[ext_resource type="PackedScene" uid="uid://dy6biwiac6uur" path="res://scenes/objects/frog.tscn" id="15_tpof6"]
-[ext_resource type="PackedScene" uid="uid://10cxumfsh22v" path="res://scenes/objects/barrier.tscn" id="16_eqj8p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jac8i"]
 size = Vector3(9.6, 0.3, 10.2)
@@ -64,6 +60,18 @@ point_count = 4
 
 [sub_resource type="Animation" id="Animation_nlbbm"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.434, 71.375)]
+}
 
 [sub_resource type="Animation" id="Animation_01ull"]
 resource_name = "Showcase"
@@ -104,8 +112,25 @@ length = 5.0
 resource_name = "problem"
 length = 4.5
 
+[sub_resource type="Animation" id="Animation_yatng"]
+resource_name = "Forward"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.434, 2.07), Vector3(0, 0.434, 71.375)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s8ahr"]
 _data = {
+"Forward": SubResource("Animation_yatng"),
 "RESET": SubResource("Animation_nlbbm"),
 "Showcase": SubResource("Animation_01ull"),
 "aerial1": SubResource("Animation_lcnse"),
@@ -226,8 +251,6 @@ size = Vector3(2, 2, 2)
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_ju4bx")
-
-[node name="Player" parent="." instance=ExtResource("2_e6y08")]
 
 [node name="Shop" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
@@ -1141,11 +1164,6 @@ mesh = SubResource("BoxMesh_b8htx")
 
 [node name="MultiScatter" parent="." instance=ExtResource("12_nanq0")]
 
-[node name="LasagnaTray" parent="." instance=ExtResource("14_fu4rr")]
-transform = Transform3D(0.469, 0, 0, 0, 0.469, 0, 0, 0, 0.469, 26, 1.193, 13.068)
-
-[node name="Frog" parent="." instance=ExtResource("15_tpof6")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 4.2, 0, 15.1)
-
-[node name="Barrier" parent="." instance=ExtResource("16_eqj8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 1.2, 13)
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.434, 71.375)
+current = true
