@@ -9,7 +9,7 @@ var Hovered := ""
 func _ready():
 	if has_node("/root/FirstScene"): get_node("/root/FirstScene").queue_free()
 	
-#	EventBus.CurrentLevel = "res://scenes/ShowcaseWorld.tscn"
+	EventBus.CurrentLevel = "res://scenes/ShowcaseWorld.tscn"
 #	EventBus.CurrentLevel = "res://scenes/levels/Level11.tscn"
 	
 	_audio_settings()

@@ -2,6 +2,7 @@ extends Interactable
 
 @export_enum("Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange") var Flavor:String
 
+# in future store elsewhere
 const FlavorSetup := {
 	"Strawberry": Color(1, 0, 0),
 	"Banana": Color(1, 0.92116665840149, 0.56999999284744),
@@ -34,31 +35,37 @@ func get_interaction_icon():
 	return EventBus.GrabTex
 
 func interact():
-	if (EventBus.HeldItem == null) and not (PotionInfo.StockAmounts[Flavor][0] <= 0):
-		$GlassSound.pitch_scale = randf_range(1.01, 1.2)
-		$GlassSound.play()
-		PotionInfo.StockAmounts[Flavor][0] -= 1
-		EventBus.HeldItem = str(Flavor)
+	var stockAmounts = PotionInfo.StockAmounts[Flavor]
+	var heldItem = EventBus.HeldItem
+	var glassSound = $GlassSound
+	
+	if (heldItem == null) and not (stockAmounts[0] <= 0):
+		glassSound.pitch_scale = randf_range(1.01, 1.2)
+		glassSound.play()
+		stockAmounts[0] -= 1
+		EventBus.HeldItem = Flavor
 		EventBus.emit_signal("HeldItemChanged")
-	elif EventBus.HeldItem == str(Flavor):
-		$GlassSound.pitch_scale = randf_range(0.8, 0.99)
-		$GlassSound.play()
-		PotionInfo.StockAmounts[Flavor][0] += 1
+	elif heldItem == Flavor:
+		glassSound.pitch_scale = randf_range(0.8, 0.99)
+		glassSound.play()
+		stockAmounts[0] += 1
 		EventBus.HeldItem = null
 		EventBus.emit_signal("HeldItemChanged")
-	_reset()
+		_reset()
 	_check_contents()
 
+
 func _check_contents():
-	if (PotionInfo.StockAmounts[Flavor][0] <= 0):
-		$Flavor.position.y = FlavorConfigs["Empty"][0]
-		$Flavor.mesh.size.y = FlavorConfigs["Empty"][1]
-	elif PotionInfo.StockAmounts[Flavor][0] <= PotionInfo.StockAmounts[Flavor][1] / 2.0:
-		$Flavor.position.y = FlavorConfigs["Half"][0]
-		$Flavor.mesh.size.y = FlavorConfigs["Half"][1]
-	else:
-		$Flavor.position.y = FlavorConfigs["Normal"][0]
-		$Flavor.mesh.size.y = FlavorConfigs["Normal"][1]
+	var stockAmounts = PotionInfo.StockAmounts[Flavor]
+	var positionAndSize = FlavorConfigs["Normal"]
+	
+	if stockAmounts[0] <= 0:
+		positionAndSize = FlavorConfigs["Empty"]
+	elif stockAmounts[0] <= stockAmounts[1] / 2.0:
+		positionAndSize = FlavorConfigs["Half"]
+	
+	$Flavor.position.y = positionAndSize[0]
+	$Flavor.mesh.size.y = positionAndSize[1]
 
 func _on_timer_timeout():
 	_check_contents()

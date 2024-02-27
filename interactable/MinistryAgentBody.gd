@@ -3,7 +3,7 @@ extends Interactable
 @onready var color := Color(randf(), randf(), randf())
 @onready var Dialogue := get_parent().get_node("SpeechBubble")
 const Flavors := ["Strawberry","Watermelon","Orange","Blueberry","Pineapple","Banana"]
-@onready var Flavor:String = Flavors[randi() % Flavors.size()]
+@onready var Flavor:String = Flavors.pick_random()
 var Talk:bool = false
 var Used:bool = false
 
@@ -22,7 +22,6 @@ func interact():
 	
 	if EventBus.HeldItem == "Juice":
 		_check(EventBus.HeldEffect, EventBus.HeldFlavor)
-		
 		EventBus.HeldEffect = null
 		EventBus.HeldFlavor = ""
 		EventBus.HeldItem = null

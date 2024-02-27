@@ -18,7 +18,7 @@ func get_interaction_icon():
 		return EventBus.CrosshairTex
 
 func interact():
-	if Night == true:
+	if Night:
 		EventBus.emit_signal("NextDay")
 
 func _day_done():

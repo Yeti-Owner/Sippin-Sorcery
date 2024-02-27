@@ -12,5 +12,5 @@ func _on_spawn_timer_timeout():
 	if self.get_child_count() == 1:
 		var t = TestSubject.instantiate()
 		add_child(t)
-	SpawnTimer.wait_time = randi_range(8, 16)
+	SpawnTimer.wait_time = 5
 	SpawnTimer.start()

@@ -10,11 +10,14 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if (event.is_action("interact")) and (current_collider != null) and (Interacted == false):
 		current_collider.interact()
+		# Signals are more optimized but look less clean, this is
+		# Surprisingly fast to execute
 		EventBus.interaction.emit(current_collider.get_interaction_icon(), current_collider.get_interaction_text())
 		Interacted = true
 	if (event.is_action_released("interact")):
 		Interacted = false
 
+# I Can't really think of a better way but I'm sure it exists
 func _process(_delta) -> void:
 	var collider = get_collider()
 	

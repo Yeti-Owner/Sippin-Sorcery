@@ -4,8 +4,8 @@ extends PathFollow3D
 @onready var Apparation := preload("res://scenes/apparation.tscn")
 @onready var Dialogue := $SpeechBubble
 
-const MaleNames := ["Liam", "Noah", "Ethan", "Oliver", "Aiden", "Ben", "Elijah", "James", "William", "Benjamin", "Lucas", "Mason", "Logan", "Alexander", "Michael"]
-const FemaleNames :=  ["Hannah", "Olivia", "Ava", "Isabella", "Sophia", "Mia", "Amelia", "Grace", "Evelyn", "Abigail", "Emily", "Elizabeth", "Charlotte", "Sofia", "Aria"]
+const MaleNames := ["Liam", "Noah", "Ethan", "Oliver", "Ben", "Elijah", "James", "William", "Benjamin", "Lucas", "Mason", "Logan", "Alexander", "Michael", "Jose", "Jessie"]
+const FemaleNames :=  ["Hannah", "Olivia", "Ava", "Isabella", "Sophia", "Mia", "Amelia", "Grace", "Evelyn", "Abigail", "Emily", "Elizabeth", "Charlotte", "Sofia", "Aria", "Jessie"]
 
 const Problems := ["Give me a potion of strength please.","Do you have a potion of levitation?","You got a potion of charisma?","Can I get a draught of sleep potion?","Hmm have something for swimming?","Do you perchance have a potion of petrification?","Give me a potion of invisibility.","Potion of flexibility?","Potion of luck please.","Could I please buy a potion of speed?","I would like 1 potion of agility please."]
 @onready var Problem:String = Problems[randi() % Problems.size()]
@@ -60,16 +60,16 @@ func _physics_process(delta):
 		walking = true
 		self.progress_ratio = min(self.progress_ratio + (speed * delta), 1)
 
+const GoodResponses = ["Oh it's just juice","Oh, juice","Hmm I still don't believe you","You got lucky I bet","You pass this time","Nice one","Surprising"]
+const BadResponses = ["I knew you were selling illegal potions","Nice try","Almost had us","So close yet so far","Better luck next time"]
 func _result(success:bool, flavor:bool):
 	var Response:String
 	if success:
 		# Good
-		var Responses = ["Oh it's just juice","Oh, juice","Hmm I still don't believe you","You got lucky I bet","You pass this time","Nice one","Surprising"]
-		Response = Responses[randi() % Responses.size()]
+		Response = GoodResponses.pick_random()
 		EventBus.Balance += 10
 	else:
-		var Responses = ["I knew you were selling illegal potions","Nice try","Almost had us","So close yet so far","Better luck next time"]
-		Response = Responses[randi() % Responses.size()]
+		Response = BadResponses.pick_random()
 		EventBus.Balance -= 25
 		EventBus.Reputation -= 2
 	

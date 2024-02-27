@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://drlfdja61v1yq"]
 
-[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_cphno"]
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_2sr3x"]
 
 [resource]
-script = ExtResource("1_cphno")
+script = ExtResource("1_2sr3x")
 Name = "Odin"
 FavColor = Color(0.0705882, 0.0705882, 0.0705882, 1)
 Dialog = "I sometimes read books so late there's no light, help?"

@@ -1,15 +1,22 @@
 extends PathFollow3D
 
 @export var Info:CharacterSheet
+
+# References
 @onready var Dialogue := $SpeechBubble
 @onready var AnimPlayer := $BodyMeshes/AnimationPlayer
 @onready var Apparation := preload("res://scenes/apparation.tscn")
-@onready var Difficulty:int = get_parent().List
+@onready var RayCast := $RayCast3D
+
+# Vars
 const speed := 0.04
+const COLLIDER_KILL = "Kill"
+const COLLIDER_STOP = "Stop"
+const COLLIDER_BODY = "Body"
 var talked:bool = false
 var walking:bool = true
 var Frustrated:bool = false
-var LeaveTime:int
+var LeaveTime:int = 45
 
 func _ready():
 	randomize()
@@ -23,30 +30,21 @@ func _ready():
 	$Body.color = Info.FavColor
 	AnimPlayer.play("walk")
 	_dress()
-	
-	match Difficulty:
-		0:
-			LeaveTime = 60
-		1:
-			LeaveTime = 50
-		2:
-			LeaveTime = 40
-		3:
-			LeaveTime = 40
 
-
+# There absolutely is a better way to do this but I kept running into bugs 
+# so I'll leave this alone for now
 func _physics_process(delta):
-	if $RayCast3D.is_colliding():
-		var collider = $RayCast3D.get_collider()
+	if RayCast.is_colliding():
+		var collider = RayCast.get_collider()
 		var colliderName = collider.name
-		
+
 		if colliderName == "Kill":
 			$BodyMeshes/Hat.set_surface_override_material(0, null)
-			
+
 			var a := Apparation.instantiate()
 			a.position = self.position
 			get_parent().add_child(a)
-			
+
 			EventBus.ActiveCustomers -= 1
 			EventBus.emit_signal("CustomerDone")
 			self.queue_free()
@@ -55,17 +53,16 @@ func _physics_process(delta):
 			$LeaveTimer.start(LeaveTime)
 			Dialogue._talk(Info.Dialog)
 			talked = true
-		
+
 		if (colliderName == "Body" or colliderName == "Stop"):
 			walking = false
 			AnimPlayer.play("RESET", 0.2)
 			return
-	
+
 	if self.progress_ratio < 1:
 		walking = true
 		self.progress_ratio = min(self.progress_ratio + (speed * delta), 1)
 
-# New Dress Function
 func _dress():
 	$BodyMeshes/Torso.set_mesh(load(PotionInfo.TorsoList[Info.House - 1]))
 	
@@ -133,14 +130,14 @@ func _on_anim_timer_timeout():
 	if (AnimPlayer.is_playing() == false) and walking == true:
 		AnimPlayer.play("walk")
 
+const HurryList := ["Mind hurrying up?","I have places to be you know.","Taking your sweet time huh.","Could you speed it up?","Dude, could you go any slower.","I'll be shriveled up and old by the time you're done.","I'm begging you to hurry up dude."]
+const GoneList := ["Yeah I'm leaving.","This takes way too long dude.","Next time hurry up.","I'm never returning.","I hope you go out of business."]
 func _on_leave_timer_timeout():
 	if Frustrated == false:
-		var HurryList := ["Mind hurrying up?","I have places to be you know.","Taking your sweet time huh.","Could you speed it up?","Dude, could you go any slower.","I'll be shriveled up and old by the time you're done.","I'm begging you to hurry up dude."]
 		Dialogue._talk(HurryList[randi() % HurryList.size()])
 		$LeaveTimer.start(LeaveTime)
 		Frustrated = true
 	else:
-		var GoneList := ["Yeah I'm leaving.","This takes way too long dude.","Next time hurry up.","I'm never returning.","I hope you go out of business."]
 		Dialogue._talk(GoneList[randi() % GoneList.size()])
 		$WaitTimer.start()
 		get_node("Body").Used = true

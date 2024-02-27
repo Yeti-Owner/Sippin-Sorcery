@@ -19,7 +19,7 @@ func interact():
 	if Active == false:
 		JournalUI._pop_up()
 
-func _physics_process(_delta) -> void:
+func _physics_process(_delta):
 	if ((Input.is_action_just_pressed("interact")) or (Input.is_action_just_pressed("pause"))) and (Active == true):
 		JournalUI._hide()
 

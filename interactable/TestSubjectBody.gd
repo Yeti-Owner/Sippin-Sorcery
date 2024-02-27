@@ -57,10 +57,11 @@ var cost := 45
 func _ready():
 	randomize()
 	
+	# Safety frames
 	await  get_tree().process_frame
 	await  get_tree().process_frame
 	await  get_tree().process_frame
-	if get_parent().CharName == "Michael Jackson":
+	if get_parent().CharName == "Michael Jackson": # Easter egg
 		get_parent().get_node("BodyMeshes").rotation_degrees.y += 180
 
 func get_interaction_text():
@@ -85,33 +86,35 @@ func interact():
 		EventBus.emit_signal("HeldItemChanged")
 		EventBus.emit_signal("BalanceChanged")
 
+# This is about as optimized as I can make it
+const Responses := ["I feel too many effects to sort them out, sorry I can't help.","Too much is going on I can't separate them.","Geez dude I'm feeling a lot, use less ingredients next time.","I'm gonna throw up, too many effects.","Dude, never do that again, too many effects."]
 func _test_juice(effects:Array):
 	var Results := ""
+	var effect
 	if effects.size() > 1:
-		var Responses := ["I feel too many effects to sort them out, sorry I can't help.", "Too much is going on I can't separate them.", "Geez dude I'm feeling a lot, use less ingredients next time.","I'm gonna throw up, too many effects.", "Dude, never do that again, too many effects."]
-		Results = Responses[randi() % Responses.size()]
-		
+		Results = Responses.pick_random()
 		SpeechBubble._talk(Results)
 		$Timer.start(4)
-		EventBus.Hint.emit(str("You can only test 1 effect at a time, review help section for more info."))
+		EventBus.Hint.emit("You can only test 1 effect at a time, review help section for more info.")
 		return
 	else:
-		# EffectsList[Effect] gives the descriptor to be recorded (+ probably spoken)
-		Results = EffectsList[effects[0]]
-		_record_journal(Results, effects[0])
+		# EffectsList[Effect] gives the descriptor to be recorded
+		effect = effects[0]
+		Results = EffectsList[effect]
+		_record_journal(Results, effect)
 	
-	
-	if AdditionalList1.has(effects[0]):
-		_effect(effects[0], Results)
+	if AdditionalList1.has(effect):
+		_effect(effect, Results)
 		$Timer.start(4)
 		return
-	elif AdditionalList2.has(effects[0]):
+	elif AdditionalList2.has(effect):
 		SpeechBubble._talk("...")
 		$Timer.start(8)
 		return
 	
 	SpeechBubble._talk(Results)
 	$Timer.start(4)
+
 
 func _record_journal(result, effect):
 	# No journal entry for these, but they are considered "effects"

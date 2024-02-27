@@ -1,5 +1,6 @@
 extends Node3D
 
+# Could prolly move elsewhere but idc
 const FlavorSetup := {
 	"Strawberry": Color(1, 0, 0),
 	"Banana": Color(1, 0.92116665840149, 0.56999999284744),

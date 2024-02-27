@@ -21,10 +21,10 @@ func _ready():
 	AnimPlayer.play("walk")
 	if (randi() % 2 == 1):
 		Gender = "Male"
-		CharName = MaleNames[randi() % MaleNames.size()]
+		CharName = MaleNames.pick_random()
 	else:
 		Gender = "Female"
-		CharName = FemaleNames[randi() % FemaleNames.size()]
+		CharName = FemaleNames.pick_random()
 	
 	_dress()
 
@@ -45,6 +45,9 @@ func _physics_process(delta):
 				
 				$BodyMeshes/Hat.set_surface_override_material(0, null)
 				
+				if EventBus.FirstTestSubject == true:
+					EventBus.Hint.emit("If you wait, more students will come.")
+					EventBus.FirstTestSubject = false
 				self.queue_free()
 		"stop":
 			if self.progress_ratio == 1:

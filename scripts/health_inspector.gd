@@ -75,12 +75,13 @@ func _physics_process(delta):
 		walking = true
 		self.progress_ratio = min(self.progress_ratio + (speed * delta), 1)
 
+const GoodResponses = ["Alright I guess you'll pass.","Well, it's not bad.","You pass this time.","I suppose you did fine.","It's good.","That was passable."]
+const BadResponses = ["Nice try, you fail this inspection.","So close but nah you fail.","Maybe next time?","Failed!","That was terrible."]
 func _result(success:bool, flavor:bool):
 	var Response:String
 	if (success) and (flavor):
 		# Good
-		var Responses = ["Alright I guess you'll pass.","Well, it's not bad.","You pass this time.","I suppose you did fine.","It's good.","That was passable."]
-		Response = Responses.pick_random()
+		Response = GoodResponses.pick_random()
 		EventBus.Balance += 60
 		SceneManager.BossDone.emit(true)
 		EventBus.BossesBeaten += 1
@@ -88,8 +89,7 @@ func _result(success:bool, flavor:bool):
 		$ResponseSound.play()
 	else:
 		# Bad
-		var Responses = ["Nice try, you fail this inspection.","So close but nah you fail.","Maybe next time?","Failed!","That was terrible."]
-		Response = Responses.pick_random()
+		Response = BadResponses.pick_random()
 		SceneManager.BossDone.emit(false)
 		$ResponseSound.stream = load("res://assets/audio/bad.ogg")
 		$ResponseSound.play()

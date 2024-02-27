@@ -11,6 +11,8 @@ var Hovered: String = ""
 @onready var Right := $Arrows/Right
 var Stage: int = 6
 
+# is there a better way? yes.
+# do I like this way more? Also yes.
 @onready var OutfitParts := {
 	6: {
 		"list": ["res://assets/models/characters/hats/HairColor1.png","res://assets/models/characters/hats/HairColor2.png","res://assets/models/characters/hats/HairColor3.png","res://assets/models/characters/hats/HairColor4.png","res://assets/models/characters/hats/HairColor5.png","res://assets/models/characters/hats/HairColor6.png","res://assets/models/characters/hats/HairColor7.png"],
@@ -163,3 +165,6 @@ func _test():
 
 func _on_scene_timer_timeout():
 	SceneManager._swap_hud("res://scenes/ui/gui.tscn")
+
+func _on_music_finished():
+	$Music.play()

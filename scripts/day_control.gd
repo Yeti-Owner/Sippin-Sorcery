@@ -22,7 +22,7 @@ var RotationSteps:float
 var StepAmt:float = 0
 var TweenValue:float = -10 # Start position of the Sun's X
 
-# in ready in does slight tween from set position to whatever the "first" one is
+# in ready it does slight tween from set position to whatever the "first" one is
 
 func _ready():
 	if Showcase:
@@ -38,6 +38,7 @@ func _ready():
 	
 	_set_color()
 
+# Depreciated, don't use
 func _showcase():
 	ShowcaseStage = wrap(ShowcaseStage + 1, 1, 4)
 	match ShowcaseStage:
@@ -114,30 +115,33 @@ func _next_stage():
 	var d:float = RotationSteps * StepAmt
 	_set_rotation(d)
 
+# There is prob a better way but I just do NOT want to work on this anymore
 func _set_color():
 	# Finds if x is closer to 0 or -180
 	if floor(abs(TweenValue) / 90.0) == 1: # floor division
+		var tween := get_tree().create_tween()
+		tween.set_parallel(true)
+		
 		# get ratio for where between -90 and -180 it is
 		var Ratio:float = (float(TweenValue + 90) / -90.0)
-		
 		# As Ratio increases there is more of dark_top and less of bright_top
 		var NewTopColor := (dark_top * Ratio) + (bright_top * (1 - Ratio))
 		var OldTopColor = EnvironmentSky.get_shader_parameter("top_color")
-		var tween := get_tree().create_tween()
 		tween.tween_method(func(it): EnvironmentSky.set_shader_parameter("top_color", it), OldTopColor, NewTopColor, 10)
 		
 		var NewBottomColor := (dark_bottom * Ratio) + (bright_bottom * (1 - Ratio))
 		var OldBottomColor = EnvironmentSky.get_shader_parameter("bottom_color")
-		var tween2 := get_tree().create_tween()
-		tween2.tween_method(func(it2): EnvironmentSky.set_shader_parameter("bottom_color", it2), OldBottomColor, NewBottomColor, 10)
+		tween.tween_method(func(it2): EnvironmentSky.set_shader_parameter("bottom_color", it2), OldBottomColor, NewBottomColor, 10)
 		
 		var NewScatter := (dark_scatter * Ratio) + (bright_scatter * (1 - Ratio))
 		var OldScatter = EnvironmentSky.get_shader_parameter("sun_scatter")
-		var tween3 := get_tree().create_tween()
-		tween3.tween_method(func(it3): EnvironmentSky.set_shader_parameter("sun_scatter", it3), OldScatter, NewScatter, 10)
+		tween.tween_method(func(it3): EnvironmentSky.set_shader_parameter("sun_scatter", it3), OldScatter, NewScatter, 10)
 		
 	else: # closer to 0 aka start
 		# Basically repeats code above but slightly backwards
+		var tween := get_tree().create_tween()
+		tween.set_parallel(true)
+		
 		
 		# Same as above but don't need to offset by 90
 		var Ratio:float = abs(float(TweenValue) / -90.0)
@@ -145,17 +149,14 @@ func _set_color():
 		# As Ratio increases there is more of bright_top and less of dark_top
 		var NewTopColor := (bright_top * Ratio) + (dark_top * (1 - Ratio))
 		var OldTopColor = EnvironmentSky.get_shader_parameter("top_color")
-		var tween := get_tree().create_tween()
 		tween.tween_method(func(it): EnvironmentSky.set_shader_parameter("top_color", it), OldTopColor, NewTopColor, 10)
 		
 		var NewBottomColor := (bright_bottom * Ratio) + (dark_bottom * (1 - Ratio))
 		var OldBottomColor = EnvironmentSky.get_shader_parameter("bottom_color")
-		var tween2 := get_tree().create_tween()
-		tween2.tween_method(func(it2): EnvironmentSky.set_shader_parameter("bottom_color", it2), OldBottomColor, NewBottomColor, 10)
+		tween.tween_method(func(it2): EnvironmentSky.set_shader_parameter("bottom_color", it2), OldBottomColor, NewBottomColor, 10)
 		
 		
 		var NewScatter := (bright_scatter * Ratio) + (dark_scatter * (1 - Ratio))
 		var OldScatter = EnvironmentSky.get_shader_parameter("sun_scatter")
-		var tween3 := get_tree().create_tween()
-		tween3.tween_method(func(it3): EnvironmentSky.set_shader_parameter("sun_scatter", it3), OldScatter, NewScatter, 10)
+		tween.tween_method(func(it3): EnvironmentSky.set_shader_parameter("sun_scatter", it3), OldScatter, NewScatter, 10)
 

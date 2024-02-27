@@ -33,6 +33,7 @@ func interact():
 	else:
 		$SpeechBubble._talk("Feel free to take a slice of the Lasagna.")
 
+# Moves head to look at player
 func _process(_delta):
 	if get_node_or_null(EventBus.PlayerPath) != null:
 		$BodyMeshes/LookMeshes.look_at(get_node(EventBus.PlayerPath).position)

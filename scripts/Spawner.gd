@@ -44,7 +44,7 @@ func _on_misc_timer_timeout():
 	_spawn()
 
 func _spawn():
-	# 1 in 3 chance to spawn ministry if exists otherwise spawn customer
+	# 1 in 3 chance to spawn ministry if any can otherwise spawn customer
 	# When no more ministry/customers spawn boss if exists
 	if Num == 0:
 		if MinistryNum != 0:
@@ -67,6 +67,7 @@ func _spawn_customer():
 	var level:int
 	
 	# 1 in 3 chance to (possibly) draw from a lower pool of customers
+	# Absolutely a better way to write it but I don't really have the time for it
 	var RNG := randi() % 3
 	if RNG == 0:
 		match List:

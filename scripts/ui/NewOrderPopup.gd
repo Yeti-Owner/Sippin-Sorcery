@@ -47,8 +47,8 @@ func _set_up_order():
 	Amount.min_value = min(1, Amount.max_value)
 	OrderMin.text = str(Amount.min_value)
 
-	# value is 1 or 0 depending on max being above 0
-	Amount.value = min(1, Amount.max_value)
+	# value is set to highest possible or 0
+	Amount.value = max(0, Amount.max_value)
 	OrderLabel.text = str(Amount.value) + "x " + SelectedItem
 
 func _hide_orders():

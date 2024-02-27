@@ -78,7 +78,7 @@ func _level():
 		25:
 			dialogue._talk(str("[font_size=36]Right outside by the exit portal you'll find first-year magic students hiding out.[/font_size]"))
 		26:
-			dialogue._talk(str("[font_size=36]They'll be willing to test out juices for you, for a price of course.[/font_size]"))
+			dialogue._talk(str("[font_size=36]There be a near endless stream of them willing to test out juices for you, for a price of course.[/font_size]"))
 			$Spawner._start()
 		27:
 			dialogue._talk(str("[font_size=36]That's all, cya![/font_size]"))

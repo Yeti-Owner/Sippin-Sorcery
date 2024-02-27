@@ -6,10 +6,10 @@ func get_interaction_text():
 func get_interaction_icon():
 	return EventBus.ActionTex
 
+# Same script for both buttons
 func interact():
 	match self.name:
 		"BackBtn":
 			get_parent()._back()
 		"NextBtn":
 			get_parent()._next()
-	

@@ -4,6 +4,8 @@ const GameVersion:int = 1
 
 # Signals
 signal interaction(icon, text)
+# In future I make HeldItemChanged and BalanceChanged a function with a var, so you don't
+# Need to fiddle around with other stuff, just the signal
 signal HeldItemChanged
 signal BalanceChanged
 signal DialogueFinished
@@ -12,33 +14,34 @@ signal DayDone
 signal CustomerDone
 signal BossProblem
 signal Hint(hint:String)
+signal RemoveBarrier # Onetime signal, possibly better option available
 signal DisableInteract(value:bool)
-signal RemoveBarrier
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"
 const GrabTex := "res://assets/textures/ui/grab.png"
 const ActionTex := "res://assets/textures/ui/action.png"
+const CauldronTex := "res://assets/textures/ui/cauldron.png"
 
-# basic potion/held item info needed
+# Basic potion/held item info needed
 var HeldItem
 var HeldEffect
 var HeldFlavor := ""
 var InsertedItems
 
 # Player Info
-var PlayerName:String = "Callum"
+var PlayerName:String = "Player"
 var PlayerOutfit:Array = ["res://assets/models/characters/legs/leg1.obj", "res://assets/models/characters/pants/pants1.obj", "res://assets/models/characters/torsos/torso1.obj", "res://assets/models/characters/heads/Head1.obj", "res://assets/models/characters/hats/Hair1.obj", "res://assets/models/characters/hats/HairColor1.png"]
 var Balance := 75
 var PlayerHeadshot
 
 var Reputation := 0 : set = _check_rep
-
 var IdNum:int
 var BossesBeaten:int = 0
 var StartDate:String = Time.get_date_string_from_system()
 var MetAlton:bool = false
-#var PlayerPath:String = ""
+var FirstTestSubject:bool = true
+
 
 # Misc
 const PlayerData := "user://save.dat"
@@ -75,7 +78,7 @@ func _ready():
 	if FileAccess.file_exists(PlayerData):
 		_load()
 		_player_headshot()
-		_assign_keys()
+#		_assign_keys()
 	else:
 		_save()
 	
@@ -108,7 +111,9 @@ func _save():
 		"SENTFEEDBACK" : SentFeedback,
 		"RADIOSONG" : RadioSong,
 		"STOCKAMOUNTS" : PotionInfo.StockAmounts,
-		"UNLOCKEDHELP" : UnlockedHelp
+		"UNLOCKEDHELP" : UnlockedHelp,
+		"METALTON" : MetAlton,
+		"FIRSTTESTSUBJECT" : FirstTestSubject
 	}
 	file.store_var(SavedData)
 
@@ -135,14 +140,16 @@ func _load():
 	Reputation = LoadedData.REPUTATION
 	PotionInfo.StockAmounts = LoadedData.STOCKAMOUNTS
 	UnlockedHelp = LoadedData.UNLOCKEDHELP
+	MetAlton = LoadedData.METALTON
+	FirstTestSubject = LoadedData.FIRSTTESTSUBJECT
 
 func _check_rep(_rep):
 	var MaxRep := (BossesBeaten + 1) * 25
 	Reputation = clamp(_rep, 0, MaxRep)
 
+# This was the most infuriating thing to work on
+# I'll come back to it later, it DOES NOT WORK
 func _assign_keys():
-	return # Doesn't work idk I'll come back to it later but
-	# for now keybinds aren't saved
 	var binds := ["forward", "backward", "left", "right", "jump", "interact", "pause", "id"]
 	for key in binds:
 		print(typeof(Keybinds[key]))
@@ -159,7 +166,7 @@ func _discord_presence():
 	
 	discord_sdk.start_timestamp = int(Time.get_unix_time_from_system())
 	
-	# Saving this in case it's relevant later idk
+	# Saving this in case it's relevant later
 	# discord_sdk.end_timestamp = int(Time.get_unix_time_from_system()) + 3600 # +1 hour in unix time / "01:00 remaining"
 	
 	discord_sdk.refresh()

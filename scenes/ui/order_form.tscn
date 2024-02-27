@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyuvf2vbqwp11"]
+[gd_scene load_steps=14 format=3 uid="uid://cyuvf2vbqwp11"]
 
 [ext_resource type="Script" path="res://scripts/ui/order_form.gd" id="1_5q747"]
 [ext_resource type="FontFile" uid="uid://dwsisuxixt5dx" path="res://assets/theme/FFFFORWA.TTF" id="3_1a8ai"]
 [ext_resource type="Texture2D" uid="uid://5m4741pcv03y" path="res://assets/textures/ui/OrderForm.png" id="4_7iaaa"]
+[ext_resource type="AudioStream" uid="uid://bgos22xkpt5p0" path="res://assets/audio/back_002.ogg" id="4_q08ei"]
 [ext_resource type="Texture2D" uid="uid://d2nuj41qjeyu5" path="res://assets/textures/ui/Notepad.png" id="5_fsunb"]
 [ext_resource type="Script" path="res://scripts/ui/NewOrderPopup.gd" id="5_tf81t"]
 [ext_resource type="AudioStream" uid="uid://d1rhkt070yqmu" path="res://assets/audio/PencilWrite.ogg" id="6_cyasd"]
@@ -109,6 +110,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 19
+
+[node name="DeleteSound" type="AudioStreamPlayer" parent="OrderForm/Bg/Scroll"]
+stream = ExtResource("4_q08ei")
+bus = &"Sfx"
 
 [node name="Options" type="HBoxContainer" parent="OrderForm/Bg"]
 layout_mode = 1

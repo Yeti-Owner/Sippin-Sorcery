@@ -103,6 +103,7 @@ func _check_flavor():
 	if FlavorList.has(EventBus.HeldFlavor):
 		success = true
 		# Player is rewarded between 5 and 8 just for flavor
+		# at the very least they will break-even not counting ingredient
 		EventBus.Balance += (randi() % 3 + 5)
 		EventBus.emit_signal("BalanceChanged")
 	
@@ -110,23 +111,20 @@ func _check_flavor():
 
 func _ask_flavors():
 	Talk = !Talk
-	var FlavorPreference:String = ""
 	var FlavorList:Array = get_parent().Info._get_flavors()
 	var FlavorPrefix:String = get_parent().Info.TastePrefix
+	var FlavorPreference:String
 	
-	if FlavorList.size() == 1:
-		FlavorPreference = str(FlavorPrefix + FlavorList[0] + ".")
-	elif FlavorList.size() == 2:
-		FlavorPreference = str(FlavorPrefix + FlavorList[0] + " and " + FlavorList[1] + ".")
-	elif FlavorList.size() == 6:
-		FlavorPreference = str(FlavorPrefix + "any flavor.")
-	else:
-		FlavorPreference = FlavorPrefix
-		for taste in FlavorList.size():
-			if FlavorList.size() > 1:
-				FlavorPreference += str(FlavorList.pop_front() + ", ")
-			else:
-				FlavorPreference += str("and " + FlavorList.pop_front() + ".")
+	# In future add an "anything but X" option but not worth it rn
+	match FlavorList.size():
+		1:
+			FlavorPreference = FlavorPrefix + FlavorList[0] + "."
+		2:
+			FlavorPreference = FlavorPrefix + FlavorList[0] + " and " + FlavorList[1] + "."
+		6:
+			FlavorPreference = FlavorPrefix + "any flavor."
+		_:
+			FlavorPreference = FlavorPrefix + ", ".join(FlavorList.slice(0, FlavorList.size() - 1)) + ", and " + FlavorList[-1] + "."
 	
 	get_parent().Dialogue._talk(FlavorPreference)
 

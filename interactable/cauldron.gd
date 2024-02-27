@@ -5,25 +5,11 @@ extends Interactable
 @onready var particles := $JuiceParticles
 
 var ItemsAdded:Array
-
-const stages:Dictionary = {
-	1: 0.27,
-	2: 0.3,
-	3: 0.33,
-	4: 0.35,
-	5: 0.38,
-	6: 0.4,
-	7: 0.42,
-	8: 0.45,
-	9: 0.49,
-	10: 0.52,
-	11: 0.56,
-	12: 0.572
-}
+const LevelChange:float = 0.054
 
 const BannedList := ["Juice","Frog"]
 const FlavorList := ["Strawberry","Banana","Pineapple","Blueberry","Watermelon","Orange","Lasagna"]
-const FlavorContent := {
+const FlavorContent := { # In future store this alongside other stuff in PotionInfo
 	"Strawberry": Color(1, 0, 0),
 	"Banana": Color(1, 0.92116665840149, 0.56999999284744),
 	"Pineapple": Color(0.89803922176361, 1, 0.09411764889956),
@@ -49,9 +35,10 @@ func get_interaction_text():
 			return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=orange]add ingredient[/color][/center]"
 
 func get_interaction_icon():
-	return "res://assets/textures/ui/cauldron.png"
+	return EventBus.CauldronTex
 
 func interact():
+	# This is not even slightly well written tbh
 	if InteractTimer.is_stopped():
 		if EventBus.HeldItem == null and ItemsAdded.size() > 0:
 			_mix()
@@ -61,25 +48,30 @@ func interact():
 			if FlavorList.has(EventBus.HeldItem):
 				_juice(true)
 			else:
-				_juice()
 				ItemsAdded.append(EventBus.HeldItem)
 				EventBus.InsertedItems = str(EventBus.HeldItem)
+				_juice()
 			EventBus.HeldItem = null
 			EventBus.emit_signal("HeldItemChanged")
 		elif (EventBus.HeldItem == "Frog"):
-			EventBus.Hint.emit("Don't put a Frog in there :(")
+			EventBus.Hint.emit("Don't put a Frog in there :(") # easter egg
 		InteractTimer.start()
 
 func _mix():
+	# This is horrid too
 	$AudioStreamPlayer3D.play()
 	_particles()
+	
+	# Construct juice/potion
 	var Effects = []
-	while ItemsAdded.size() > 0:
+	while ItemsAdded.size() > 0: 
 		var amt = min(ItemsAdded.count(ItemsAdded[0])-1, 2)
 		Effects.append(PotionInfo.CauldronPotions[ItemsAdded[0]][amt])
-		var tmp = ItemsAdded[0]
-		while ItemsAdded.has(tmp):
-			ItemsAdded.erase(tmp)
+		var temp = ItemsAdded[0]
+		while ItemsAdded.has(temp):
+			ItemsAdded.erase(temp)
+	
+	# Give player juice/potion
 	EventBus.HeldFlavor = content
 	content = ""
 	EventBus.HeldEffect = Effects
@@ -89,15 +81,17 @@ func _mix():
 	$Juice.mesh.material.albedo_color = DefaultGreen
 
 func _juice(FlavorAdded:bool = false):
-	if ItemsAdded.size() == 0:
-		$Juice.visible = false
-	else:
-		$Juice.visible = true
-		$Juice.position.y = stages[min(11, ItemsAdded.size())]
-	
 	if FlavorAdded:
 		content = EventBus.HeldItem
 		$Juice.mesh.material.albedo_color = FlavorContent[EventBus.HeldItem]
+	
+	# if something added
+	if (ItemsAdded.size() > 0) or (content != ""):
+		$Juice.visible = true
+		# Max size 0.574 min size 0.25
+		$Juice.position.y = (LevelChange * clamp(ItemsAdded.size() - 1, 0, 6)) + 0.25
+	else:
+		$Juice.visible = false
 
 func _particles():
 	particles.position.y = $Juice.position.y

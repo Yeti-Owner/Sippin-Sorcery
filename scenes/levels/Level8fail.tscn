@@ -177,11 +177,11 @@ transform = Transform3D(-0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, -0.173648
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 23.9, 0, 46.3)
 HasItem = true
 
-[node name="TrashBag5" parent="TrashBags" instance=ExtResource("28_h7o1e")]
-transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 25.3, 0, 12.5)
-
 [node name="TrashBag6" parent="TrashBags" instance=ExtResource("28_h7o1e")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 27.1, 0, 12.5)
+
+[node name="TrashBag5" parent="TrashBags" instance=ExtResource("28_h7o1e")]
+transform = Transform3D(4.47035e-08, 0, 1, 0, 1, 0, -1, 0, 4.47035e-08, 24.5, 0, 12.8)
 
 [node name="MiscTimer" type="Timer" parent="."]
 wait_time = 5.0

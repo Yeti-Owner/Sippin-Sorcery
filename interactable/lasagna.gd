@@ -7,7 +7,7 @@ func get_interaction_text():
 	if EventBus.HeldItem != null:
 		return "[center][color=YELLOW]Lasagna[/color][/center]"
 	else:
-		return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=YELLOW]grab[/color] Lasagna[/center]"
+		return "[center]Press " + OS.get_keycode_string(InputMap.action_get_events("interact")[0].keycode) + " to [color=YELLOW]grab Lasagna[/color][/center]"
 
 func get_interaction_icon():
 	return EventBus.GrabTex

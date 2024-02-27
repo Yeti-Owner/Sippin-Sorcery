@@ -13,7 +13,7 @@ func _ready():
 	EventBus._update_presence()
 	_start()
 	
-	# Debug to check for memory leaks
+	# Debug to check for memory leaks basically
 #	print("---\n")
 #	print_orphan_nodes()
 #	print("\n---")

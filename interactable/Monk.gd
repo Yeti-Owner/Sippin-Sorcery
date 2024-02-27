@@ -1,10 +1,9 @@
 extends Interactable
 
-#@onready var Player := get_node("%Player")
 @onready var FlipPage := $FlipPageSound
 @onready var OpenClose := $OpenCloseSound
 var Active:bool = false
-var Cost:int = 15
+var Cost:int = 10
 
 const EffectsDescription := {
 	"MandrakeRoot": ["Resistance to common illnesses", "Confusion","Straightforward health boost"],
@@ -64,7 +63,7 @@ func interact():
 	if Active == false:
 		_pop_up()
 
-func _physics_process(_delta) -> void:
+func _physics_process(_delta):
 	if ((Input.is_action_just_pressed("interact")) or (Input.is_action_just_pressed("pause"))) and (Active == true):
 		self._hide()
 
@@ -98,43 +97,58 @@ func _on_click_out_pressed():
 	_hide()
 
 func _set_page(_page):
-	CurrentPage = clamp(_page, 0, 16)
-	PotionName.text = PotionInfo.JournalPotions[CurrentPage][0]
-	PotionIcon.texture = load(PotionInfo.JournalPotions[CurrentPage][1])
-	PotionDesc.text = PotionInfo.JournalPotions[CurrentPage][2]
+	var page = clamp(_page, 0, 16)
+	CurrentPage = page
 	
-	# Notes shenanigans
-	var Ref = PotionInfo.JournalIngredients[PageOrder[CurrentPage]]
-	if Ref[0].length() < LengthLimit:
+	var potionData = PotionInfo.JournalPotions[page]
+	PotionName.text = potionData[0]
+	PotionIcon.texture = load(potionData[1])
+	PotionDesc.text = potionData[2]
+	
+	# This looks really poor but it's actually really well optimized
+	# Basically just reduces number of lookups drastically
+	var ref = PotionInfo.JournalIngredients[PageOrder[page]]
+	var ref0Length = ref[0].length()
+	var ref1Length = ref[1].length()
+	var ref2Length = ref[2].length()
+	
+	if ref0Length < LengthLimit:
 		Effect1Text.text = "\n[color=BLACK]Effect 1:\n- "
 		Effect1Text.get_parent().disabled = true
 	else:
-		Effect1Text.text = Ref[0]
+		Effect1Text.text = ref[0]
 		Effect1Text.get_parent().disabled = false
 	
-	if Ref[1].length() < LengthLimit:
+	if ref1Length < LengthLimit:
 		Effect2Text.text = "\n[color=BLACK]Effect 2:\n- "
 		Effect2Text.get_parent().disabled = true
 	else:
-		Effect2Text.text = Ref[1]
+		Effect2Text.text = ref[1]
 		Effect2Text.get_parent().disabled = false
 	
-	if Ref[2].length() < LengthLimit:
+	if ref2Length < LengthLimit:
 		Effect3Text.text = "\n[color=BLACK]Effect 3:\n- "
 		Effect3Text.get_parent().disabled = true
 	else:
-		Effect3Text.text = Ref[2]
+		Effect3Text.text = ref[2]
 		Effect3Text.get_parent().disabled = false
 
+
+
+
+# In future collapse this to 1 signal with var
 func _on_left_pressed():
-	FlipPage.pitch_scale = randf_range(0.9, 1.1)
-	FlipPage.play()
+	_flip_sound()
 	_set_page(CurrentPage - 1)
 
 func _on_right_pressed():
+	_flip_sound()
+	_set_page(CurrentPage + 1)
+
+func _flip_sound():
 	FlipPage.pitch_scale = randf_range(0.9, 1.1)
 	FlipPage.play()
-	_set_page(CurrentPage + 1)
+
 
 func _clarify(EffectNum:int):
 	# PageOrder[CurrentPage] gives ingredient (MandrakeRoot)
@@ -144,6 +158,7 @@ func _clarify(EffectNum:int):
 	if (Ref[EffectNum].length() < LengthLimit) or (EventBus.Balance < Cost): # if not experimented !!! ALSO CHECK BALANCE !!!
 		return
 	else:
+		_write_sound()
 		var CurrentEntry:String = PotionInfo.JournalIngredients[PageOrder[CurrentPage]][EffectNum]
 		if ("Alton" in CurrentEntry) or ("Duane" in CurrentEntry):
 			return
@@ -157,21 +172,16 @@ func _clarify(EffectNum:int):
 		PotionInfo.JournalIngredients[PageOrder[CurrentPage]][EffectNum] = NewEntry
 		_set_page(CurrentPage)
 
-func _on_effect_1_pressed():
-	_clarify(0)
+func _on_effect_pressed(Num):
+	_clarify(Num)
+
+func _write_sound():
 	$WriteSound.pitch_scale = randf_range(0.8, 1.2)
 	$WriteSound.play()
 
-func _on_effect_2_pressed():
-	_clarify(1)
-	$WriteSound.pitch_scale = randf_range(0.8, 1.2)
-	$WriteSound.play()
-
-func _on_effect_3_pressed():
-	_clarify(2)
-	$WriteSound.pitch_scale = randf_range(0.8, 1.2)
-	$WriteSound.play()
-
+# Makes the head move to look at player
 func _process(_delta):
 	if get_node_or_null(EventBus.PlayerPath) != null:
 		$MonkMesh/Head.look_at(get_node(EventBus.PlayerPath).position)
+
+

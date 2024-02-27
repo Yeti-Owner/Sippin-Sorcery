@@ -597,9 +597,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 0, 2.4)
 shape = SubResource("BoxShape3D_ad0ny")
 
 [connection signal="pressed" from="Monk/MonkShenanigans/Journal/ClickOut" to="Monk" method="_on_click_out_pressed"]
-[connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect1" to="Monk" method="_on_effect_1_pressed"]
-[connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect2" to="Monk" method="_on_effect_2_pressed"]
-[connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect3" to="Monk" method="_on_effect_3_pressed"]
+[connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect1" to="Monk" method="_on_effect_pressed" binds= [0]]
+[connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect2" to="Monk" method="_on_effect_pressed" binds= [1]]
+[connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/MarginContainer/HBoxContainer/RightPage/VBoxContainer/Effect3" to="Monk" method="_on_effect_pressed" binds= [2]]
 [connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/Left" to="Monk" method="_on_left_pressed"]
 [connection signal="pressed" from="Monk/MonkShenanigans/Journal/TextureRect/Right" to="Monk" method="_on_right_pressed"]
 [connection signal="timeout" from="Monk/DelayTimer" to="Monk" method="_on_delay_timer_timeout"]
