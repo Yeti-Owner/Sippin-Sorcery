@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=4 format=3 uid="uid://drva4862eoeci"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_cl2y2"]
+[ext_resource type="ArrayMesh" uid="uid://dixyh4kt2h4o2" path="res://assets/models/characters/hats/Hair1.obj" id="1_fs7mw"]
+[ext_resource type="Texture2D" uid="uid://n8q8byy4b6th" path="res://assets/models/characters/hats/HairColor2.png" id="1_udmgt"]
+
+[resource]
+script = ExtResource("1_cl2y2")
+Name = "Bruhgby"
+FavColor = Color(0.333333, 0.333333, 0.333333, 1)
+Dialog = "My gorgeous queen wears socks, give me something to sniff through them."
+Budget = 24
+resistance = "Bonus"
+confusion = "Bad"
+health = "Bonus"
+flexibility = "Okay"
+creativity = "Okay"
+speed = "Okay"
+courage = "Bonus"
+stamina = "Bonus"
+strength = "Okay"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "Okay"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Bad"
+luck = "Bonus"
+petrification = "Bad"
+purity = "Okay"
+heightenedSenses = "NeedOr"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Okay"
+perception = "Okay"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "NeedOr"
+charisma = "Okay"
+plantControl = "Okay"
+sleep = "Bad"
+House = 2
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = false
+Banana = true
+Pineapple = false
+Blueberry = false
+Watermelon = true
+Orange = false
+Hat = ExtResource("1_fs7mw")
+HatColor = ExtResource("1_udmgt")

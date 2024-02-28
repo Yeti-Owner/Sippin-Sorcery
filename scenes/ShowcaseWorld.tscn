@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://crt5ujv7a820q"]
+[gd_scene load_steps=67 format=3 uid="uid://cld0mlcqh40i8"]
 
 [ext_resource type="Script" path="res://scripts/ShowcaseWorld.gd" id="1_ju4bx"]
 [ext_resource type="ArrayMesh" uid="uid://wpspxpw70f78" path="res://assets/models/Shop.obj" id="3_jtxqv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cpvyagx1uuygr" path="res://scenes/level_parts/misc_items.tscn" id="5_nh521"]
 [ext_resource type="PackedScene" uid="uid://c8v65hrtcpabn" path="res://scenes/day_control.tscn" id="6_my861"]
 [ext_resource type="PackedScene" uid="uid://cv71x0apk4i5p" path="res://scenes/spawner.tscn" id="7_8hbcj"]
+[ext_resource type="PackedScene" uid="uid://dq0cttsvnw3ye" path="res://scenes/characters/customer.tscn" id="7_xq076"]
 [ext_resource type="PackedScene" uid="uid://23lgbqrnmudg" path="res://scenes/level_parts/level_houses.tscn" id="8_hpe0t"]
 [ext_resource type="MeshLibrary" uid="uid://dx2hu8mne4kxe" path="res://scenes/Gridmap/town_mesh.meshlib" id="9_n8erl"]
 [ext_resource type="PackedScene" uid="uid://dtllhpkqoaqtf" path="res://scenes/objects/particles.tscn" id="10_abh1w"]
@@ -316,7 +317,6 @@ shape = SubResource("BoxShape3D_rc85i")
 curve = SubResource("Curve3D_a1qbb")
 Num = 0
 List = 1
-BossSpawn = 2
 
 [node name="Stop" type="StaticBody3D" parent="Spawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974, 2)
@@ -334,6 +334,10 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner/Kill"]
 shape = SubResource("BoxShape3D_3av3a")
+
+[node name="Customer" parent="Spawner" instance=ExtResource("7_xq076")]
+transform = Transform3D(-0.999919, 0, 0.0127151, 0, 1, 0, -0.0127151, 0, -0.999919, 0.827477, 1, 17.7356)
+progress = 52.2709
 
 [node name="Houses" parent="." instance=ExtResource("8_hpe0t")]
 

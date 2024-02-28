@@ -16,7 +16,6 @@ func _ready():
 	RestockItem.allow_reselect = false
 	_hide()
 
-# Need way to disable the items that an order already exists for
 # for now, everything is a flat rate of $5
 
 func _on_item_list_item_selected(index):
@@ -30,7 +29,7 @@ func _on_item_list_item_selected(index):
 	_set_up_order()
 
 func _set_up_order():
-	# Need like a tick sound here
+	# Need like a tick sound here?
 	
 	# Basic set-up
 	var Item:String = SelectedItem.replace(" ", "")

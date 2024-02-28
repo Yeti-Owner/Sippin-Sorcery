@@ -3,7 +3,7 @@ var counter:int = 0
 
 func _ready():
 	$Spawner._start()
-#	get_node("/root/SceneManager/GameScene").visible =  false
+	get_node("/root/SceneManager/GameScene").visible =  false
 #	$AnimationPlayer.play("Forward")
 	pass
 

@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://cxhwakv2iohsw"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_sem7t"]
+
+[resource]
+script = ExtResource("1_sem7t")
+Name = "Mighty Pickle Man"
+FavColor = Color(0.568627, 0, 0, 1)
+Dialog = "Can you speed me up so time feels slower?"
+Budget = 17
+resistance = "Bonus"
+confusion = "Bad"
+health = "Bonus"
+flexibility = "Bad"
+creativity = "Bad"
+speed = "NeedAnd"
+courage = "Bad"
+stamina = "Bonus"
+strength = "Bad"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Bad"
+fireRes = "Bad"
+lessPain = "Bad"
+swimming = "Bad"
+underwaterBreathing = "Bad"
+fishTalk = "Bad"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Bad"
+hearing = "Bad"
+hovering = "Bad"
+luck = "Bonus"
+petrification = "Bad"
+purity = "Bad"
+heightenedSenses = "Bad"
+stability = "Bad"
+jumping = "Bad"
+precision = "Bad"
+dexterity = "Bad"
+alertness = "Bad"
+perception = "Bad"
+electricalRes = "Bad"
+explosionRes = "Bad"
+smokeImmunity = "Bad"
+petrificationRes = "Bad"
+betterSmell = "Bad"
+charisma = "Bad"
+plantControl = "Bad"
+sleep = "Bad"
+House = 2
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = false
+Blueberry = true
+Watermelon = true
+Orange = true
