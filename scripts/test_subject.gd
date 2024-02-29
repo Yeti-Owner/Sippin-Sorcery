@@ -26,6 +26,8 @@ func _ready():
 		Gender = "Female"
 		CharName = FemaleNames.pick_random()
 	
+	EventBus.connect("Fuck", _end)
+	
 	_dress()
 
 func _physics_process(delta):
@@ -89,3 +91,7 @@ func _dress():
 	$BodyMeshes/Leg2.set_mesh(L)
 #	$BodyMeshes/Arm1.set_mesh(load("res://assets/models/characters/arm.obj"))
 #	$BodyMeshes/Arm2.set_mesh(load("res://assets/models/characters/arm.obj"))
+
+func _end():
+	$BodyMeshes/Hat.set_surface_override_material(0, null)
+	self.queue_free()

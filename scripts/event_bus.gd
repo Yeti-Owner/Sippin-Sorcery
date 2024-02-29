@@ -16,6 +16,7 @@ signal BossProblem
 signal Hint(hint:String)
 signal RemoveBarrier # Onetime signal, possibly better option available
 signal DisableInteract(value:bool)
+signal Fuck # Fixes some weird bugs in a weird way idc atp
 
 # Crosshair textures
 const CrosshairTex := "res://assets/textures/ui/crosshair.png"

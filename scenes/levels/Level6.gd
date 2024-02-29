@@ -42,6 +42,7 @@ func _on_clock_next_day():
 	EventBus.Hint.emit("Remember the Help page updates often.")
 	EventBus.DayNum += 1
 	SceneManager._change_scene("res://scenes/levels/Level7.tscn", "day")
+	EventBus.emit_signal("Fuck")
 
 func _on_delay_timer_timeout():
 	_level()

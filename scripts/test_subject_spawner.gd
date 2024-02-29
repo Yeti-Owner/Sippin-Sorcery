@@ -5,6 +5,7 @@ const TestSubject := preload("res://scenes/characters/test_subject.tscn")
 
 func _ready():
 	randomize()
+	EventBus.connect("Fuck", _end)
 	SpawnTimer.wait_time = randi_range(10, 18)
 	SpawnTimer.start()
 
@@ -14,3 +15,6 @@ func _on_spawn_timer_timeout():
 		add_child(t)
 	SpawnTimer.wait_time = 5
 	SpawnTimer.start()
+
+func _end():
+	SpawnTimer.stop()

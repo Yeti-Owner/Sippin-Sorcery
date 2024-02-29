@@ -49,3 +49,4 @@ func _on_menu_pressed():
 	SceneManager._stop_boss()
 	SceneManager._swap_hud(null)
 	SceneManager._change_scene("res://scenes/ui/menu.tscn")
+	EventBus.emit_signal("Fuck")

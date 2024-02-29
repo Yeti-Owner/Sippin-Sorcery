@@ -30,3 +30,4 @@ func _on_clock_next_day():
 		SceneManager._change_scene("res://scenes/levels/Level6.tscn", "day")
 	else:
 		SceneManager._change_scene("res://scenes/levels/Level5fail.tscn", "day")
+	EventBus.emit_signal("Fuck")

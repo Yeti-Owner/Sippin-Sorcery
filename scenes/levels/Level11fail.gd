@@ -23,6 +23,7 @@ func _on_clock_next_day():
 		SceneManager._change_scene("res://scenes/levels/EndLevel.tscn", "day")
 	else: # Fail
 		SceneManager._change_scene("res://scenes/levels/Level11fail.tscn", "day")
+	EventBus.emit_signal("Fuck")
 
 func _on_witch_timer_timeout():
 	# Instance in Witch

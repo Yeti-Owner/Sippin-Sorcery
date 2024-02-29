@@ -122,6 +122,7 @@ func _duane_journal():
 func _on_clock_next_day():
 	EventBus.DayNum += 1
 	SceneManager._change_scene("res://scenes/levels/Level1.tscn", "day")
+	EventBus.emit_signal("Fuck")
 
 func _on_pause_timeout():
 	Stage += 1

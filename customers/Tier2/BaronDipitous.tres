@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://84x5wfy2o6wl"]
+
+[ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_nmgcf"]
+
+[resource]
+script = ExtResource("1_nmgcf")
+Name = "Baron Dipitous"
+FavColor = Color(0, 0, 0.619608, 1)
+Dialog = "I need help making my work more entertaining."
+Budget = 21
+resistance = "Bonus"
+confusion = "Bad"
+health = "Bonus"
+flexibility = "Okay"
+creativity = "NeedOr"
+speed = "Bonus"
+courage = "Okay"
+stamina = "Bonus"
+strength = "Okay"
+badVision = "Bad"
+badSmell = "Bad"
+poison = "Bad"
+coldRes = "Okay"
+fireRes = "Okay"
+lessPain = "Okay"
+swimming = "Okay"
+underwaterBreathing = "Okay"
+fishTalk = "Okay"
+sticky = "Bad"
+nightVision = "Bad"
+invisibility = "Bad"
+lessWeight = "Okay"
+hearing = "Okay"
+hovering = "Bad"
+luck = "Bonus"
+petrification = "Bad"
+purity = "Bonus"
+heightenedSenses = "Okay"
+stability = "Okay"
+jumping = "Okay"
+precision = "Okay"
+dexterity = "Okay"
+alertness = "Bonus"
+perception = "Okay"
+electricalRes = "Okay"
+explosionRes = "Okay"
+smokeImmunity = "Okay"
+petrificationRes = "Okay"
+betterSmell = "Okay"
+charisma = "NeedOr"
+plantControl = "Okay"
+sleep = "Bad"
+House = 1
+Gender = "Male"
+TastePrefix = "I like "
+Strawberry = true
+Banana = true
+Pineapple = true
+Blueberry = false
+Watermelon = true
+Orange = true

@@ -21,6 +21,8 @@ var LeaveTime:int = 45
 func _ready():
 	randomize()
 	
+	EventBus.connect("Fuck", _end)
+	
 	EventBus.ActiveCustomers += 1
 	
 	var a := Apparation.instantiate()
@@ -141,3 +143,7 @@ func _on_leave_timer_timeout():
 		Dialogue._talk(GoneList[randi() % GoneList.size()])
 		$WaitTimer.start()
 		get_node("Body").Used = true
+
+func _end():
+	$BodyMeshes/Hat.set_surface_override_material(0, null)
+	self.queue_free()

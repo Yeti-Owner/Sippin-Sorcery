@@ -34,6 +34,7 @@ var Spawned:Array
 
 func _ready():
 	randomize()
+	EventBus.connect("Fuck", _end)
 
 func _start():
 #	timer.wait_time = 0.05
@@ -114,3 +115,6 @@ func _spawn_boss():
 	# Spawn boss
 	var b = HealthInspector.instantiate()
 	add_child(b)
+
+func _end():
+	timer.stop()

@@ -31,6 +31,7 @@ func _on_clock_next_day():
 		SceneManager._change_scene("res://scenes/levels/Level9.tscn", "day")
 	else:
 		SceneManager._change_scene("res://scenes/levels/Level8fail.tscn", "day")
+	EventBus.emit_signal("Fuck")
 
 func _boss_help():
 	if BossStage == 0:
