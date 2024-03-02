@@ -6,8 +6,8 @@
 script = ExtResource("1_emion")
 Name = "Leah"
 FavColor = Color(0.854902, 0, 0.756863, 1)
-Dialog = "I love Diving deep underwater, give me something so I can breathe down there."
-Budget = 17
+Dialog = "I love diving deep underwater, give me something so I can breathe down there."
+Budget = 18
 resistance = "Okay"
 confusion = "Bad"
 health = "Okay"

@@ -2,7 +2,7 @@ extends Control
 
 @onready var Http := $HTTP
 const URL:String = "https://api.jsonbin.io/v3/b"
-const X_Master_Key := ""
+const X_Master_Key := "$2a$10$zXquFFBK.2mYJuiJ9TmQs.4cC6NHseS7xQR2Ff9TotRNISfy4Cwd6"
 
 var Data:Dictionary = {
 	"Rate" : null,

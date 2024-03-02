@@ -52,7 +52,7 @@ const EffectsList := {
 var AdditionalList1 := ["hovering","invisibility","speed","strength"]
 var AdditionalList2 := ["petrification"]
 
-var cost := 45
+var cost := 40
 
 func _ready():
 	randomize()

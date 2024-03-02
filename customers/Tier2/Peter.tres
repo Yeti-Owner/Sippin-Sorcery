@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_0um57")
-Name = "Peter"
+Name = "Peter Parker"
 FavColor = Color(0.823529, 0, 0, 1)
 Dialog = "I need to climb up some walls... for reasons."
 Budget = 19

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://c4s43gdjaj2ie"]
+[gd_resource type="Resource" script_class="CharacterSheet" load_steps=2 format=3 uid="uid://bb7ieae8pmbo1"]
 
 [ext_resource type="Script" path="res://resources/character_sheet.gd" id="1_gvf52"]
 
@@ -7,7 +7,7 @@ script = ExtResource("1_gvf52")
 Name = "Whatmaster"
 FavColor = Color(0, 0.392157, 0.505882, 1)
 Dialog = "Brian is too fat for me to carry him in 2s, I need to be stronger."
-Budget = 14
+Budget = 18
 resistance = "Okay"
 confusion = "Bad"
 health = "Bonus"
